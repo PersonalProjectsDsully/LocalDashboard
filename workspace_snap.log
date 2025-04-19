@@ -1,0 +1,5 @@
+2025-04-19 14:16:01,021 - workspace_snap - INFO - Initialized WorkspaceSnapAgent with 2 monitors
+2025-04-19 14:16:01,022 - workspace_snap - INFO - Loaded workspace 'Development'
+2025-04-19 14:16:01,022 - workspace_snap - INFO - Arranging workspace: Development
+2025-04-19 14:16:01,029 - workspace_snap - WARNING - Failed to log activity: 404
+2025-04-19 14:16:01,030 - workspace_snap - INFO - Launching: "C:\Program Files\Microsoft VS Code\Code.exe" --new-window 

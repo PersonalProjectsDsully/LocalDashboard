@@ -1,0 +1,23 @@
+title: Website Redesign
+status: active
+tags:
+  - web
+  - design
+  - frontend
+due: 2025-05-15
+description: |
+  Complete redesign of the company website with new branding and improved user experience.
+  
+  Key deliverables:
+  - New homepage design
+  - Responsive layout for mobile devices
+  - Improved navigation
+  - Integration with CMS
+  
+team:
+  - name: John Doe
+    role: Project Lead
+  - name: Jane Smith
+    role: Designer
+  - name: Bob Johnson
+    role: Developer

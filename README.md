@@ -1,152 +1,185 @@
-# LocalDashboard
-# **Projects Hub — Master Project Plan (v1.0‑alpha)**  
-*A local‑first desktop workspace with projects, tasks, docs, alarms, workspace‑snap, and a new **Focus Monitor** that tracks active‑window time & screenshots.*
+# LocalDashboard / Projects Hub
 
----
+A local-first desktop workspace with projects, tasks, docs, alarms, workspace-snap, and a Focus Monitor that tracks active-window time & screenshots.
 
-## 0 · Solution Overview
+## Overview
 
-| Layer | Role |
-|-------|------|
-| **Tauri desktop shell (Rust + React)** | Renders UI, handles global hotkeys, shows Windows toasts. |
-| **FastAPI backend (Python 3.12, Docker)** | CRUD for YAML/MD files, WebSocket hub, alarm engine, daily summary builder, Git auto‑commit. |
-| **Workspace Snap agent (Python, host)** | Launches & tiles apps per `workspace_layout.json`; reports progress. |
-| **Focus Monitor agent (Python, host)** | Logs active window, grabs periodic screenshots, runs Tesseract OCR, produces daily usage summaries. |
+Projects Hub is a comprehensive productivity tool designed to help you manage your projects, tasks, and focus in one place. It combines project management, document editing, time tracking, and workspace management into a single, cohesive application.
 
-All data lives in **plain files** under a user‑chosen `ProjectsHub/` folder and is hot‑watched for real‑time UI refresh.
+### Key Features
 
----
+- **Project Management**: Organize projects with tasks, documents, and deadlines
+- **Document Editing**: Create and edit markdown documents with real-time preview
+- **Task Tracking**: Kanban board for visualizing task progress
+- **Alarms**: Set countdowns with visual indicators for important deadlines
+- **Workspace Snap**: Arrange windows with a single click for optimal productivity
+- **Focus Monitor**: Track active window usage and capture periodic screenshots
+- **Activity Feed**: Real-time log of actions and events
+- **Command Palette**: Quick access to all features with keyboard shortcuts
 
-## 1 · User‑Facing Feature Matrix
+## Architecture
 
-| Area | Core MVP Features |
-|------|-------------------|
-| **Dashboard** | • Quick‑action bar (*Start Workspace*, *Cmd K palette*, *New Project*)<br>• “Big alarms” cards<br>• Pinned docs list<br>• **Focus Report** tab (pie chart, timeline, screenshot gallery) |
-| **Sidebar** | • Navigation icons (Projects, Docs, Tasks)<br>• Live alarm pills (green/amber/red)<br>• “+ Add alarm” button |
-| **Projects / Docs** | • Kanban board from `tasks.yaml` (drag‑drop)<br>• Markdown editor/preview with autosave & conflict banner |
-| **Workspace Snap** | • One‑click (and palette) layout<br>• Minimises unlisted apps<br>• Logs to Activity feed |
-| **Command Palette** | • `Ctrl + Space` overlay (kbar) — search commands, docs, tasks, alarms |
-| **Activity Feed** | • Real‑time log of saves, Git commits, snap steps<br>• Quiet‑mode toggle |
-| **Focus Monitor** | • Tracks active window, screenshots, OCR<br>• Daily summary JSON → Dashboard Focus Report<br>• “Pause tracking” toggle |
+The application consists of several components:
 
-*Optional future*: Grafana dashboard cards and Voice ↔ Voice assistant.
+1. **Tauri Desktop Shell**: A cross-platform desktop application built with Rust and React
+2. **FastAPI Backend**: A Python-based API server for file operations and data processing
+3. **Workspace Snap Agent**: A Python script for arranging windows according to predefined layouts
+4. **Focus Monitor Agent**: A Python script for tracking active windows and capturing screenshots
 
----
+## Getting Started
 
-## 2 · File & Schema Conventions
+### Prerequisites
+
+- [Node.js](https://nodejs.org/) (v16 or later)
+- [Rust](https://www.rust-lang.org/tools/install) (latest stable)
+- [Python](https://www.python.org/downloads/) (3.12 or later)
+- [Docker](https://www.docker.com/products/docker-desktop/) (for running the backend)
+- [Tesseract OCR](https://github.com/tesseract-ocr/tesseract) (for OCR functionality)
+
+### Installation
+
+1. Clone the repository:
+   ```
+   git clone https://github.com/yourusername/projects-hub.git
+   cd projects-hub
+   ```
+
+2. Set up the backend:
+   ```
+   cd docker/backend
+   docker build -t projects-hub-backend .
+   ```
+
+3. Set up the Tauri application:
+   ```
+   cd ../../tauri
+   npm install
+   ```
+
+4. Install Python dependencies for the agents:
+   ```
+   pip install pywin32 mss pytesseract pillow pywinauto screeninfo requests
+   ```
+
+### Configuration
+
+1. Create a `ProjectsHub` directory where you want to store your data:
+   ```
+   mkdir ~/ProjectsHub
+   ```
+
+2. Copy the sample configuration files:
+   ```
+   cp -r ProjectsHub/* ~/ProjectsHub/
+   ```
+
+### Running the Application
+
+1. Start the backend:
+   ```
+   docker-compose up backend
+   ```
+
+2. Start the Tauri application:
+   ```
+   cd tauri
+   npm install
+   npx tauri dev
+   ```
+
+3. (Optional) Run the Workspace Snap agent:
+   ```
+   python workspace_snap_agent.py --config ~/ProjectsHub/workspace_layout.json
+   ```
+
+4. (Optional) Run the Focus Monitor agent:
+   ```
+   python focus_monitor_agent.py --output-dir ~/ProjectsHub --tesseract-path /path/to/tesseract
+   ```
+
+## Usage
+
+### Projects
+
+Projects are stored in the `ProjectsHub` directory, with each project having its own subdirectory. Each project contains:
+
+- `project.yaml`: Project metadata (title, status, tags, due date)
+- `tasks.yaml`: Task definitions and status
+- `docs/`: Markdown documents related to the project
+
+### Tasks
+
+Tasks are organized in a Kanban board with three columns: To Do, In Progress, and Done. You can drag and drop tasks between columns to update their status.
+
+### Documents
+
+Documents are written in Markdown and can be edited directly in the application. The editor provides a live preview of the rendered Markdown.
+
+### Alarms
+
+Alarms (or countdowns) are defined in `countdowns.yaml` and display in the sidebar with color-coded indicators based on their thresholds.
+
+### Workspace Snap
+
+Workspace layouts are defined in `workspace_layout.json` and can be activated from the command palette or dashboard.
+
+### Focus Monitor
+
+The Focus Monitor runs in the background and tracks:
+
+- Active window title and application
+- Time spent in each application
+- Periodic screenshots (with OCR for text extraction)
+
+Daily summaries are generated in the `focus_logs` directory and can be viewed in the Focus Report tab.
+
+## Development
+
+### Project Structure
 
 ```
 ProjectsHub/
-├─ 00‑meta.yaml            # UI prefs (theme, feed quiet hours)
-├─ countdowns.yaml         # alarms (days + time + thresholds)
-├─ workspace_layout.json   # app → monitor region mapping
-├─ focus_logs/             # JSONL + PNG + OCR txt per day
-├─ templates/              # new‑project skeletons
-└─ Project‑Foo/
-    ├─ project.yaml        # title, status, tags, due
-    ├─ tasks.yaml          # simple Kanban structs
-    ├─ docs/*.md           # CommonMark + front‑matter
-    └─ assets/…
+├─ 00-meta.yaml            # UI preferences
+├─ countdowns.yaml         # Alarms/countdowns
+├─ workspace_layout.json   # Window arrangement config
+├─ focus_logs/             # Focus monitoring data
+├─ templates/              # Project templates
+└─ Project-*/              # Project directories
+   ├─ project.yaml         # Project metadata
+   ├─ tasks.yaml           # Project tasks
+   └─ docs/                # Project documents
+
+docker/
+├─ backend/                # FastAPI backend Dockerfile and code
+└─ tauri/                  # Tauri build container
+
+tauri/                     # Tauri desktop application
+├─ src/                    # React frontend code
+└─ src-tauri/              # Rust backend code
+
+workspace_snap_agent.py    # Window arrangement script
+focus_monitor_agent.py     # Focus tracking script
 ```
 
----
+### Building for Production
 
-## 3 · Architecture Diagram
+To build the application for production:
 
-```
-┌──────────────────────────────── Desktop App (Tauri) ──────────────────────────────┐
-│ React UI  ·  Command Palette  ·  Toasts  ·  "Pause tracking" switch               │
-└────────────────────────────────────────▲───────────────────────────────────────────┘
-                                         │ WebSocket (logs, alarms)
-                                         ▼ REST
-┌────────────────────────────── FastAPI backend (Docker) ────────────────────────────┐
-│ /files  /tasks  /alarms  /focus/summary  |  watchdog FS events → WS push           │
-│ Alarm engine (async loop)                |  Git autocommit                        │
-│ Daily summary builder (reads focus_logs) |                                         │
-└────────────────────────────────▲───────────────────────────────────────────────────┘
-                                 │ localhost JSON APIs
-┌──────── Workspace Snap agent (host) ───────┐   ┌──────── Focus Monitor agent (host) ──────┐
-│ pywinauto · win32gui · screeninfo          │   │ win32 GetForegroundWindow / mss screenshot│
-│ Arranges windows, posts /log               │   │ JSONL + PNG + OCR txt → focus_logs/       │
-└────────────────────────────────────────────┘   └──────────────────────────────────────────┘
-```
+1. Build the Tauri application:
+   ```
+   cd tauri
+   npm run tauri build
+   ```
 
----
+2. The built application will be in `tauri/src-tauri/target/release/bundle/`
 
-## 4 · Docker Compose (MVP)
+## License
 
-```yaml
-services:
-  backend:
-    build: docker/backend
-    volumes: [ ./ProjectsHub:/hub_data ]
-    ports: [ "8000:8000" ]
+This project is licensed under the MIT License - see the LICENSE file for details.
 
-  tauri_builder:            # one‑shot build container
-    build: docker/tauri
-    volumes: [ ./tauri:/src, ./artifacts:/dist ]
-    command: ["/src/build.sh"]   # emits signed MSI/DMG
+## Acknowledgments
 
-# (Workspace Snap & Focus Monitor run as tiny host‑side Python venvs)
-```
-
-*Switching Docker to Windows‑containers mode is **optional** and only required if you want both agents containerised.*  
-
----
-
-## 5 · Seven‑Week Delivery Timeline
-
-| Week | Phase | Key Deliverables |
-|------|-------|------------------|
-| **0 (½ wk)** | Foundations | Repo, CI, issue board, dev‑container. |
-| **1** | Core scaffolding | FastAPI & Tauri skeleton; static sidebar/tabs. |
-| **2** | Live file sync | watchdog → WS; Git auto‑commit; UI hot‑reload. |
-| **3** | Alarms | YAML schema, engine, sidebar pills, add/edit modal, desktop toasts. |
-| **4** | Projects & Docs | Markdown editor w/ autosave; Kanban board; pinned docs. |
-| **5** | Workspace Snap | JSON layout validator; pywinauto agent; logs to feed. |
-| **5.5** | Palette & Feed | kbar overlay; quiet‑mode drawer polish. |
-| **6** | **Focus Monitor** | Window tracker, screenshot/OCR, daily summary, Focus Report tab, privacy toggle. |
-| **7 (½ wk)** | QA & Packaging | Playwright e2e; signed installer; README user guide. |
-
----
-
-## 6 · Phase‑6 (Focus Monitor) Tasks
-
-| Task | Success Criteria |
-|------|------------------|
-| Tracker loop | 5‑sec sampling; JSONL lines `{ts, exe, title}`. |
-| Screenshot capture | PNG on change or max 60 s; ≤ 40 MB/day. |
-| OCR extraction | TXT sidecar with first 256 chars (eng). |
-| Daily summariser | `daily_summary_YYYY‑MM‑DD.json` (totals + keywords). |
-| API + UI | `/focus/summary?date=` returns JSON; Dashboard tab shows pie chart & gallery. |
-| Privacy switch | Toggle stops new logs & images immediately. |
-
----
-
-## 7 · Optional Epics (Post‑MVP)
-
-| Epic | Extra Effort |
-|------|--------------|
-| **A Grafana Dashboards** | Add Grafana container → Dashboard iframe list from `00‑meta.yaml`. |
-| **B Voice ↔ Voice Assistant** | Precise hot‑word, whisper.cpp ASR, LLM skills, Orpheus TTS. |
-
----
-
-## 8 · Success Criteria for MVP
-
-1. **Installer + Docker compose** yield a fully working local app on Windows.  
-2. User can create/edit projects, tasks, docs **without touching raw files**.  
-3. Alarms fire visually & audibly, are editable in the UI.  
-4. Workspace Snap arranges windows in ≤ 5 s, minimises others.  
-5. Focus Report shows accurate time‑per‑app and last screenshots; privacy toggle works.  
-6. Quiet‑mode hides feed; command palette finds everything.  
-
----
-
-### Ready to Execute?
-
-* Start **Phase 0** by initialising the repo and dev‑container.  
-* Open issues labelled `phase-1` for schema, backend & UI scaffolds.  
-* Kick off stand‑ups with the seven‑week roadmap as your sprint calendar.
-
-Let me know whenever you need a deeper dive into a specific phase or code scaffold!
+- [Tauri](https://tauri.app/) for the desktop application framework
+- [FastAPI](https://fastapi.tiangolo.com/) for the backend API
+- [React](https://reactjs.org/) for the frontend UI
+- [Tesseract OCR](https://github.com/tesseract-ocr/tesseract) for text extraction from screenshots

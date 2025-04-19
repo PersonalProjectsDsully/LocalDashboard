@@ -1,0 +1,8 @@
+theme: dark
+feed_quiet_hours:
+  start: '22:00'
+  end: '08:00'
+pinned_docs:
+  - Project-A/docs/overview.md
+  - Project-B/docs/meeting-notes.md
+  - Project-A/docs/roadmap.md

@@ -1,0 +1,27 @@
+title: Mobile App Development
+status: planning
+tags:
+  - mobile
+  - app
+  - ios
+  - android
+due: 2025-07-30
+description: |
+  Develop a cross-platform mobile application for both iOS and Android that allows users to access our services on the go.
+  
+  Key features:
+  - User authentication
+  - Product browsing and search
+  - Order placement and tracking
+  - Push notifications
+  - Offline mode
+  
+team:
+  - name: Sarah Williams
+    role: Project Lead
+  - name: Mike Chen
+    role: Mobile Developer
+  - name: Alex Rodriguez
+    role: Backend Developer
+  - name: Lisa Kim
+    role: UX Designer

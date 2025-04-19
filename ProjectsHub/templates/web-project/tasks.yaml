@@ -1,0 +1,55 @@
+- id: task-1
+  title: Project planning
+  description: Define project scope, requirements, and timeline
+  status: todo
+  priority: high
+  assigned_to: {{TEAM_MEMBER1_NAME}}
+  due: {{PLANNING_DUE_DATE}}
+
+- id: task-2
+  title: Design wireframes
+  description: Create wireframes for all pages and components
+  status: todo
+  priority: high
+  assigned_to: {{TEAM_MEMBER2_NAME}}
+  due: {{WIREFRAMES_DUE_DATE}}
+
+- id: task-3
+  title: Design mockups
+  description: Create visual designs based on approved wireframes
+  status: todo
+  priority: high
+  assigned_to: {{TEAM_MEMBER2_NAME}}
+  due: {{MOCKUPS_DUE_DATE}}
+
+- id: task-4
+  title: Frontend development
+  description: Implement the frontend based on approved designs
+  status: todo
+  priority: medium
+  assigned_to: {{TEAM_MEMBER3_NAME}}
+  due: {{FRONTEND_DUE_DATE}}
+
+- id: task-5
+  title: Backend development
+  description: Implement API endpoints and database models
+  status: todo
+  priority: medium
+  assigned_to: {{TEAM_MEMBER3_NAME}}
+  due: {{BACKEND_DUE_DATE}}
+
+- id: task-6
+  title: Testing
+  description: Perform unit tests, integration tests, and user acceptance testing
+  status: todo
+  priority: medium
+  assigned_to: {{TEAM_MEMBER1_NAME}}
+  due: {{TESTING_DUE_DATE}}
+
+- id: task-7
+  title: Deployment
+  description: Deploy the application to production
+  status: todo
+  priority: high
+  assigned_to: {{TEAM_MEMBER3_NAME}}
+  due: {{DEPLOYMENT_DUE_DATE}}

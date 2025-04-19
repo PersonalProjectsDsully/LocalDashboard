@@ -1,0 +1,23 @@
+title: {{PROJECT_TITLE}}
+status: planning
+tags:
+  - web
+  - {{TAG1}}
+  - {{TAG2}}
+due: {{DUE_DATE}}
+description: |
+  {{PROJECT_DESCRIPTION}}
+  
+  Key deliverables:
+  - {{DELIVERABLE1}}
+  - {{DELIVERABLE2}}
+  - {{DELIVERABLE3}}
+  - {{DELIVERABLE4}}
+  
+team:
+  - name: {{TEAM_MEMBER1_NAME}}
+    role: {{TEAM_MEMBER1_ROLE}}
+  - name: {{TEAM_MEMBER2_NAME}}
+    role: {{TEAM_MEMBER2_ROLE}}
+  - name: {{TEAM_MEMBER3_NAME}}
+    role: {{TEAM_MEMBER3_ROLE}}

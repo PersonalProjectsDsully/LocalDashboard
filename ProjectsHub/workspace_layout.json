@@ -1,0 +1,44 @@
+{
+  "name": "Development",
+  "description": "Standard development workspace with code editor, browser, and terminal",
+  "apps": [
+    {
+      "name": "VS Code",
+      "path": "C:\\Program Files\\Microsoft VS Code\\Code.exe",
+      "args": ["--new-window", "${PROJECT_PATH}"],
+      "position": {
+        "monitor": 0,
+        "x": 0,
+        "y": 0,
+        "width": 1200,
+        "height": 1400
+      }
+    },
+    {
+      "name": "Chrome",
+      "path": "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe",
+      "args": ["http://localhost:8000"],
+      "position": {
+        "monitor": 0,
+        "x": 1200,
+        "y": 0,
+        "width": 1600,
+        "height": 900
+      }
+    },
+    {
+      "name": "Terminal",
+      "path": "C:\\Windows\\System32\\cmd.exe",
+      "args": [],
+      "position": {
+        "monitor": 0,
+        "x": 1200,
+        "y": 900,
+        "width": 1600,
+        "height": 500
+      }
+    }
+  ],
+  "minimize_others": true,
+  "restore_on_exit": true
+}

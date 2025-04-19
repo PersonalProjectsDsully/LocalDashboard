@@ -1,0 +1,22 @@
+version: '3'
+
+services:
+  backend:
+    build: docker/backend
+    volumes:
+      - ./ProjectsHub:/hub_data
+    ports:
+      - "8000:8000"
+    restart: unless-stopped
+
+  tauri_builder:
+    build: docker/tauri
+    volumes:
+      - ./tauri:/src
+      - ./artifacts:/dist
+    command: ["/src/build.sh"]
+    profiles:
+      - build
+    # This is a one-shot build container, only run when needed
+
+# Workspace Snap & Focus Monitor will run as host-side Python venvs

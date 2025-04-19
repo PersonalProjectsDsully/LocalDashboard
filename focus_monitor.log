@@ -1,0 +1,15 @@
+2025-04-19 14:16:46,914 - focus_monitor - INFO - Initialized FocusMonitorAgent with output directory: ProjectsHub
+2025-04-19 14:16:46,915 - focus_monitor - INFO - Starting Focus Monitor with interval 10s and screenshot interval 120s
+2025-04-19 14:16:47,128 - focus_monitor - INFO - Captured screenshot: screenshot_2025-04-19_20250419_141646.png
+2025-04-19 14:16:47,236 - focus_monitor - ERROR - Error performing OCR: tesseract is not installed or it's not in your PATH. See README file for more information.
+2025-04-19 14:18:47,497 - focus_monitor - INFO - Captured screenshot: screenshot_2025-04-19_20250419_141847.png
+2025-04-19 14:18:47,601 - focus_monitor - ERROR - Error performing OCR: tesseract is not installed or it's not in your PATH. See README file for more information.
+2025-04-19 14:18:59,182 - focus_monitor - INFO - Focus Monitor stopped by user
+2025-04-19 14:18:59,183 - focus_monitor - INFO - Logged window activity: README.md - LocalDashboard - Visual Studio Code (132s)
+2025-04-19 14:18:59,193 - focus_monitor - INFO - Generated daily summary for 2025-04-19
+2025-04-19 14:19:15,846 - focus_monitor - INFO - Initialized FocusMonitorAgent with output directory: ProjectsHub
+2025-04-19 14:19:15,846 - focus_monitor - INFO - Starting Focus Monitor with interval 10s and screenshot interval 120s
+2025-04-19 14:19:16,050 - focus_monitor - INFO - Captured screenshot: screenshot_2025-04-19_20250419_141915.png
+2025-04-19 14:19:16,156 - focus_monitor - ERROR - Error performing OCR: tesseract is not installed or it's not in your PATH. See README file for more information.
+2025-04-19 14:19:20,985 - focus_monitor - INFO - Focus Monitor stopped by user
+2025-04-19 14:19:20,987 - focus_monitor - INFO - Generated daily summary for 2025-04-19

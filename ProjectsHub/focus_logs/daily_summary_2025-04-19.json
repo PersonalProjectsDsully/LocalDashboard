@@ -1,0 +1,76 @@
+{
+  "date": "2025-04-19",
+  "totalTime": 28932,
+  "appBreakdown": [
+    {
+      "appName": "Code",
+      "exePath": "C:\\Program Files\\Microsoft VS Code\\Code.exe",
+      "timeSpent": 13932,
+      "percentage": 48.154292824554126,
+      "windowTitles": [
+        "ProjectsHub/Project-A/docs/overview.md - Visual Studio Code",
+        "ProjectsHub/Project-A/tasks.yaml - Visual Studio Code",
+        "ProjectsHub/Project-B/docs/meeting-notes.md - Visual Studio Code",
+        "README.md - LocalDashboard - Visual Studio Code"
+      ]
+    },
+    {
+      "appName": "chrome",
+      "exePath": "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe",
+      "timeSpent": 7200,
+      "percentage": 24.88593944421402,
+      "windowTitles": [
+        "React Documentation - Google Chrome",
+        "Contentful - Content Management Platform - Google Chrome",
+        "GitHub - Google Chrome"
+      ]
+    },
+    {
+      "appName": "Teams",
+      "exePath": "C:\\Program Files\\Microsoft Teams\\current\\Teams.exe",
+      "timeSpent": 4200,
+      "percentage": 14.516798009124846,
+      "windowTitles": [
+        "Team Meeting - Microsoft Teams",
+        "Chat with Jane Smith - Microsoft Teams"
+      ]
+    },
+    {
+      "appName": "slack",
+      "exePath": "C:\\Users\\admin\\AppData\\Local\\slack\\slack.exe",
+      "timeSpent": 1800,
+      "percentage": 6.221484861053505,
+      "windowTitles": [
+        "general - Company Workspace - Slack",
+        "project-website-redesign - Company Workspace - Slack"
+      ]
+    },
+    {
+      "appName": "Figma",
+      "exePath": "C:\\Users\\admin\\AppData\\Local\\Figma\\Figma.exe",
+      "timeSpent": 1800,
+      "percentage": 6.221484861053505,
+      "windowTitles": [
+        "Website Redesign - Figma"
+      ]
+    }
+  ],
+  "screenshots": [
+    "screenshot_2025-04-19_20250419_141646.png",
+    "screenshot_2025-04-19_20250419_141847.png",
+    "screenshot_2025-04-19_20250419_141915.png"
+  ],
+  "keywords": [],
+  "focusScore": 92,
+  "distractionEvents": 25,
+  "meetingTime": 9000,
+  "productiveApps": [
+    "Code",
+    "chrome",
+    "Teams",
+    "Figma"
+  ],
+  "distractionApps": [
+    "slack"
+  ]
+}

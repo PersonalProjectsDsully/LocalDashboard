@@ -1,0 +1,71 @@
+- id: task-1
+  title: Market research
+  description: Research competing mobile apps and identify key features and opportunities
+  status: todo
+  priority: high
+  assigned_to: Sarah Williams
+  due: 2025-05-15
+
+- id: task-2
+  title: User requirements gathering
+  description: Conduct user interviews and surveys to identify key requirements
+  status: todo
+  priority: high
+  assigned_to: Lisa Kim
+  due: 2025-05-30
+
+- id: task-3
+  title: UI/UX design
+  description: Create wireframes and mockups for all app screens
+  status: todo
+  priority: high
+  assigned_to: Lisa Kim
+  due: 2025-06-15
+
+- id: task-4
+  title: API design
+  description: Design RESTful API endpoints for the mobile app
+  status: todo
+  priority: medium
+  assigned_to: Alex Rodriguez
+  due: 2025-06-15
+
+- id: task-5
+  title: Frontend development
+  description: Implement UI components and screens using React Native
+  status: todo
+  priority: medium
+  assigned_to: Mike Chen
+  due: 2025-07-15
+
+- id: task-6
+  title: Backend implementation
+  description: Implement API endpoints and database models
+  status: todo
+  priority: medium
+  assigned_to: Alex Rodriguez
+  due: 2025-07-15
+
+- id: task-7
+  title: Integration testing
+  description: Test frontend and backend integration
+  status: todo
+  priority: medium
+  assigned_to: Mike Chen
+  due: 2025-07-20
+
+- id: task-8
+  title: User acceptance testing
+  description: Conduct UAT with selected users
+  status: todo
+  priority: high
+  assigned_to: Sarah Williams
+  due: 2025-07-25
+
+- id: task-9
+  title: App store submission
+  description: Prepare and submit app to Apple App Store and Google Play Store
+  status: todo
+  priority: high
+  assigned_to: Mike Chen
+  due: 2025-07-30
