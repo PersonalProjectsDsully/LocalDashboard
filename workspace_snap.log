@@ -3,3 +3,10 @@
 2025-04-19 14:16:01,022 - workspace_snap - INFO - Arranging workspace: Development
 2025-04-19 14:16:01,029 - workspace_snap - WARNING - Failed to log activity: 404
 2025-04-19 14:16:01,030 - workspace_snap - INFO - Launching: "C:\Program Files\Microsoft VS Code\Code.exe" --new-window 
+2025-04-19 14:16:05,340 - workspace_snap - WARNING - Could not find window handle for VS Code
+2025-04-19 14:16:05,346 - workspace_snap - WARNING - Failed to log activity: 404
+2025-04-19 14:16:05,346 - workspace_snap - INFO - Launching: "C:\Program Files\Google\Chrome\Application\chrome.exe" http://localhost:8000
+2025-04-19 14:16:07,417 - workspace_snap - INFO - Found window handle for Chrome: 66876
+2025-04-19 14:16:07,450 - workspace_snap - INFO - Positioned window at (1200, 0) with size 1600x900
+2025-04-19 14:16:07,455 - workspace_snap - WARNING - Failed to log activity: 404
+2025-04-19 14:16:07,456 - workspace_snap - INFO - Launching: "C:\Windows\System32\cmd.exe" 

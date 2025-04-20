@@ -1,7 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import axios from 'axios';
 import { format } from 'date-fns';
 import { PieChart, Pie, Cell, ResponsiveContainer, Tooltip } from 'recharts';
+import { DndProvider, useDrag, useDrop } from 'react-dnd';
+import { HTML5Backend } from 'react-dnd-html5-backend';
 
 interface FocusSummary {
   date: string;
@@ -15,10 +17,165 @@ interface FocusSummary {
   keywords: string[];
 }
 
+interface PinnedDoc {
+  id: string;
+  title: string;
+  path: string;
+  lastModified?: string;
+}
+
+interface DragItem {
+  type: string;
+  id: string;
+  index: number;
+}
+
+const ItemTypes = {
+  PINNED_DOC: 'pinnedDoc',
+};
+
+const PinnedDocCard: React.FC<{
+  doc: PinnedDoc;
+  index: number;
+  moveDoc: (dragIndex: number, hoverIndex: number) => void;
+  togglePin: (id: string) => void;
+}> = ({ doc, index, moveDoc, togglePin }) => {
+  const ref = useRef<HTMLDivElement>(null);
+  
+  const [{ isDragging }, drag] = useDrag({
+    type: ItemTypes.PINNED_DOC,
+    item: { type: ItemTypes.PINNED_DOC, id: doc.id, index },
+    collect: (monitor) => ({
+      isDragging: monitor.isDragging(),
+    }),
+  });
+  
+  const [, drop] = useDrop({
+    accept: ItemTypes.PINNED_DOC,
+    hover: (item: DragItem, monitor) => {
+      if (!ref.current) {
+        return;
+      }
+      
+      const dragIndex = item.index;
+      const hoverIndex = index;
+      
+      // Don't replace items with themselves
+      if (dragIndex === hoverIndex) {
+        return;
+      }
+      
+      // Determine rectangle on screen
+      const hoverBoundingRect = ref.current.getBoundingClientRect();
+      
+      // Get vertical middle
+      const hoverMiddleY = (hoverBoundingRect.bottom - hoverBoundingRect.top) / 2;
+      
+      // Determine mouse position
+      const clientOffset = monitor.getClientOffset();
+      
+      // Get pixels to the top
+      const hoverClientY = clientOffset!.y - hoverBoundingRect.top;
+      
+      // Only perform the move when the mouse has crossed half of the items height
+      // When dragging downwards, only move when the cursor is below 50%
+      // When dragging upwards, only move when the cursor is above 50%
+      
+      // Dragging downwards
+      if (dragIndex < hoverIndex && hoverClientY < hoverMiddleY) {
+        return;
+      }
+      
+      // Dragging upwards
+      if (dragIndex > hoverIndex && hoverClientY > hoverMiddleY) {
+        return;
+      }
+      
+      // Time to actually perform the action
+      moveDoc(dragIndex, hoverIndex);
+      
+      // Note: we're mutating the monitor item here!
+      // Generally it's better to avoid mutations,
+      // but it's good here for the sake of performance
+      // to avoid expensive index searches.
+      item.index = hoverIndex;
+    },
+  });
+  
+  drag(drop(ref));
+  
+  const opacity = isDragging ? 0.4 : 1;
+  
+  // Determine file icon based on path extension
+  const getFileIcon = (path: string) => {
+    const extension = path.split('.').pop()?.toLowerCase();
+    switch (extension) {
+      case 'md':
+        return '📄';
+      case 'pdf':
+        return '📕';
+      case 'doc':
+      case 'docx':
+        return '📘';
+      case 'xls':
+      case 'xlsx':
+        return '📗';
+      case 'ppt':
+      case 'pptx':
+        return '📙';
+      case 'jpg':
+      case 'jpeg':
+      case 'png':
+      case 'gif':
+        return '🖼️';
+      default:
+        return '📄';
+    }
+  };
+  
+  return (
+    <div 
+      ref={ref} 
+      className="card doc-card" 
+      style={{ opacity }}
+    >
+      <div className="doc-icon">
+        {getFileIcon(doc.path)}
+      </div>
+      <div className="doc-content">
+        <h3 className="doc-title">{doc.title}</h3>
+        <p className="doc-path">{doc.path}</p>
+        {doc.lastModified && (
+          <p className="doc-last-modified">
+            Last modified: {format(new Date(doc.lastModified), 'MMM d, yyyy h:mm a')}
+          </p>
+        )}
+      </div>
+      <div className="doc-actions">
+        <span 
+          className={`pin-button ${true ? 'pinned' : ''}`}
+          onClick={() => togglePin(doc.id)}
+          title="Unpin document"
+        >
+          ★
+        </span>
+      </div>
+    </div>
+  );
+};
+
+const EmptyDocCard: React.FC = () => {
+  return (
+    <div className="empty-doc-card">
+      Drag files here to pin
+    </div>
+  );
+};
+
 const Dashboard: React.FC = () => {
   const [focusSummary, setFocusSummary] = useState<FocusSummary | null>(null);
   const [alarms, setAlarms] = useState<any[]>([]);
-  const [pinnedDocs, setPinnedDocs] = useState<any[]>([]);
+  const [pinnedDocs, setPinnedDocs] = useState<PinnedDoc[]>([]);
   const [activeTab, setActiveTab] = useState('dashboard');
   
   const today = format(new Date(), 'yyyy-MM-dd');
@@ -49,9 +206,24 @@ const Dashboard: React.FC = () => {
       try {
         // This would be replaced with actual API call when implemented
         setPinnedDocs([
-          { id: '1', title: 'Project Overview', path: 'Project-A/docs/overview.md' },
-          { id: '2', title: 'Meeting Notes', path: 'Project-B/docs/meeting-notes.md' },
-          { id: '3', title: 'Development Roadmap', path: 'Project-A/docs/roadmap.md' },
+          { 
+            id: '1', 
+            title: 'Project Overview', 
+            path: 'Project-A/docs/overview.md',
+            lastModified: '2025-04-18T14:30:00Z'
+          },
+          { 
+            id: '2', 
+            title: 'Meeting Notes', 
+            path: 'Project-B/docs/meeting-notes.md',
+            lastModified: '2025-04-15T10:00:00Z'
+          },
+          { 
+            id: '3', 
+            title: 'Development Roadmap', 
+            path: 'Project-A/docs/roadmap.md',
+            lastModified: '2025-04-10T09:15:00Z'
+          },
         ]);
       } catch (error) {
         console.error('Error fetching pinned docs:', error);
@@ -76,21 +248,55 @@ const Dashboard: React.FC = () => {
       return 'green';
     }
   };
+
+  const getAlarmIcon = (status: string) => {
+    switch (status) {
+      case 'red':
+        return '🔔';
+      case 'amber':
+        return '🔔';
+      case 'green':
+        return '🔔';
+      default:
+        return '🔔';
+    }
+  };
+  
+  const moveDoc = (dragIndex: number, hoverIndex: number) => {
+    const draggedDoc = pinnedDocs[dragIndex];
+    const newDocs = [...pinnedDocs];
+    newDocs.splice(dragIndex, 1);
+    newDocs.splice(hoverIndex, 0, draggedDoc);
+    setPinnedDocs(newDocs);
+  };
+  
+  const togglePin = (id: string) => {
+    // In a real app, this would call an API to toggle the pin status
+    console.log('Toggle pin for doc:', id);
+  };
   
   return (
     <div className="dashboard-container">
       <div className="header">
         <h1 className="text-2xl font-bold">Dashboard</h1>
-        <div className="tabs">
+        <div className="tabs" role="tablist">
           <button 
             className={`tab ${activeTab === 'dashboard' ? 'active' : ''}`}
             onClick={() => setActiveTab('dashboard')}
+            role="tab"
+            aria-selected={activeTab === 'dashboard'}
+            aria-controls="dashboard-panel"
+            id="dashboard-tab"
           >
             Dashboard
           </button>
           <button 
             className={`tab ${activeTab === 'focus-report' ? 'active' : ''}`}
             onClick={() => setActiveTab('focus-report')}
+            role="tab"
+            aria-selected={activeTab === 'focus-report'}
+            aria-controls="focus-report-panel"
+            id="focus-report-tab"
           >
             Focus Report
           </button>
@@ -98,15 +304,15 @@ const Dashboard: React.FC = () => {
       </div>
       
       {activeTab === 'dashboard' ? (
-        <>
+        <div role="tabpanel" id="dashboard-panel" aria-labelledby="dashboard-tab">
           <div className="quick-action-bar">
-            <button className="quick-action-button">
+            <button className="quick-action-button" data-shortcut="⌘ W">
               <span>🖥️</span> Start Workspace
             </button>
-            <button className="quick-action-button">
+            <button className="quick-action-button" data-shortcut="⌘ ⇧ P">
               <span>⌘</span> Command Palette
             </button>
-            <button className="quick-action-button">
+            <button className="quick-action-button" data-shortcut="⌘ N">
               <span>+</span> New Project
             </button>
           </div>
@@ -119,10 +325,21 @@ const Dashboard: React.FC = () => {
                   alarms.map((alarm) => (
                     <div key={alarm.id} className={`card alarm-card ${getAlarmStatus(alarm)}`}>
                       <div className="flex justify-between items-center">
-                        <h3 className="text-lg font-semibold">{alarm.title}</h3>
+                        <h3 className="text-lg font-semibold">
+                          <span className={`alarm-icon ${getAlarmStatus(alarm)}`}>
+                            {getAlarmIcon(getAlarmStatus(alarm))}
+                          </span>
+                          {alarm.title}
+                        </h3>
                         <span className="text-lg font-bold">{alarm.days}d</span>
                       </div>
                       {alarm.time && <p className="text-sm text-gray-500">Due: {alarm.time}</p>}
+                      <div className="alarm-progress">
+                        <div 
+                          className={`alarm-progress-bar ${getAlarmStatus(alarm)}`} 
+                          style={{ width: `${Math.min(10, alarm.days) * 10}%` }}
+                        ></div>
+                      </div>
                     </div>
                   ))
                 ) : (
@@ -133,23 +350,28 @@ const Dashboard: React.FC = () => {
             
             <div className="dashboard-section">
               <h2 className="section-title">Pinned Documents</h2>
-              <div className="pinned-docs-container">
-                {pinnedDocs.length > 0 ? (
-                  pinnedDocs.map((doc) => (
-                    <div key={doc.id} className="card doc-card">
-                      <h3 className="text-lg font-semibold">{doc.title}</h3>
-                      <p className="text-sm text-gray-500">{doc.path}</p>
-                    </div>
-                  ))
-                ) : (
-                  <div className="empty-state">No pinned documents</div>
-                )}
-              </div>
+              <DndProvider backend={HTML5Backend}>
+                <div className="pinned-docs-container">
+                  {pinnedDocs.length > 0 ? (
+                    pinnedDocs.map((doc, index) => (
+                      <PinnedDocCard 
+                        key={doc.id} 
+                        doc={doc} 
+                        index={index}
+                        moveDoc={moveDoc}
+                        togglePin={togglePin}
+                      />
+                    ))
+                  ) : (
+                    <EmptyDocCard />
+                  )}
+                </div>
+              </DndProvider>
             </div>
           </div>
-        </>
+        </div>
       ) : (
-        <div className="focus-report">
+        <div className="focus-report" role="tabpanel" id="focus-report-panel" aria-labelledby="focus-report-tab">
           <div className="card">
             <h2 className="text-xl font-semibold mb-4">Focus Summary for {today}</h2>
             

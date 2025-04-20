@@ -23,6 +23,7 @@ const CommandPalette: React.FC = () => {
       shortcut: ['g', 'd'],
       keywords: 'home dashboard main',
       perform: () => navigate('/'),
+      subtitle: 'Go to Dashboard',
     },
     {
       id: 'projects',
@@ -30,6 +31,7 @@ const CommandPalette: React.FC = () => {
       shortcut: ['g', 'p'],
       keywords: 'projects',
       perform: () => navigate('/projects'),
+      subtitle: 'Go to Projects',
     },
     {
       id: 'documents',
@@ -37,6 +39,7 @@ const CommandPalette: React.FC = () => {
       shortcut: ['g', 'o'],
       keywords: 'docs documents',
       perform: () => navigate('/documents'),
+      subtitle: 'Go to Documents',
     },
     {
       id: 'tasks',
@@ -44,6 +47,7 @@ const CommandPalette: React.FC = () => {
       shortcut: ['g', 't'],
       keywords: 'tasks todo',
       perform: () => navigate('/tasks'),
+      subtitle: 'Go to Tasks',
     },
     
     // Creation actions
@@ -53,6 +57,7 @@ const CommandPalette: React.FC = () => {
       shortcut: ['n', 'p'],
       keywords: 'create new project',
       perform: () => console.log('Create new project'),
+      subtitle: 'Create a new project',
     },
     {
       id: 'new-document',
@@ -60,6 +65,7 @@ const CommandPalette: React.FC = () => {
       shortcut: ['n', 'd'],
       keywords: 'create new document',
       perform: () => console.log('Create new document'),
+      subtitle: 'Create a new document',
     },
     {
       id: 'new-task',
@@ -67,6 +73,7 @@ const CommandPalette: React.FC = () => {
       shortcut: ['n', 't'],
       keywords: 'create new task',
       perform: () => console.log('Create new task'),
+      subtitle: 'Create a new task',
     },
     {
       id: 'new-alarm',
@@ -74,6 +81,7 @@ const CommandPalette: React.FC = () => {
       shortcut: ['n', 'a'],
       keywords: 'create new alarm countdown',
       perform: () => console.log('Create new alarm'),
+      subtitle: 'Create a new alarm',
     },
     
     // Workspace actions
@@ -83,6 +91,7 @@ const CommandPalette: React.FC = () => {
       shortcut: ['w', 's'],
       keywords: 'workspace start launch',
       perform: () => console.log('Start workspace'),
+      subtitle: 'Start a workspace (⌘ W)',
     },
     
     // Focus Monitor actions
@@ -92,6 +101,7 @@ const CommandPalette: React.FC = () => {
       shortcut: ['f', 'm'],
       keywords: 'focus monitor toggle',
       perform: () => console.log('Toggle focus monitor'),
+      subtitle: 'Toggle focus monitoring',
     },
     
     // Activity Feed actions
@@ -101,6 +111,17 @@ const CommandPalette: React.FC = () => {
       shortcut: ['q', 'm'],
       keywords: 'quiet mode toggle',
       perform: () => console.log('Toggle quiet mode'),
+      subtitle: 'Toggle activity feed notifications',
+    },
+    
+    // Command Palette
+    {
+      id: 'open-command-palette',
+      name: 'Command Palette',
+      shortcut: ['⌘', '⇧', 'p'],
+      keywords: 'command palette search',
+      perform: () => {}, // Already open
+      subtitle: 'Search for commands (⌘ ⇧ P)',
     },
   ]);
   
@@ -108,7 +129,7 @@ const CommandPalette: React.FC = () => {
     <KBarPortal>
       <KBarPositioner className="kbar-positioner">
         <KBarAnimator className="kbar-animator">
-          <KBarSearch className="kbar-search" placeholder="Type a command or search..." />
+          <KBarSearch className="kbar-search" placeholder="Type a command or search... (⌘ ⇧ P)" />
           <RenderResults />
         </KBarAnimator>
       </KBarPositioner>

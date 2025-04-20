@@ -47,14 +47,27 @@ const Sidebar: React.FC = () => {
       return 'green';
     }
   };
+
+  const getAlarmIcon = (status: string) => {
+    switch (status) {
+      case 'red':
+        return '🔔';
+      case 'amber':
+        return '🔔';
+      case 'green':
+        return '🔔';
+      default:
+        return '🔔';
+    }
+  };
   
   return (
-    <div className="sidebar">
+    <>
       <div className="sidebar-header">
         <h1 className="text-xl font-bold mb-6">Projects Hub</h1>
       </div>
       
-      <nav className="sidebar-nav">
+      <div className="sidebar-nav">
         <NavLink to="/" className={({ isActive }) => `nav-item ${isActive ? 'active' : ''}`}>
           <span className="nav-icon">📊</span>
           <span>Dashboard</span>
@@ -74,23 +87,43 @@ const Sidebar: React.FC = () => {
           <span className="nav-icon">✓</span>
           <span>Tasks</span>
         </NavLink>
-      </nav>
+      </div>
       
       <div className="sidebar-section mt-8">
         <h2 className="text-sm uppercase font-semibold mb-2 text-gray-400">Alarms</h2>
         
-        <div className="alarms-list">
-          {alarms.length > 0 ? (
-            alarms.map((alarm) => (
-              <div key={alarm.id} className={`alarm-pill ${getAlarmStatus(alarm)}`}>
-                <span className="alarm-title">{alarm.title}</span>
-                <span className="alarm-days">{alarm.days}d</span>
+        {alarms.length > 0 ? (
+          <div className="alarms-list">
+            {alarms.length > 1 ? (
+              <div className={`alarm-pill ${getAlarmStatus(alarms[0])}`}>
+                <span className={`alarm-icon ${getAlarmStatus(alarms[0])}`}>
+                  {getAlarmIcon(getAlarmStatus(alarms[0]))}
+                </span>
+                <span className="alarm-title">{alarms[0].title}</span>
+                <span className="alarm-days">{alarms[0].days}d</span>
+                <span className="alarm-badge">+{alarms.length - 1}</span>
               </div>
-            ))
-          ) : (
-            <div className="text-sm text-gray-400">No alarms set</div>
-          )}
-        </div>
+            ) : (
+              alarms.map((alarm) => (
+                <div key={alarm.id} className={`alarm-pill ${getAlarmStatus(alarm)}`}>
+                  <span className={`alarm-icon ${getAlarmStatus(alarm)}`}>
+                    {getAlarmIcon(getAlarmStatus(alarm))}
+                  </span>
+                  <span className="alarm-title">{alarm.title}</span>
+                  <span className="alarm-days">{alarm.days}d</span>
+                  <div className="alarm-progress">
+                    <div 
+                      className={`alarm-progress-bar ${getAlarmStatus(alarm)}`} 
+                      style={{ width: `${Math.min(10, alarm.days) * 10}%` }}
+                    ></div>
+                  </div>
+                </div>
+              ))
+            )}
+          </div>
+        ) : (
+          <div className="text-sm text-gray-400">No alarms set</div>
+        )}
         
         <button className="add-alarm-btn mt-2">
           <span>+</span> Add alarm
@@ -106,7 +139,7 @@ const Sidebar: React.FC = () => {
           <span className="ml-2 text-sm">Focus Monitor</span>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 

@@ -48,16 +48,21 @@ function App() {
   return (
     <KBarProvider>
       <div className="app-container">
-        <Sidebar />
-        <div className="main-content">
+        <nav className="sidebar">
+          <Sidebar />
+        </nav>
+        <main className="main-content">
           <Routes>
             <Route path="/" element={<Dashboard />} />
             <Route path="/projects" element={<Projects />} />
             <Route path="/documents" element={<Documents />} />
             <Route path="/tasks" element={<Tasks />} />
           </Routes>
-        </div>
-        <ActivityFeed />
+        </main>
+        <aside className="activity-feed" aria-live="polite">
+          <ActivityFeed />
+          <div className="sr-only" aria-live="assertive" id="activity-announcer"></div>
+        </aside>
         <CommandPalette />
       </div>
     </KBarProvider>

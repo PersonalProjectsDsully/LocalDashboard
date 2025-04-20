@@ -3,19 +3,59 @@
 @tailwind utilities;
 
 :root {
-  --primary-color: #3b82f6;
-  --secondary-color: #6b7280;
-  --background-color: #f9fafb;
-  --text-color: #1f2937;
+  /* Color Palette */
+  --primary-color: #2563eb;
+  --primary-color-70: rgba(37, 99, 235, 0.7);
+  --success-color: #10b981;
+  --success-color-70: rgba(16, 185, 129, 0.7);
+  --warning-color: #f59e0b;
+  --warning-color-70: rgba(245, 158, 11, 0.7);
+  --danger-color: #ef4444;
+  --danger-color-70: rgba(239, 68, 68, 0.7);
+  
+  /* Layout */
   --sidebar-width: 240px;
   --header-height: 60px;
   --feed-width: 300px;
+  --max-content-width: 1120px;
+  
+  /* Typography */
+  --font-size-xs: 12px;
+  --font-size-sm: 14px;
+  --font-size-base: 16px;
+  --font-size-lg: 18px;
+  --font-size-xl: 20px;
+  --font-size-2xl: 24px;
+  
+  /* Colors */
+  --background-color: #f9fafb;
+  --text-color: #1f2937;
+  
+  /* Transitions */
+  --transition-default: all 0.15s ease;
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background-color: #111827;
+    --text-color: #f9fafb;
+  }
+}
+
+/* Reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+    animation: none !important;
+  }
 }
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  transition: var(--transition-default);
 }
 
 body {
@@ -26,6 +66,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   background-color: var(--background-color);
   color: var(--text-color);
+  font-size: var(--font-size-base);
 }
 
 code {
@@ -50,4 +91,15 @@ code {
 
 ::-webkit-scrollbar-thumb:hover {
   background: #a8a8a8;
+}
+
+/* Focus outlines */
+:focus {
+  outline: 2px solid var(--primary-color);
+  outline-offset: 2px;
+}
+
+/* Semantic HTML elements */
+nav, main, aside {
+  display: block;
 }
