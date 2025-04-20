@@ -1025,3 +1025,23 @@
 2025-04-20 17:03:02,102 [INFO] main: WebSocket disconnected from 172.28.0.1:58660. Remaining: 1
 2025-04-20 17:03:02,291 [INFO] main: New WebSocket connection from 172.28.0.1:57942. Total: 2
 2025-04-20 17:03:02,324 [INFO] main: New WebSocket connection from 172.28.0.1:57962. Total: 3
+2025-04-20 17:21:45,718 [INFO] main: WebSocket disconnected from 172.28.0.1:57962. Remaining: 2
+2025-04-20 17:21:45,719 [INFO] main: WebSocket disconnected from 172.28.0.1:57942. Remaining: 1
+2025-04-20 17:21:45,946 [INFO] main: New WebSocket connection from 172.28.0.1:45560. Total: 2
+2025-04-20 17:21:45,970 [INFO] main: New WebSocket connection from 172.28.0.1:45570. Total: 3
+2025-04-20 17:21:53,797 [INFO] main: WebSocket disconnected from 172.28.0.1:45570. Remaining: 2
+2025-04-20 17:21:53,798 [INFO] main: WebSocket disconnected from 172.28.0.1:45560. Remaining: 1
+2025-04-20 17:24:16,455 [INFO] main: New WebSocket connection from 172.28.0.1:49250. Total: 2
+2025-04-20 17:24:16,486 [INFO] main: New WebSocket connection from 172.28.0.1:49264. Total: 3
+2025-04-20 17:24:19,130 [INFO] main: WebSocket disconnected from 172.28.0.1:49264. Remaining: 2
+2025-04-20 17:24:19,130 [INFO] main: WebSocket disconnected from 172.28.0.1:49250. Remaining: 1
+2025-04-20 17:24:19,193 [INFO] main: New WebSocket connection from 172.28.0.1:49266. Total: 2
+2025-04-20 17:24:19,223 [INFO] main: New WebSocket connection from 172.28.0.1:49268. Total: 3
+2025-04-20 17:25:01,290 [INFO] main: WebSocket disconnected from 172.28.0.1:49268. Remaining: 2
+2025-04-20 17:25:01,290 [INFO] main: WebSocket disconnected from 172.28.0.1:49266. Remaining: 1
+2025-04-20 17:26:21,186 [INFO] main: New WebSocket connection from 172.28.0.1:34142. Total: 2
+2025-04-20 17:26:21,194 [INFO] main: WebSocket disconnected from 172.28.0.1:34142. Remaining: 1
+2025-04-20 17:26:21,540 [INFO] main: New WebSocket connection from 172.28.0.1:34172. Total: 2
+2025-04-20 17:26:21,572 [INFO] main: New WebSocket connection from 172.28.0.1:34190. Total: 3
+2025-04-20 17:28:21,786 [INFO] main: WebSocket disconnected from 172.28.0.1:34172. Remaining: 2
+2025-04-20 17:28:21,786 [INFO] main: WebSocket disconnected from 172.28.0.1:34190. Remaining: 1
