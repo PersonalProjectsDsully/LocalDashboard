@@ -1,11 +1,16 @@
+# docker/backend/requirements.txt
+
 fastapi==0.110.0
-uvicorn==0.27.1
+uvicorn[standard]==0.27.1 # Use [standard] for websockets etc.
 pydantic==2.6.1
 python-multipart==0.0.9
 pyyaml==6.0.1
 watchdog==3.0.0
-websockets==12.0
+# websockets included via uvicorn[standard]
 gitpython==3.1.41
 python-dotenv==1.0.1
+requests # <-- ADD THIS LINE
+
+# Keep pytest and httpx for testing if you plan to add tests
 pytest==7.4.3
 httpx==0.27.0

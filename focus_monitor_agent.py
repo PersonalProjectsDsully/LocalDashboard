@@ -1,9 +1,10 @@
 #!/usr/bin/env python3
 """
-Focus Monitor Agent
+Focus Monitor Agent (Window Title Tracking Version)
 
-This script tracks active windows, captures screenshots, and performs OCR to generate
-focus activity logs and daily summaries.
+This script tracks the title and executable of the currently focused window
+to generate focus activity logs and daily summaries. Does NOT take screenshots.
+Periodically checks backend for desired active state.
 """
 
 import os
@@ -13,364 +14,358 @@ import json
 import logging
 import argparse
 import datetime
-import subprocess
-from typing import Dict, List, Optional, Tuple
+from typing import Dict, List, Optional, Set
 from pathlib import Path
+import asyncio
+import requests
 
 try:
     import win32gui
     import win32process
     import win32api
-    import mss
-    import pytesseract
-    from PIL import Image
+    import win32con # For constants if needed later
 except ImportError:
     print("Required packages not found. Please install with:")
-    print("pip install pywin32 mss pytesseract pillow")
-    print("Note: You also need to install Tesseract OCR and set the path to the executable.")
+    print("pip install pywin32 requests") # Removed mss, pytesseract, pillow
     sys.exit(1)
 
 # Configure logging
 logging.basicConfig(
     level=logging.INFO,
-    format="%(asctime)s - %(name)s - %(levelname)s - %(message)s",
+    format="%(asctime)s [%(levelname)s] %(name)s: %(message)s",
     handlers=[
-        logging.FileHandler("focus_monitor.log"),
+        logging.FileHandler("focus_monitor.log", encoding='utf-8'),
         logging.StreamHandler()
     ]
 )
 logger = logging.getLogger("focus_monitor")
 
+# --- Configuration (Copied for backend calculation consistency) ---
+PRODUCTIVE_EXES = {"code.exe", "pycharm", "idea", "webstorm", "goland", "clion",
+                   "word", "excel", "powerpnt", "outlook",
+                   "chrome.exe", "firefox.exe", "msedge.exe", "safari",
+                   "cmd.exe", "powershell.exe", "terminal", "wt.exe",
+                   "explorer.exe", "photoshop", "illustrator", "figma", "xd",
+                   "blender", "unity", "docker", "virtualbox", "vmware",
+                   "gitkraken", "postman", "obsidian"}
+DISTRACTION_EXES = {"steam.exe", "epicgameslauncher", "origin.exe", "gog galaxy",
+                     "spotify.exe", "discord.exe", "slack.exe",
+                     "netflix", "hulu", "disneyplus",
+                     "whatsapp", "telegram", "signal"}
+DISTRACTION_TITLE_KEYWORDS = {"youtube", "facebook", "twitter", "reddit", "netflix",
+                              "hulu", "twitch", "instagram", "9gag", "game", "play",
+                              "tiktok", "pinterest"}
+MEETING_EXES = {"teams.exe", "zoom.exe", "webex", "skype.exe", "slack.exe"}
+MEETING_TITLE_KEYWORDS = {"meet", "meeting", "call", "webinar", "huddle",
+                           "zoom meeting", "microsoft teams meeting", "google meet"}
+
 class FocusMonitorAgent:
-    def __init__(self, output_dir: str, tesseract_path: Optional[str] = None, api_url: str = "http://localhost:8000"):
+    def __init__(self, output_dir: str, api_url: Optional[str] = None):
         self.output_dir = Path(output_dir)
         self.api_url = api_url
-        self.active = True
-        self.last_window_info = None
-        self.last_screenshot_time = 0
-        self.window_start_time = 0
-        self.today = datetime.datetime.now().strftime("%Y-%m-%d")
-        
-        # Create output directories
+        self.active = True # Internal current state
+        self.desired_active_state = True # State requested by backend
+        self.last_window_info: Optional[Dict] = None
+        self.window_start_time: float = time.time()
+        self.today: str = self._get_current_utc_date()
+
         self.focus_logs_dir = self.output_dir / "focus_logs"
         self.focus_logs_dir.mkdir(parents=True, exist_ok=True)
-        
-        # Set Tesseract path if provided
-        if tesseract_path:
-            pytesseract.pytesseract.tesseract_cmd = tesseract_path
-        
-        logger.info(f"Initialized FocusMonitorAgent with output directory: {self.output_dir}")
 
-    def _get_active_window_info(self) -> Dict:
-        """Get information about the currently active window."""
-        try:
-            hwnd = win32gui.GetForegroundWindow()
-            _, pid = win32process.GetWindowThreadProcessId(hwnd)
-            
+        logger.info(f"Initialized FocusMonitorAgent (Window Tracking). Output: {self.focus_logs_dir}, API: {self.api_url or 'Disabled'}")
+
+    def _get_current_utc_date(self) -> str:
+         return datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%d")
+
+    async def check_backend_status(self):
+        """Periodically check the desired active state from the backend."""
+        while True:
+            if not self.api_url:
+                self.desired_active_state = True # Default to active if no API
+                await asyncio.sleep(60)
+                continue
             try:
-                # Get process executable path
-                handle = win32api.OpenProcess(0x0400 | 0x0010, False, pid)
-                exe = win32process.GetModuleFileNameEx(handle, 0)
-            except Exception:
-                exe = "Unknown"
-            
-            title = win32gui.GetWindowText(hwnd)
-            
-            return {
-                "hwnd": hwnd,
-                "pid": pid,
-                "exe": exe,
-                "title": title,
-                "timestamp": datetime.datetime.now().isoformat()
-            }
-        except Exception as e:
-            logger.error(f"Error getting active window info: {e}")
-            return {
-                "hwnd": 0,
-                "pid": 0,
-                "exe": "Error",
-                "title": "Error",
-                "timestamp": datetime.datetime.now().isoformat()
-            }
-
-    def _capture_screenshot(self) -> Optional[str]:
-        """Capture a screenshot of the current screen."""
-        try:
-            timestamp = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
-            filename = f"screenshot_{self.today}_{timestamp}.png"
-            filepath = self.focus_logs_dir / filename
-            
-            with mss.mss() as sct:
-                monitor = sct.monitors[1]  # Primary monitor
-                sct_img = sct.grab(monitor)
-                img = Image.frombytes("RGB", sct_img.size, sct_img.bgra, "raw", "BGRX")
-                img.save(str(filepath))
-            
-            logger.info(f"Captured screenshot: {filename}")
-            return filename
-        except Exception as e:
-            logger.error(f"Error capturing screenshot: {e}")
-            return None
-
-    def _perform_ocr(self, screenshot_path: str) -> str:
-        """Perform OCR on the captured screenshot."""
-        try:
-            img = Image.open(self.focus_logs_dir / screenshot_path)
-            
-            # Resize image for faster OCR
-            width, height = img.size
-            new_width = 1200
-            new_height = int(height * (new_width / width))
-            img = img.resize((new_width, new_height))
-            
-            # Perform OCR
-            text = pytesseract.image_to_string(img, lang='eng')
-            
-            # Truncate to first 256 characters
-            text = text[:256]
-            
-            # Save OCR text to file
-            ocr_path = self.focus_logs_dir / f"{screenshot_path.replace('.png', '.txt')}"
-            with open(ocr_path, "w", encoding="utf-8") as f:
-                f.write(text)
-            
-            logger.info(f"Performed OCR on {screenshot_path}")
-            return text
-        except Exception as e:
-            logger.error(f"Error performing OCR: {e}")
-            return ""
-
-    def _log_window_activity(self, window_info: Dict, duration: int):
-        """Log window activity to JSONL file."""
-        try:
-            log_file = self.focus_logs_dir / f"focus_log_{self.today}.jsonl"
-            
-            log_entry = {
-                "timestamp": window_info["timestamp"],
-                "exe": window_info["exe"],
-                "title": window_info["title"],
-                "duration": duration
-            }
-            
-            with open(log_file, "a", encoding="utf-8") as f:
-                f.write(json.dumps(log_entry) + "\n")
-            
-            logger.info(f"Logged window activity: {window_info['title']} ({duration}s)")
-        except Exception as e:
-            logger.error(f"Error logging window activity: {e}")
-
-    def _extract_keywords(self, text: str) -> List[str]:
-        """Extract keywords from OCR text."""
-        # This is a simple implementation that could be improved with NLP
-        if not text:
-            return []
-        
-        # Split text into words
-        words = text.lower().split()
-        
-        # Remove common words and short words
-        stop_words = {"the", "a", "an", "and", "or", "but", "is", "are", "was", "were", "be", "been", "being", "in", "on", "at", "to", "for", "with", "by", "about", "against", "between", "into", "through", "during", "before", "after", "above", "below", "from", "up", "down", "of", "off", "over", "under", "again", "further", "then", "once", "here", "there", "when", "where", "why", "how", "all", "any", "both", "each", "few", "more", "most", "other", "some", "such", "no", "nor", "not", "only", "own", "same", "so", "than", "too", "very", "s", "t", "can", "will", "just", "don", "should", "now"}
-        keywords = [word for word in words if word not in stop_words and len(word) > 3]
-        
-        # Return unique keywords
-        return list(set(keywords))
-
-    def _generate_daily_summary(self):
-        """Generate a daily summary of focus activity."""
-        try:
-            log_file = self.focus_logs_dir / f"focus_log_{self.today}.jsonl"
-            summary_file = self.focus_logs_dir / f"daily_summary_{self.today}.json"
-            
-            if not log_file.exists():
-                logger.warning(f"No log file found for {self.today}")
-                return
-            
-            # Read log entries
-            log_entries = []
-            with open(log_file, "r", encoding="utf-8") as f:
-                for line in f:
-                    log_entries.append(json.loads(line.strip()))
-            
-            # Calculate total time and app breakdown
-            total_time = sum(entry["duration"] for entry in log_entries)
-            app_breakdown = {}
-            
-            for entry in log_entries:
-                exe = entry["exe"]
-                if exe not in app_breakdown:
-                    app_breakdown[exe] = {
-                        "appName": os.path.basename(exe).split(".")[0] if "." in os.path.basename(exe) else os.path.basename(exe),
-                        "exePath": exe,
-                        "timeSpent": 0,
-                        "percentage": 0,
-                        "windowTitles": []
-                    }
-                
-                app_breakdown[exe]["timeSpent"] += entry["duration"]
-                if entry["title"] not in app_breakdown[exe]["windowTitles"]:
-                    app_breakdown[exe]["windowTitles"].append(entry["title"])
-            
-            # Calculate percentages
-            for app in app_breakdown.values():
-                app["percentage"] = (app["timeSpent"] / total_time) * 100 if total_time > 0 else 0
-            
-            # Sort by time spent
-            app_breakdown_list = sorted(
-                app_breakdown.values(),
-                key=lambda x: x["timeSpent"],
-                reverse=True
-            )
-            
-            # Get screenshots
-            screenshots = [f for f in os.listdir(self.focus_logs_dir) if f.startswith(f"screenshot_{self.today}") and f.endswith(".png")]
-            
-            # Extract keywords from OCR files
-            keywords = []
-            for screenshot in screenshots:
-                ocr_file = screenshot.replace(".png", ".txt")
-                ocr_path = self.focus_logs_dir / ocr_file
-                
-                if ocr_path.exists():
-                    with open(ocr_path, "r", encoding="utf-8") as f:
-                        text = f.read()
-                        keywords.extend(self._extract_keywords(text))
-            
-            # Get unique keywords
-            unique_keywords = list(set(keywords))
-            
-            # Create summary
-            summary = {
-                "date": self.today,
-                "totalTime": total_time,
-                "appBreakdown": app_breakdown_list,
-                "screenshots": screenshots,
-                "keywords": unique_keywords,
-                "focusScore": self._calculate_focus_score(app_breakdown_list, total_time),
-                "distractionEvents": len(log_entries),
-                "meetingTime": sum(entry["duration"] for entry in log_entries if "meeting" in entry["title"].lower() or "teams" in entry["exe"].lower() or "zoom" in entry["exe"].lower()),
-                "productiveApps": [app["appName"] for app in app_breakdown_list if self._is_productive_app(app["exePath"])],
-                "distractionApps": [app["appName"] for app in app_breakdown_list if self._is_distraction_app(app["exePath"])]
-            }
-            
-            # Write summary to file
-            with open(summary_file, "w", encoding="utf-8") as f:
-                json.dump(summary, f, indent=2)
-            
-            logger.info(f"Generated daily summary for {self.today}")
-        except Exception as e:
-            logger.error(f"Error generating daily summary: {e}")
-
-    def _calculate_focus_score(self, app_breakdown: List[Dict], total_time: int) -> int:
-        """Calculate a focus score based on app usage."""
-        if total_time == 0:
-            return 0
-        
-        productive_time = sum(app["timeSpent"] for app in app_breakdown if self._is_productive_app(app["exePath"]))
-        distraction_time = sum(app["timeSpent"] for app in app_breakdown if self._is_distraction_app(app["exePath"]))
-        
-        # Calculate score (0-100)
-        score = int((productive_time / total_time) * 100)
-        
-        # Adjust for distractions
-        if distraction_time > 0:
-            distraction_penalty = int((distraction_time / total_time) * 20)
-            score = max(0, score - distraction_penalty)
-        
-        return score
-
-    def _is_productive_app(self, exe_path: str) -> bool:
-        """Determine if an app is considered productive."""
-        productive_keywords = ["code", "visual studio", "intellij", "pycharm", "word", "excel", "powerpoint", "outlook", "teams", "chrome", "edge", "firefox", "safari", "figma", "photoshop", "illustrator", "terminal", "cmd", "powershell"]
-        return any(keyword in exe_path.lower() for keyword in productive_keywords)
-
-    def _is_distraction_app(self, exe_path: str) -> bool:
-        """Determine if an app is considered a distraction."""
-        distraction_keywords = ["game", "steam", "epic", "netflix", "hulu", "spotify", "discord", "slack", "facebook", "twitter", "instagram", "reddit", "youtube"]
-        return any(keyword in exe_path.lower() for keyword in distraction_keywords)
+                response = requests.get(f"{self.api_url}/focus/status", timeout=3)
+                response.raise_for_status()
+                new_desired_state = response.json().get("active", True)
+                if self.desired_active_state != new_desired_state:
+                     logger.info(f"Backend desired state changed to: {new_desired_state}")
+                     self.desired_active_state = new_desired_state
+            except requests.exceptions.RequestException as e:
+                logger.warning(f"Could not reach backend ({self.api_url}) to check focus status: {e}")
+            except Exception as e:
+                 logger.error(f"Error checking backend status: {e}")
+            await asyncio.sleep(15) # Check every 15 seconds
 
     def toggle_active(self):
-        """Toggle the active state of the monitor."""
-        self.active = not self.active
-        logger.info(f"Focus Monitor {'activated' if self.active else 'deactivated'}")
+        """Toggle the internal active state if it differs from desired state."""
+        if self.active == self.desired_active_state: return
 
-    def run(self, interval: int = 5, screenshot_interval: int = 60):
-        """Run the focus monitor loop."""
-        logger.info(f"Starting Focus Monitor with interval {interval}s and screenshot interval {screenshot_interval}s")
-        
-        self.window_start_time = time.time()
-        
+        new_state = self.desired_active_state
+        logger.info(f"Focus Monitor internal state changing to: {new_state}")
+
+        if not new_state: # Pausing
+             if self.last_window_info:
+                 duration = int(time.time() - self.window_start_time)
+                 if duration > 0: self._log_window_activity(self.last_window_info, duration)
+             self.last_window_info = None
+             self.window_start_time = time.time()
+        else: # Resuming
+             self.window_start_time = time.time() # Reset start time
+
+        self.active = new_state
+
+    def _get_focused_window_details(self) -> Optional[Dict]:
+        """Get details (hwnd, pid, exe, title, timestamp) for the currently focused window."""
         try:
-            while True:
-                if not self.active:
-                    time.sleep(interval)
-                    continue
-                
-                # Check if day has changed
-                current_day = datetime.datetime.now().strftime("%Y-%m-%d")
-                if current_day != self.today:
-                    # Generate summary for previous day
-                    self._generate_daily_summary()
-                    # Update today
-                    self.today = current_day
-                
-                # Get active window info
-                current_window_info = self._get_active_window_info()
-                
-                # Check if window has changed
-                if self.last_window_info and (current_window_info["hwnd"] != self.last_window_info["hwnd"] or
-                                             current_window_info["title"] != self.last_window_info["title"]):
-                    # Log previous window activity
-                    duration = int(time.time() - self.window_start_time)
-                    if duration >= interval:  # Only log if duration is significant
-                        self._log_window_activity(self.last_window_info, duration)
-                    
-                    # Reset timer
-                    self.window_start_time = time.time()
-                
-                # Check if it's time to take a screenshot
-                current_time = time.time()
-                if current_time - self.last_screenshot_time >= screenshot_interval:
-                    screenshot_path = self._capture_screenshot()
-                    if screenshot_path:
-                        self._perform_ocr(screenshot_path)
-                    self.last_screenshot_time = current_time
-                
-                # Update last window info
-                self.last_window_info = current_window_info
-                
-                # Sleep for the specified interval
-                time.sleep(interval)
-        except KeyboardInterrupt:
-            logger.info("Focus Monitor stopped by user")
-            # Log the last window activity
-            if self.last_window_info:
-                duration = int(time.time() - self.window_start_time)
-                if duration >= interval:
-                    self._log_window_activity(self.last_window_info, duration)
-            # Generate daily summary
-            self._generate_daily_summary()
-        except Exception as e:
-            logger.error(f"Error in Focus Monitor: {e}")
-            # Try to log the last window activity
-            if self.last_window_info:
-                duration = int(time.time() - self.window_start_time)
-                if duration >= interval:
-                    self._log_window_activity(self.last_window_info, duration)
-            # Try to generate daily summary
-            self._generate_daily_summary()
+            hwnd = win32gui.GetForegroundWindow()
+            if not hwnd: return None
 
-def main():
-    parser = argparse.ArgumentParser(description="Focus Monitor Agent")
-    parser.add_argument("--output-dir", "-o", default="ProjectsHub", help="Output directory for focus logs")
-    parser.add_argument("--tesseract-path", "-t", help="Path to Tesseract OCR executable")
-    parser.add_argument("--api-url", "-a", default="http://localhost:8000", help="Backend API URL")
+            title = win32gui.GetWindowText(hwnd)
+            tid, pid = win32process.GetWindowThreadProcessId(hwnd)
+
+            if not title or pid == 0 or title in ["Program Manager", "Windows Default Lock Screen", "Windows Input Experience"]:
+                 return None # Filter out uninteresting windows
+
+            exe = "Unknown"
+            try:
+                # PROCESS_QUERY_LIMITED_INFORMATION is safer if available
+                handle = win32api.OpenProcess(win32con.PROCESS_QUERY_LIMITED_INFORMATION | win32con.PROCESS_VM_READ, False, pid)
+                if handle:
+                    try: exe = win32process.GetModuleFileNameEx(handle, 0)
+                    finally: win32api.CloseHandle(handle)
+            except Exception: pass # Ignore permission errors
+
+            return {
+                "hwnd": hwnd, "pid": pid, "exe": exe, "title": title,
+                "timestamp": datetime.datetime.now(datetime.timezone.utc).isoformat()
+            }
+        except Exception as e:
+            if "pywintypes.error" in str(type(e)) and e.args[0] in [0, 1400]: # Handle window closing during check
+                 logger.debug(f"Window likely closed during info retrieval: {e}")
+                 return None
+            logger.error(f"Error getting focused window details: {e}", exc_info=False)
+            return None
+
+    def _log_window_activity(self, window_info: Dict, duration: int):
+        """Log focused window activity to JSONL file."""
+        if duration <= 0: return
+        try:
+            log_file = self.focus_logs_dir / f"focus_log_{self.today}.jsonl"
+            log_entry = {
+                "timestamp": window_info["timestamp"], "exe": window_info["exe"],
+                "title": window_info["title"], "duration": duration
+            }
+            with open(log_file, "a", encoding="utf-8") as f:
+                f.write(json.dumps(log_entry) + "\n")
+            app_name = os.path.basename(log_entry['exe']) if log_entry['exe'] != "Unknown" else "Unknown"
+            title_snip = log_entry['title'][:60].replace('\n', ' ') + ('...' if len(log_entry['title']) > 60 else '')
+            logger.info(f"Logged: {app_name} - '{title_snip}' ({duration}s)")
+        except Exception as e:
+            logger.error(f"Error writing to log file {log_file}: {e}")
+
+    def _generate_daily_summary(self):
+        """Generate a daily summary (without screenshots/keywords) when agent stops."""
+        # This function remains largely the same calculation-wise,
+        # but we *only* call it on clean shutdown/day change for the *previous* day.
+        # The backend handles on-demand calculation for the *current* day.
+        current_summary_day = self.today
+        logger.info(f"Generating final daily summary file for {current_summary_day}...")
+        summary_file = self.focus_logs_dir / f"daily_summary_{current_summary_day}.json"
+        log_file = self.focus_logs_dir / f"focus_log_{current_summary_day}.jsonl"
+
+        if not log_file.exists():
+            logger.warning(f"No focus log file found for {current_summary_day}. Cannot generate final summary file.")
+            return # Do not create an empty file
+
+        summary = { # Structure without screenshots/keywords
+            "date": current_summary_day, "totalTime": 0, "appBreakdown": [],
+            "focusScore": 0, "distractionEvents": 0, "meetingTime": 0,
+            "productiveApps": [], "distractionApps": []
+        }
+        try:
+            log_entries = []
+            total_time = 0
+            app_time: Dict[str, float] = {}
+            app_titles: Dict[str, Set[str]] = {}
+            # --- Process Log File ---
+            with open(log_file, "r", encoding="utf-8") as f:
+                for line_num, line in enumerate(f, 1):
+                    try:
+                        entry = json.loads(line.strip())
+                        if not isinstance(entry, dict) or not all(k in entry for k in ["exe", "title", "duration", "timestamp"]): continue
+                        duration = entry.get("duration", 0)
+                        if duration <= 0: continue
+                        log_entries.append(entry)
+                        total_time += duration
+                        exe = entry["exe"] or "Unknown"; title = entry["title"] or ""
+                        app_time[exe] = app_time.get(exe, 0) + duration
+                        if exe not in app_titles: app_titles[exe] = set()
+                        if len(app_titles[exe]) < 50: app_titles[exe].add(title)
+                    except Exception as e: logger.error(f"Err processing line {line_num}: {e}")
+
+            summary["totalTime"] = round(total_time)
+            summary["distractionEvents"] = len(log_entries)
+
+            # App breakdown
+            app_breakdown_list = []
+            for exe, time_spent in app_time.items():
+                 app_name = os.path.basename(exe).replace('.exe', '') if exe != "Unknown" else "Unknown"
+                 percentage = (time_spent / total_time * 100) if total_time > 0 else 0
+                 app_breakdown_list.append({
+                     "appName": app_name, "exePath": exe, "timeSpent": round(time_spent),
+                     "percentage": round(percentage, 2), "windowTitles": sorted(list(app_titles.get(exe, set())))
+                 })
+            app_breakdown_list.sort(key=lambda x: x["timeSpent"], reverse=True)
+            summary["appBreakdown"] = app_breakdown_list
+
+            # Metrics
+            title_list_map = {app['exePath']: app['windowTitles'] for app in app_breakdown_list}
+            summary["meetingTime"] = round(sum(e["duration"] for e in log_entries if self._is_meeting_app(e["exe"], e["title"])))
+            productive_apps_set = {app["appName"] for app in app_breakdown_list if self._is_productive_app(app["exePath"], title_list_map.get(app["exePath"], []))}
+            distraction_apps_set = {app["appName"] for app in app_breakdown_list if self._is_distraction_app(app["exePath"], title_list_map.get(app["exePath"], []))}
+            summary["productiveApps"] = sorted(list(productive_apps_set))
+            summary["distractionApps"] = sorted(list(distraction_apps_set))
+            summary["focusScore"] = self._calculate_focus_score(summary["productiveApps"], summary["distractionApps"], summary["appBreakdown"], summary["totalTime"])
+
+            # Write final summary file
+            with open(summary_file, "w", encoding="utf-8") as f:
+                json.dump(summary, f, indent=2)
+            logger.info(f"Generated final daily summary file for {current_summary_day}.")
+
+        except Exception as e:
+            logger.error(f"Error generating final daily summary file for {current_summary_day}: {e}", exc_info=True)
+
+    # --- Keep calculation helpers needed by _generate_daily_summary ---
+    def _calculate_focus_score(self, productive_apps: List[str], distraction_apps: List[str], app_breakdown: List[Dict], total_time: int) -> int:
+        if total_time <= 0: return 0
+        productive_time = sum(app["timeSpent"] for app in app_breakdown if app["appName"] in productive_apps)
+        distraction_time = sum(app["timeSpent"] for app in app_breakdown if app["appName"] in distraction_apps)
+        neutral_time = max(0, total_time - productive_time - distraction_time)
+        weighted_score = (productive_time * 1.0) + (neutral_time * 0.5) - (distraction_time * 1.0)
+        normalized_score = weighted_score / total_time if total_time > 0 else 0
+        final_score = max(0, min(100, int((normalized_score + 1) / 2 * 100)))
+        return final_score
+    def _is_productive_app(self, exe_path: str, titles: List[str]) -> bool:
+        exe_lower = exe_path.lower(); title_concat_lower = " ".join(titles).lower()
+        if any(pe in exe_lower for pe in PRODUCTIVE_EXES):
+             if not any(dk in title_concat_lower for dk in DISTRACTION_TITLE_KEYWORDS): return True
+        return False
+    def _is_distraction_app(self, exe_path: str, titles: List[str]) -> bool:
+        exe_lower = exe_path.lower(); title_concat_lower = " ".join(titles).lower()
+        if any(de in exe_lower for de in DISTRACTION_EXES): return True
+        if any(pe in exe_lower for pe in PRODUCTIVE_EXES) and any(dk in title_concat_lower for dk in DISTRACTION_TITLE_KEYWORDS): return True
+        return False
+    def _is_meeting_app(self, exe_path: str, title: str) -> bool:
+         exe_lower = exe_path.lower(); title_lower = title.lower()
+         if any(me in exe_lower for me in MEETING_EXES): return True
+         if any(mk in title_lower for mk in MEETING_TITLE_KEYWORDS): return True
+         return False
+
+    # --- Main Agent Loop (Simplified) ---
+    async def run_agent_loop(self, interval: int = 5):
+        """The main agent loop (async) - tracks focused window."""
+        logger.info(f"Starting Focus Monitor agent loop (Window Tracking). Interval: {interval}s")
+        self.window_start_time = time.time()
+
+        while True:
+            main_loop_start_time = time.time()
+            try:
+                # Check desired state from backend and toggle internal state if needed
+                self.toggle_active()
+
+                # Day Change Check (using UTC)
+                current_day_utc = self._get_current_utc_date()
+                if current_day_utc != self.today:
+                    logger.info(f"Date changed from {self.today} to {current_day_utc}. Generating previous day summary.")
+                    self._generate_daily_summary() # Generate final summary for previous day
+                    self.today = current_day_utc
+                    logger.info(f"Updated current tracking date to {self.today}")
+
+                # Skip processing if not active
+                if not self.active:
+                    await asyncio.sleep(max(0.1, interval - (time.time() - main_loop_start_time)))
+                    continue
+
+                # Get current focused window details
+                current_window_info = self._get_focused_window_details()
+
+                # Determine if the focused window changed significantly
+                is_idle = current_window_info is None
+                window_changed = False
+                if is_idle:
+                     if self.last_window_info is not None: window_changed = True # Active -> Idle
+                elif self.last_window_info is None: window_changed = True # Idle -> Active
+                elif (current_window_info["hwnd"] != self.last_window_info["hwnd"] or
+                      current_window_info["title"] != self.last_window_info["title"] or
+                      current_window_info["exe"] != self.last_window_info["exe"]): window_changed = True # Active -> Different Active
+
+                if window_changed:
+                    # Log duration for the *previous* window/state
+                    if self.last_window_info:
+                        duration = int(time.time() - self.window_start_time)
+                        if duration > 0: self._log_window_activity(self.last_window_info, duration)
+
+                    # Reset timer and update last window info (becomes None if now idle)
+                    self.window_start_time = time.time()
+                    self.last_window_info = current_window_info
+
+                # --- NO Screenshot/OCR Logic Here ---
+
+                # Sleep until next interval
+                elapsed = time.time() - main_loop_start_time
+                sleep_duration = max(0.1, interval - elapsed)
+                await asyncio.sleep(sleep_duration)
+
+            except KeyboardInterrupt:
+                logger.info("KeyboardInterrupt received in agent loop.")
+                break
+            except Exception as e:
+                 logger.error(f"Unhandled error in agent loop: {e}", exc_info=True)
+                 await asyncio.sleep(interval * 2) # Wait longer after error
+
+        # --- Cleanup on exit ---
+        logger.info("Agent loop finished. Performing final cleanup...")
+        if self.last_window_info: # Log final activity
+            duration = int(time.time() - self.window_start_time)
+            if duration > 0: self._log_window_activity(self.last_window_info, duration)
+        self._generate_daily_summary() # Generate final summary for the last active day
+        logger.info("Focus Monitor agent stopped.")
+
+
+async def main_async():
+    parser = argparse.ArgumentParser(description="Focus Monitor Agent (Window Tracking)")
+    parser.add_argument("--output-dir", "-o", required=True, help="Base directory where ProjectsHub data resides")
+    parser.add_argument("--api-url", "-a", default="http://localhost:8000", help="Backend API URL for status checks")
     parser.add_argument("--interval", "-i", type=int, default=5, help="Sampling interval in seconds")
-    parser.add_argument("--screenshot-interval", "-s", type=int, default=60, help="Screenshot interval in seconds")
-    
+    # Removed screenshot/tesseract args
+    parser.add_argument("--no-api-check", action="store_true", help="Disable checking backend API for status.")
     args = parser.parse_args()
-    
-    agent = FocusMonitorAgent(args.output_dir, args.tesseract_path, args.api_url)
-    agent.run(args.interval, args.screenshot_interval)
+
+    output_dir_path = Path(args.output_dir)
+    if not output_dir_path.is_dir():
+        logger.critical(f"Output directory not found: {args.output_dir}"); sys.exit(1)
+
+    api_url = None if args.no_api_check else args.api_url
+
+    agent = FocusMonitorAgent(str(output_dir_path.resolve()), api_url)
+
+    tasks = [asyncio.create_task(agent.run_agent_loop(args.interval))]
+    if api_url:
+        tasks.append(asyncio.create_task(agent.check_backend_status()))
+
+    try:
+        await tasks[0] # Wait for main loop
+    except asyncio.CancelledError: logger.info("Agent loop task cancelled.")
+    finally: # Cleanup background tasks
+        for task in tasks[1:]:
+            if not task.done(): task.cancel()
+        await asyncio.gather(*tasks[1:], return_exceptions=True)
+        logger.info("All background tasks finished.")
+
 
 if __name__ == "__main__":
-    main()
+     try: asyncio.run(main_async())
+     except KeyboardInterrupt: logger.info("Focus Monitor stopped by user (main).")
+     except Exception as main_err: logger.critical(f"Focus Monitor exited: {main_err}", exc_info=True)
+     

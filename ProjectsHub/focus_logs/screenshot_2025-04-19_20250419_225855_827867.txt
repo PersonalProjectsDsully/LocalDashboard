@@ -1,0 +1,31 @@
+J File
+
+>
+>
+
+Edit Selection View Go Run
+
+EXPLORER
+
+> .repomix
+> artifacts
+\ docker
+\ backend
+# Dockerfile
+® mainpy am
+
+requirements.txt
+> tauri
+
+> ProjectsHub
+
+© tauri °
+> node modules
+
+¥ sre e
+
+> components
+\ pages
+ Dashboard.tsx
+ Documents:sx 1
+& Project

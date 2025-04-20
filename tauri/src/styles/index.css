@@ -3,16 +3,6 @@
 @tailwind utilities;
 
 :root {
-  /* Color Palette */
-  --primary-color: #2563eb;
-  --primary-color-70: rgba(37, 99, 235, 0.7);
-  --success-color: #10b981;
-  --success-color-70: rgba(16, 185, 129, 0.7);
-  --warning-color: #f59e0b;
-  --warning-color-70: rgba(245, 158, 11, 0.7);
-  --danger-color: #ef4444;
-  --danger-color-70: rgba(239, 68, 68, 0.7);
-  
   /* Layout */
   --sidebar-width: 240px;
   --header-height: 60px;
@@ -27,19 +17,48 @@
   --font-size-xl: 20px;
   --font-size-2xl: 24px;
   
-  /* Colors */
-  --background-color: #f9fafb;
-  --text-color: #1f2937;
+  /* Dark Theme Colors (Default) */
+  --bg-primary: #0D1117;
+  --bg-surface: #161B22;
+  --bg-card: #1E2430;
+  --border-subtle: #262C38;
+  --accent-primary: #3B82F6;
+  --accent-primary-hover: #60A5FA;
+  --accent-warning: #F59E0B;
+  --text-primary: #F1F5F9;
+  --text-muted: #9CA3AF;
+  --danger: #EF4444;
+  
+  /* Legacy variable names for compatibility */
+  --primary-color: var(--accent-primary);
+  --primary-color-hover: var(--accent-primary-hover);
+  --primary-color-70: rgba(59, 130, 246, 0.7);
+  --success-color: #10b981;
+  --success-color-70: rgba(16, 185, 129, 0.7);
+  --warning-color: var(--accent-warning);
+  --warning-color-70: rgba(245, 158, 11, 0.7);
+  --danger-color: var(--danger);
+  --danger-color-70: rgba(239, 68, 68, 0.7);
+  --background-color: var(--bg-primary);
+  --text-color: var(--text-primary);
   
   /* Transitions */
   --transition-default: all 0.15s ease;
 }
 
-/* Dark mode support */
-@media (prefers-color-scheme: dark) {
+/* Light mode support */
+@media (prefers-color-scheme: light) {
   :root {
-    --background-color: #111827;
-    --text-color: #f9fafb;
+    --bg-primary: #f9fafb;
+    --bg-surface: #f1f5f9;
+    --bg-card: #ffffff;
+    --border-subtle: #e2e8f0;
+    --text-primary: #1f2937;
+    --text-muted: #6b7280;
+    
+    /* Legacy variable names for compatibility */
+    --background-color: var(--bg-primary);
+    --text-color: var(--text-primary);
   }
 }
 

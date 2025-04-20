@@ -8,6 +8,9 @@ services:
     ports:
       - "8000:8000"
     restart: unless-stopped
+    extra_hosts:
+      # This allows the container to reach Ollama on the host machine
+      - "host.docker.internal:host-gateway"
 
   tauri_builder:
     build: docker/tauri
