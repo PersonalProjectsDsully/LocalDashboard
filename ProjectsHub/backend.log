@@ -1067,3 +1067,171 @@
 2025-04-20 17:40:53,724 [INFO] main: New WebSocket connection from 172.28.0.1:46908. Total: 1
 2025-04-20 17:40:59,153 [INFO] main: New WebSocket connection from 172.28.0.1:46934. Total: 2
 2025-04-20 17:40:59,188 [INFO] main: New WebSocket connection from 172.28.0.1:46946. Total: 3
+2025-04-20 17:48:40,694 [INFO] main: WebSocket disconnected from 172.28.0.1:46946. Remaining: 2
+2025-04-20 17:48:40,695 [INFO] main: WebSocket disconnected from 172.28.0.1:46934. Remaining: 1
+2025-04-20 17:49:43,355 [INFO] main: New WebSocket connection from 172.28.0.1:38938. Total: 2
+2025-04-20 17:49:43,382 [INFO] main: New WebSocket connection from 172.28.0.1:38952. Total: 3
+2025-04-20 17:52:43,999 [INFO] main: WebSocket disconnected from 172.28.0.1:38938. Remaining: 2
+2025-04-20 17:52:44,000 [INFO] main: WebSocket disconnected from 172.28.0.1:38952. Remaining: 1
+2025-04-20 17:52:44,164 [INFO] main: New WebSocket connection from 172.28.0.1:41262. Total: 2
+2025-04-20 17:52:44,195 [INFO] main: New WebSocket connection from 172.28.0.1:41276. Total: 3
+2025-04-20 18:02:59,266 [INFO] main: WebSocket disconnected from 172.28.0.1:41276. Remaining: 2
+2025-04-20 18:02:59,267 [INFO] main: WebSocket disconnected from 172.28.0.1:41262. Remaining: 1
+2025-04-20 19:00:21,435 [INFO] main: WebSocket disconnected from 172.28.0.1:46908. Remaining: 0
+2025-04-20 19:00:21,535 [INFO] main: --- Shutting down Projects Hub Backend ---
+2025-04-20 19:00:21,572 [INFO] main: File system watcher stopped.
+2025-04-20 19:01:06,407 [INFO] ollama_client: Initialized Ollama client with base URL: http://host.docker.internal:11434
+2025-04-20 19:01:06,424 [INFO] main: --- Starting Projects Hub Backend ---
+2025-04-20 19:01:06,424 [INFO] main: Watching data directory: /hub_data
+2025-04-20 19:01:06,427 [INFO] main: Hub data directory ready: /hub_data
+2025-04-20 19:01:06,428 [INFO] main: Ensured directory exists: /hub_data/focus_logs
+2025-04-20 19:01:06,455 [INFO] main: File system watcher started successfully.
+2025-04-20 19:01:06,857 [INFO] main: New WebSocket connection from 172.28.0.1:58726. Total: 1
+2025-04-20 19:03:57,070 [INFO] main: Pre-generated summary not found for 2025-04-20, attempting on-demand calculation.
+2025-04-20 19:03:57,071 [INFO] main: Calculating on-demand summary for 2025-04-20 from /hub_data/focus_logs/focus_log_2025-04-20.jsonl
+2025-04-20 19:03:57,103 [INFO] main: Successfully calculated on-demand summary for 2025-04-20
+2025-04-20 19:03:57,115 [INFO] main: Pre-generated summary not found for 2025-04-20, attempting on-demand calculation.
+2025-04-20 19:03:57,116 [INFO] main: Calculating on-demand summary for 2025-04-20 from /hub_data/focus_logs/focus_log_2025-04-20.jsonl
+2025-04-20 19:03:57,132 [INFO] main: Successfully calculated on-demand summary for 2025-04-20
+2025-04-20 19:03:57,135 [INFO] main: New WebSocket connection from 172.28.0.1:47596. Total: 2
+2025-04-20 19:03:57,181 [INFO] main: New WebSocket connection from 172.28.0.1:47630. Total: 3
+2025-04-20 19:03:57,742 [INFO] main: WebSocket disconnected from 172.28.0.1:47630. Remaining: 2
+2025-04-20 19:03:57,743 [INFO] main: WebSocket disconnected from 172.28.0.1:47596. Remaining: 1
+2025-04-20 19:03:58,174 [INFO] main: Pre-generated summary not found for 2025-04-20, attempting on-demand calculation.
+2025-04-20 19:03:58,176 [INFO] main: Calculating on-demand summary for 2025-04-20 from /hub_data/focus_logs/focus_log_2025-04-20.jsonl
+2025-04-20 19:03:58,191 [INFO] main: Successfully calculated on-demand summary for 2025-04-20
+2025-04-20 19:03:58,207 [INFO] main: New WebSocket connection from 172.28.0.1:47640. Total: 2
+2025-04-20 19:03:58,217 [INFO] main: Pre-generated summary not found for 2025-04-20, attempting on-demand calculation.
+2025-04-20 19:03:58,218 [INFO] main: Calculating on-demand summary for 2025-04-20 from /hub_data/focus_logs/focus_log_2025-04-20.jsonl
+2025-04-20 19:03:58,233 [INFO] main: Successfully calculated on-demand summary for 2025-04-20
+2025-04-20 19:03:58,278 [INFO] main: New WebSocket connection from 172.28.0.1:47646. Total: 3
+2025-04-20 19:04:00,715 [INFO] main: WebSocket disconnected from 172.28.0.1:58726. Remaining: 2
+2025-04-20 19:04:00,716 [INFO] main: WebSocket disconnected from 172.28.0.1:47640. Remaining: 1
+2025-04-20 19:04:00,716 [INFO] main: WebSocket disconnected from 172.28.0.1:47646. Remaining: 0
+2025-04-20 19:04:00,816 [INFO] main: --- Shutting down Projects Hub Backend ---
+2025-04-20 19:04:00,850 [INFO] main: File system watcher stopped.
+2025-04-20 19:08:30,959 [INFO] ollama_client: Initialized Ollama client with base URL: http://host.docker.internal:11434
+2025-04-20 19:08:30,977 [INFO] main: --- Starting Projects Hub Backend ---
+2025-04-20 19:08:30,977 [INFO] main: Watching data directory: /hub_data
+2025-04-20 19:08:30,980 [INFO] main: Hub data directory ready: /hub_data
+2025-04-20 19:08:30,981 [INFO] main: Ensured directory exists: /hub_data/focus_logs
+2025-04-20 19:08:31,015 [INFO] main: File system watcher started successfully.
+2025-04-20 19:08:31,185 [INFO] main: New WebSocket connection from 172.28.0.1:37146. Total: 1
+2025-04-20 19:08:55,780 [INFO] main: WebSocket disconnected from 172.28.0.1:37146. Remaining: 0
+2025-04-20 19:08:55,881 [INFO] main: --- Shutting down Projects Hub Backend ---
+2025-04-20 19:08:55,915 [INFO] main: File system watcher stopped.
+2025-04-20 19:09:27,716 [INFO] ollama_client: Initialized Ollama client with base URL: http://host.docker.internal:11434
+2025-04-20 19:09:27,732 [INFO] main: --- Starting Projects Hub Backend ---
+2025-04-20 19:09:27,732 [INFO] main: Watching data directory: /hub_data
+2025-04-20 19:09:27,735 [INFO] main: Hub data directory ready: /hub_data
+2025-04-20 19:09:27,736 [INFO] main: Ensured directory exists: /hub_data/focus_logs
+2025-04-20 19:09:27,765 [INFO] main: File system watcher started successfully.
+2025-04-20 19:09:28,939 [INFO] main: New WebSocket connection from 172.28.0.1:43594. Total: 1
+2025-04-20 19:43:27,336 [INFO] main: Pre-generated summary not found for 2025-04-20, attempting on-demand calculation.
+2025-04-20 19:43:27,337 [INFO] main: Calculating on-demand summary for 2025-04-20 from /hub_data/focus_logs/focus_log_2025-04-20.jsonl
+2025-04-20 19:43:27,364 [INFO] main: Successfully calculated on-demand summary for 2025-04-20
+2025-04-20 19:43:27,375 [INFO] main: Pre-generated summary not found for 2025-04-20, attempting on-demand calculation.
+2025-04-20 19:43:27,376 [INFO] main: Calculating on-demand summary for 2025-04-20 from /hub_data/focus_logs/focus_log_2025-04-20.jsonl
+2025-04-20 19:43:27,392 [INFO] main: Successfully calculated on-demand summary for 2025-04-20
+2025-04-20 19:43:27,395 [INFO] main: New WebSocket connection from 172.28.0.1:35216. Total: 2
+2025-04-20 19:43:27,432 [INFO] main: New WebSocket connection from 172.28.0.1:35264. Total: 3
+2025-04-20 19:43:32,055 [INFO] main: WebSocket disconnected from 172.28.0.1:35264. Remaining: 2
+2025-04-20 19:43:32,056 [INFO] main: WebSocket disconnected from 172.28.0.1:35216. Remaining: 1
+2025-04-20 19:43:40,561 [INFO] main: New WebSocket connection from 172.28.0.1:41210. Total: 2
+2025-04-20 19:43:40,598 [INFO] main: New WebSocket connection from 172.28.0.1:41222. Total: 3
+2025-04-20 19:43:43,698 [INFO] main: Pre-generated summary not found for 2025-04-20, attempting on-demand calculation.
+2025-04-20 19:43:43,699 [INFO] main: Calculating on-demand summary for 2025-04-20 from /hub_data/focus_logs/focus_log_2025-04-20.jsonl
+2025-04-20 19:43:43,713 [INFO] main: Successfully calculated on-demand summary for 2025-04-20
+2025-04-20 19:43:43,722 [INFO] main: Pre-generated summary not found for 2025-04-20, attempting on-demand calculation.
+2025-04-20 19:43:43,723 [INFO] main: Calculating on-demand summary for 2025-04-20 from /hub_data/focus_logs/focus_log_2025-04-20.jsonl
+2025-04-20 19:43:43,738 [INFO] main: Successfully calculated on-demand summary for 2025-04-20
+2025-04-20 19:43:59,686 [INFO] main: WebSocket disconnected from 172.28.0.1:41222. Remaining: 2
+2025-04-20 19:43:59,686 [INFO] main: WebSocket disconnected from 172.28.0.1:41210. Remaining: 1
+2025-04-20 19:43:59,781 [INFO] main: New WebSocket connection from 172.28.0.1:34000. Total: 2
+2025-04-20 19:43:59,830 [INFO] main: New WebSocket connection from 172.28.0.1:34034. Total: 3
+2025-04-20 19:44:09,402 [INFO] main: Pre-generated summary not found for 2025-04-20, attempting on-demand calculation.
+2025-04-20 19:44:09,404 [INFO] main: Calculating on-demand summary for 2025-04-20 from /hub_data/focus_logs/focus_log_2025-04-20.jsonl
+2025-04-20 19:44:09,428 [INFO] main: Successfully calculated on-demand summary for 2025-04-20
+2025-04-20 19:44:09,436 [INFO] main: Pre-generated summary not found for 2025-04-20, attempting on-demand calculation.
+2025-04-20 19:44:09,437 [INFO] main: Calculating on-demand summary for 2025-04-20 from /hub_data/focus_logs/focus_log_2025-04-20.jsonl
+2025-04-20 19:44:09,450 [INFO] main: Successfully calculated on-demand summary for 2025-04-20
+2025-04-20 20:31:00,879 [INFO] main: WebSocket disconnected from 172.28.0.1:34034. Remaining: 2
+2025-04-20 20:31:00,883 [INFO] main: WebSocket disconnected from 172.28.0.1:34000. Remaining: 1
+2025-04-20 20:39:44,690 [INFO] main: WebSocket disconnected from 172.28.0.1:43594. Remaining: 0
+2025-04-20 20:39:44,791 [INFO] main: --- Shutting down Projects Hub Backend ---
+2025-04-20 20:39:44,828 [INFO] main: File system watcher stopped.
+2025-04-20 20:39:50,945 [INFO] ollama_client: Initialized Ollama client with base URL: http://host.docker.internal:11434
+2025-04-20 20:39:50,961 [INFO] main: --- Starting Projects Hub Backend ---
+2025-04-20 20:39:50,962 [INFO] main: Watching data directory: /hub_data
+2025-04-20 20:39:50,964 [INFO] main: Hub data directory ready: /hub_data
+2025-04-20 20:39:50,965 [INFO] main: Ensured directory exists: /hub_data/focus_logs
+2025-04-20 20:39:50,989 [INFO] main: File system watcher started successfully.
+2025-04-20 20:39:51,715 [INFO] main: New WebSocket connection from 172.28.0.1:48254. Total: 1
+2025-04-20 20:43:47,536 [INFO] main: New WebSocket connection from 172.28.0.1:49336. Total: 2
+2025-04-20 20:43:47,574 [INFO] main: New WebSocket connection from 172.28.0.1:49374. Total: 3
+2025-04-20 20:53:01,738 [INFO] main: New WebSocket connection from 172.28.0.1:53948. Total: 4
+2025-04-20 20:53:01,789 [INFO] main: New WebSocket connection from 172.28.0.1:53978. Total: 5
+2025-04-20 20:53:04,757 [INFO] main: WebSocket disconnected from 172.28.0.1:49374. Remaining: 4
+2025-04-20 20:53:04,758 [INFO] main: WebSocket disconnected from 172.28.0.1:49336. Remaining: 3
+2025-04-20 20:53:04,759 [INFO] main: WebSocket disconnected from 172.28.0.1:53948. Remaining: 2
+2025-04-20 20:53:04,759 [INFO] main: WebSocket disconnected from 172.28.0.1:53978. Remaining: 1
+2025-04-20 20:53:05,000 [INFO] main: New WebSocket connection from 172.28.0.1:51424. Total: 2
+2025-04-20 20:53:05,051 [INFO] main: New WebSocket connection from 172.28.0.1:51428. Total: 3
+2025-04-20 20:55:46,461 [INFO] main: Pre-generated summary not found for 2025-04-20, attempting on-demand calculation.
+2025-04-20 20:55:46,463 [INFO] main: Calculating on-demand summary for 2025-04-20 from /hub_data/focus_logs/focus_log_2025-04-20.jsonl
+2025-04-20 20:55:46,493 [INFO] main: Successfully calculated on-demand summary for 2025-04-20
+2025-04-20 20:55:46,501 [INFO] main: Pre-generated summary not found for 2025-04-20, attempting on-demand calculation.
+2025-04-20 20:55:46,502 [INFO] main: Calculating on-demand summary for 2025-04-20 from /hub_data/focus_logs/focus_log_2025-04-20.jsonl
+2025-04-20 20:55:46,520 [INFO] main: Successfully calculated on-demand summary for 2025-04-20
+2025-04-20 21:03:38,679 [INFO] main: WebSocket disconnected from 172.28.0.1:51428. Remaining: 2
+2025-04-20 21:03:38,680 [INFO] main: WebSocket disconnected from 172.28.0.1:51424. Remaining: 1
+2025-04-20 21:17:53,352 [INFO] main: New WebSocket connection from 172.28.0.1:39074. Total: 2
+2025-04-20 21:17:53,398 [INFO] main: New WebSocket connection from 172.28.0.1:39112. Total: 3
+2025-04-20 21:17:58,974 [INFO] main: WebSocket disconnected from 172.28.0.1:39074. Remaining: 2
+2025-04-20 21:17:58,975 [INFO] main: WebSocket disconnected from 172.28.0.1:39112. Remaining: 1
+2025-04-20 21:17:59,198 [INFO] main: New WebSocket connection from 172.28.0.1:39140. Total: 2
+2025-04-20 21:17:59,244 [INFO] main: New WebSocket connection from 172.28.0.1:39190. Total: 3
+2025-04-20 21:18:12,230 [INFO] main: Pre-generated summary not found for 2025-04-20, attempting on-demand calculation.
+2025-04-20 21:18:12,231 [INFO] main: Calculating on-demand summary for 2025-04-20 from /hub_data/focus_logs/focus_log_2025-04-20.jsonl
+2025-04-20 21:18:12,260 [INFO] main: Successfully calculated on-demand summary for 2025-04-20
+2025-04-20 21:18:12,272 [INFO] main: Pre-generated summary not found for 2025-04-20, attempting on-demand calculation.
+2025-04-20 21:18:12,273 [INFO] main: Calculating on-demand summary for 2025-04-20 from /hub_data/focus_logs/focus_log_2025-04-20.jsonl
+2025-04-20 21:18:12,291 [INFO] main: Successfully calculated on-demand summary for 2025-04-20
+2025-04-20 21:18:18,522 [INFO] main: Pre-generated summary not found for 2025-04-20, attempting on-demand calculation.
+2025-04-20 21:18:18,523 [INFO] main: Calculating on-demand summary for 2025-04-20 from /hub_data/focus_logs/focus_log_2025-04-20.jsonl
+2025-04-20 21:18:18,539 [INFO] main: Successfully calculated on-demand summary for 2025-04-20
+2025-04-20 21:18:22,365 [INFO] main: Pre-generated summary not found for 2025-04-20, attempting on-demand calculation.
+2025-04-20 21:18:22,367 [INFO] main: Calculating on-demand summary for 2025-04-20 from /hub_data/focus_logs/focus_log_2025-04-20.jsonl
+2025-04-20 21:18:22,383 [INFO] main: Successfully calculated on-demand summary for 2025-04-20
+2025-04-20 21:20:00,127 [INFO] main: WebSocket disconnected from 172.28.0.1:39190. Remaining: 2
+2025-04-20 21:20:00,128 [INFO] main: WebSocket disconnected from 172.28.0.1:39140. Remaining: 1
+2025-04-20 21:20:00,423 [INFO] main: Pre-generated summary not found for 2025-04-20, attempting on-demand calculation.
+2025-04-20 21:20:00,425 [INFO] main: Calculating on-demand summary for 2025-04-20 from /hub_data/focus_logs/focus_log_2025-04-20.jsonl
+2025-04-20 21:20:00,452 [INFO] main: Successfully calculated on-demand summary for 2025-04-20
+2025-04-20 21:20:00,461 [INFO] main: Pre-generated summary not found for 2025-04-20, attempting on-demand calculation.
+2025-04-20 21:20:00,462 [INFO] main: Calculating on-demand summary for 2025-04-20 from /hub_data/focus_logs/focus_log_2025-04-20.jsonl
+2025-04-20 21:20:00,478 [INFO] main: Successfully calculated on-demand summary for 2025-04-20
+2025-04-20 21:20:00,492 [INFO] main: New WebSocket connection from 172.28.0.1:51372. Total: 2
+2025-04-20 21:20:00,533 [INFO] main: New WebSocket connection from 172.28.0.1:51400. Total: 3
+2025-04-20 21:21:55,759 [INFO] main: WebSocket disconnected from 172.28.0.1:51372. Remaining: 2
+2025-04-20 21:21:55,760 [INFO] main: WebSocket disconnected from 172.28.0.1:51400. Remaining: 1
+2025-04-20 21:21:55,861 [INFO] main: New WebSocket connection from 172.28.0.1:40202. Total: 2
+2025-04-20 21:21:55,918 [INFO] main: New WebSocket connection from 172.28.0.1:40238. Total: 3
+2025-04-20 21:31:54,762 [INFO] main: WebSocket disconnected from 172.28.0.1:40202. Remaining: 2
+2025-04-20 21:31:54,763 [INFO] main: WebSocket disconnected from 172.28.0.1:40238. Remaining: 1
+2025-04-20 21:31:54,961 [INFO] main: New WebSocket connection from 172.28.0.1:56220. Total: 2
+2025-04-20 21:31:55,015 [INFO] main: New WebSocket connection from 172.28.0.1:56232. Total: 3
+2025-04-20 21:42:52,763 [INFO] main: WebSocket disconnected from 172.28.0.1:56220. Remaining: 2
+2025-04-20 21:42:52,764 [INFO] main: WebSocket disconnected from 172.28.0.1:56232. Remaining: 1
+2025-04-20 21:42:52,881 [INFO] main: New WebSocket connection from 172.28.0.1:48362. Total: 2
+2025-04-20 21:42:52,937 [INFO] main: New WebSocket connection from 172.28.0.1:48390. Total: 3
+2025-04-20 21:52:02,328 [INFO] main: WebSocket disconnected from 172.28.0.1:48362. Remaining: 2
+2025-04-20 21:52:02,329 [INFO] main: WebSocket disconnected from 172.28.0.1:48390. Remaining: 1
+2025-04-20 21:52:05,183 [INFO] main: New WebSocket connection from 172.28.0.1:56600. Total: 2
+2025-04-20 21:52:05,252 [INFO] main: New WebSocket connection from 172.28.0.1:56650. Total: 3
+2025-04-20 21:52:06,982 [INFO] main: Pre-generated summary not found for 2025-04-20, attempting on-demand calculation.
+2025-04-20 21:52:06,983 [INFO] main: Calculating on-demand summary for 2025-04-20 from /hub_data/focus_logs/focus_log_2025-04-20.jsonl
+2025-04-20 21:52:06,999 [INFO] main: Successfully calculated on-demand summary for 2025-04-20
+2025-04-20 21:52:07,005 [INFO] main: Pre-generated summary not found for 2025-04-20, attempting on-demand calculation.
+2025-04-20 21:52:07,007 [INFO] main: Calculating on-demand summary for 2025-04-20 from /hub_data/focus_logs/focus_log_2025-04-20.jsonl
+2025-04-20 21:52:07,014 [INFO] main: Successfully calculated on-demand summary for 2025-04-20

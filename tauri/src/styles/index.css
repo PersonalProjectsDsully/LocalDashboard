@@ -1,10 +1,12 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import 'highlight.js/styles/github-dark.css'; /* Adjust path/theme as needed */
 
 :root {
   /* Layout */
   --sidebar-width: 240px;
+  --sidebar-width-collapsed: 60px;
   --header-height: 60px;
   --feed-width: 300px;
   --max-content-width: 1120px;
