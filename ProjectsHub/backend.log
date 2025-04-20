@@ -1045,3 +1045,23 @@
 2025-04-20 17:26:21,572 [INFO] main: New WebSocket connection from 172.28.0.1:34190. Total: 3
 2025-04-20 17:28:21,786 [INFO] main: WebSocket disconnected from 172.28.0.1:34172. Remaining: 2
 2025-04-20 17:28:21,786 [INFO] main: WebSocket disconnected from 172.28.0.1:34190. Remaining: 1
+2025-04-20 17:40:31,199 [INFO] main: WebSocket disconnected from 172.28.0.1:46678. Remaining: 0
+2025-04-20 17:40:31,299 [INFO] main: --- Shutting down Projects Hub Backend ---
+2025-04-20 17:40:31,332 [INFO] main: File system watcher stopped.
+2025-04-20 17:40:44,397 [INFO] ollama_client: Initialized Ollama client with base URL: http://host.docker.internal:11434
+2025-04-20 17:40:44,415 [INFO] main: --- Starting Projects Hub Backend ---
+2025-04-20 17:40:44,415 [INFO] main: Watching data directory: /hub_data
+2025-04-20 17:40:44,418 [INFO] main: Hub data directory ready: /hub_data
+2025-04-20 17:40:44,420 [INFO] main: Ensured directory exists: /hub_data/focus_logs
+2025-04-20 17:40:44,452 [INFO] main: File system watcher started successfully.
+2025-04-20 17:40:44,715 [INFO] main: New WebSocket connection from 172.28.0.1:40660. Total: 1
+2025-04-20 17:40:48,163 [INFO] main: WebSocket disconnected from 172.28.0.1:40660. Remaining: 0
+2025-04-20 17:40:48,263 [INFO] main: --- Shutting down Projects Hub Backend ---
+2025-04-20 17:40:48,300 [INFO] main: File system watcher stopped.
+2025-04-20 17:40:53,114 [INFO] ollama_client: Initialized Ollama client with base URL: http://host.docker.internal:11434
+2025-04-20 17:40:53,130 [INFO] main: --- Starting Projects Hub Backend ---
+2025-04-20 17:40:53,131 [INFO] main: Watching data directory: /hub_data
+2025-04-20 17:40:53,134 [INFO] main: Hub data directory ready: /hub_data
+2025-04-20 17:40:53,135 [INFO] main: Ensured directory exists: /hub_data/focus_logs
+2025-04-20 17:40:53,163 [INFO] main: File system watcher started successfully.
+2025-04-20 17:40:53,724 [INFO] main: New WebSocket connection from 172.28.0.1:46908. Total: 1
