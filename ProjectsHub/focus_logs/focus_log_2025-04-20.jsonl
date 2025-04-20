@@ -765,3 +765,8 @@
 {"timestamp": "2025-04-20T17:39:39.478357+00:00", "exe": "C:\\Users\\admin\\AppData\\Local\\Programs\\cursor\\Cursor.exe", "title": "Chat.tsx - LocalDashboard - Cursor", "duration": 5}
 {"timestamp": "2025-04-20T17:39:44.082401+00:00", "exe": "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe", "title": "Chat UI Improvements - Google Chrome", "duration": 35}
 {"timestamp": "2025-04-20T17:39:44.484346+00:00", "exe": "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe", "title": "Chat UI Improvements - Google Chrome", "duration": 35}
+{"timestamp": "2025-04-20T17:40:56.221164+00:00", "exe": "C:\\Program Files\\WindowsApps\\Microsoft.WindowsTerminal_1.22.10731.0_x64__8wekyb3d8bbwe\\WindowsTerminal.exe", "title": "C:\\Windows\\system32\\cmd.exe - python  focus_monitor_agent.py --output-dir ProjectsHub --api-url http://localhost:8000", "duration": 4}
+{"timestamp": "2025-04-20T17:41:01.219010+00:00", "exe": "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe", "title": "Projects Hub - Google Chrome", "duration": 10}
+{"timestamp": "2025-04-20T17:41:11.251258+00:00", "exe": "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe", "title": "Chat UI Improvements - Google Chrome", "duration": 15}
+{"timestamp": "2025-04-20T17:41:26.269761+00:00", "exe": "C:\\Users\\admin\\AppData\\Local\\Programs\\cursor\\Cursor.exe", "title": "Chat.tsx - LocalDashboard - Cursor", "duration": 5}
+{"timestamp": "2025-04-20T17:41:31.270312+00:00", "exe": "C:\\Users\\admin\\AppData\\Local\\Programs\\cursor\\Cursor.exe", "title": "\u25cf COMMIT_EDITMSG - LocalDashboard - Cursor", "duration": 5}

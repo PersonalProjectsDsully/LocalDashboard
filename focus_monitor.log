@@ -1037,3 +1037,7 @@
 2025-04-20 13:39:44,484 [INFO] focus_monitor: Logged: Cursor.exe - 'Chat.tsx - LocalDashboard - Cursor' (5s)
 2025-04-20 13:40:19,167 [INFO] focus_monitor: Logged: chrome.exe - 'Chat UI Improvements - Google Chrome' (35s)
 2025-04-20 13:40:19,557 [INFO] focus_monitor: Logged: chrome.exe - 'Chat UI Improvements - Google Chrome' (35s)
+2025-04-20 13:40:56,220 [INFO] focus_monitor: Initialized FocusMonitorAgent (Window Tracking). Output: C:\Users\admin\Desktop\LocalDashboard\LocalDashboard\ProjectsHub\focus_logs, API: http://localhost:8000
+2025-04-20 13:40:56,220 [INFO] focus_monitor: Starting Focus Monitor agent loop (Window Tracking). Interval: 5s
+2025-04-20 13:41:01,219 [INFO] focus_monitor: Logged: WindowsTerminal.exe - 'C:\Windows\system32\cmd.exe - python  focus_monitor_agent.py...' (4s)
+2025-04-20 13:41:11,251 [INFO] focus_monitor: Logged: chrome.exe - 'Projects Hub - Google Chrome' (10s)
