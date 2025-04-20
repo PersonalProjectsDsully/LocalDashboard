@@ -1,6 +1,7 @@
 import requests
 import json
 import logging
+import time  # Make sure this import is present
 
 logger = logging.getLogger(__name__)
 
@@ -23,6 +24,7 @@ class OllamaClient:
                         "provider": "ollama",
                         "description": f"Ollama model: {model['name']}"
                     })
+                logger.info(f"Retrieved {len(models)} models from Ollama server")
                 return models
             else:
                 logger.error(f"Failed to get models from Ollama: {response.status_code} - {response.text}")
@@ -63,7 +65,7 @@ class OllamaClient:
             if response.status_code == 200:
                 data = response.json()
                 return {
-                    "id": f"resp_{data.get('created', 0)}",
+                    "id": f"resp_{int(time.time())}",
                     "role": "assistant",
                     "content": data.get("message", {}).get("content", "No response from model"),
                     "model": model_id

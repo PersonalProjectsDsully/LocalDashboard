@@ -1,0 +1,23 @@
+name: Bug Fix
+description: Template for creating a bug fix task
+template:
+  title: "Fix: "
+  description: |
+    ## Bug Description
+    
+    ## Steps to Reproduce
+    1. 
+    2. 
+    3. 
+    
+    ## Expected Behavior
+    
+    ## Actual Behavior
+    
+    ## Possible Solution
+    
+  status: todo
+  priority: medium
+  tags:
+    - bug
+    - fix

@@ -14,28 +14,46 @@ import './styles/App.css';
 import { v4 as uuidv4 } from 'uuid'; // For generating IDs
 
 
-// --- Event Bus (Keep as is) ---
+// --- Event Bus (Improved implementation) ---
 export const eventBus = {
   listeners: {} as Record<string, Array<(data: any) => void>>,
+  
   on(event: string, callback: (data: any) => void) {
     if (!this.listeners[event]) {
       this.listeners[event] = [];
     }
+    console.log(`[EventBus] Adding listener for event: ${event}, total listeners: ${this.listeners[event].length + 1}`);
     this.listeners[event].push(callback);
     return () => this.off(event, callback);
   },
+  
   off(event: string, callback: (data: any) => void) {
     if (!this.listeners[event]) return;
+    const initialLength = this.listeners[event].length;
     this.listeners[event] = this.listeners[event].filter(listener => listener !== callback);
+    console.log(`[EventBus] Removed listener for event: ${event}, before: ${initialLength}, after: ${this.listeners[event].length}`);
   },
+  
   emit(event: string, data: any) {
-    if (!this.listeners[event]) return;
-    setTimeout(() => {
-        this.listeners[event]?.forEach(listener => {
-            try { listener(data); }
-            catch (e) { console.error(`Error in event listener for ${event}:`, e); }
-        });
-    }, 0);
+    if (!this.listeners[event]) {
+      console.log(`[EventBus] No listeners for event: ${event}`);
+      return;
+    }
+    
+    console.log(`[EventBus] Emitting event: ${event} to ${this.listeners[event].length} listeners`);
+    
+    // Use Promise.resolve().then to ensure event processing happens after the current call stack
+    Promise.resolve().then(() => {
+      if (!this.listeners[event]) return; // Check again in case listeners were removed
+      
+      this.listeners[event].forEach(listener => {
+        try { 
+          listener(data); 
+        } catch (e) { 
+          console.error(`[EventBus] Error in event listener for ${event}:`, e); 
+        }
+      });
+    });
   },
 };
 
@@ -196,10 +214,19 @@ function App() {
         ws.onmessage = (event) => {
             try {
                 const message = JSON.parse(event.data);
-                console.log('WebSocket message received:', message);
+                console.log('%cWebSocket message received', 'background: #4CAF50; color: white; padding: 2px 5px; border-radius: 3px;', message);
+                
                 // Emit specific events
                 if (message.type) {
-                   eventBus.emit(message.type, message);
+                    // Immediately broadcast all websocket messages to relevant listeners
+                    console.log(`Broadcasting websocket message of type: ${message.type}`);
+                    
+                    // Force state update if it's a chat message
+                    if (message.type === 'chat_message_received') {
+                        console.log('%cReceived chat message via WebSocket', 'background: #2196F3; color: white; padding: 2px 5px; border-radius: 3px;', message);
+                    }
+                    
+                    eventBus.emit(message.type, message);
 
                    // --- Centralized State Updates based on WS ---
                    // Example: Update chat list if a session changes
@@ -216,8 +243,11 @@ function App() {
                             setSelectedChatId(chatSessions.length > 1 ? chatSessions.find(s => s.id !== message.session_id)?.id ?? null : null);
                         }
                    }
-                   // Note: chat_message_received might need specific handling in the Chat component itself
-                   // if real-time updates *within* the current chat are needed without a full state pass.
+                   // Real-time handling for chat messages
+                   if (message.type === 'chat_message_received' && message.message) {
+                      console.log(`WS: Chat message received for session ${message.session_id}`);
+                      // The message is already being broadcasted above, let the Chat component handle updating its state
+                   }
                 }
                  // Handle generic activity log for the feed (assuming it exists)
                  if (message.type === 'activity_log' && message.payload) {
@@ -250,7 +280,7 @@ function App() {
     <KBarProvider>
       <div className="app-container flex h-screen bg-gray-100 dark:bg-gray-900">
         {/* Sidebar */}
-        <nav className="sidebar w-[var(--sidebar-width)] bg-white dark:bg-gray-800 border-r border-gray-200 dark:border-gray-700 p-4 flex flex-col overflow-y-auto flex-shrink-0">
+        <nav className={`sidebar ${isSidebarCollapsed ? 'w-[var(--sidebar-width-collapsed)]' : 'w-[var(--sidebar-width)]'} bg-white dark:bg-gray-800 border-r border-gray-200 dark:border-gray-700 p-4 flex flex-col overflow-y-auto flex-shrink-0`}>
           <Sidebar
             // --- Pass chat state down ---
             chatSessions={chatSessions}
@@ -301,21 +331,17 @@ function App() {
               path="/chat"
               element={
                 <Chat
-                  // --- Pass needed state down ---
                   selectedChatId={selectedChatId}
                   selectedModelId={selectedModel}
-                  models={models} // Pass models for potential display in chat
-                  // Function to update the parent's selectedChatId if Chat modifies it (e.g., sets title on first message)
+                  models={models}
                   onSessionUpdate={(updatedSession: ChatMeta) => {
                       setChatSessions(prev => prev.map(s => s.id === updatedSession.id ? updatedSession : s));
-                      // Potentially update selectedChatId if needed, though usually done via sidebar click
                   }}
-                  setChatError={setChatError} // Allow Chat to set errors in App
-                  chatError={chatError} // <-- PASS THE ERROR STATE DOWN
+                  setChatError={setChatError}
+                  chatError={chatError}
                 />
               }
             />
-             {/* <Route path="/chattest" element={<div className="bg-pink-600 w-full h-full flex items-center justify-center text-white text-3xl font-bold">THIS IS A TEST ROUTE WITH PINK BACKGROUND</div>} /> */}
           </Routes>
         </main>
 

@@ -1428,3 +1428,631 @@
 2025-04-20 17:53:51,791 [INFO] focus_monitor: Logged: EscapeFromTarkov.exe - 'EscapeFromTarkov' (35s)
 2025-04-20 17:55:01,908 [INFO] focus_monitor: Logged: claude.exe - 'Claude' (70s)
 2025-04-20 17:55:06,917 [INFO] focus_monitor: Logged: EscapeFromTarkov.exe - 'EscapeFromTarkov' (5s)
+2025-04-20 17:55:16,925 [INFO] focus_monitor: Logged: GitHubDesktop.exe - 'GitHub Desktop' (10s)
+2025-04-20 17:55:21,941 [INFO] focus_monitor: Logged: claude.exe - 'Claude' (5s)
+2025-04-20 17:55:31,966 [INFO] focus_monitor: Logged: GitHubDesktop.exe - 'GitHub Desktop' (10s)
+2025-04-20 17:55:56,993 [INFO] focus_monitor: Logged: claude.exe - 'Claude' (25s)
+2025-04-20 17:56:22,033 [INFO] focus_monitor: Logged: chrome.exe - 'Projects Hub - Google Chrome' (25s)
+2025-04-20 17:56:27,047 [INFO] focus_monitor: Logged: ShareX.exe - 'ShareX - Region capture' (5s)
+2025-04-20 17:56:47,074 [INFO] focus_monitor: Logged: claude.exe - 'Claude' (20s)
+2025-04-20 17:57:57,192 [INFO] focus_monitor: Logged: chrome.exe - 'Projects Hub - Google Chrome' (70s)
+2025-04-20 17:58:02,205 [INFO] focus_monitor: Logged: explorer.exe - 'Task Switching' (5s)
+2025-04-20 17:58:07,214 [INFO] focus_monitor: Logged: claude.exe - 'Claude' (5s)
+2025-04-20 17:58:19,302 [WARNING] focus_monitor: Could not reach backend (http://localhost:8000) to check focus status: HTTPConnectionPool(host='localhost', port=8000): Read timed out. (read timeout=3)
+2025-04-20 17:59:29,451 [INFO] focus_monitor: Logged: chrome.exe - 'Projects Hub - Google Chrome' (82s)
+2025-04-20 17:59:34,470 [INFO] focus_monitor: Logged: GitHubDesktop.exe - 'GitHub Desktop' (5s)
+2025-04-20 18:00:04,510 [INFO] focus_monitor: Logged: chrome.exe - 'Projects Hub - Google Chrome' (30s)
+2025-04-20 18:00:09,511 [INFO] focus_monitor: Logged: explorer.exe - 'Task Switching' (5s)
+2025-04-20 18:00:14,525 [INFO] focus_monitor: Logged: WindowsTerminal.exe - 'C:\Windows\system32\cmd.exe - python  focus_monitor_agent.py...' (5s)
+2025-04-20 18:00:19,533 [INFO] focus_monitor: Logged: chrome.exe - 'Projects Hub - Google Chrome' (5s)
+2025-04-20 18:00:44,561 [INFO] focus_monitor: Logged: WindowsTerminal.exe - 'C:\Windows\system32\cmd.exe - docker-compose  up --build' (25s)
+2025-04-20 18:00:49,583 [INFO] focus_monitor: Logged: chrome.exe - 'Projects Hub - Google Chrome' (5s)
+2025-04-20 18:01:04,591 [INFO] focus_monitor: Logged: claude.exe - 'Claude' (15s)
+2025-04-20 18:01:09,605 [INFO] focus_monitor: Logged: explorer.exe - 'Task Switching' (5s)
+2025-04-20 18:01:34,657 [INFO] focus_monitor: Logged: chrome.exe - 'Projects Hub - Google Chrome' (25s)
+2025-04-20 18:01:49,679 [INFO] focus_monitor: Logged: explorer.exe - 'Task Switching' (15s)
+2025-04-20 18:02:49,810 [INFO] focus_monitor: Logged: claude.exe - 'Claude' (60s)
+2025-04-20 18:03:24,861 [INFO] focus_monitor: Logged: chrome.exe - 'Projects Hub - Google Chrome' (35s)
+2025-04-20 18:14:22,319 [INFO] focus_monitor: Initialized FocusMonitorAgent (Window Tracking). Output: C:\Users\admin\Desktop\LocalDashboard\LocalDashboard\ProjectsHub\focus_logs, API: http://localhost:8000
+2025-04-20 18:14:22,319 [INFO] focus_monitor: Starting Focus Monitor agent loop (Window Tracking). Interval: 5s
+2025-04-20 18:14:32,332 [INFO] focus_monitor: Logged: WindowsTerminal.exe - 'C:\Windows\system32\cmd.exe - python  focus_monitor_agent.py...' (10s)
+2025-04-20 18:14:47,354 [INFO] focus_monitor: Logged: chrome.exe - 'Projects Hub - Google Chrome' (15s)
+2025-04-20 18:14:52,358 [INFO] focus_monitor: Logged: claude.exe - 'Claude' (5s)
+2025-04-20 18:16:02,492 [INFO] focus_monitor: Logged: EscapeFromTarkov.exe - 'EscapeFromTarkov' (70s)
+2025-04-20 18:16:07,497 [INFO] focus_monitor: Logged: claude.exe - 'Claude' (5s)
+2025-04-20 18:16:22,527 [INFO] focus_monitor: Logged: chrome.exe - 'Projects Hub - Google Chrome' (15s)
+2025-04-20 18:16:32,537 [INFO] focus_monitor: Logged: EscapeFromTarkov.exe - 'EscapeFromTarkov' (10s)
+2025-04-20 18:16:47,551 [INFO] focus_monitor: Logged: chrome.exe - 'Projects Hub - Google Chrome' (10s)
+2025-04-20 18:16:57,573 [INFO] focus_monitor: Logged: WindowsTerminal.exe - 'C:\Windows\system32\cmd.exe - docker-compose  up --build' (10s)
+2025-04-20 18:17:12,610 [INFO] focus_monitor: Logged: claude.exe - 'Claude' (15s)
+2025-04-20 18:17:17,617 [INFO] focus_monitor: Logged: WindowsTerminal.exe - 'C:\Windows\system32\cmd.exe - docker-compose  up --build' (5s)
+2025-04-20 18:17:37,630 [INFO] focus_monitor: Logged: claude.exe - 'Claude' (20s)
+2025-04-20 18:17:47,651 [INFO] focus_monitor: Logged: EscapeFromTarkov.exe - 'EscapeFromTarkov' (10s)
+2025-04-20 18:18:12,665 [INFO] focus_monitor: Logged: claude.exe - 'Claude' (25s)
+2025-04-20 18:18:17,667 [INFO] focus_monitor: Logged: SearchHost.exe - 'Search' (5s)
+2025-04-20 18:18:22,690 [INFO] focus_monitor: Logged: claude.exe - 'Claude' (5s)
+2025-04-20 18:18:27,702 [INFO] focus_monitor: Logged: GitHubDesktop.exe - 'GitHub Desktop' (5s)
+2025-04-20 18:18:47,732 [INFO] focus_monitor: Logged: Unknown - 'Task Manager' (15s)
+2025-04-20 18:18:52,746 [INFO] focus_monitor: Logged: SearchHost.exe - 'Search' (5s)
+2025-04-20 18:19:12,773 [INFO] focus_monitor: Logged: claude.exe - 'Claude' (20s)
+2025-04-20 18:19:17,784 [INFO] focus_monitor: Logged: GitHubDesktop.exe - 'GitHub Desktop' (5s)
+2025-04-20 18:19:37,839 [INFO] focus_monitor: Logged: chrome.exe - 'Projects Hub - Google Chrome' (20s)
+2025-04-20 18:20:32,953 [INFO] focus_monitor: Logged: EscapeFromTarkov.exe - 'EscapeFromTarkov' (55s)
+2025-04-20 18:20:57,983 [INFO] focus_monitor: Logged: chrome.exe - 'Projects Hub - Google Chrome' (25s)
+2025-04-20 18:21:08,009 [INFO] focus_monitor: Logged: GitHubDesktop.exe - 'GitHub Desktop' (5s)
+2025-04-20 18:21:18,023 [INFO] focus_monitor: Logged: BsgLauncher.exe - 'BsgLauncher' (10s)
+2025-04-20 18:21:43,055 [INFO] focus_monitor: Logged: chrome.exe - 'Projects Hub - Google Chrome' (25s)
+2025-04-20 18:22:23,105 [INFO] focus_monitor: Logged: claude.exe - 'Claude' (40s)
+2025-04-20 18:22:28,115 [INFO] focus_monitor: Logged: WindowsTerminal.exe - 'C:\Windows\system32\cmd.exe - python  focus_monitor_agent.py...' (5s)
+2025-04-20 18:22:38,137 [INFO] focus_monitor: Logged: WindowsTerminal.exe - 'C:\Windows\system32\cmd.exe - docker-compose  up --build' (10s)
+2025-04-20 18:23:08,211 [INFO] focus_monitor: Logged: claude.exe - 'Claude' (30s)
+2025-04-20 18:23:41,136 [WARNING] focus_monitor: Could not reach backend (http://localhost:8000) to check focus status: HTTPConnectionPool(host='localhost', port=8000): Read timed out. (read timeout=3)
+2025-04-20 18:23:41,137 [INFO] focus_monitor: Logged: chrome.exe - 'Projects Hub - Google Chrome' (32s)
+2025-04-20 18:24:33,897 [INFO] focus_monitor: Initialized FocusMonitorAgent (Window Tracking). Output: C:\Users\admin\Desktop\LocalDashboard\LocalDashboard\ProjectsHub\focus_logs, API: http://localhost:8000
+2025-04-20 18:24:33,897 [INFO] focus_monitor: Starting Focus Monitor agent loop (Window Tracking). Interval: 5s
+2025-04-20 18:24:38,908 [INFO] focus_monitor: Logged: WindowsTerminal.exe - 'C:\Windows\system32\cmd.exe - python  focus_monitor_agent.py...' (5s)
+2025-04-20 18:24:43,919 [INFO] focus_monitor: Logged: explorer.exe - 'Task Switching' (5s)
+2025-04-20 18:24:53,127 [INFO] focus_monitor: Initialized FocusMonitorAgent (Window Tracking). Output: C:\Users\admin\Desktop\LocalDashboard\LocalDashboard\ProjectsHub\focus_logs, API: http://localhost:8000
+2025-04-20 18:24:53,127 [INFO] focus_monitor: Starting Focus Monitor agent loop (Window Tracking). Interval: 5s
+2025-04-20 18:25:08,157 [INFO] focus_monitor: Logged: chrome.exe - 'Projects Hub - Google Chrome' (15s)
+2025-04-20 18:25:13,167 [INFO] focus_monitor: Logged: WindowsTerminal.exe - 'C:\Windows\system32\cmd.exe - python  focus_monitor_agent.py...' (5s)
+2025-04-20 18:25:53,249 [INFO] focus_monitor: Logged: chrome.exe - 'Projects Hub - Google Chrome' (40s)
+2025-04-20 18:26:18,297 [INFO] focus_monitor: Logged: chrome.exe - 'Sidebar Chat Layout - Google Chrome' (25s)
+2025-04-20 18:26:23,295 [INFO] focus_monitor: Logged: chrome.exe - 'Lighthouse - The Official Escape from Tarkov Wiki - Google C...' (4s)
+2025-04-20 18:26:43,346 [INFO] focus_monitor: Logged: chrome.exe - 'Projects Hub - Google Chrome' (20s)
+2025-04-20 18:26:58,357 [INFO] focus_monitor: Logged: chrome.exe - 'ChatGPT - Google Chrome' (15s)
+2025-04-20 18:27:23,391 [INFO] focus_monitor: Logged: chrome.exe - 'Claude Max Features - Google Chrome' (25s)
+2025-04-20 18:27:28,391 [INFO] focus_monitor: Logged: chrome.exe - 'Untitled - Google Chrome' (5s)
+2025-04-20 18:28:13,461 [INFO] focus_monitor: Logged: chrome.exe - 'Anthropic Unveils Claude AI's Max Plan. Is Claude's expanded...' (30s)
+2025-04-20 18:28:23,483 [INFO] focus_monitor: Logged: chrome.exe - 'Claude Max Features - Google Chrome' (10s)
+2025-04-20 18:28:28,487 [INFO] focus_monitor: Logged: chrome.exe - 'Projects Hub - Google Chrome' (5s)
+2025-04-20 18:29:33,612 [INFO] focus_monitor: Logged: claude.exe - 'Claude' (65s)
+2025-04-20 18:29:38,629 [INFO] focus_monitor: Logged: chrome.exe - 'Google - Google Chrome' (5s)
+2025-04-20 18:29:43,630 [INFO] focus_monitor: Logged: chrome.exe - 'mcp servers claude github - Google Search - Google Chrome' (5s)
+2025-04-20 18:30:33,688 [INFO] focus_monitor: Logged: chrome.exe - 'modelcontextprotocol/servers: Model Context Protocol Servers...' (50s)
+2025-04-20 18:30:53,731 [INFO] focus_monitor: Logged: chrome.exe - 'Zue - Google Chrome' (20s)
+2025-04-20 18:30:58,732 [INFO] focus_monitor: Logged: WindowsTerminal.exe - 'C:\WINDOWS\system32\cmd.exe ' (5s)
+2025-04-20 18:31:08,744 [INFO] focus_monitor: Logged: GitHubDesktop.exe - 'GitHub Desktop' (10s)
+2025-04-20 18:31:23,784 [INFO] focus_monitor: Logged: claude.exe - 'Claude' (15s)
+2025-04-20 18:33:24,016 [INFO] focus_monitor: Logged: chrome.exe - 'modelcontextprotocol/servers: Model Context Protocol Servers...' (120s)
+2025-04-20 18:33:54,087 [INFO] focus_monitor: Logged: GitHubDesktop.exe - 'GitHub Desktop' (30s)
+2025-04-20 18:34:09,104 [INFO] focus_monitor: Logged: claude.exe - 'Claude' (15s)
+2025-04-20 18:34:14,112 [INFO] focus_monitor: Logged: SearchHost.exe - 'Search' (5s)
+2025-04-20 18:34:19,125 [INFO] focus_monitor: Logged: claude.exe - 'Claude' (5s)
+2025-04-20 18:34:43,243 [INFO] focus_monitor: Initialized FocusMonitorAgent (Window Tracking). Output: C:\Users\admin\Desktop\LocalDashboard\LocalDashboard\ProjectsHub\focus_logs, API: http://localhost:8000
+2025-04-20 18:34:43,243 [INFO] focus_monitor: Starting Focus Monitor agent loop (Window Tracking). Interval: 5s
+2025-04-20 18:34:48,250 [INFO] focus_monitor: Logged: WindowsTerminal.exe - 'C:\Windows\system32\cmd.exe - python  focus_monitor_agent.py...' (5s)
+2025-04-20 18:34:53,259 [INFO] focus_monitor: Logged: chrome.exe - 'Projects Hub - Google Chrome' (5s)
+2025-04-20 18:34:58,260 [INFO] focus_monitor: Logged: WindowsTerminal.exe - 'C:\Windows\system32\cmd.exe - docker-compose  up --build' (5s)
+2025-04-20 18:35:03,259 [INFO] focus_monitor: Logged: WindowsTerminal.exe - 'C:\WINDOWS\system32\cmd.exe ' (4s)
+2025-04-20 18:35:58,350 [INFO] focus_monitor: Logged: claude.exe - 'Claude' (55s)
+2025-04-20 18:36:03,361 [INFO] focus_monitor: Logged: chrome.exe - 'Google - Google Chrome' (5s)
+2025-04-20 18:36:08,361 [INFO] focus_monitor: Logged: chrome.exe - 'claude sharing data - Google Search - Google Chrome' (4s)
+2025-04-20 18:36:18,389 [INFO] focus_monitor: Logged: chrome.exe - 'I would like to input sensitive data into free Claude.ai, or...' (10s)
+2025-04-20 18:36:23,394 [INFO] focus_monitor: Logged: chrome.exe - 'Anthropic Help Center - Google Chrome' (5s)
+2025-04-20 18:36:28,405 [INFO] focus_monitor: Logged: chrome.exe - 'Max Plan | Anthropic Help Center - Google Chrome' (5s)
+2025-04-20 18:36:43,451 [INFO] focus_monitor: Logged: chrome.exe - 'How much does the Max plan cost? | Anthropic Help Center - G...' (15s)
+2025-04-20 18:36:53,461 [INFO] focus_monitor: Logged: chrome.exe - 'About Claude's Max Plan Usage | Anthropic Help Center - Goog...' (10s)
+2025-04-20 18:37:08,491 [INFO] focus_monitor: Logged: claude.exe - 'Claude' (15s)
+2025-04-20 18:37:13,493 [INFO] focus_monitor: Logged: chrome.exe - 'About Claude's Max Plan Usage | Anthropic Help Center - Goog...' (5s)
+2025-04-20 18:41:53,120 [INFO] focus_monitor: Initialized FocusMonitorAgent (Window Tracking). Output: C:\Users\admin\Desktop\LocalDashboard\LocalDashboard\ProjectsHub\focus_logs, API: http://localhost:8000
+2025-04-20 18:41:53,120 [INFO] focus_monitor: Starting Focus Monitor agent loop (Window Tracking). Interval: 5s
+2025-04-20 18:41:53,127 [WARNING] focus_monitor: Could not reach backend (http://localhost:8000) to check focus status: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+2025-04-20 18:41:58,133 [INFO] focus_monitor: Logged: WindowsTerminal.exe - 'C:\Windows\system32\cmd.exe - python  focus_monitor_agent.py...' (5s)
+2025-04-20 18:42:08,153 [WARNING] focus_monitor: Could not reach backend (http://localhost:8000) to check focus status: ('Connection aborted.', ConnectionAbortedError(10053, 'An established connection was aborted by the software in your host machine', None, 10053, None))
+2025-04-20 18:42:08,154 [INFO] focus_monitor: Logged: chrome.exe - 'Projects Hub - Google Chrome' (10s)
+2025-04-20 18:42:13,154 [INFO] focus_monitor: Logged: WindowsTerminal.exe - 'C:\Windows\system32\cmd.exe - python  focus_monitor_agent.py...' (5s)
+2025-04-20 18:42:18,157 [INFO] focus_monitor: Logged: WindowsTerminal.exe - 'C:\Windows\system32\cmd.exe - docker-compose  up --build' (5s)
+2025-04-20 18:42:23,173 [INFO] focus_monitor: Logged: chrome.exe - 'Projects Hub - Google Chrome' (5s)
+2025-04-20 18:42:23,189 [WARNING] focus_monitor: Could not reach backend (http://localhost:8000) to check focus status: ('Connection aborted.', ConnectionAbortedError(10053, 'An established connection was aborted by the software in your host machine', None, 10053, None))
+2025-04-20 18:42:28,177 [INFO] focus_monitor: Logged: claude.exe - 'Claude' (5s)
+2025-04-20 18:42:33,186 [INFO] focus_monitor: Logged: WindowsTerminal.exe - 'C:\WINDOWS\system32\cmd.exe ' (5s)
+2025-04-20 18:42:38,196 [INFO] focus_monitor: Logged: chrome.exe - 'Projects Hub - Google Chrome' (5s)
+2025-04-20 18:42:38,212 [WARNING] focus_monitor: Could not reach backend (http://localhost:8000) to check focus status: ('Connection aborted.', ConnectionAbortedError(10053, 'An established connection was aborted by the software in your host machine', None, 10053, None))
+2025-04-20 18:42:55,166 [INFO] focus_monitor: Initialized FocusMonitorAgent (Window Tracking). Output: C:\Users\admin\Desktop\LocalDashboard\LocalDashboard\ProjectsHub\focus_logs, API: http://localhost:8000
+2025-04-20 18:42:55,166 [INFO] focus_monitor: Starting Focus Monitor agent loop (Window Tracking). Interval: 5s
+2025-04-20 18:42:55,182 [WARNING] focus_monitor: Could not reach backend (http://localhost:8000) to check focus status: ('Connection aborted.', ConnectionAbortedError(10053, 'An established connection was aborted by the software in your host machine', None, 10053, None))
+2025-04-20 18:43:00,176 [INFO] focus_monitor: Logged: WindowsTerminal.exe - 'C:\Windows\system32\cmd.exe - python  focus_monitor_agent.py...' (5s)
+2025-04-20 18:43:10,201 [WARNING] focus_monitor: Could not reach backend (http://localhost:8000) to check focus status: ('Connection aborted.', ConnectionAbortedError(10053, 'An established connection was aborted by the software in your host machine', None, 10053, None))
+2025-04-20 18:43:10,202 [INFO] focus_monitor: Logged: WindowsTerminal.exe - 'C:\Windows\system32\cmd.exe - docker-compose  up --build' (10s)
+2025-04-20 18:43:25,226 [WARNING] focus_monitor: Could not reach backend (http://localhost:8000) to check focus status: ('Connection aborted.', ConnectionAbortedError(10053, 'An established connection was aborted by the software in your host machine', None, 10053, None))
+2025-04-20 18:43:40,234 [WARNING] focus_monitor: Could not reach backend (http://localhost:8000) to check focus status: ('Connection aborted.', ConnectionAbortedError(10053, 'An established connection was aborted by the software in your host machine', None, 10053, None))
+2025-04-20 18:43:55,255 [WARNING] focus_monitor: Could not reach backend (http://localhost:8000) to check focus status: ('Connection aborted.', ConnectionAbortedError(10053, 'An established connection was aborted by the software in your host machine', None, 10053, None))
+2025-04-20 18:44:10,279 [WARNING] focus_monitor: Could not reach backend (http://localhost:8000) to check focus status: ('Connection aborted.', ConnectionAbortedError(10053, 'An established connection was aborted by the software in your host machine', None, 10053, None))
+2025-04-20 18:44:25,293 [WARNING] focus_monitor: Could not reach backend (http://localhost:8000) to check focus status: ('Connection aborted.', ConnectionAbortedError(10053, 'An established connection was aborted by the software in your host machine', None, 10053, None))
+2025-04-20 18:44:40,334 [WARNING] focus_monitor: Could not reach backend (http://localhost:8000) to check focus status: ('Connection aborted.', ConnectionAbortedError(10053, 'An established connection was aborted by the software in your host machine', None, 10053, None))
+2025-04-20 18:44:55,333 [WARNING] focus_monitor: Could not reach backend (http://localhost:8000) to check focus status: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+2025-04-20 18:45:10,361 [WARNING] focus_monitor: Could not reach backend (http://localhost:8000) to check focus status: ('Connection aborted.', ConnectionAbortedError(10053, 'An established connection was aborted by the software in your host machine', None, 10053, None))
+2025-04-20 18:45:25,387 [WARNING] focus_monitor: Could not reach backend (http://localhost:8000) to check focus status: ('Connection aborted.', ConnectionAbortedError(10053, 'An established connection was aborted by the software in your host machine', None, 10053, None))
+2025-04-20 18:45:40,415 [WARNING] focus_monitor: Could not reach backend (http://localhost:8000) to check focus status: ('Connection aborted.', ConnectionAbortedError(10053, 'An established connection was aborted by the software in your host machine', None, 10053, None))
+2025-04-20 18:45:55,431 [WARNING] focus_monitor: Could not reach backend (http://localhost:8000) to check focus status: ('Connection aborted.', ConnectionAbortedError(10053, 'An established connection was aborted by the software in your host machine', None, 10053, None))
+2025-04-20 18:46:10,456 [WARNING] focus_monitor: Could not reach backend (http://localhost:8000) to check focus status: ('Connection aborted.', ConnectionAbortedError(10053, 'An established connection was aborted by the software in your host machine', None, 10053, None))
+2025-04-20 18:46:25,487 [WARNING] focus_monitor: Could not reach backend (http://localhost:8000) to check focus status: ('Connection aborted.', ConnectionAbortedError(10053, 'An established connection was aborted by the software in your host machine', None, 10053, None))
+2025-04-20 18:46:40,495 [WARNING] focus_monitor: Could not reach backend (http://localhost:8000) to check focus status: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+2025-04-20 18:46:55,515 [WARNING] focus_monitor: Could not reach backend (http://localhost:8000) to check focus status: ('Connection aborted.', ConnectionAbortedError(10053, 'An established connection was aborted by the software in your host machine', None, 10053, None))
+2025-04-20 18:47:10,549 [WARNING] focus_monitor: Could not reach backend (http://localhost:8000) to check focus status: ('Connection aborted.', ConnectionAbortedError(10053, 'An established connection was aborted by the software in your host machine', None, 10053, None))
+2025-04-20 18:47:25,578 [WARNING] focus_monitor: Could not reach backend (http://localhost:8000) to check focus status: ('Connection aborted.', ConnectionAbortedError(10053, 'An established connection was aborted by the software in your host machine', None, 10053, None))
+2025-04-20 18:47:40,605 [WARNING] focus_monitor: Could not reach backend (http://localhost:8000) to check focus status: ('Connection aborted.', ConnectionAbortedError(10053, 'An established connection was aborted by the software in your host machine', None, 10053, None))
+2025-04-20 18:47:55,640 [WARNING] focus_monitor: Could not reach backend (http://localhost:8000) to check focus status: ('Connection aborted.', ConnectionAbortedError(10053, 'An established connection was aborted by the software in your host machine', None, 10053, None))
+2025-04-20 18:48:10,664 [WARNING] focus_monitor: Could not reach backend (http://localhost:8000) to check focus status: ('Connection aborted.', ConnectionAbortedError(10053, 'An established connection was aborted by the software in your host machine', None, 10053, None))
+2025-04-20 18:48:25,695 [WARNING] focus_monitor: Could not reach backend (http://localhost:8000) to check focus status: ('Connection aborted.', ConnectionAbortedError(10053, 'An established connection was aborted by the software in your host machine', None, 10053, None))
+2025-04-20 18:48:35,755 [INFO] focus_monitor: Logged: claude.exe - 'Claude' (325s)
+2025-04-20 18:48:40,710 [WARNING] focus_monitor: Could not reach backend (http://localhost:8000) to check focus status: ('Connection aborted.', ConnectionAbortedError(10053, 'An established connection was aborted by the software in your host machine', None, 10053, None))
+2025-04-20 18:48:40,772 [INFO] focus_monitor: Logged: chrome.exe - 'Projects Hub - Google Chrome' (5s)
+2025-04-20 18:48:52,166 [INFO] focus_monitor: Initialized FocusMonitorAgent (Window Tracking). Output: C:\Users\admin\Desktop\LocalDashboard\LocalDashboard\ProjectsHub\focus_logs, API: http://localhost:8000
+2025-04-20 18:48:52,166 [INFO] focus_monitor: Starting Focus Monitor agent loop (Window Tracking). Interval: 5s
+2025-04-20 18:48:55,203 [WARNING] focus_monitor: Could not reach backend (http://localhost:8000) to check focus status: HTTPConnectionPool(host='localhost', port=8000): Read timed out. (read timeout=3)
+2025-04-20 18:49:02,174 [INFO] focus_monitor: Logged: WindowsTerminal.exe - 'C:\Windows\system32\cmd.exe - python  focus_monitor_agent.py...' (10s)
+2025-04-20 18:49:13,236 [WARNING] focus_monitor: Could not reach backend (http://localhost:8000) to check focus status: HTTPConnectionPool(host='localhost', port=8000): Read timed out. (read timeout=3)
+2025-04-20 18:49:13,237 [INFO] focus_monitor: Logged: chrome.exe - 'Projects Hub - Google Chrome' (11s)
+2025-04-20 18:49:18,242 [INFO] focus_monitor: Logged: WindowsTerminal.exe - 'C:\Windows\system32\cmd.exe - docker-compose  up --build' (5s)
+2025-04-20 18:49:31,268 [WARNING] focus_monitor: Could not reach backend (http://localhost:8000) to check focus status: HTTPConnectionPool(host='localhost', port=8000): Read timed out. (read timeout=3)
+2025-04-20 18:49:31,268 [INFO] focus_monitor: Logged: claude.exe - 'Claude' (13s)
+2025-04-20 18:49:41,296 [INFO] focus_monitor: Logged: chrome.exe - 'Projects Hub - Google Chrome' (10s)
+2025-04-20 18:49:49,278 [WARNING] focus_monitor: Could not reach backend (http://localhost:8000) to check focus status: HTTPConnectionPool(host='localhost', port=8000): Read timed out. (read timeout=3)
+2025-04-20 18:49:49,279 [INFO] focus_monitor: Logged: explorer.exe - 'Task Switching' (7s)
+2025-04-20 18:50:07,321 [WARNING] focus_monitor: Could not reach backend (http://localhost:8000) to check focus status: HTTPConnectionPool(host='localhost', port=8000): Read timed out. (read timeout=3)
+2025-04-20 18:50:07,322 [INFO] focus_monitor: Logged: WindowsTerminal.exe - 'C:\WINDOWS\system32\cmd.exe ' (18s)
+2025-04-20 18:50:17,345 [INFO] focus_monitor: Logged: claude.exe - 'Claude' (10s)
+2025-04-20 18:50:25,346 [WARNING] focus_monitor: Could not reach backend (http://localhost:8000) to check focus status: HTTPConnectionPool(host='localhost', port=8000): Read timed out. (read timeout=3)
+2025-04-20 18:50:35,358 [INFO] focus_monitor: Logged: chrome.exe - 'Projects Hub - Google Chrome' (18s)
+2025-04-20 18:50:43,371 [WARNING] focus_monitor: Could not reach backend (http://localhost:8000) to check focus status: HTTPConnectionPool(host='localhost', port=8000): Read timed out. (read timeout=3)
+2025-04-20 18:50:43,372 [INFO] focus_monitor: Logged: WindowsTerminal.exe - 'C:\Windows\system32\cmd.exe - docker-compose  up --build' (8s)
+2025-04-20 18:51:01,417 [WARNING] focus_monitor: Could not reach backend (http://localhost:8000) to check focus status: HTTPConnectionPool(host='localhost', port=8000): Read timed out. (read timeout=3)
+2025-04-20 18:53:53,084 [INFO] focus_monitor: Initialized FocusMonitorAgent (Window Tracking). Output: C:\Users\admin\Desktop\LocalDashboard\LocalDashboard\ProjectsHub\focus_logs, API: http://localhost:8000
+2025-04-20 18:53:53,084 [INFO] focus_monitor: Starting Focus Monitor agent loop (Window Tracking). Interval: 5s
+2025-04-20 18:53:58,081 [INFO] focus_monitor: Logged: WindowsTerminal.exe - 'C:\Windows\system32\cmd.exe - python  focus_monitor_agent.py...' (4s)
+2025-04-20 18:54:08,120 [INFO] focus_monitor: Logged: chrome.exe - 'Projects Hub - Google Chrome' (10s)
+2025-04-20 18:54:33,172 [INFO] focus_monitor: Logged: WindowsTerminal.exe - 'C:\Windows\system32\cmd.exe - python  focus_monitor_agent.py...' (25s)
+2025-04-20 18:54:53,187 [INFO] focus_monitor: Logged: claude.exe - 'Claude' (20s)
+2025-04-20 18:55:18,234 [INFO] focus_monitor: Logged: chrome.exe - 'Projects Hub - Google Chrome' (25s)
+2025-04-20 18:55:23,244 [INFO] focus_monitor: Logged: WindowsTerminal.exe - 'C:\Windows\system32\cmd.exe - python  focus_monitor_agent.py...' (5s)
+2025-04-20 18:57:18,148 [INFO] focus_monitor: Initialized FocusMonitorAgent (Window Tracking). Output: C:\Users\admin\Desktop\LocalDashboard\LocalDashboard\ProjectsHub\focus_logs, API: http://localhost:8000
+2025-04-20 18:57:18,149 [INFO] focus_monitor: Starting Focus Monitor agent loop (Window Tracking). Interval: 5s
+2025-04-20 18:57:23,148 [INFO] focus_monitor: Logged: WindowsTerminal.exe - 'C:\Windows\system32\cmd.exe - python  focus_monitor_agent.py...' (4s)
+2025-04-20 18:57:33,165 [INFO] focus_monitor: Logged: chrome.exe - 'Projects Hub - Google Chrome' (10s)
+2025-04-20 18:58:43,212 [INFO] focus_monitor: Logged: claude.exe - 'Claude' (70s)
+2025-04-20 18:58:48,219 [INFO] focus_monitor: Logged: brave.exe - 'localhost:8000/debug/ping - Brave' (5s)
+2025-04-20 18:58:53,230 [INFO] focus_monitor: Logged: claude.exe - 'Claude' (5s)
+2025-04-20 18:58:58,240 [INFO] focus_monitor: Logged: WindowsTerminal.exe - 'Windows PowerShell' (5s)
+2025-04-20 18:59:08,265 [INFO] focus_monitor: Logged: WindowsTerminal.exe - 'Command Prompt' (10s)
+2025-04-20 18:59:13,271 [INFO] focus_monitor: Logged: claude.exe - 'Claude' (5s)
+2025-04-20 18:59:18,283 [INFO] focus_monitor: Logged: explorer.exe - 'Task Switching' (5s)
+2025-04-20 19:00:43,412 [INFO] focus_monitor: Logged: claude.exe - 'Claude' (85s)
+2025-04-20 19:00:53,431 [INFO] focus_monitor: Logged: WindowsTerminal.exe - 'Command Prompt' (10s)
+2025-04-20 19:01:12,123 [INFO] focus_monitor: Initialized FocusMonitorAgent (Window Tracking). Output: C:\Users\admin\Desktop\LocalDashboard\LocalDashboard\ProjectsHub\focus_logs, API: http://localhost:8000
+2025-04-20 19:01:12,123 [INFO] focus_monitor: Starting Focus Monitor agent loop (Window Tracking). Interval: 5s
+2025-04-20 19:01:12,132 [WARNING] focus_monitor: Could not reach backend (http://localhost:8000) to check focus status: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+2025-04-20 19:01:17,134 [INFO] focus_monitor: Logged: WindowsTerminal.exe - 'C:\Windows\system32\cmd.exe - python  focus_monitor_agent.py...' (5s)
+2025-04-20 19:01:22,136 [INFO] focus_monitor: Logged: WindowsTerminal.exe - 'C:\Windows\system32\cmd.exe - docker-compose  up --build' (5s)
+2025-04-20 19:01:27,148 [WARNING] focus_monitor: Could not reach backend (http://localhost:8000) to check focus status: ('Connection aborted.', ConnectionAbortedError(10053, 'An established connection was aborted by the software in your host machine', None, 10053, None))
+2025-04-20 19:01:27,149 [INFO] focus_monitor: Logged: claude.exe - 'Claude' (5s)
+2025-04-20 19:01:37,157 [INFO] focus_monitor: Logged: chrome.exe - 'Projects Hub - Google Chrome' (10s)
+2025-04-20 19:01:42,166 [WARNING] focus_monitor: Could not reach backend (http://localhost:8000) to check focus status: ('Connection aborted.', ConnectionAbortedError(10053, 'An established connection was aborted by the software in your host machine', None, 10053, None))
+2025-04-20 19:01:42,167 [INFO] focus_monitor: Logged: WindowsTerminal.exe - 'C:\WINDOWS\system32\cmd.exe ' (5s)
+2025-04-20 19:01:57,185 [WARNING] focus_monitor: Could not reach backend (http://localhost:8000) to check focus status: ('Connection aborted.', ConnectionAbortedError(10053, 'An established connection was aborted by the software in your host machine', None, 10053, None))
+2025-04-20 19:02:12,196 [WARNING] focus_monitor: Could not reach backend (http://localhost:8000) to check focus status: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+2025-04-20 19:02:27,215 [WARNING] focus_monitor: Could not reach backend (http://localhost:8000) to check focus status: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+2025-04-20 19:02:42,254 [WARNING] focus_monitor: Could not reach backend (http://localhost:8000) to check focus status: ('Connection aborted.', ConnectionAbortedError(10053, 'An established connection was aborted by the software in your host machine', None, 10053, None))
+2025-04-20 19:02:57,272 [WARNING] focus_monitor: Could not reach backend (http://localhost:8000) to check focus status: ('Connection aborted.', ConnectionAbortedError(10053, 'An established connection was aborted by the software in your host machine', None, 10053, None))
+2025-04-20 19:03:12,293 [WARNING] focus_monitor: Could not reach backend (http://localhost:8000) to check focus status: ('Connection aborted.', ConnectionAbortedError(10053, 'An established connection was aborted by the software in your host machine', None, 10053, None))
+2025-04-20 19:03:27,316 [WARNING] focus_monitor: Could not reach backend (http://localhost:8000) to check focus status: ('Connection aborted.', ConnectionAbortedError(10053, 'An established connection was aborted by the software in your host machine', None, 10053, None))
+2025-04-20 19:03:42,334 [WARNING] focus_monitor: Could not reach backend (http://localhost:8000) to check focus status: ('Connection aborted.', ConnectionAbortedError(10053, 'An established connection was aborted by the software in your host machine', None, 10053, None))
+2025-04-20 19:03:57,356 [WARNING] focus_monitor: Could not reach backend (http://localhost:8000) to check focus status: ('Connection aborted.', ConnectionAbortedError(10053, 'An established connection was aborted by the software in your host machine', None, 10053, None))
+2025-04-20 19:04:12,381 [WARNING] focus_monitor: Could not reach backend (http://localhost:8000) to check focus status: ('Connection aborted.', ConnectionAbortedError(10053, 'An established connection was aborted by the software in your host machine', None, 10053, None))
+2025-04-20 19:04:27,399 [WARNING] focus_monitor: Could not reach backend (http://localhost:8000) to check focus status: ('Connection aborted.', ConnectionAbortedError(10053, 'An established connection was aborted by the software in your host machine', None, 10053, None))
+2025-04-20 19:04:42,404 [WARNING] focus_monitor: Could not reach backend (http://localhost:8000) to check focus status: ('Connection aborted.', ConnectionAbortedError(10053, 'An established connection was aborted by the software in your host machine', None, 10053, None))
+2025-04-20 19:04:57,433 [WARNING] focus_monitor: Could not reach backend (http://localhost:8000) to check focus status: ('Connection aborted.', ConnectionAbortedError(10053, 'An established connection was aborted by the software in your host machine', None, 10053, None))
+2025-04-20 19:05:12,458 [WARNING] focus_monitor: Could not reach backend (http://localhost:8000) to check focus status: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+2025-04-20 19:05:27,472 [WARNING] focus_monitor: Could not reach backend (http://localhost:8000) to check focus status: ('Connection aborted.', ConnectionAbortedError(10053, 'An established connection was aborted by the software in your host machine', None, 10053, None))
+2025-04-20 19:05:42,499 [WARNING] focus_monitor: Could not reach backend (http://localhost:8000) to check focus status: ('Connection aborted.', ConnectionAbortedError(10053, 'An established connection was aborted by the software in your host machine', None, 10053, None))
+2025-04-20 19:05:57,532 [WARNING] focus_monitor: Could not reach backend (http://localhost:8000) to check focus status: ('Connection aborted.', ConnectionAbortedError(10053, 'An established connection was aborted by the software in your host machine', None, 10053, None))
+2025-04-20 19:06:12,554 [WARNING] focus_monitor: Could not reach backend (http://localhost:8000) to check focus status: ('Connection aborted.', ConnectionAbortedError(10053, 'An established connection was aborted by the software in your host machine', None, 10053, None))
+2025-04-20 19:06:27,564 [WARNING] focus_monitor: Could not reach backend (http://localhost:8000) to check focus status: ('Connection aborted.', ConnectionAbortedError(10053, 'An established connection was aborted by the software in your host machine', None, 10053, None))
+2025-04-20 19:06:42,590 [WARNING] focus_monitor: Could not reach backend (http://localhost:8000) to check focus status: ('Connection aborted.', ConnectionAbortedError(10053, 'An established connection was aborted by the software in your host machine', None, 10053, None))
+2025-04-20 19:06:57,622 [WARNING] focus_monitor: Could not reach backend (http://localhost:8000) to check focus status: ('Connection aborted.', ConnectionAbortedError(10053, 'An established connection was aborted by the software in your host machine', None, 10053, None))
+2025-04-20 19:07:12,643 [WARNING] focus_monitor: Could not reach backend (http://localhost:8000) to check focus status: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+2025-04-20 19:07:27,674 [WARNING] focus_monitor: Could not reach backend (http://localhost:8000) to check focus status: ('Connection aborted.', ConnectionAbortedError(10053, 'An established connection was aborted by the software in your host machine', None, 10053, None))
+2025-04-20 19:07:42,698 [WARNING] focus_monitor: Could not reach backend (http://localhost:8000) to check focus status: ('Connection aborted.', ConnectionAbortedError(10053, 'An established connection was aborted by the software in your host machine', None, 10053, None))
+2025-04-20 19:07:57,730 [WARNING] focus_monitor: Could not reach backend (http://localhost:8000) to check focus status: ('Connection aborted.', ConnectionAbortedError(10053, 'An established connection was aborted by the software in your host machine', None, 10053, None))
+2025-04-20 19:08:12,760 [WARNING] focus_monitor: Could not reach backend (http://localhost:8000) to check focus status: ('Connection aborted.', ConnectionAbortedError(10053, 'An established connection was aborted by the software in your host machine', None, 10053, None))
+2025-04-20 19:08:27,772 [WARNING] focus_monitor: Could not reach backend (http://localhost:8000) to check focus status: ('Connection aborted.', ConnectionAbortedError(10053, 'An established connection was aborted by the software in your host machine', None, 10053, None))
+2025-04-20 19:08:42,801 [WARNING] focus_monitor: Could not reach backend (http://localhost:8000) to check focus status: ('Connection aborted.', ConnectionAbortedError(10053, 'An established connection was aborted by the software in your host machine', None, 10053, None))
+2025-04-20 19:08:57,833 [WARNING] focus_monitor: Could not reach backend (http://localhost:8000) to check focus status: ('Connection aborted.', ConnectionAbortedError(10053, 'An established connection was aborted by the software in your host machine', None, 10053, None))
+2025-04-20 19:09:12,862 [WARNING] focus_monitor: Could not reach backend (http://localhost:8000) to check focus status: ('Connection aborted.', ConnectionAbortedError(10053, 'An established connection was aborted by the software in your host machine', None, 10053, None))
+2025-04-20 19:09:42,136 [INFO] focus_monitor: Initialized FocusMonitorAgent (Window Tracking). Output: C:\Users\admin\Desktop\LocalDashboard\LocalDashboard\ProjectsHub\focus_logs, API: http://localhost:8000
+2025-04-20 19:09:42,136 [INFO] focus_monitor: Starting Focus Monitor agent loop (Window Tracking). Interval: 5s
+2025-04-20 19:09:47,158 [INFO] focus_monitor: Logged: WindowsTerminal.exe - 'C:\Windows\system32\cmd.exe - python  focus_monitor_agent.py...' (5s)
+2025-04-20 19:10:07,197 [INFO] focus_monitor: Logged: chrome.exe - 'Projects Hub - Google Chrome' (20s)
+2025-04-20 19:10:17,200 [INFO] focus_monitor: Logged: WindowsTerminal.exe - 'C:\Windows\system32\cmd.exe - docker-compose  up --build' (10s)
+2025-04-20 19:10:32,247 [INFO] focus_monitor: Logged: chrome.exe - 'Projects Hub - Google Chrome' (15s)
+2025-04-20 19:11:42,369 [INFO] focus_monitor: Logged: claude.exe - 'Claude' (70s)
+2025-04-20 19:11:47,376 [INFO] focus_monitor: Logged: explorer.exe - 'Task Switching' (5s)
+2025-04-20 19:12:07,393 [INFO] focus_monitor: Logged: claude.exe - 'Claude' (20s)
+2025-04-20 19:12:12,389 [INFO] focus_monitor: Logged: chrome.exe - 'Projects Hub - Google Chrome' (4s)
+2025-04-20 19:12:42,450 [INFO] focus_monitor: Logged: claude.exe - 'Claude' (30s)
+2025-04-20 19:16:22,869 [INFO] focus_monitor: Logged: claude.exe - 'Claude' (210s)
+2025-04-20 19:16:47,909 [INFO] focus_monitor: Logged: chrome.exe - 'Projects Hub - Google Chrome' (25s)
+2025-04-20 19:17:05,973 [INFO] focus_monitor: Initialized FocusMonitorAgent (Window Tracking). Output: C:\Users\admin\Desktop\FocusTimer\focus_logs, API: http://localhost:8000
+2025-04-20 19:17:05,973 [INFO] focus_monitor: Starting Focus Monitor agent loop (Window Tracking). Interval: 5s
+2025-04-20 19:17:10,974 [INFO] focus_monitor: Logged: WindowsTerminal.exe - 'C:\Windows\system32\cmd.exe - python  focus_monitor_agent.py...' (4s)
+2025-04-20 19:17:31,003 [INFO] focus_monitor: Logged: chrome.exe - 'Projects Hub - Google Chrome' (20s)
+2025-04-20 19:17:46,035 [INFO] focus_monitor: Logged: WindowsTerminal.exe - 'C:\Windows\system32\cmd.exe - docker-compose  up --build' (15s)
+2025-04-20 19:17:51,036 [INFO] focus_monitor: Logged: WindowsTerminal.exe - 'C:\WINDOWS\system32\cmd.exe ' (5s)
+2025-04-20 19:17:56,042 [INFO] focus_monitor: Logged: chrome.exe - 'Projects Hub - Google Chrome' (5s)
+2025-04-20 19:18:11,062 [INFO] focus_monitor: Logged: claude.exe - 'Claude' (15s)
+2025-04-20 19:18:16,070 [INFO] focus_monitor: Logged: chrome.exe - 'Projects Hub - Google Chrome' (5s)
+2025-04-20 19:18:36,112 [INFO] focus_monitor: Logged: claude.exe - 'Claude' (20s)
+2025-04-20 19:18:41,116 [INFO] focus_monitor: Logged: explorer.exe - 'focus_logs - File Explorer' (5s)
+2025-04-20 19:19:46,272 [INFO] focus_monitor: Logged: claude.exe - 'Claude' (65s)
+2025-04-20 19:20:01,283 [INFO] focus_monitor: Logged: chrome.exe - 'Projects Hub - Google Chrome' (15s)
+2025-04-20 19:20:18,101 [INFO] focus_monitor: Initialized FocusMonitorAgent (Window Tracking). Output: C:\Users\admin\Desktop\FocusTimer\focus_logs, API: http://localhost:8000
+2025-04-20 19:20:18,102 [INFO] focus_monitor: Starting Focus Monitor agent loop (Window Tracking). Interval: 5s
+2025-04-20 19:20:23,098 [INFO] focus_monitor: Logged: WindowsTerminal.exe - 'C:\Windows\system32\cmd.exe - python  focus_monitor_agent.py...' (4s)
+2025-04-20 19:20:53,148 [INFO] focus_monitor: Logged: chrome.exe - 'Projects Hub - Google Chrome' (30s)
+2025-04-20 19:22:34,489 [INFO] focus_monitor: Current UTC date: 2025-04-20
+2025-04-20 19:22:34,489 [INFO] focus_monitor: Initialized FocusMonitorAgent (Window Tracking). Output: C:\Users\admin\Desktop\FocusTimer\focus_logs, API: http://localhost:8000
+2025-04-20 19:22:34,489 [INFO] focus_monitor: Starting Focus Monitor agent loop (Window Tracking). Interval: 5s
+2025-04-20 19:22:34,489 [INFO] focus_monitor: Current UTC date: 2025-04-20
+2025-04-20 19:22:39,481 [INFO] focus_monitor: Current UTC date: 2025-04-20
+2025-04-20 19:22:39,482 [INFO] focus_monitor: Logged: WindowsTerminal.exe - 'C:\Windows\system32\cmd.exe - python  focus_monitor_agent.py...' (4s)
+2025-04-20 19:22:44,496 [INFO] focus_monitor: Current UTC date: 2025-04-20
+2025-04-20 19:22:44,497 [INFO] focus_monitor: Logged: chrome.exe - 'Projects Hub - Google Chrome' (5s)
+2025-04-20 19:22:49,501 [INFO] focus_monitor: Current UTC date: 2025-04-20
+2025-04-20 19:22:54,513 [INFO] focus_monitor: Current UTC date: 2025-04-20
+2025-04-20 19:22:59,521 [INFO] focus_monitor: Current UTC date: 2025-04-20
+2025-04-20 19:23:04,550 [INFO] focus_monitor: Current UTC date: 2025-04-20
+2025-04-20 19:23:09,557 [INFO] focus_monitor: Current UTC date: 2025-04-20
+2025-04-20 19:23:14,571 [INFO] focus_monitor: Current UTC date: 2025-04-20
+2025-04-20 19:23:19,576 [INFO] focus_monitor: Current UTC date: 2025-04-20
+2025-04-20 19:23:24,584 [INFO] focus_monitor: Current UTC date: 2025-04-20
+2025-04-20 19:23:29,590 [INFO] focus_monitor: Current UTC date: 2025-04-20
+2025-04-20 19:23:34,607 [INFO] focus_monitor: Current UTC date: 2025-04-20
+2025-04-20 19:23:45,906 [INFO] focus_monitor: Current UTC date: 2025-04-20
+2025-04-20 19:23:45,907 [INFO] focus_monitor: Initialized FocusMonitorAgent (Window Tracking). Output: C:\Users\admin\Desktop\FocusTimer\focus_logs, API: http://localhost:8000
+2025-04-20 19:23:45,907 [INFO] focus_monitor: Starting Focus Monitor agent loop (Window Tracking). Interval: 5s
+2025-04-20 19:23:45,907 [INFO] focus_monitor: Current UTC date: 2025-04-20
+2025-04-20 19:23:45,925 [WARNING] focus_monitor: Could not reach backend (http://localhost:8000) to check focus status: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+2025-04-20 19:23:50,922 [INFO] focus_monitor: Current UTC date: 2025-04-20
+2025-04-20 19:23:50,923 [INFO] focus_monitor: Logged: WindowsTerminal.exe - 'Command Prompt - auto_sync_focus_logs.bat' (5s)
+2025-04-20 19:23:55,929 [INFO] focus_monitor: Current UTC date: 2025-04-20
+2025-04-20 19:24:00,948 [INFO] focus_monitor: Current UTC date: 2025-04-20
+2025-04-20 19:24:00,949 [INFO] focus_monitor: Logged: WindowsTerminal.exe - 'C:\WINDOWS\system32\cmd.exe ' (10s)
+2025-04-20 19:24:05,956 [INFO] focus_monitor: Current UTC date: 2025-04-20
+2025-04-20 19:24:05,957 [INFO] focus_monitor: Logged: chrome.exe - 'Projects Hub - Google Chrome' (5s)
+2025-04-20 19:24:10,964 [INFO] focus_monitor: Current UTC date: 2025-04-20
+2025-04-20 19:24:10,964 [INFO] focus_monitor: Logged: ShareX.exe - 'ShareX - Region capture' (5s)
+2025-04-20 19:24:15,970 [INFO] focus_monitor: Current UTC date: 2025-04-20
+2025-04-20 19:24:20,972 [INFO] focus_monitor: Current UTC date: 2025-04-20
+2025-04-20 19:24:25,976 [INFO] focus_monitor: Current UTC date: 2025-04-20
+2025-04-20 19:24:31,007 [INFO] focus_monitor: Current UTC date: 2025-04-20
+2025-04-20 19:24:36,019 [INFO] focus_monitor: Current UTC date: 2025-04-20
+2025-04-20 19:24:41,034 [INFO] focus_monitor: Current UTC date: 2025-04-20
+2025-04-20 19:24:46,030 [INFO] focus_monitor: Current UTC date: 2025-04-20
+2025-04-20 19:24:51,035 [INFO] focus_monitor: Current UTC date: 2025-04-20
+2025-04-20 19:24:56,049 [INFO] focus_monitor: Current UTC date: 2025-04-20
+2025-04-20 19:25:01,049 [INFO] focus_monitor: Current UTC date: 2025-04-20
+2025-04-20 19:25:06,056 [INFO] focus_monitor: Current UTC date: 2025-04-20
+2025-04-20 19:25:11,063 [INFO] focus_monitor: Current UTC date: 2025-04-20
+2025-04-20 19:25:11,063 [INFO] focus_monitor: Logged: claude.exe - 'Claude' (55s)
+2025-04-20 19:25:17,315 [INFO] focus_monitor: Current UTC date: 2025-04-20
+2025-04-20 19:25:17,315 [INFO] focus_monitor: Initialized FocusMonitorAgent (Window Tracking). Output: C:\Users\admin\Desktop\FocusTimer\focus_logs, API: http://localhost:8000
+2025-04-20 19:25:17,315 [INFO] focus_monitor: Starting Focus Monitor agent loop (Window Tracking). Interval: 5s
+2025-04-20 19:25:17,316 [INFO] focus_monitor: Current UTC date: 2025-04-20
+2025-04-20 19:25:18,338 [WARNING] focus_monitor: Could not reach backend (http://localhost:8000) to check focus status: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+2025-04-20 19:25:22,318 [INFO] focus_monitor: Current UTC date: 2025-04-20
+2025-04-20 19:25:22,318 [INFO] focus_monitor: Logged: WindowsTerminal.exe - 'Command Prompt - timeout  /t 5 ' (5s)
+2025-04-20 19:25:27,321 [INFO] focus_monitor: Current UTC date: 2025-04-20
+2025-04-20 19:25:27,322 [INFO] focus_monitor: Logged: WindowsTerminal.exe - 'C:\WINDOWS\system32\cmd.exe ' (5s)
+2025-04-20 19:25:32,334 [INFO] focus_monitor: Current UTC date: 2025-04-20
+2025-04-20 19:25:37,351 [INFO] focus_monitor: Current UTC date: 2025-04-20
+2025-04-20 19:25:42,355 [INFO] focus_monitor: Current UTC date: 2025-04-20
+2025-04-20 19:25:47,361 [INFO] focus_monitor: Current UTC date: 2025-04-20
+2025-04-20 19:25:52,371 [INFO] focus_monitor: Current UTC date: 2025-04-20
+2025-04-20 19:25:57,385 [INFO] focus_monitor: Current UTC date: 2025-04-20
+2025-04-20 19:26:02,389 [INFO] focus_monitor: Current UTC date: 2025-04-20
+2025-04-20 19:26:07,408 [INFO] focus_monitor: Current UTC date: 2025-04-20
+2025-04-20 19:26:12,409 [INFO] focus_monitor: Current UTC date: 2025-04-20
+2025-04-20 19:26:17,411 [INFO] focus_monitor: Current UTC date: 2025-04-20
+2025-04-20 19:26:22,418 [INFO] focus_monitor: Current UTC date: 2025-04-20
+2025-04-20 19:26:27,428 [INFO] focus_monitor: Current UTC date: 2025-04-20
+2025-04-20 19:26:32,443 [INFO] focus_monitor: Current UTC date: 2025-04-20
+2025-04-20 19:26:37,454 [INFO] focus_monitor: Current UTC date: 2025-04-20
+2025-04-20 19:26:42,458 [INFO] focus_monitor: Current UTC date: 2025-04-20
+2025-04-20 19:26:47,463 [INFO] focus_monitor: Current UTC date: 2025-04-20
+2025-04-20 19:26:52,470 [INFO] focus_monitor: Current UTC date: 2025-04-20
+2025-04-20 19:26:52,471 [INFO] focus_monitor: Logged: chrome.exe - 'Projects Hub - Google Chrome' (85s)
+2025-04-20 19:26:57,476 [INFO] focus_monitor: Current UTC date: 2025-04-20
+2025-04-20 19:26:57,477 [INFO] focus_monitor: Logged: claude.exe - 'Claude' (5s)
+2025-04-20 19:27:02,489 [INFO] focus_monitor: Current UTC date: 2025-04-20
+2025-04-20 19:27:07,485 [INFO] focus_monitor: Current UTC date: 2025-04-20
+2025-04-20 19:27:12,500 [INFO] focus_monitor: Current UTC date: 2025-04-20
+2025-04-20 19:27:17,506 [INFO] focus_monitor: Current UTC date: 2025-04-20
+2025-04-20 19:27:22,517 [INFO] focus_monitor: Current UTC date: 2025-04-20
+2025-04-20 19:27:27,521 [INFO] focus_monitor: Current UTC date: 2025-04-20
+2025-04-20 19:27:27,522 [INFO] focus_monitor: Logged: chrome.exe - 'Projects Hub - Google Chrome' (30s)
+2025-04-20 19:27:32,524 [INFO] focus_monitor: Current UTC date: 2025-04-20
+2025-04-20 19:27:37,528 [INFO] focus_monitor: Current UTC date: 2025-04-20
+2025-04-20 19:27:42,543 [INFO] focus_monitor: Current UTC date: 2025-04-20
+2025-04-20 19:27:47,544 [INFO] focus_monitor: Current UTC date: 2025-04-20
+2025-04-20 19:27:52,550 [INFO] focus_monitor: Current UTC date: 2025-04-20
+2025-04-20 19:27:57,553 [INFO] focus_monitor: Current UTC date: 2025-04-20
+2025-04-20 19:28:02,568 [INFO] focus_monitor: Current UTC date: 2025-04-20
+2025-04-20 19:28:07,571 [INFO] focus_monitor: Current UTC date: 2025-04-20
+2025-04-20 19:28:12,578 [INFO] focus_monitor: Current UTC date: 2025-04-20
+2025-04-20 19:28:17,583 [INFO] focus_monitor: Current UTC date: 2025-04-20
+2025-04-20 19:28:22,592 [INFO] focus_monitor: Current UTC date: 2025-04-20
+2025-04-20 19:28:22,593 [INFO] focus_monitor: Logged: claude.exe - 'Claude' (55s)
+2025-04-20 19:28:27,598 [INFO] focus_monitor: Current UTC date: 2025-04-20
+2025-04-20 19:28:32,606 [INFO] focus_monitor: Current UTC date: 2025-04-20
+2025-04-20 19:28:37,621 [INFO] focus_monitor: Current UTC date: 2025-04-20
+2025-04-20 19:28:42,625 [INFO] focus_monitor: Current UTC date: 2025-04-20
+2025-04-20 19:28:47,631 [INFO] focus_monitor: Current UTC date: 2025-04-20
+2025-04-20 19:28:47,632 [INFO] focus_monitor: Logged: chrome.exe - 'Projects Hub - Google Chrome' (25s)
+2025-04-20 19:28:52,626 [INFO] focus_monitor: Current UTC date: 2025-04-20
+2025-04-20 19:28:57,636 [INFO] focus_monitor: Current UTC date: 2025-04-20
+2025-04-20 19:29:02,649 [INFO] focus_monitor: Current UTC date: 2025-04-20
+2025-04-20 19:29:07,654 [INFO] focus_monitor: Current UTC date: 2025-04-20
+2025-04-20 19:29:12,663 [INFO] focus_monitor: Current UTC date: 2025-04-20
+2025-04-20 19:29:17,674 [INFO] focus_monitor: Current UTC date: 2025-04-20
+2025-04-20 19:29:22,689 [INFO] focus_monitor: Current UTC date: 2025-04-20
+2025-04-20 19:29:27,691 [INFO] focus_monitor: Current UTC date: 2025-04-20
+2025-04-20 19:29:32,702 [INFO] focus_monitor: Current UTC date: 2025-04-20
+2025-04-20 19:29:37,702 [INFO] focus_monitor: Current UTC date: 2025-04-20
+2025-04-20 19:29:37,703 [INFO] focus_monitor: Logged: claude.exe - 'Claude' (50s)
+2025-04-20 19:29:42,706 [INFO] focus_monitor: Current UTC date: 2025-04-20
+2025-04-20 19:29:42,708 [INFO] focus_monitor: Logged: SearchHost.exe - 'Search' (5s)
+2025-04-20 19:29:47,714 [INFO] focus_monitor: Current UTC date: 2025-04-20
+2025-04-20 19:29:52,724 [INFO] focus_monitor: Current UTC date: 2025-04-20
+2025-04-20 19:29:57,725 [INFO] focus_monitor: Current UTC date: 2025-04-20
+2025-04-20 19:30:02,740 [INFO] focus_monitor: Current UTC date: 2025-04-20
+2025-04-20 19:30:07,747 [INFO] focus_monitor: Current UTC date: 2025-04-20
+2025-04-20 19:30:12,754 [INFO] focus_monitor: Current UTC date: 2025-04-20
+2025-04-20 19:30:17,763 [INFO] focus_monitor: Current UTC date: 2025-04-20
+2025-04-20 19:30:22,776 [INFO] focus_monitor: Current UTC date: 2025-04-20
+2025-04-20 19:30:27,780 [INFO] focus_monitor: Current UTC date: 2025-04-20
+2025-04-20 19:30:27,781 [INFO] focus_monitor: Logged: claude.exe - 'Claude' (45s)
+2025-04-20 19:30:32,780 [INFO] focus_monitor: Current UTC date: 2025-04-20
+2025-04-20 19:30:32,781 [INFO] focus_monitor: Logged: brave.exe - 'Introduction - Model Context Protocol - Brave' (4s)
+2025-04-20 19:30:37,792 [INFO] focus_monitor: Current UTC date: 2025-04-20
+2025-04-20 19:30:42,802 [INFO] focus_monitor: Current UTC date: 2025-04-20
+2025-04-20 19:30:47,804 [INFO] focus_monitor: Current UTC date: 2025-04-20
+2025-04-20 19:30:47,805 [INFO] focus_monitor: Logged: brave.exe - 'Example Servers - Model Context Protocol - Brave' (15s)
+2025-04-20 19:30:52,814 [INFO] focus_monitor: Current UTC date: 2025-04-20
+2025-04-20 19:30:57,815 [INFO] focus_monitor: Current UTC date: 2025-04-20
+2025-04-20 19:31:02,822 [INFO] focus_monitor: Current UTC date: 2025-04-20
+2025-04-20 19:31:02,823 [INFO] focus_monitor: Logged: chrome.exe - 'Projects Hub - Google Chrome' (15s)
+2025-04-20 19:31:07,816 [INFO] focus_monitor: Current UTC date: 2025-04-20
+2025-04-20 19:31:07,817 [INFO] focus_monitor: Logged: brave.exe - 'Example Servers - Model Context Protocol - Brave' (4s)
+2025-04-20 19:31:12,821 [INFO] focus_monitor: Current UTC date: 2025-04-20
+2025-04-20 19:31:17,836 [INFO] focus_monitor: Current UTC date: 2025-04-20
+2025-04-20 19:31:22,832 [INFO] focus_monitor: Current UTC date: 2025-04-20
+2025-04-20 19:31:27,844 [INFO] focus_monitor: Current UTC date: 2025-04-20
+2025-04-20 19:31:32,857 [INFO] focus_monitor: Current UTC date: 2025-04-20
+2025-04-20 19:31:37,882 [INFO] focus_monitor: Current UTC date: 2025-04-20
+2025-04-20 19:31:42,886 [INFO] focus_monitor: Current UTC date: 2025-04-20
+2025-04-20 19:31:42,887 [INFO] focus_monitor: Logged: claude.exe - 'Claude' (35s)
+2025-04-20 19:31:47,901 [INFO] focus_monitor: Current UTC date: 2025-04-20
+2025-04-20 19:31:52,896 [INFO] focus_monitor: Current UTC date: 2025-04-20
+2025-04-20 19:31:52,897 [INFO] focus_monitor: Logged: chrome.exe - 'Projects Hub - Google Chrome' (10s)
+2025-04-20 19:31:57,896 [INFO] focus_monitor: Current UTC date: 2025-04-20
+2025-04-20 19:32:02,908 [INFO] focus_monitor: Current UTC date: 2025-04-20
+2025-04-20 19:32:07,913 [INFO] focus_monitor: Current UTC date: 2025-04-20
+2025-04-20 19:32:12,918 [INFO] focus_monitor: Current UTC date: 2025-04-20
+2025-04-20 19:32:17,929 [INFO] focus_monitor: Current UTC date: 2025-04-20
+2025-04-20 19:32:22,941 [INFO] focus_monitor: Current UTC date: 2025-04-20
+2025-04-20 19:32:27,955 [INFO] focus_monitor: Current UTC date: 2025-04-20
+2025-04-20 19:32:32,959 [INFO] focus_monitor: Current UTC date: 2025-04-20
+2025-04-20 19:32:37,962 [INFO] focus_monitor: Current UTC date: 2025-04-20
+2025-04-20 19:32:42,962 [INFO] focus_monitor: Current UTC date: 2025-04-20
+2025-04-20 19:32:42,963 [INFO] focus_monitor: Logged: claude.exe - 'Claude' (50s)
+2025-04-20 19:32:47,973 [INFO] focus_monitor: Current UTC date: 2025-04-20
+2025-04-20 19:32:52,982 [INFO] focus_monitor: Current UTC date: 2025-04-20
+2025-04-20 19:32:57,997 [INFO] focus_monitor: Current UTC date: 2025-04-20
+2025-04-20 19:33:03,012 [INFO] focus_monitor: Current UTC date: 2025-04-20
+2025-04-20 19:33:08,034 [INFO] focus_monitor: Current UTC date: 2025-04-20
+2025-04-20 19:33:13,036 [INFO] focus_monitor: Current UTC date: 2025-04-20
+2025-04-20 19:33:18,047 [INFO] focus_monitor: Current UTC date: 2025-04-20
+2025-04-20 19:33:27,677 [INFO] focus_monitor: Current UTC date: 2025-04-20
+2025-04-20 19:33:27,677 [INFO] focus_monitor: Initialized FocusMonitorAgent (Window Tracking). Output: C:\Users\admin\Desktop\FocusTimer\focus_logs, API: http://localhost:8000
+2025-04-20 19:33:27,677 [INFO] focus_monitor: Starting Focus Monitor agent loop (Window Tracking). Interval: 5s
+2025-04-20 19:33:27,677 [INFO] focus_monitor: Current UTC date: 2025-04-20
+2025-04-20 19:33:28,707 [WARNING] focus_monitor: Could not reach backend (http://localhost:8000) to check focus status: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+2025-04-20 19:33:32,682 [INFO] focus_monitor: Current UTC date: 2025-04-20
+2025-04-20 19:33:32,682 [INFO] focus_monitor: Logged: WindowsTerminal.exe - 'Command Prompt - timeout  /t 5 ' (5s)
+2025-04-20 19:33:37,687 [INFO] focus_monitor: Current UTC date: 2025-04-20
+2025-04-20 19:33:42,701 [INFO] focus_monitor: Current UTC date: 2025-04-20
+2025-04-20 19:33:47,710 [INFO] focus_monitor: Current UTC date: 2025-04-20
+2025-04-20 19:33:52,714 [INFO] focus_monitor: Current UTC date: 2025-04-20
+2025-04-20 19:33:57,729 [INFO] focus_monitor: Current UTC date: 2025-04-20
+2025-04-20 19:33:57,730 [INFO] focus_monitor: Logged: chrome.exe - 'Projects Hub - Google Chrome' (25s)
+2025-04-20 19:34:02,744 [INFO] focus_monitor: Current UTC date: 2025-04-20
+2025-04-20 19:34:07,749 [INFO] focus_monitor: Current UTC date: 2025-04-20
+2025-04-20 19:34:12,753 [INFO] focus_monitor: Current UTC date: 2025-04-20
+2025-04-20 19:34:17,761 [INFO] focus_monitor: Current UTC date: 2025-04-20
+2025-04-20 19:34:22,773 [INFO] focus_monitor: Current UTC date: 2025-04-20
+2025-04-20 19:34:27,775 [INFO] focus_monitor: Current UTC date: 2025-04-20
+2025-04-20 19:34:32,778 [INFO] focus_monitor: Current UTC date: 2025-04-20
+2025-04-20 19:34:37,781 [INFO] focus_monitor: Current UTC date: 2025-04-20
+2025-04-20 19:34:42,789 [INFO] focus_monitor: Current UTC date: 2025-04-20
+2025-04-20 19:34:47,798 [INFO] focus_monitor: Current UTC date: 2025-04-20
+2025-04-20 19:34:52,806 [INFO] focus_monitor: Current UTC date: 2025-04-20
+2025-04-20 19:34:52,807 [INFO] focus_monitor: Logged: claude.exe - 'Claude' (55s)
+2025-04-20 19:34:57,814 [INFO] focus_monitor: Current UTC date: 2025-04-20
+2025-04-20 19:35:02,823 [INFO] focus_monitor: Current UTC date: 2025-04-20
+2025-04-20 19:35:07,831 [INFO] focus_monitor: Current UTC date: 2025-04-20
+2025-04-20 19:35:12,836 [INFO] focus_monitor: Current UTC date: 2025-04-20
+2025-04-20 19:35:17,833 [INFO] focus_monitor: Current UTC date: 2025-04-20
+2025-04-20 19:35:22,837 [INFO] focus_monitor: Current UTC date: 2025-04-20
+2025-04-20 19:35:22,837 [INFO] focus_monitor: Logged: chrome.exe - 'Projects Hub - Google Chrome' (30s)
+2025-04-20 19:35:27,843 [INFO] focus_monitor: Current UTC date: 2025-04-20
+2025-04-20 19:35:32,865 [INFO] focus_monitor: Current UTC date: 2025-04-20
+2025-04-20 19:35:32,866 [INFO] focus_monitor: Logged: claude.exe - 'Claude' (10s)
+2025-04-20 19:35:37,871 [INFO] focus_monitor: Current UTC date: 2025-04-20
+2025-04-20 19:35:37,872 [INFO] focus_monitor: Logged: explorer.exe - 'focus_logs - File Explorer' (5s)
+2025-04-20 19:35:42,878 [INFO] focus_monitor: Current UTC date: 2025-04-20
+2025-04-20 19:35:42,879 [INFO] focus_monitor: Logged: explorer.exe - 'Desktop - File Explorer' (5s)
+2025-04-20 19:35:47,884 [INFO] focus_monitor: Current UTC date: 2025-04-20
+2025-04-20 19:35:47,885 [INFO] focus_monitor: Logged: explorer.exe - 'ProjectsHub - File Explorer' (5s)
+2025-04-20 19:35:52,890 [INFO] focus_monitor: Current UTC date: 2025-04-20
+2025-04-20 19:35:57,899 [INFO] focus_monitor: Current UTC date: 2025-04-20
+2025-04-20 19:35:57,900 [INFO] focus_monitor: Logged: explorer.exe - 'LocalDashboard - File Explorer' (10s)
+2025-04-20 19:36:02,896 [INFO] focus_monitor: Current UTC date: 2025-04-20
+2025-04-20 19:36:02,897 [INFO] focus_monitor: Logged: explorer.exe - 'ProjectsHub - File Explorer' (4s)
+2025-04-20 19:36:07,909 [INFO] focus_monitor: Current UTC date: 2025-04-20
+2025-04-20 19:36:07,909 [INFO] focus_monitor: Logged: explorer.exe - 'LocalDashboard - File Explorer' (5s)
+2025-04-20 19:36:12,911 [INFO] focus_monitor: Current UTC date: 2025-04-20
+2025-04-20 19:36:12,912 [INFO] focus_monitor: Logged: explorer.exe - 'src-tauri - File Explorer' (5s)
+2025-04-20 19:36:17,909 [INFO] focus_monitor: Current UTC date: 2025-04-20
+2025-04-20 19:36:17,910 [INFO] focus_monitor: Logged: chrome.exe - 'Projects Hub - Google Chrome' (4s)
+2025-04-20 19:36:22,923 [INFO] focus_monitor: Current UTC date: 2025-04-20
+2025-04-20 19:36:22,924 [INFO] focus_monitor: Logged: claude.exe - 'Claude' (5s)
+2025-04-20 19:36:27,936 [INFO] focus_monitor: Current UTC date: 2025-04-20
+2025-04-20 19:36:32,937 [INFO] focus_monitor: Current UTC date: 2025-04-20
+2025-04-20 19:36:37,945 [INFO] focus_monitor: Current UTC date: 2025-04-20
+2025-04-20 19:36:42,955 [INFO] focus_monitor: Current UTC date: 2025-04-20
+2025-04-20 19:36:47,955 [INFO] focus_monitor: Current UTC date: 2025-04-20
+2025-04-20 19:36:47,956 [INFO] focus_monitor: Logged: chrome.exe - 'Projects Hub - Google Chrome' (25s)
+2025-04-20 19:36:52,960 [INFO] focus_monitor: Current UTC date: 2025-04-20
+2025-04-20 19:36:57,975 [INFO] focus_monitor: Current UTC date: 2025-04-20
+2025-04-20 19:37:02,987 [INFO] focus_monitor: Current UTC date: 2025-04-20
+2025-04-20 19:37:07,993 [INFO] focus_monitor: Current UTC date: 2025-04-20
+2025-04-20 19:37:13,001 [INFO] focus_monitor: Current UTC date: 2025-04-20
+2025-04-20 19:37:18,018 [INFO] focus_monitor: Current UTC date: 2025-04-20
+2025-04-20 19:37:23,030 [INFO] focus_monitor: Current UTC date: 2025-04-20
+2025-04-20 19:37:28,041 [INFO] focus_monitor: Current UTC date: 2025-04-20
+2025-04-20 19:37:33,043 [INFO] focus_monitor: Current UTC date: 2025-04-20
+2025-04-20 19:37:33,043 [INFO] focus_monitor: Logged: claude.exe - 'Claude' (45s)
+2025-04-20 19:37:38,050 [INFO] focus_monitor: Current UTC date: 2025-04-20
+2025-04-20 19:37:43,064 [INFO] focus_monitor: Current UTC date: 2025-04-20
+2025-04-20 19:37:48,079 [INFO] focus_monitor: Current UTC date: 2025-04-20
+2025-04-20 19:37:53,093 [INFO] focus_monitor: Current UTC date: 2025-04-20
+2025-04-20 19:37:58,103 [INFO] focus_monitor: Current UTC date: 2025-04-20
+2025-04-20 19:38:03,110 [INFO] focus_monitor: Current UTC date: 2025-04-20
+2025-04-20 19:38:08,114 [INFO] focus_monitor: Current UTC date: 2025-04-20
+2025-04-20 19:38:13,119 [INFO] focus_monitor: Current UTC date: 2025-04-20
+2025-04-20 19:38:18,110 [INFO] focus_monitor: Current UTC date: 2025-04-20
+2025-04-20 19:38:23,114 [INFO] focus_monitor: Current UTC date: 2025-04-20
+2025-04-20 19:38:28,129 [INFO] focus_monitor: Current UTC date: 2025-04-20
+2025-04-20 19:38:33,137 [INFO] focus_monitor: Current UTC date: 2025-04-20
+2025-04-20 19:38:38,152 [INFO] focus_monitor: Current UTC date: 2025-04-20
+2025-04-20 19:38:43,161 [INFO] focus_monitor: Current UTC date: 2025-04-20
+2025-04-20 19:38:48,162 [INFO] focus_monitor: Current UTC date: 2025-04-20
+2025-04-20 19:38:53,171 [INFO] focus_monitor: Current UTC date: 2025-04-20
+2025-04-20 19:38:58,173 [INFO] focus_monitor: Current UTC date: 2025-04-20
+2025-04-20 19:39:03,185 [INFO] focus_monitor: Current UTC date: 2025-04-20
+2025-04-20 19:39:08,195 [INFO] focus_monitor: Current UTC date: 2025-04-20
+2025-04-20 19:39:08,196 [INFO] focus_monitor: Logged: chrome.exe - 'Projects Hub - Google Chrome' (95s)
+2025-04-20 19:39:21,126 [INFO] focus_monitor: Current UTC date: 2025-04-20
+2025-04-20 19:39:21,126 [INFO] focus_monitor: Initialized FocusMonitorAgent (Window Tracking). Output: C:\Users\admin\Desktop\FocusTimer\focus_logs, API: http://localhost:8000
+2025-04-20 19:39:21,126 [INFO] focus_monitor: Starting Focus Monitor agent loop (Window Tracking). Interval: 5s
+2025-04-20 19:39:21,127 [INFO] focus_monitor: Current UTC date: 2025-04-20
+2025-04-20 19:39:22,156 [WARNING] focus_monitor: Could not reach backend (http://localhost:8000) to check focus status: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+2025-04-20 19:39:26,128 [INFO] focus_monitor: Current UTC date: 2025-04-20
+2025-04-20 19:39:26,129 [INFO] focus_monitor: Logged: WindowsTerminal.exe - 'Command Prompt - timeout  /t 5 ' (5s)
+2025-04-20 19:39:31,140 [INFO] focus_monitor: Current UTC date: 2025-04-20
+2025-04-20 19:39:36,142 [INFO] focus_monitor: Current UTC date: 2025-04-20
+2025-04-20 19:39:41,150 [INFO] focus_monitor: Current UTC date: 2025-04-20
+2025-04-20 19:39:41,151 [INFO] focus_monitor: Logged: chrome.exe - 'Projects Hub - Google Chrome' (15s)
+2025-04-20 19:39:46,159 [INFO] focus_monitor: Current UTC date: 2025-04-20
+2025-04-20 19:39:46,160 [INFO] focus_monitor: Logged: ShareX.exe - 'ShareX - Editor menu' (5s)
+2025-04-20 19:39:51,172 [INFO] focus_monitor: Current UTC date: 2025-04-20
+2025-04-20 19:39:51,173 [INFO] focus_monitor: Logged: ShareX.exe - 'ShareX - Image editor - 1718x1270' (5s)
+2025-04-20 19:39:56,185 [INFO] focus_monitor: Current UTC date: 2025-04-20
+2025-04-20 19:40:01,191 [INFO] focus_monitor: Current UTC date: 2025-04-20
+2025-04-20 19:40:06,206 [INFO] focus_monitor: Current UTC date: 2025-04-20
+2025-04-20 19:40:11,202 [INFO] focus_monitor: Current UTC date: 2025-04-20
+2025-04-20 19:40:16,206 [INFO] focus_monitor: Current UTC date: 2025-04-20
+2025-04-20 19:40:21,219 [INFO] focus_monitor: Current UTC date: 2025-04-20
+2025-04-20 19:40:26,229 [INFO] focus_monitor: Current UTC date: 2025-04-20
+2025-04-20 19:40:31,243 [INFO] focus_monitor: Current UTC date: 2025-04-20
+2025-04-20 19:40:36,248 [INFO] focus_monitor: Current UTC date: 2025-04-20
+2025-04-20 19:40:41,266 [INFO] focus_monitor: Current UTC date: 2025-04-20
+2025-04-20 19:40:46,275 [INFO] focus_monitor: Current UTC date: 2025-04-20
+2025-04-20 19:40:51,288 [INFO] focus_monitor: Current UTC date: 2025-04-20
+2025-04-20 19:40:56,296 [INFO] focus_monitor: Current UTC date: 2025-04-20
+2025-04-20 19:41:01,296 [INFO] focus_monitor: Current UTC date: 2025-04-20
+2025-04-20 19:41:06,299 [INFO] focus_monitor: Current UTC date: 2025-04-20
+2025-04-20 19:41:11,311 [INFO] focus_monitor: Current UTC date: 2025-04-20
+2025-04-20 19:41:16,317 [INFO] focus_monitor: Current UTC date: 2025-04-20
+2025-04-20 19:41:21,327 [INFO] focus_monitor: Current UTC date: 2025-04-20
+2025-04-20 19:41:26,344 [INFO] focus_monitor: Current UTC date: 2025-04-20
+2025-04-20 19:41:31,358 [INFO] focus_monitor: Current UTC date: 2025-04-20
+2025-04-20 19:41:36,371 [INFO] focus_monitor: Current UTC date: 2025-04-20
+2025-04-20 19:41:41,398 [INFO] focus_monitor: Current UTC date: 2025-04-20
+2025-04-20 19:41:46,413 [INFO] focus_monitor: Current UTC date: 2025-04-20
+2025-04-20 19:41:51,428 [INFO] focus_monitor: Current UTC date: 2025-04-20
+2025-04-20 19:41:56,436 [INFO] focus_monitor: Current UTC date: 2025-04-20
+2025-04-20 19:42:01,436 [INFO] focus_monitor: Current UTC date: 2025-04-20
+2025-04-20 19:42:06,441 [INFO] focus_monitor: Current UTC date: 2025-04-20
+2025-04-20 19:42:11,437 [INFO] focus_monitor: Current UTC date: 2025-04-20
+2025-04-20 19:42:16,448 [INFO] focus_monitor: Current UTC date: 2025-04-20
+2025-04-20 19:42:21,449 [INFO] focus_monitor: Current UTC date: 2025-04-20
+2025-04-20 19:42:26,466 [INFO] focus_monitor: Current UTC date: 2025-04-20
+2025-04-20 19:42:31,472 [INFO] focus_monitor: Current UTC date: 2025-04-20
+2025-04-20 19:42:36,478 [INFO] focus_monitor: Current UTC date: 2025-04-20
+2025-04-20 19:42:41,478 [INFO] focus_monitor: Current UTC date: 2025-04-20
+2025-04-20 19:42:46,489 [INFO] focus_monitor: Current UTC date: 2025-04-20
+2025-04-20 19:42:51,502 [INFO] focus_monitor: Current UTC date: 2025-04-20
+2025-04-20 19:42:56,502 [INFO] focus_monitor: Current UTC date: 2025-04-20
+2025-04-20 19:43:01,506 [INFO] focus_monitor: Current UTC date: 2025-04-20
+2025-04-20 19:43:06,519 [INFO] focus_monitor: Current UTC date: 2025-04-20
+2025-04-20 19:43:11,536 [INFO] focus_monitor: Current UTC date: 2025-04-20
+2025-04-20 19:43:16,545 [INFO] focus_monitor: Current UTC date: 2025-04-20
+2025-04-20 19:43:21,548 [INFO] focus_monitor: Current UTC date: 2025-04-20
+2025-04-20 19:43:26,550 [INFO] focus_monitor: Current UTC date: 2025-04-20
+2025-04-20 19:43:31,553 [INFO] focus_monitor: Current UTC date: 2025-04-20
+2025-04-20 19:43:36,567 [INFO] focus_monitor: Current UTC date: 2025-04-20
+2025-04-20 19:43:41,575 [INFO] focus_monitor: Current UTC date: 2025-04-20
+2025-04-20 19:43:46,585 [INFO] focus_monitor: Current UTC date: 2025-04-20
+2025-04-20 19:43:46,585 [INFO] focus_monitor: Logged: claude.exe - 'Claude' (235s)
+2025-04-20 19:43:51,586 [INFO] focus_monitor: Current UTC date: 2025-04-20
+2025-04-20 19:43:56,594 [INFO] focus_monitor: Current UTC date: 2025-04-20
+2025-04-20 19:44:01,596 [INFO] focus_monitor: Current UTC date: 2025-04-20
+2025-04-20 19:44:06,606 [INFO] focus_monitor: Current UTC date: 2025-04-20
+2025-04-20 19:44:11,624 [INFO] focus_monitor: Current UTC date: 2025-04-20
+2025-04-20 19:44:16,628 [INFO] focus_monitor: Current UTC date: 2025-04-20
+2025-04-20 19:44:21,632 [INFO] focus_monitor: Current UTC date: 2025-04-20
+2025-04-20 19:44:26,634 [INFO] focus_monitor: Current UTC date: 2025-04-20
+2025-04-20 19:44:31,645 [INFO] focus_monitor: Current UTC date: 2025-04-20
+2025-04-20 19:44:31,646 [INFO] focus_monitor: Logged: chrome.exe - 'Projects Hub - Google Chrome' (45s)
+2025-04-20 19:44:36,660 [INFO] focus_monitor: Current UTC date: 2025-04-20
+2025-04-20 19:44:36,661 [INFO] focus_monitor: Logged: claude.exe - 'Claude' (5s)
+2025-04-20 19:44:41,665 [INFO] focus_monitor: Current UTC date: 2025-04-20
+2025-04-20 19:44:46,665 [INFO] focus_monitor: Current UTC date: 2025-04-20
+2025-04-20 19:44:51,670 [INFO] focus_monitor: Current UTC date: 2025-04-20
+2025-04-20 19:44:56,683 [INFO] focus_monitor: Current UTC date: 2025-04-20
+2025-04-20 19:45:01,690 [INFO] focus_monitor: Current UTC date: 2025-04-20
+2025-04-20 19:45:06,693 [INFO] focus_monitor: Current UTC date: 2025-04-20
+2025-04-20 19:45:11,688 [INFO] focus_monitor: Current UTC date: 2025-04-20
+2025-04-20 19:45:16,695 [INFO] focus_monitor: Current UTC date: 2025-04-20
+2025-04-20 19:45:21,705 [INFO] focus_monitor: Current UTC date: 2025-04-20
+2025-04-20 19:45:26,717 [INFO] focus_monitor: Current UTC date: 2025-04-20
+2025-04-20 19:45:31,717 [INFO] focus_monitor: Current UTC date: 2025-04-20
+2025-04-20 19:45:36,722 [INFO] focus_monitor: Current UTC date: 2025-04-20
+2025-04-20 19:45:41,726 [INFO] focus_monitor: Current UTC date: 2025-04-20
+2025-04-20 19:45:46,731 [INFO] focus_monitor: Current UTC date: 2025-04-20
+2025-04-20 19:45:51,745 [INFO] focus_monitor: Current UTC date: 2025-04-20
+2025-04-20 19:45:56,758 [INFO] focus_monitor: Current UTC date: 2025-04-20
+2025-04-20 19:46:01,771 [INFO] focus_monitor: Current UTC date: 2025-04-20
+2025-04-20 19:46:06,785 [INFO] focus_monitor: Current UTC date: 2025-04-20
+2025-04-20 19:46:11,790 [INFO] focus_monitor: Current UTC date: 2025-04-20
+2025-04-20 19:46:16,802 [INFO] focus_monitor: Current UTC date: 2025-04-20
+2025-04-20 19:46:21,804 [INFO] focus_monitor: Current UTC date: 2025-04-20
+2025-04-20 19:46:26,807 [INFO] focus_monitor: Current UTC date: 2025-04-20
+2025-04-20 19:46:31,814 [INFO] focus_monitor: Current UTC date: 2025-04-20
+2025-04-20 19:46:31,815 [INFO] focus_monitor: Logged: chrome.exe - 'Projects Hub - Google Chrome' (115s)
+2025-04-20 19:46:36,819 [INFO] focus_monitor: Current UTC date: 2025-04-20
+2025-04-20 19:46:36,820 [INFO] focus_monitor: Logged: claude.exe - 'Claude' (5s)
+2025-04-20 19:46:41,820 [INFO] focus_monitor: Current UTC date: 2025-04-20
+2025-04-20 19:46:41,821 [INFO] focus_monitor: Logged: ShareX.exe - 'ShareX - Image editor - 1718x1270' (5s)
+2025-04-20 19:46:46,822 [INFO] focus_monitor: Current UTC date: 2025-04-20
+2025-04-20 19:46:51,835 [INFO] focus_monitor: Current UTC date: 2025-04-20
+2025-04-20 19:46:56,844 [INFO] focus_monitor: Current UTC date: 2025-04-20
+2025-04-20 19:47:01,853 [INFO] focus_monitor: Current UTC date: 2025-04-20
+2025-04-20 19:47:06,858 [INFO] focus_monitor: Current UTC date: 2025-04-20
+2025-04-20 19:47:11,875 [INFO] focus_monitor: Current UTC date: 2025-04-20
+2025-04-20 19:47:16,883 [INFO] focus_monitor: Current UTC date: 2025-04-20
+2025-04-20 19:47:16,884 [INFO] focus_monitor: Logged: claude.exe - 'Claude' (35s)
+2025-04-20 19:47:21,886 [INFO] focus_monitor: Current UTC date: 2025-04-20
+2025-04-20 19:47:26,907 [INFO] focus_monitor: Current UTC date: 2025-04-20

@@ -64,7 +64,9 @@ const Tasks: React.FC = () => {
     setError(null);
     try {
       const response = await axios.get('http://localhost:8000/projects');
-      const fetchedProjects = response.data.projects || [];
+      console.log('Projects API response:', response.data);
+      // Handle both formats: direct array or {projects: array}
+      const fetchedProjects = Array.isArray(response.data) ? response.data : (response.data.projects || []);
       setProjects(fetchedProjects);
       // Set default selected project only if none is selected/passed AND projects exist
       if (fetchedProjects.length > 0 && !selectedProject) {
@@ -92,7 +94,8 @@ const Tasks: React.FC = () => {
       setLoadingTasks(true);
       setError(null); // Clear previous task errors
       try {
-        const response = await axios.get(`http://localhost:8000/tasks?project_id=${projectId}`);
+        // Updated to use the new API endpoint
+        const response = await axios.get(`http://localhost:8000/tasks/${projectId}`);
         const fetchedTasks = response.data.tasks || [];
 
         // Ensure status matches column IDs and default if invalid/missing
@@ -100,7 +103,9 @@ const Tasks: React.FC = () => {
             // Normalize status: lowercase, replace space/underscore with hyphen
             const normalizedStatus = task.status?.toLowerCase().replace(/[\s_]/g, '-') || COLUMN_IDS.TODO;
             // Ensure it's a valid column ID, otherwise default to TODO
-            const validStatus = COLUMN_IDS[normalizedStatus.toUpperCase() as keyof typeof COLUMN_IDS] || COLUMN_IDS.TODO;
+            const validStatus = Object.values(COLUMN_IDS).includes(normalizedStatus) 
+              ? normalizedStatus 
+              : COLUMN_IDS.TODO;
             return { ...task, status: validStatus };
         });
         setTasks(correctedTasks);
@@ -159,9 +164,6 @@ const Tasks: React.FC = () => {
 
     // 2. Optimistic UI Update
     // Create a new array with the task moved to the new status
-    // Note: This simple update only changes the status property.
-    // For visual reordering within the list *before* backend confirmation,
-    // you'd need a more complex state update (e.g., managing tasks per column).
     const updatedTasksOptimistic = tasks.map(task =>
         task.id === draggableId
             ? { ...task, status: destination.droppableId }
@@ -172,27 +174,57 @@ const Tasks: React.FC = () => {
     // 3. Call Backend API to persist the change
     try {
       setError(null); // Clear previous errors
-      await axios.put(`http://localhost:8000/tasks/${selectedProject}`, {
+      // Update to use new API endpoint for updating just the status
+      await axios.patch(`http://localhost:8000/tasks/${selectedProject}/${draggableId}/status`, {
         id: draggableId,
         status: destination.droppableId, // The ID of the column it was dropped into
       });
       // Success! The optimistic update is likely correct.
-      // The WebSocket listener should ideally handle the final state confirmation by refetching,
-      // preventing the need for a second refetch here unless WS fails.
       console.log(`Task ${draggableId} status updated to ${destination.droppableId} on backend.`);
     } catch (error) {
       console.error('Failed to update task status on backend:', error);
       setError('Failed to save task change. Reverting UI.');
       // Revert UI change on failure by refetching the last known good state
-      // (Could also revert using the state before the optimistic update, but refetch is safer)
       fetchTasks(selectedProject);
     }
   };
 
-  const handleCreateTask = () => {
-    // TODO: Implement task creation modal/form
-    // Should likely POST to a new endpoint like /tasks/{project_id}
-    console.log('Create task clicked - Placeholder');
+  const handleCreateTask = async () => {
+    if (!selectedProject) {
+      setError('Please select a project first.');
+      return;
+    }
+    
+    try {
+      const newTaskId = `task-${Date.now()}`;
+      const newTask: Task = {
+        id: newTaskId,
+        title: `New Task ${new Date().toLocaleTimeString()}`,
+        description: "Click to edit this task",
+        status: COLUMN_IDS.TODO,
+        priority: "medium",
+        due: new Date(Date.now() + 7 * 24 * 60 * 60 * 1000).toISOString().split('T')[0], // 7 days from now
+      };
+      
+      console.log('Creating new task:', newTask);
+      
+      // Optimistic UI update
+      setTasks(prev => [...prev, newTask]);
+      
+      // Call backend API to create the task
+      const response = await axios.post(`http://localhost:8000/tasks/${selectedProject}`, newTask);
+      
+      if (response.data) {
+        console.log('Task created successfully:', response.data);
+        // Refresh tasks to get the server version
+        fetchTasks(selectedProject);
+      }
+    } catch (error) {
+      console.error('Failed to create task:', error);
+      setError('Failed to create task. Please try again.');
+      // Refresh to get the correct state from server
+      fetchTasks(selectedProject);
+    }
   };
 
   // --- Memoized Derived State ---
@@ -205,15 +237,21 @@ const Tasks: React.FC = () => {
       };
       tasks.forEach(task => {
           // Ensure task status is valid, default to TODO if not
-          const columnId = task.status && COLUMN_IDS[task.status.toUpperCase() as keyof typeof COLUMN_IDS]
-                             ? task.status
-                             : COLUMN_IDS.TODO;
+          const columnId = Object.values(COLUMN_IDS).includes(task.status)
+              ? task.status
+              : COLUMN_IDS.TODO;
           columns[columnId].push(task);
       });
-      // Optional: Sort tasks within each column (e.g., by priority, due date, title)
-      // Object.values(columns).forEach(columnTasks => {
-      //     columnTasks.sort((a, b) => a.title.localeCompare(b.title));
-      // });
+      // Sort tasks within each column by due date
+      Object.values(columns).forEach(columnTasks => {
+          columnTasks.sort((a, b) => {
+              // Sort by due date (ascending)
+              if (a.due && b.due) return a.due.localeCompare(b.due);
+              if (a.due) return -1; // a has due date, b doesn't
+              if (b.due) return 1;  // b has due date, a doesn't
+              return 0; // neither has due date
+          });
+      });
       return columns;
   }, [tasks]); // Recalculate only when the tasks array changes
 

@@ -52,7 +52,7 @@ const Sidebar: React.FC<SidebarProps> = ({
     const [loadingAlarms, setLoadingAlarms] = useState(true);
     const [loadingFocusStatus, setLoadingFocusStatus] = useState(true);
     const [sidebarError, setSidebarError] = useState<string | null>(null);
-    const [showSettings, setShowSettings] = useState(true);
+    const [showSettings, setShowSettings] = useState(false); // Start with settings collapsed
     const [temperature, setTemperature] = useState(0.7);
     const [contextLength, setContextLength] = useState(10);
 
@@ -121,6 +121,30 @@ const Sidebar: React.FC<SidebarProps> = ({
         console.error('Failed to toggle focus monitor:', error);
         setIsFocusMonitorActive(!newState);
         setSidebarError('Failed to toggle Focus Monitor.');
+        }
+    };
+
+    // Handle temperature change
+    const handleTemperatureChange = (newTemp: number) => {
+        setTemperature(newTemp);
+        // Here you would typically send this to the backend
+        try {
+            axios.post('http://localhost:8000/chat/settings', { temperature: newTemp })
+                .catch(err => console.error('Failed to update temperature:', err));
+        } catch (error) {
+            console.error('Error updating temperature:', error);
+        }
+    };
+
+    // Handle context length change
+    const handleContextLengthChange = (newLength: number) => {
+        setContextLength(newLength);
+        // Here you would typically send this to the backend
+        try {
+            axios.post('http://localhost:8000/chat/settings', { contextLength: newLength })
+                .catch(err => console.error('Failed to update context length:', err));
+        } catch (error) {
+            console.error('Error updating context length:', error);
         }
     };
 
@@ -210,10 +234,74 @@ const Sidebar: React.FC<SidebarProps> = ({
                            </nav>
                         ) : ( <p className="text-xs text-gray-500 px-4 py-2">No chats yet.</p> )}
                         {/* Chat Settings Accordion */}
-                       <button onClick={() => setShowSettings((s) => !s)} className="flex items-center gap-2 w-full px-3 py-2 hover:bg-gray-100 dark:hover:bg-gray-700 rounded text-sm text-gray-700 dark:text-gray-200">
+                       <button 
+                           onClick={(e) => {
+                               e.preventDefault();
+                               e.stopPropagation();
+                               setShowSettings(prevState => !prevState); // Explicitly toggle settings
+                               console.log('Settings toggled:', !showSettings); // Debug log
+                           }}
+                           className={`flex items-center gap-2 w-full px-3 py-2 hover:bg-gray-100 dark:hover:bg-gray-700 rounded text-sm ${showSettings ? 'bg-blue-50 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300' : 'text-gray-700 dark:text-gray-200'} cursor-pointer transition-colors duration-150`}>
                            <SettingsIcon size={16} /> <span className="flex-1 text-left">Settings</span> {showSettings ? <ChevronLeft size={14} /> : <ChevronRight size={14} />}
                        </button>
-                       {showSettings && ( <div className="px-3 pt-2 pb-4 space-y-3 text-xs"> {/* ... Settings content ... */} </div> )}
+                       {showSettings && (
+                           <div className="px-3 pt-2 pb-4 space-y-3 text-xs bg-gray-50 dark:bg-gray-800/50 rounded-lg border border-gray-200 dark:border-gray-700 mt-1 mb-2 shadow-sm animate-fadeIn">
+                               <div className="setting-group">
+                                   <label htmlFor="model-selector" className="block mb-1 font-medium text-gray-700 dark:text-gray-300">Model</label>
+                                   <select
+                                       id="model-selector"
+                                       value={selectedModel}
+                                       onChange={(e) => onSelectModel(e.target.value)}
+                                       className="w-full px-2 py-1 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 rounded text-gray-800 dark:text-gray-200"
+                                       disabled={loadingModels}
+                                   >
+                                       {loadingModels ? (
+                                           <option>Loading models...</option>
+                                       ) : models.length > 0 ? (
+                                           models.map(model => (
+                                               <option key={model.id} value={model.id}>
+                                                   {model.name}
+                                               </option>
+                                           ))
+                                       ) : (
+                                           <option>No models available</option>
+                                       )}
+                                   </select>
+                               </div>
+                               
+                               <div className="setting-group mt-3">
+                                   <label htmlFor="temperature-slider" className="block mb-1 font-medium text-gray-700 dark:text-gray-300">
+                                       Temperature: {temperature.toFixed(1)}
+                                   </label>
+                                   <input
+                                       id="temperature-slider"
+                                       type="range"
+                                       min="0"
+                                       max="1"
+                                       step="0.1"
+                                       value={temperature}
+                                       onChange={(e) => handleTemperatureChange(parseFloat(e.target.value))}
+                                       className="w-full accent-blue-500"
+                                   />
+                               </div>
+                               
+                               <div className="setting-group mt-3">
+                                   <label htmlFor="context-length" className="block mb-1 font-medium text-gray-700 dark:text-gray-300">
+                                       Context Length: {contextLength}
+                                   </label>
+                                   <input
+                                       id="context-length"
+                                       type="range"
+                                       min="1"
+                                       max="20"
+                                       step="1"
+                                       value={contextLength}
+                                       onChange={(e) => handleContextLengthChange(parseInt(e.target.value))}
+                                       className="w-full accent-blue-500"
+                                   />
+                               </div>
+                           </div>
+                       )}
                     </div>
                 )}
             </div> {/* End of flex-grow container */}

@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
 import axios from 'axios';
 import { format, formatDistanceToNow } from 'date-fns';
+import { useNavigate } from 'react-router-dom';
 import { PieChart, Pie, Cell, ResponsiveContainer, Tooltip, Legend } from 'recharts';
 // Import Dnd types and backend
 import { DndProvider, useDrag, useDrop, DropTargetMonitor } from 'react-dnd';
@@ -158,6 +159,7 @@ const EmptyDocCard: React.FC = () => {
 
 // --- Dashboard Component ---
 const Dashboard: React.FC = () => {
+  const navigate = useNavigate();
   const [focusSummary, setFocusSummary] = useState<FocusSummary | null>(null);
   const [alarms, setAlarms] = useState<Alarm[]>([]);
   const [pinnedDocs, setPinnedDocs] = useState<PinnedDoc[]>([]);
@@ -180,16 +182,25 @@ const Dashboard: React.FC = () => {
   useEffect(() => {
       const findHubPath = async () => {
            try {
-                // FIXME: Replace this with a reliable method to get/store the user-chosen ProjectsHub path.
-                // Using AppDataDir is just a temporary placeholder.
-                const dataDir = await appDataDir();
-                const hubPath = await join(dataDir, 'ProjectsHub'); // Assumes folder name
-                // Could add a check here to see if hubPath actually exists
-                setUserHubPath(hubPath);
-                console.log("User Hub Path (determined example):", hubPath);
+                // Check if we're running in a Tauri environment
+                if (window.__TAURI_IPC__ && typeof window.__TAURI_IPC__ === 'function') {
+                    // FIXME: Replace this with a reliable method to get/store the user-chosen ProjectsHub path.
+                    // Using AppDataDir is just a temporary placeholder.
+                    const dataDir = await appDataDir();
+                    const hubPath = await join(dataDir, 'ProjectsHub'); // Assumes folder name
+                    // Could add a check here to see if hubPath actually exists
+                    setUserHubPath(hubPath);
+                    console.log("User Hub Path (determined via Tauri):", hubPath);
+                } else {
+                    // If not running in Tauri, use a default path
+                    console.log("Not running in a Tauri environment, using default Hub path");
+                    setUserHubPath("/hub_data");
+                }
            } catch (e) {
                 console.error("Critical: Failed to determine Hub path:", e);
                 setError("Could not determine ProjectsHub data location. Some features may not work.");
+                // Set a fallback path
+                setUserHubPath("/hub_data");
            }
       };
       findHubPath();
@@ -350,11 +361,18 @@ const Dashboard: React.FC = () => {
             console.log(`Invoking trigger_workspace_snap with config: ${configPath}`);
             
             try {
-                // Try the Tauri invoke approach
-                await invoke('trigger_workspace_snap', {
-                    configPath: configPath,
-                });
-                console.log("trigger_workspace_snap invoke called successfully.");
+                // Check if we're running in a Tauri environment
+                if (window.__TAURI_IPC__ && typeof window.__TAURI_IPC__ === 'function') {
+                    // Try the Tauri invoke approach
+                    await invoke('trigger_workspace_snap', {
+                        configPath: configPath,
+                    });
+                    console.log("trigger_workspace_snap invoke called successfully.");
+                } else {
+                    console.log("Not running in Tauri environment, using backend API for workspace snap");
+                    // Use the backend API directly
+                    await axios.post('http://localhost:8000/workspace/start_snap');
+                }
             } catch (tauriError) {
                 // Fallback to direct API call if Tauri invoke fails
                 console.error("Tauri invoke failed, trying direct API:", tauriError);
@@ -397,8 +415,8 @@ const Dashboard: React.FC = () => {
                
                console.log("Created new project:", response.data);
                
-               // Reload projects or navigate to the new project
-               navigate(`/projects/${response.data.id}`);
+               // Reload projects or navigate to the projects page
+               navigate('/projects');
            } catch (error) {
                console.error("Failed to create project:", error);
                setError(`Failed to create project: ${error}`);

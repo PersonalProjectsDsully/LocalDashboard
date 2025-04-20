@@ -1235,3 +1235,1023 @@
 2025-04-20 21:52:07,005 [INFO] main: Pre-generated summary not found for 2025-04-20, attempting on-demand calculation.
 2025-04-20 21:52:07,007 [INFO] main: Calculating on-demand summary for 2025-04-20 from /hub_data/focus_logs/focus_log_2025-04-20.jsonl
 2025-04-20 21:52:07,014 [INFO] main: Successfully calculated on-demand summary for 2025-04-20
+2025-04-20 21:55:13,645 [INFO] main: WebSocket disconnected from 172.28.0.1:56650. Remaining: 2
+2025-04-20 21:55:13,647 [INFO] main: WebSocket disconnected from 172.28.0.1:56600. Remaining: 1
+2025-04-20 21:55:13,757 [INFO] main: Pre-generated summary not found for 2025-04-20, attempting on-demand calculation.
+2025-04-20 21:55:13,759 [INFO] main: Calculating on-demand summary for 2025-04-20 from /hub_data/focus_logs/focus_log_2025-04-20.jsonl
+2025-04-20 21:55:13,768 [INFO] main: Successfully calculated on-demand summary for 2025-04-20
+2025-04-20 21:55:13,780 [INFO] main: Pre-generated summary not found for 2025-04-20, attempting on-demand calculation.
+2025-04-20 21:55:13,782 [INFO] main: Calculating on-demand summary for 2025-04-20 from /hub_data/focus_logs/focus_log_2025-04-20.jsonl
+2025-04-20 21:55:13,790 [INFO] main: Successfully calculated on-demand summary for 2025-04-20
+2025-04-20 21:55:13,791 [INFO] main: New WebSocket connection from 172.28.0.1:41454. Total: 2
+2025-04-20 21:55:13,821 [INFO] main: New WebSocket connection from 172.28.0.1:41482. Total: 3
+2025-04-20 21:55:29,440 [INFO] main: WebSocket disconnected from 172.28.0.1:41482. Remaining: 2
+2025-04-20 21:55:29,441 [INFO] main: WebSocket disconnected from 172.28.0.1:41454. Remaining: 1
+2025-04-20 21:55:29,594 [INFO] main: New WebSocket connection from 172.28.0.1:42990. Total: 2
+2025-04-20 21:55:29,596 [INFO] main: Pre-generated summary not found for 2025-04-20, attempting on-demand calculation.
+2025-04-20 21:55:29,598 [INFO] main: Calculating on-demand summary for 2025-04-20 from /hub_data/focus_logs/focus_log_2025-04-20.jsonl
+2025-04-20 21:55:29,605 [INFO] main: Successfully calculated on-demand summary for 2025-04-20
+2025-04-20 21:55:29,616 [INFO] main: Pre-generated summary not found for 2025-04-20, attempting on-demand calculation.
+2025-04-20 21:55:29,617 [INFO] main: Calculating on-demand summary for 2025-04-20 from /hub_data/focus_logs/focus_log_2025-04-20.jsonl
+2025-04-20 21:55:29,624 [INFO] main: Successfully calculated on-demand summary for 2025-04-20
+2025-04-20 21:55:29,661 [INFO] main: New WebSocket connection from 172.28.0.1:43044. Total: 3
+2025-04-20 21:55:58,119 [INFO] main: WebSocket disconnected from 172.28.0.1:42990. Remaining: 2
+2025-04-20 21:55:58,120 [INFO] main: WebSocket disconnected from 172.28.0.1:43044. Remaining: 1
+2025-04-20 21:55:58,280 [INFO] main: Pre-generated summary not found for 2025-04-20, attempting on-demand calculation.
+2025-04-20 21:55:58,282 [INFO] main: Calculating on-demand summary for 2025-04-20 from /hub_data/focus_logs/focus_log_2025-04-20.jsonl
+2025-04-20 21:55:58,298 [INFO] main: Successfully calculated on-demand summary for 2025-04-20
+2025-04-20 21:55:58,307 [INFO] main: Pre-generated summary not found for 2025-04-20, attempting on-demand calculation.
+2025-04-20 21:55:58,309 [INFO] main: Calculating on-demand summary for 2025-04-20 from /hub_data/focus_logs/focus_log_2025-04-20.jsonl
+2025-04-20 21:55:58,314 [INFO] main: Successfully calculated on-demand summary for 2025-04-20
+2025-04-20 21:55:58,315 [INFO] main: New WebSocket connection from 172.28.0.1:59204. Total: 2
+2025-04-20 21:55:58,359 [INFO] main: New WebSocket connection from 172.28.0.1:59236. Total: 3
+2025-04-20 21:58:04,259 [INFO] main: WebSocket disconnected from 172.28.0.1:59236. Remaining: 2
+2025-04-20 21:58:04,259 [INFO] main: WebSocket disconnected from 172.28.0.1:59204. Remaining: 1
+2025-04-20 21:58:04,371 [INFO] main: New WebSocket connection from 172.28.0.1:44772. Total: 2
+2025-04-20 21:58:04,406 [INFO] main: New WebSocket connection from 172.28.0.1:44802. Total: 3
+2025-04-20 21:58:12,225 [INFO] main: Sending message to Ollama model deepseek-r1:8b
+2025-04-20 21:58:12,226 [INFO] ollama_client: Sending chat request to Ollama for model: deepseek-r1:8b
+2025-04-20 21:59:57,532 [INFO] main: Sending message to Ollama model deepseek-r1:8b
+2025-04-20 21:59:57,532 [INFO] ollama_client: Sending chat request to Ollama for model: deepseek-r1:8b
+2025-04-20 22:00:16,156 [INFO] main: Sending message to Ollama model deepseek-r1:8b
+2025-04-20 22:00:16,156 [INFO] ollama_client: Sending chat request to Ollama for model: deepseek-r1:8b
+2025-04-20 22:00:43,559 [INFO] main: WebSocket disconnected from 172.28.0.1:44802. Remaining: 2
+2025-04-20 22:00:43,559 [INFO] main: WebSocket disconnected from 172.28.0.1:44772. Remaining: 1
+2025-04-20 22:00:43,758 [INFO] main: New WebSocket connection from 172.28.0.1:52846. Total: 2
+2025-04-20 22:00:43,799 [INFO] main: New WebSocket connection from 172.28.0.1:52876. Total: 3
+2025-04-20 22:01:19,572 [INFO] main: WebSocket disconnected from 172.28.0.1:52876. Remaining: 2
+2025-04-20 22:01:19,573 [INFO] main: WebSocket disconnected from 172.28.0.1:52846. Remaining: 1
+2025-04-20 22:01:19,701 [INFO] main: New WebSocket connection from 172.28.0.1:53226. Total: 2
+2025-04-20 22:01:19,748 [INFO] main: New WebSocket connection from 172.28.0.1:53280. Total: 3
+2025-04-20 22:03:00,044 [INFO] main: WebSocket disconnected from 172.28.0.1:53226. Remaining: 2
+2025-04-20 22:03:00,045 [INFO] main: WebSocket disconnected from 172.28.0.1:53280. Remaining: 1
+2025-04-20 22:03:00,168 [INFO] main: New WebSocket connection from 172.28.0.1:42458. Total: 2
+2025-04-20 22:03:00,217 [INFO] main: New WebSocket connection from 172.28.0.1:42512. Total: 3
+2025-04-20 22:03:08,064 [INFO] main: Sending message to Ollama model llama3.1:8b
+2025-04-20 22:03:08,064 [INFO] ollama_client: Sending chat request to Ollama for model: llama3.1:8b
+2025-04-20 22:03:16,110 [ERROR] ollama_client: Ollama API error: 500 - {"error":"llama runner process has terminated: cudaMalloc failed: out of memory"}
+2025-04-20 22:03:16,111 [ERROR] ollama_client: Error in chat completion: name 'time' is not defined
+Traceback (most recent call last):
+  File "/app/ollama_client.py", line 74, in chat_completion
+    "id": f"error_{int(time.time())}",
+                       ^^^^
+NameError: name 'time' is not defined. Did you forget to import 'time'
+2025-04-20 22:03:16,115 [ERROR] main: Error calling Ollama API: name 'time' is not defined
+Traceback (most recent call last):
+  File "/app/ollama_client.py", line 74, in chat_completion
+    "id": f"error_{int(time.time())}",
+                       ^^^^
+NameError: name 'time' is not defined. Did you forget to import 'time'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/app/main.py", line 1087, in send_chat_message
+    ollama_response = ollama_client.chat_completion(
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/ollama_client.py", line 82, in chat_completion
+    "id": f"error_{int(time.time())}",
+                       ^^^^
+NameError: name 'time' is not defined. Did you forget to import 'time'
+2025-04-20 22:03:16,127 [INFO] main: WebSocket disconnected from 172.28.0.1:42458. Remaining: 2
+2025-04-20 22:03:16,128 [INFO] main: WebSocket disconnected from 172.28.0.1:42512. Remaining: 1
+2025-04-20 22:03:16,129 [INFO] main: New WebSocket connection from 172.28.0.1:56594. Total: 2
+2025-04-20 22:03:16,143 [INFO] main: New WebSocket connection from 172.28.0.1:56616. Total: 3
+2025-04-20 22:14:08,874 [INFO] main: WebSocket disconnected from 172.28.0.1:48254. Remaining: 2
+2025-04-20 22:14:08,875 [INFO] main: WebSocket disconnected from 172.28.0.1:56616. Remaining: 1
+2025-04-20 22:14:08,876 [INFO] main: WebSocket disconnected from 172.28.0.1:56594. Remaining: 0
+2025-04-20 22:14:08,974 [INFO] main: --- Shutting down Projects Hub Backend ---
+2025-04-20 22:14:09,011 [INFO] main: File system watcher stopped.
+2025-04-20 22:14:20,107 [INFO] ollama_client: Initialized Ollama client with base URL: http://host.docker.internal:11434
+2025-04-20 22:14:20,124 [INFO] main: --- Starting Projects Hub Backend ---
+2025-04-20 22:14:20,124 [INFO] main: Watching data directory: /hub_data
+2025-04-20 22:14:20,126 [INFO] main: Hub data directory ready: /hub_data
+2025-04-20 22:14:20,128 [INFO] main: Ensured directory exists: /hub_data/focus_logs
+2025-04-20 22:14:20,160 [INFO] main: File system watcher started successfully.
+2025-04-20 22:14:20,725 [INFO] main: New WebSocket connection from 172.28.0.1:47844. Total: 1
+2025-04-20 22:14:21,752 [INFO] main: New WebSocket connection from 172.28.0.1:47848. Total: 2
+2025-04-20 22:14:22,897 [INFO] main: WebSocket disconnected from 172.28.0.1:47848. Remaining: 1
+2025-04-20 22:14:23,607 [INFO] main: New WebSocket connection from 172.28.0.1:51634. Total: 2
+2025-04-20 22:14:23,662 [INFO] main: New WebSocket connection from 172.28.0.1:51692. Total: 3
+2025-04-20 22:14:28,677 [INFO] main: WebSocket disconnected from 172.28.0.1:51692. Remaining: 2
+2025-04-20 22:14:28,678 [INFO] main: WebSocket disconnected from 172.28.0.1:51634. Remaining: 1
+2025-04-20 22:14:28,809 [INFO] main: New WebSocket connection from 172.28.0.1:51704. Total: 2
+2025-04-20 22:14:28,857 [INFO] main: New WebSocket connection from 172.28.0.1:51734. Total: 3
+2025-04-20 22:14:33,351 [INFO] main: Sending message to Ollama model qwq:latest
+2025-04-20 22:14:33,351 [INFO] ollama_client: Sending chat request to Ollama for model: qwq:latest
+2025-04-20 22:14:34,618 [ERROR] ollama_client: Ollama API error: 500 - {"error":"llama runner process has terminated: error loading model: unable to allocate CUDA0 buffer"}
+2025-04-20 22:14:34,619 [ERROR] ollama_client: Error in chat completion: name 'time' is not defined
+Traceback (most recent call last):
+  File "/app/ollama_client.py", line 74, in chat_completion
+    "id": f"error_{int(time.time())}",
+                       ^^^^
+NameError: name 'time' is not defined. Did you forget to import 'time'
+2025-04-20 22:14:34,621 [ERROR] main: Error calling Ollama API: name 'time' is not defined
+Traceback (most recent call last):
+  File "/app/ollama_client.py", line 74, in chat_completion
+    "id": f"error_{int(time.time())}",
+                       ^^^^
+NameError: name 'time' is not defined. Did you forget to import 'time'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/app/main.py", line 1108, in send_chat_message
+    ollama_response = ollama_client.chat_completion(
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/ollama_client.py", line 82, in chat_completion
+    "id": f"error_{int(time.time())}",
+                       ^^^^
+NameError: name 'time' is not defined. Did you forget to import 'time'
+2025-04-20 22:14:34,626 [INFO] main: Broadcasting chat message via WebSocket for session 1745164108066
+2025-04-20 22:14:34,626 [INFO] main: Broadcasting message of type 'chat_message_received' to 3 clients
+2025-04-20 22:14:34,627 [INFO] main: Message broadcast successful to 3/3 clients
+2025-04-20 22:14:40,191 [INFO] main: Sending message to Ollama model qwq:latest
+2025-04-20 22:14:40,191 [INFO] ollama_client: Sending chat request to Ollama for model: qwq:latest
+2025-04-20 22:14:41,427 [ERROR] ollama_client: Ollama API error: 500 - {"error":"llama runner process has terminated: error loading model: unable to allocate CUDA0 buffer"}
+2025-04-20 22:14:41,427 [ERROR] ollama_client: Error in chat completion: name 'time' is not defined
+Traceback (most recent call last):
+  File "/app/ollama_client.py", line 74, in chat_completion
+    "id": f"error_{int(time.time())}",
+                       ^^^^
+NameError: name 'time' is not defined. Did you forget to import 'time'
+2025-04-20 22:14:41,428 [ERROR] main: Error calling Ollama API: name 'time' is not defined
+Traceback (most recent call last):
+  File "/app/ollama_client.py", line 74, in chat_completion
+    "id": f"error_{int(time.time())}",
+                       ^^^^
+NameError: name 'time' is not defined. Did you forget to import 'time'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/app/main.py", line 1108, in send_chat_message
+    ollama_response = ollama_client.chat_completion(
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/ollama_client.py", line 82, in chat_completion
+    "id": f"error_{int(time.time())}",
+                       ^^^^
+NameError: name 'time' is not defined. Did you forget to import 'time'
+2025-04-20 22:14:41,432 [INFO] main: Broadcasting chat message via WebSocket for session 1745164108066
+2025-04-20 22:14:41,433 [INFO] main: Broadcasting message of type 'chat_message_received' to 3 clients
+2025-04-20 22:14:41,434 [INFO] main: Message broadcast successful to 3/3 clients
+2025-04-20 22:16:08,032 [INFO] main: WebSocket disconnected from 172.28.0.1:51734. Remaining: 2
+2025-04-20 22:16:08,033 [INFO] main: WebSocket disconnected from 172.28.0.1:51704. Remaining: 1
+2025-04-20 22:16:08,174 [INFO] main: New WebSocket connection from 172.28.0.1:40488. Total: 2
+2025-04-20 22:16:08,211 [INFO] main: New WebSocket connection from 172.28.0.1:40520. Total: 3
+2025-04-20 22:16:15,615 [INFO] main: Sending message to Ollama model deepseek-r1:8b
+2025-04-20 22:16:15,615 [INFO] ollama_client: Sending chat request to Ollama for model: deepseek-r1:8b
+2025-04-20 22:16:18,107 [INFO] main: Broadcasting chat message via WebSocket for session 1745164108066
+2025-04-20 22:16:18,108 [INFO] main: Broadcasting message of type 'chat_message_received' to 3 clients
+2025-04-20 22:16:18,110 [INFO] main: Message broadcast successful to 3/3 clients
+2025-04-20 22:16:49,318 [INFO] main: WebSocket disconnected from 172.28.0.1:40488. Remaining: 2
+2025-04-20 22:16:49,319 [INFO] main: WebSocket disconnected from 172.28.0.1:40520. Remaining: 1
+2025-04-20 22:16:49,423 [INFO] main: New WebSocket connection from 172.28.0.1:53678. Total: 2
+2025-04-20 22:16:49,467 [INFO] main: New WebSocket connection from 172.28.0.1:53712. Total: 3
+2025-04-20 22:19:19,964 [INFO] main: Sending message to Ollama model llama3.1:8b
+2025-04-20 22:19:19,965 [INFO] ollama_client: Sending chat request to Ollama for model: llama3.1:8b
+2025-04-20 22:19:21,950 [ERROR] ollama_client: Ollama API error: 500 - {"error":"llama runner process has terminated: error loading model: unable to allocate CUDA0 buffer"}
+2025-04-20 22:19:21,950 [ERROR] ollama_client: Error in chat completion: name 'time' is not defined
+Traceback (most recent call last):
+  File "/app/ollama_client.py", line 74, in chat_completion
+    "id": f"error_{int(time.time())}",
+                       ^^^^
+NameError: name 'time' is not defined. Did you forget to import 'time'
+2025-04-20 22:19:21,951 [ERROR] main: Error calling Ollama API: name 'time' is not defined
+Traceback (most recent call last):
+  File "/app/ollama_client.py", line 74, in chat_completion
+    "id": f"error_{int(time.time())}",
+                       ^^^^
+NameError: name 'time' is not defined. Did you forget to import 'time'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/app/main.py", line 1108, in send_chat_message
+    ollama_response = ollama_client.chat_completion(
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/ollama_client.py", line 82, in chat_completion
+    "id": f"error_{int(time.time())}",
+                       ^^^^
+NameError: name 'time' is not defined. Did you forget to import 'time'
+2025-04-20 22:19:21,965 [INFO] main: Broadcasting chat message via WebSocket for session 1745164108066
+2025-04-20 22:19:21,966 [INFO] main: Broadcasting message of type 'chat_message_received' to 3 clients
+2025-04-20 22:19:21,967 [INFO] main: Message broadcast successful to 3/3 clients
+2025-04-20 22:20:40,599 [INFO] main: Sending message to Ollama model deepseek-r1:8b
+2025-04-20 22:20:40,600 [INFO] ollama_client: Sending chat request to Ollama for model: deepseek-r1:8b
+2025-04-20 22:20:41,699 [INFO] main: Broadcasting chat message via WebSocket for session 1745164108066
+2025-04-20 22:20:41,700 [INFO] main: Broadcasting message of type 'chat_message_received' to 3 clients
+2025-04-20 22:20:41,701 [INFO] main: Message broadcast successful to 3/3 clients
+2025-04-20 22:20:44,298 [INFO] main: WebSocket disconnected from 172.28.0.1:53712. Remaining: 2
+2025-04-20 22:20:44,299 [INFO] main: WebSocket disconnected from 172.28.0.1:53678. Remaining: 1
+2025-04-20 22:20:44,445 [INFO] main: New WebSocket connection from 172.28.0.1:46748. Total: 2
+2025-04-20 22:20:44,490 [INFO] main: New WebSocket connection from 172.28.0.1:46790. Total: 3
+2025-04-20 22:20:53,125 [INFO] main: Sending message to Ollama model deepseek-r1:14b
+2025-04-20 22:20:53,125 [INFO] ollama_client: Sending chat request to Ollama for model: deepseek-r1:14b
+2025-04-20 22:20:53,904 [ERROR] ollama_client: Ollama API error: 500 - {"error":"llama runner process has terminated: error loading model: unable to allocate CUDA0 buffer"}
+2025-04-20 22:20:53,905 [ERROR] ollama_client: Error in chat completion: name 'time' is not defined
+Traceback (most recent call last):
+  File "/app/ollama_client.py", line 74, in chat_completion
+    "id": f"error_{int(time.time())}",
+                       ^^^^
+NameError: name 'time' is not defined. Did you forget to import 'time'
+2025-04-20 22:20:53,906 [ERROR] main: Error calling Ollama API: name 'time' is not defined
+Traceback (most recent call last):
+  File "/app/ollama_client.py", line 74, in chat_completion
+    "id": f"error_{int(time.time())}",
+                       ^^^^
+NameError: name 'time' is not defined. Did you forget to import 'time'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/app/main.py", line 1108, in send_chat_message
+    ollama_response = ollama_client.chat_completion(
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/ollama_client.py", line 82, in chat_completion
+    "id": f"error_{int(time.time())}",
+                       ^^^^
+NameError: name 'time' is not defined. Did you forget to import 'time'
+2025-04-20 22:20:53,921 [INFO] main: Broadcasting chat message via WebSocket for session 1745164108066
+2025-04-20 22:20:53,922 [INFO] main: Broadcasting message of type 'chat_message_received' to 3 clients
+2025-04-20 22:20:53,923 [INFO] main: Message broadcast successful to 3/3 clients
+2025-04-20 22:21:22,912 [INFO] main: WebSocket disconnected from 172.28.0.1:46790. Remaining: 2
+2025-04-20 22:21:22,912 [INFO] main: WebSocket disconnected from 172.28.0.1:46748. Remaining: 1
+2025-04-20 22:21:23,044 [INFO] main: New WebSocket connection from 172.28.0.1:48186. Total: 2
+2025-04-20 22:21:23,080 [INFO] main: New WebSocket connection from 172.28.0.1:48218. Total: 3
+2025-04-20 22:21:34,225 [INFO] main: Sending message to Ollama model deepseek-r1:8b
+2025-04-20 22:21:34,225 [INFO] ollama_client: Sending chat request to Ollama for model: deepseek-r1:8b
+2025-04-20 22:21:35,409 [INFO] main: Broadcasting chat message via WebSocket for session 1745164108066
+2025-04-20 22:21:35,409 [INFO] main: Broadcasting message of type 'chat_message_received' to 3 clients
+2025-04-20 22:21:35,410 [INFO] main: Message broadcast successful to 3/3 clients
+2025-04-20 22:21:37,362 [INFO] main: WebSocket disconnected from 172.28.0.1:48186. Remaining: 2
+2025-04-20 22:21:37,363 [INFO] main: WebSocket disconnected from 172.28.0.1:48218. Remaining: 1
+2025-04-20 22:21:37,469 [INFO] main: New WebSocket connection from 172.28.0.1:36438. Total: 2
+2025-04-20 22:21:37,511 [INFO] main: New WebSocket connection from 172.28.0.1:36466. Total: 3
+2025-04-20 22:23:11,259 [INFO] main: WebSocket disconnected from 172.28.0.1:36438. Remaining: 2
+2025-04-20 22:23:11,259 [INFO] main: WebSocket disconnected from 172.28.0.1:36466. Remaining: 1
+2025-04-20 22:23:11,373 [INFO] main: New WebSocket connection from 172.28.0.1:57536. Total: 2
+2025-04-20 22:23:11,415 [INFO] main: New WebSocket connection from 172.28.0.1:57580. Total: 3
+2025-04-20 22:23:35,581 [INFO] main: Sending message to Ollama model llama3.1:8b
+2025-04-20 22:23:35,582 [INFO] ollama_client: Sending chat request to Ollama for model: llama3.1:8b
+2025-04-20 22:23:43,932 [INFO] main: Broadcasting chat message via WebSocket for session 1745164108066
+2025-04-20 22:23:43,932 [INFO] main: Broadcasting message of type 'chat_message_received' to 3 clients
+2025-04-20 22:23:43,934 [INFO] main: Message broadcast successful to 3/3 clients
+2025-04-20 22:23:58,583 [INFO] main: WebSocket disconnected from 172.28.0.1:57580. Remaining: 2
+2025-04-20 22:23:58,584 [INFO] main: WebSocket disconnected from 172.28.0.1:57536. Remaining: 1
+2025-04-20 22:23:58,723 [INFO] main: New WebSocket connection from 172.28.0.1:44210. Total: 2
+2025-04-20 22:23:58,767 [INFO] main: New WebSocket connection from 172.28.0.1:44258. Total: 3
+2025-04-20 22:24:23,623 [INFO] main: WebSocket disconnected from 172.28.0.1:44210. Remaining: 2
+2025-04-20 22:24:23,623 [INFO] main: WebSocket disconnected from 172.28.0.1:44258. Remaining: 1
+2025-04-20 22:24:23,624 [INFO] main: WebSocket disconnected from 172.28.0.1:47844. Remaining: 0
+2025-04-20 22:24:23,722 [INFO] main: --- Shutting down Projects Hub Backend ---
+2025-04-20 22:24:23,758 [INFO] main: File system watcher stopped.
+2025-04-20 22:24:32,585 [INFO] ollama_client: Initialized Ollama client with base URL: http://host.docker.internal:11434
+2025-04-20 22:24:32,600 [INFO] main: --- Starting Projects Hub Backend ---
+2025-04-20 22:24:32,601 [INFO] main: Watching data directory: /hub_data
+2025-04-20 22:24:32,603 [INFO] main: Hub data directory ready: /hub_data
+2025-04-20 22:24:32,604 [INFO] main: Ensured directory exists: /hub_data/focus_logs
+2025-04-20 22:24:32,629 [INFO] main: File system watcher started successfully.
+2025-04-20 22:24:32,719 [INFO] main: New WebSocket connection from 172.28.0.1:44430. Total: 1
+2025-04-20 22:24:35,027 [INFO] main: New WebSocket connection from 172.28.0.1:55914. Total: 2
+2025-04-20 22:24:35,071 [INFO] main: New WebSocket connection from 172.28.0.1:55958. Total: 3
+2025-04-20 22:24:46,169 [INFO] main: WebSocket disconnected from 172.28.0.1:55914. Remaining: 2
+2025-04-20 22:24:46,170 [INFO] main: WebSocket disconnected from 172.28.0.1:55958. Remaining: 1
+2025-04-20 22:24:46,170 [INFO] main: WebSocket disconnected from 172.28.0.1:44430. Remaining: 0
+2025-04-20 22:24:46,269 [INFO] main: --- Shutting down Projects Hub Backend ---
+2025-04-20 22:24:46,307 [INFO] main: File system watcher stopped.
+2025-04-20 22:24:49,567 [INFO] ollama_client: Initialized Ollama client with base URL: http://host.docker.internal:11434
+2025-04-20 22:24:49,582 [INFO] main: --- Starting Projects Hub Backend ---
+2025-04-20 22:24:49,582 [INFO] main: Watching data directory: /hub_data
+2025-04-20 22:24:49,585 [INFO] main: Hub data directory ready: /hub_data
+2025-04-20 22:24:49,586 [INFO] main: Ensured directory exists: /hub_data/focus_logs
+2025-04-20 22:24:49,612 [INFO] main: File system watcher started successfully.
+2025-04-20 22:24:50,719 [INFO] main: New WebSocket connection from 172.28.0.1:49374. Total: 1
+2025-04-20 22:24:50,771 [INFO] main: New WebSocket connection from 172.28.0.1:49378. Total: 2
+2025-04-20 22:24:53,659 [INFO] main: WebSocket disconnected from 172.28.0.1:49378. Remaining: 1
+2025-04-20 22:24:54,168 [INFO] main: New WebSocket connection from 172.28.0.1:36608. Total: 2
+2025-04-20 22:24:54,209 [INFO] main: New WebSocket connection from 172.28.0.1:36662. Total: 3
+2025-04-20 22:25:02,225 [INFO] main: Sending message to Ollama model llama3.1:8b
+2025-04-20 22:25:02,226 [INFO] ollama_client: Sending chat request to Ollama for model: llama3.1:8b
+2025-04-20 22:25:03,231 [INFO] main: Broadcasting chat message via WebSocket for session 1745164108066
+2025-04-20 22:25:03,231 [INFO] main: Broadcasting message of type 'chat_message_received' to 3 clients
+2025-04-20 22:25:03,232 [INFO] main: Message broadcast successful to 3/3 clients
+2025-04-20 22:25:27,793 [INFO] main: Pre-generated summary not found for 2025-04-20, attempting on-demand calculation.
+2025-04-20 22:25:27,794 [INFO] main: Calculating on-demand summary for 2025-04-20 from /hub_data/focus_logs/focus_log_2025-04-20.jsonl
+2025-04-20 22:25:27,811 [INFO] main: Successfully calculated on-demand summary for 2025-04-20
+2025-04-20 22:25:27,819 [INFO] main: Pre-generated summary not found for 2025-04-20, attempting on-demand calculation.
+2025-04-20 22:25:27,820 [INFO] main: Calculating on-demand summary for 2025-04-20 from /hub_data/focus_logs/focus_log_2025-04-20.jsonl
+2025-04-20 22:25:27,827 [INFO] main: Successfully calculated on-demand summary for 2025-04-20
+2025-04-20 22:34:17,831 [INFO] main: WebSocket disconnected from 172.28.0.1:36662. Remaining: 2
+2025-04-20 22:34:17,832 [INFO] main: WebSocket disconnected from 172.28.0.1:36608. Remaining: 1
+2025-04-20 22:34:17,990 [INFO] main: New WebSocket connection from 172.28.0.1:53770. Total: 2
+2025-04-20 22:34:18,042 [INFO] main: New WebSocket connection from 172.28.0.1:53798. Total: 3
+2025-04-20 22:34:21,715 [INFO] main: Pre-generated summary not found for 2025-04-20, attempting on-demand calculation.
+2025-04-20 22:34:21,717 [INFO] main: Calculating on-demand summary for 2025-04-20 from /hub_data/focus_logs/focus_log_2025-04-20.jsonl
+2025-04-20 22:34:21,734 [INFO] main: Successfully calculated on-demand summary for 2025-04-20
+2025-04-20 22:34:21,743 [INFO] main: Pre-generated summary not found for 2025-04-20, attempting on-demand calculation.
+2025-04-20 22:34:21,744 [INFO] main: Calculating on-demand summary for 2025-04-20 from /hub_data/focus_logs/focus_log_2025-04-20.jsonl
+2025-04-20 22:34:21,750 [INFO] main: Successfully calculated on-demand summary for 2025-04-20
+2025-04-20 22:34:27,615 [INFO] main: WebSocket disconnected from 172.28.0.1:53798. Remaining: 2
+2025-04-20 22:34:27,616 [INFO] main: WebSocket disconnected from 172.28.0.1:49374. Remaining: 1
+2025-04-20 22:34:27,616 [INFO] main: WebSocket disconnected from 172.28.0.1:53770. Remaining: 0
+2025-04-20 22:34:27,715 [INFO] main: --- Shutting down Projects Hub Backend ---
+2025-04-20 22:34:27,756 [INFO] main: File system watcher stopped.
+2025-04-20 22:34:40,714 [INFO] ollama_client: Initialized Ollama client with base URL: http://host.docker.internal:11434
+2025-04-20 22:34:40,737 [INFO] main: --- Starting Projects Hub Backend ---
+2025-04-20 22:34:40,737 [INFO] main: Watching data directory: /hub_data
+2025-04-20 22:34:40,740 [INFO] main: Hub data directory ready: /hub_data
+2025-04-20 22:34:40,741 [INFO] main: Ensured directory exists: /hub_data/focus_logs
+2025-04-20 22:34:40,768 [INFO] main: File system watcher started successfully.
+2025-04-20 22:34:41,712 [INFO] main: New WebSocket connection from 172.28.0.1:35884. Total: 1
+2025-04-20 22:34:44,171 [INFO] main: Pre-generated summary not found for 2025-04-20, attempting on-demand calculation.
+2025-04-20 22:34:44,172 [INFO] main: Calculating on-demand summary for 2025-04-20 from /hub_data/focus_logs/focus_log_2025-04-20.jsonl
+2025-04-20 22:34:44,184 [INFO] main: Successfully calculated on-demand summary for 2025-04-20
+2025-04-20 22:34:44,196 [INFO] main: Pre-generated summary not found for 2025-04-20, attempting on-demand calculation.
+2025-04-20 22:34:44,198 [INFO] main: Calculating on-demand summary for 2025-04-20 from /hub_data/focus_logs/focus_log_2025-04-20.jsonl
+2025-04-20 22:34:44,209 [INFO] main: Successfully calculated on-demand summary for 2025-04-20
+2025-04-20 22:34:44,230 [INFO] main: New WebSocket connection from 172.28.0.1:44666. Total: 2
+2025-04-20 22:34:44,272 [INFO] main: New WebSocket connection from 172.28.0.1:44682. Total: 3
+2025-04-20 22:37:28,074 [INFO] main: WebSocket disconnected from 172.28.0.1:44682. Remaining: 2
+2025-04-20 22:37:28,074 [INFO] main: WebSocket disconnected from 172.28.0.1:35884. Remaining: 1
+2025-04-20 22:37:28,075 [INFO] main: WebSocket disconnected from 172.28.0.1:44666. Remaining: 0
+2025-04-20 22:37:28,174 [INFO] main: --- Shutting down Projects Hub Backend ---
+2025-04-20 22:37:28,209 [INFO] main: File system watcher stopped.
+2025-04-20 22:41:50,678 [INFO] ollama_client: Initialized Ollama client with base URL: http://host.docker.internal:11434
+2025-04-20 22:42:52,380 [INFO] ollama_client: Initialized Ollama client with base URL: http://host.docker.internal:11434
+2025-04-20 22:48:49,416 [INFO] ollama_client: Initialized Ollama client with base URL: http://host.docker.internal:11434
+2025-04-20 22:48:49,416 [INFO] ollama_client: MCP servers configured: mcp1, mcp2, mcp3
+2025-04-20 22:48:49,445 [INFO] main: --- Starting Projects Hub Backend ---
+2025-04-20 22:48:49,445 [INFO] main: Watching data directory: /hub_data
+2025-04-20 22:48:49,448 [INFO] main: Hub data directory ready: /hub_data
+2025-04-20 22:48:49,449 [INFO] main: Ensured directory exists: /hub_data/focus_logs
+2025-04-20 22:48:49,484 [INFO] main: File system watcher started successfully.
+2025-04-20 22:48:49,492 [INFO] ollama_client: Retrieved 7 models from primary Ollama server
+2025-04-20 22:48:53,458 [WARNING] ollama_client: Error connecting to MCP server mcp1: HTTPConnectionPool(host='mcp-server-1', port=11434): Max retries exceeded with url: /api/tags (Caused by NameResolutionError("<urllib3.connection.HTTPConnection object at 0x7fd71ca61cd0>: Failed to resolve 'mcp-server-1' ([Errno -2] Name or service not known)"))
+2025-04-20 22:48:57,433 [WARNING] ollama_client: Error connecting to MCP server mcp2: HTTPConnectionPool(host='mcp-server-2', port=11434): Max retries exceeded with url: /api/tags (Caused by NameResolutionError("<urllib3.connection.HTTPConnection object at 0x7fd71ca62420>: Failed to resolve 'mcp-server-2' ([Errno -2] Name or service not known)"))
+2025-04-20 22:49:01,411 [WARNING] ollama_client: Error connecting to MCP server mcp3: HTTPConnectionPool(host='mcp-server-3', port=11434): Max retries exceeded with url: /api/tags (Caused by NameResolutionError("<urllib3.connection.HTTPConnection object at 0x7fd71ca62b70>: Failed to resolve 'mcp-server-3' ([Errno -2] Name or service not known)"))
+2025-04-20 22:49:01,419 [INFO] main: New WebSocket connection from 172.28.0.1:34676. Total: 1
+2025-04-20 22:49:01,424 [INFO] main: New WebSocket connection from 172.28.0.1:48246. Total: 2
+2025-04-20 22:49:01,458 [INFO] main: New WebSocket connection from 172.28.0.1:48256. Total: 3
+2025-04-20 22:49:01,485 [INFO] ollama_client: Retrieved 7 models from primary Ollama server
+2025-04-20 22:49:05,454 [WARNING] ollama_client: Error connecting to MCP server mcp1: HTTPConnectionPool(host='mcp-server-1', port=11434): Max retries exceeded with url: /api/tags (Caused by NameResolutionError("<urllib3.connection.HTTPConnection object at 0x7fd71ca8ef90>: Failed to resolve 'mcp-server-1' ([Errno -2] Name or service not known)"))
+2025-04-20 22:49:09,434 [WARNING] ollama_client: Error connecting to MCP server mcp2: HTTPConnectionPool(host='mcp-server-2', port=11434): Max retries exceeded with url: /api/tags (Caused by NameResolutionError("<urllib3.connection.HTTPConnection object at 0x7fd71ca8f3b0>: Failed to resolve 'mcp-server-2' ([Errno -2] Name or service not known)"))
+2025-04-20 22:49:13,425 [WARNING] ollama_client: Error connecting to MCP server mcp3: HTTPConnectionPool(host='mcp-server-3', port=11434): Max retries exceeded with url: /api/tags (Caused by NameResolutionError("<urllib3.connection.HTTPConnection object at 0x7fd71ca8fd10>: Failed to resolve 'mcp-server-3' ([Errno -2] Name or service not known)"))
+2025-04-20 22:49:13,427 [INFO] main: New WebSocket connection from 172.28.0.1:48286. Total: 4
+2025-04-20 22:49:13,433 [INFO] ollama_client: Retrieved 7 models from primary Ollama server
+2025-04-20 22:49:17,404 [WARNING] ollama_client: Error connecting to MCP server mcp1: HTTPConnectionPool(host='mcp-server-1', port=11434): Max retries exceeded with url: /api/tags (Caused by NameResolutionError("<urllib3.connection.HTTPConnection object at 0x7fd71cab6330>: Failed to resolve 'mcp-server-1' ([Errno -2] Name or service not known)"))
+2025-04-20 22:49:21,393 [WARNING] ollama_client: Error connecting to MCP server mcp2: HTTPConnectionPool(host='mcp-server-2', port=11434): Max retries exceeded with url: /api/tags (Caused by NameResolutionError("<urllib3.connection.HTTPConnection object at 0x7fd71ca8d2e0>: Failed to resolve 'mcp-server-2' ([Errno -2] Name or service not known)"))
+2025-04-20 22:49:25,378 [WARNING] ollama_client: Error connecting to MCP server mcp3: HTTPConnectionPool(host='mcp-server-3', port=11434): Max retries exceeded with url: /api/tags (Caused by NameResolutionError("<urllib3.connection.HTTPConnection object at 0x7fd71ca8e120>: Failed to resolve 'mcp-server-3' ([Errno -2] Name or service not known)"))
+2025-04-20 22:49:25,389 [INFO] main: WebSocket disconnected from 172.28.0.1:48246. Remaining: 3
+2025-04-20 22:49:25,389 [INFO] main: WebSocket disconnected from 172.28.0.1:48256. Remaining: 2
+2025-04-20 22:49:25,423 [INFO] main: New WebSocket connection from 172.28.0.1:35010. Total: 3
+2025-04-20 22:49:25,448 [INFO] main: New WebSocket connection from 172.28.0.1:35026. Total: 4
+2025-04-20 22:49:25,453 [INFO] ollama_client: Retrieved 7 models from primary Ollama server
+2025-04-20 22:49:29,437 [WARNING] ollama_client: Error connecting to MCP server mcp1: HTTPConnectionPool(host='mcp-server-1', port=11434): Max retries exceeded with url: /api/tags (Caused by NameResolutionError("<urllib3.connection.HTTPConnection object at 0x7fd71cab5220>: Failed to resolve 'mcp-server-1' ([Errno -2] Name or service not known)"))
+2025-04-20 22:49:33,434 [WARNING] ollama_client: Error connecting to MCP server mcp2: HTTPConnectionPool(host='mcp-server-2', port=11434): Max retries exceeded with url: /api/tags (Caused by NameResolutionError("<urllib3.connection.HTTPConnection object at 0x7fd71ca8f1d0>: Failed to resolve 'mcp-server-2' ([Errno -2] Name or service not known)"))
+2025-04-20 22:49:37,417 [WARNING] ollama_client: Error connecting to MCP server mcp3: HTTPConnectionPool(host='mcp-server-3', port=11434): Max retries exceeded with url: /api/tags (Caused by NameResolutionError("<urllib3.connection.HTTPConnection object at 0x7fd71ca8ec00>: Failed to resolve 'mcp-server-3' ([Errno -2] Name or service not known)"))
+2025-04-20 22:49:37,441 [INFO] ollama_client: Retrieved 7 models from primary Ollama server
+2025-04-20 22:49:41,422 [WARNING] ollama_client: Error connecting to MCP server mcp1: HTTPConnectionPool(host='mcp-server-1', port=11434): Max retries exceeded with url: /api/tags (Caused by NameResolutionError("<urllib3.connection.HTTPConnection object at 0x7fd71cad87d0>: Failed to resolve 'mcp-server-1' ([Errno -2] Name or service not known)"))
+2025-04-20 22:49:45,412 [WARNING] ollama_client: Error connecting to MCP server mcp2: HTTPConnectionPool(host='mcp-server-2', port=11434): Max retries exceeded with url: /api/tags (Caused by NameResolutionError("<urllib3.connection.HTTPConnection object at 0x7fd71ca8e240>: Failed to resolve 'mcp-server-2' ([Errno -2] Name or service not known)"))
+2025-04-20 22:49:49,387 [WARNING] ollama_client: Error connecting to MCP server mcp3: HTTPConnectionPool(host='mcp-server-3', port=11434): Max retries exceeded with url: /api/tags (Caused by NameResolutionError("<urllib3.connection.HTTPConnection object at 0x7fd71cab4380>: Failed to resolve 'mcp-server-3' ([Errno -2] Name or service not known)"))
+2025-04-20 22:49:49,388 [INFO] main: WebSocket disconnected from 172.28.0.1:35026. Remaining: 3
+2025-04-20 22:49:49,408 [INFO] main: New WebSocket connection from 172.28.0.1:34762. Total: 4
+2025-04-20 22:49:49,418 [INFO] ollama_client: Retrieved 7 models from primary Ollama server
+2025-04-20 22:49:53,391 [WARNING] ollama_client: Error connecting to MCP server mcp1: HTTPConnectionPool(host='mcp-server-1', port=11434): Max retries exceeded with url: /api/tags (Caused by NameResolutionError("<urllib3.connection.HTTPConnection object at 0x7fd71cada000>: Failed to resolve 'mcp-server-1' ([Errno -2] Name or service not known)"))
+2025-04-20 22:49:57,385 [WARNING] ollama_client: Error connecting to MCP server mcp2: HTTPConnectionPool(host='mcp-server-2', port=11434): Max retries exceeded with url: /api/tags (Caused by NameResolutionError("<urllib3.connection.HTTPConnection object at 0x7fd71ca63e30>: Failed to resolve 'mcp-server-2' ([Errno -2] Name or service not known)"))
+2025-04-20 22:50:01,351 [WARNING] ollama_client: Error connecting to MCP server mcp3: HTTPConnectionPool(host='mcp-server-3', port=11434): Max retries exceeded with url: /api/tags (Caused by NameResolutionError("<urllib3.connection.HTTPConnection object at 0x7fd71cc198e0>: Failed to resolve 'mcp-server-3' ([Errno -2] Name or service not known)"))
+2025-04-20 22:50:01,356 [INFO] ollama_client: Retrieved 7 models from primary Ollama server
+2025-04-20 22:50:05,334 [WARNING] ollama_client: Error connecting to MCP server mcp1: HTTPConnectionPool(host='mcp-server-1', port=11434): Max retries exceeded with url: /api/tags (Caused by NameResolutionError("<urllib3.connection.HTTPConnection object at 0x7fd71cada510>: Failed to resolve 'mcp-server-1' ([Errno -2] Name or service not known)"))
+2025-04-20 22:50:09,295 [WARNING] ollama_client: Error connecting to MCP server mcp2: HTTPConnectionPool(host='mcp-server-2', port=11434): Max retries exceeded with url: /api/tags (Caused by NameResolutionError("<urllib3.connection.HTTPConnection object at 0x7fd71cadade0>: Failed to resolve 'mcp-server-2' ([Errno -2] Name or service not known)"))
+2025-04-20 22:50:13,280 [WARNING] ollama_client: Error connecting to MCP server mcp3: HTTPConnectionPool(host='mcp-server-3', port=11434): Max retries exceeded with url: /api/tags (Caused by NameResolutionError("<urllib3.connection.HTTPConnection object at 0x7fd71cab5eb0>: Failed to resolve 'mcp-server-3' ([Errno -2] Name or service not known)"))
+2025-04-20 22:50:13,283 [INFO] main: WebSocket disconnected from 172.28.0.1:48286. Remaining: 3
+2025-04-20 22:50:13,284 [INFO] main: WebSocket disconnected from 172.28.0.1:34676. Remaining: 2
+2025-04-20 22:50:14,713 [INFO] main: New WebSocket connection from 172.28.0.1:35770. Total: 3
+2025-04-20 22:50:15,856 [INFO] main: New WebSocket connection from 172.28.0.1:35774. Total: 4
+2025-04-20 22:50:16,052 [INFO] main: WebSocket disconnected from 172.28.0.1:34762. Remaining: 3
+2025-04-20 22:50:16,052 [INFO] main: WebSocket disconnected from 172.28.0.1:35010. Remaining: 2
+2025-04-20 22:50:16,183 [INFO] main: New WebSocket connection from 172.28.0.1:35780. Total: 3
+2025-04-20 22:50:16,220 [INFO] ollama_client: Retrieved 7 models from primary Ollama server
+2025-04-20 22:50:20,205 [WARNING] ollama_client: Error connecting to MCP server mcp1: HTTPConnectionPool(host='mcp-server-1', port=11434): Max retries exceeded with url: /api/tags (Caused by NameResolutionError("<urllib3.connection.HTTPConnection object at 0x7fd71cadb7d0>: Failed to resolve 'mcp-server-1' ([Errno -2] Name or service not known)"))
+2025-04-20 22:50:24,200 [WARNING] ollama_client: Error connecting to MCP server mcp2: HTTPConnectionPool(host='mcp-server-2', port=11434): Max retries exceeded with url: /api/tags (Caused by NameResolutionError("<urllib3.connection.HTTPConnection object at 0x7fd71cadba10>: Failed to resolve 'mcp-server-2' ([Errno -2] Name or service not known)"))
+2025-04-20 22:50:28,166 [WARNING] ollama_client: Error connecting to MCP server mcp3: HTTPConnectionPool(host='mcp-server-3', port=11434): Max retries exceeded with url: /api/tags (Caused by NameResolutionError("<urllib3.connection.HTTPConnection object at 0x7fd71cc1a4e0>: Failed to resolve 'mcp-server-3' ([Errno -2] Name or service not known)"))
+2025-04-20 22:50:28,202 [INFO] ollama_client: Retrieved 7 models from primary Ollama server
+2025-04-20 22:50:32,179 [WARNING] ollama_client: Error connecting to MCP server mcp1: HTTPConnectionPool(host='mcp-server-1', port=11434): Max retries exceeded with url: /api/tags (Caused by NameResolutionError("<urllib3.connection.HTTPConnection object at 0x7fd71cab67b0>: Failed to resolve 'mcp-server-1' ([Errno -2] Name or service not known)"))
+2025-04-20 22:50:36,150 [WARNING] ollama_client: Error connecting to MCP server mcp2: HTTPConnectionPool(host='mcp-server-2', port=11434): Max retries exceeded with url: /api/tags (Caused by NameResolutionError("<urllib3.connection.HTTPConnection object at 0x7fd71cab7950>: Failed to resolve 'mcp-server-2' ([Errno -2] Name or service not known)"))
+2025-04-20 22:50:40,134 [WARNING] ollama_client: Error connecting to MCP server mcp3: HTTPConnectionPool(host='mcp-server-3', port=11434): Max retries exceeded with url: /api/tags (Caused by NameResolutionError("<urllib3.connection.HTTPConnection object at 0x7fd71cab5250>: Failed to resolve 'mcp-server-3' ([Errno -2] Name or service not known)"))
+2025-04-20 22:50:40,136 [INFO] main: New WebSocket connection from 172.28.0.1:35818. Total: 4
+2025-04-20 22:50:40,162 [INFO] ollama_client: Retrieved 7 models from primary Ollama server
+2025-04-20 22:50:44,123 [WARNING] ollama_client: Error connecting to MCP server mcp1: HTTPConnectionPool(host='mcp-server-1', port=11434): Max retries exceeded with url: /api/tags (Caused by NameResolutionError("<urllib3.connection.HTTPConnection object at 0x7fd71cab4f80>: Failed to resolve 'mcp-server-1' ([Errno -2] Name or service not known)"))
+2025-04-20 22:50:48,087 [WARNING] ollama_client: Error connecting to MCP server mcp2: HTTPConnectionPool(host='mcp-server-2', port=11434): Max retries exceeded with url: /api/tags (Caused by NameResolutionError("<urllib3.connection.HTTPConnection object at 0x7fd71cab6600>: Failed to resolve 'mcp-server-2' ([Errno -2] Name or service not known)"))
+2025-04-20 22:50:52,052 [WARNING] ollama_client: Error connecting to MCP server mcp3: HTTPConnectionPool(host='mcp-server-3', port=11434): Max retries exceeded with url: /api/tags (Caused by NameResolutionError("<urllib3.connection.HTTPConnection object at 0x7fd71cab5370>: Failed to resolve 'mcp-server-3' ([Errno -2] Name or service not known)"))
+2025-04-20 22:50:52,060 [INFO] ollama_client: Retrieved 7 models from primary Ollama server
+2025-04-20 22:50:56,038 [WARNING] ollama_client: Error connecting to MCP server mcp1: HTTPConnectionPool(host='mcp-server-1', port=11434): Max retries exceeded with url: /api/tags (Caused by NameResolutionError("<urllib3.connection.HTTPConnection object at 0x7fd71cc4b050>: Failed to resolve 'mcp-server-1' ([Errno -2] Name or service not known)"))
+2025-04-20 22:51:00,015 [WARNING] ollama_client: Error connecting to MCP server mcp2: HTTPConnectionPool(host='mcp-server-2', port=11434): Max retries exceeded with url: /api/tags (Caused by NameResolutionError("<urllib3.connection.HTTPConnection object at 0x7fd71cab4ce0>: Failed to resolve 'mcp-server-2' ([Errno -2] Name or service not known)"))
+2025-04-20 22:51:04,005 [WARNING] ollama_client: Error connecting to MCP server mcp3: HTTPConnectionPool(host='mcp-server-3', port=11434): Max retries exceeded with url: /api/tags (Caused by NameResolutionError("<urllib3.connection.HTTPConnection object at 0x7fd71cab4680>: Failed to resolve 'mcp-server-3' ([Errno -2] Name or service not known)"))
+2025-04-20 22:53:39,370 [INFO] main: WebSocket disconnected from 172.28.0.1:35780. Remaining: 3
+2025-04-20 22:53:39,371 [INFO] main: WebSocket disconnected from 172.28.0.1:35818. Remaining: 2
+2025-04-20 22:53:39,371 [INFO] main: WebSocket disconnected from 172.28.0.1:35774. Remaining: 1
+2025-04-20 22:53:39,372 [INFO] main: WebSocket disconnected from 172.28.0.1:35770. Remaining: 0
+2025-04-20 22:53:39,470 [INFO] main: --- Shutting down Projects Hub Backend ---
+2025-04-20 22:53:39,509 [INFO] main: File system watcher stopped.
+2025-04-20 22:53:50,671 [INFO] ollama_client: Initialized Ollama client with base URL: http://host.docker.internal:11434
+2025-04-20 22:53:50,698 [INFO] main: --- Starting Projects Hub Backend ---
+2025-04-20 22:53:50,698 [INFO] main: Watching data directory: /hub_data
+2025-04-20 22:53:50,701 [INFO] main: Hub data directory ready: /hub_data
+2025-04-20 22:53:50,702 [INFO] main: Ensured directory exists: /hub_data/focus_logs
+2025-04-20 22:53:50,732 [INFO] main: File system watcher started successfully.
+2025-04-20 22:53:51,717 [INFO] main: New WebSocket connection from 172.28.0.1:46334. Total: 1
+2025-04-20 22:53:52,186 [INFO] main: New WebSocket connection from 172.28.0.1:46342. Total: 2
+2025-04-20 22:53:52,714 [INFO] main: New WebSocket connection from 172.28.0.1:46352. Total: 3
+2025-04-20 22:53:54,254 [INFO] main: WebSocket disconnected from 172.28.0.1:46342. Remaining: 2
+2025-04-20 22:53:54,800 [INFO] main: New WebSocket connection from 172.28.0.1:54580. Total: 3
+2025-04-20 22:53:54,858 [INFO] ollama_client: Retrieved 7 models from Ollama server
+2025-04-20 22:53:54,861 [INFO] main: New WebSocket connection from 172.28.0.1:54622. Total: 4
+2025-04-20 22:53:54,873 [INFO] ollama_client: Retrieved 7 models from Ollama server
+2025-04-20 22:53:54,885 [INFO] ollama_client: Retrieved 7 models from Ollama server
+2025-04-20 22:53:54,892 [INFO] ollama_client: Retrieved 7 models from Ollama server
+2025-04-20 22:55:00,567 [INFO] main: Wrote YAML: /hub_data/countdowns.yaml
+2025-04-20 22:55:00,568 [INFO] main: File Watcher: Processing 'modified' for 'countdowns.yaml'
+2025-04-20 22:55:00,569 [INFO] main: Broadcasting message of type 'alarms_updated' to 4 clients
+2025-04-20 22:55:00,570 [INFO] main: Message broadcast successful to 4/4 clients
+2025-04-20 22:57:04,362 [INFO] main: WebSocket disconnected from 172.28.0.1:54580. Remaining: 3
+2025-04-20 22:57:04,362 [INFO] main: WebSocket disconnected from 172.28.0.1:54622. Remaining: 2
+2025-04-20 22:57:04,497 [INFO] main: New WebSocket connection from 172.28.0.1:44092. Total: 3
+2025-04-20 22:57:04,531 [INFO] ollama_client: Retrieved 7 models from Ollama server
+2025-04-20 22:57:04,543 [INFO] ollama_client: Retrieved 7 models from Ollama server
+2025-04-20 22:57:04,551 [INFO] main: New WebSocket connection from 172.28.0.1:44114. Total: 4
+2025-04-20 22:57:04,556 [INFO] ollama_client: Retrieved 7 models from Ollama server
+2025-04-20 22:57:04,562 [INFO] ollama_client: Retrieved 7 models from Ollama server
+2025-04-20 22:57:07,777 [INFO] main: WebSocket disconnected from 172.28.0.1:44092. Remaining: 3
+2025-04-20 22:57:07,778 [INFO] main: WebSocket disconnected from 172.28.0.1:44114. Remaining: 2
+2025-04-20 22:57:07,778 [INFO] main: WebSocket disconnected from 172.28.0.1:46352. Remaining: 1
+2025-04-20 22:57:07,779 [INFO] main: WebSocket disconnected from 172.28.0.1:46334. Remaining: 0
+2025-04-20 22:57:07,877 [INFO] main: --- Shutting down Projects Hub Backend ---
+2025-04-20 22:57:07,910 [INFO] main: File system watcher stopped.
+2025-04-20 22:57:15,957 [INFO] ollama_client: Initialized Ollama client with base URL: http://host.docker.internal:11434
+2025-04-20 22:57:15,985 [INFO] main: --- Starting Projects Hub Backend ---
+2025-04-20 22:57:15,985 [INFO] main: Watching data directory: /hub_data
+2025-04-20 22:57:15,988 [INFO] main: Hub data directory ready: /hub_data
+2025-04-20 22:57:15,989 [INFO] main: Ensured directory exists: /hub_data/focus_logs
+2025-04-20 22:57:16,019 [INFO] main: File system watcher started successfully.
+2025-04-20 22:57:16,716 [INFO] main: New WebSocket connection from 172.28.0.1:54544. Total: 1
+2025-04-20 22:57:16,717 [INFO] main: New WebSocket connection from 172.28.0.1:54558. Total: 2
+2025-04-20 22:57:18,365 [INFO] main: New WebSocket connection from 172.28.0.1:54580. Total: 3
+2025-04-20 22:57:19,018 [INFO] main: WebSocket disconnected from 172.28.0.1:54580. Remaining: 2
+2025-04-20 22:57:20,433 [INFO] main: New WebSocket connection from 172.28.0.1:54618. Total: 3
+2025-04-20 22:57:20,470 [INFO] ollama_client: Retrieved 7 models from Ollama server
+2025-04-20 22:57:20,482 [INFO] ollama_client: Retrieved 7 models from Ollama server
+2025-04-20 22:57:20,489 [INFO] main: New WebSocket connection from 172.28.0.1:54652. Total: 4
+2025-04-20 22:57:20,494 [INFO] ollama_client: Retrieved 7 models from Ollama server
+2025-04-20 22:57:20,501 [INFO] ollama_client: Retrieved 7 models from Ollama server
+2025-04-20 23:00:43,446 [INFO] main: Wrote YAML: /hub_data/test-project/project.yaml
+2025-04-20 23:00:43,454 [INFO] main: Wrote YAML: /hub_data/test-project/tasks.yaml
+2025-04-20 23:00:43,455 [INFO] main: File Watcher: Processing 'created' for 'test-project/project.yaml'
+2025-04-20 23:00:43,456 [INFO] main: Broadcasting message of type 'project_updated' to 4 clients
+2025-04-20 23:00:43,456 [INFO] main: Message broadcast successful to 4/4 clients
+2025-04-20 23:00:45,104 [INFO] main: Wrote YAML: /hub_data/test-project/tasks.yaml
+2025-04-20 23:00:45,105 [INFO] main: Broadcasting message of type 'tasks_updated' to 4 clients
+2025-04-20 23:00:45,106 [INFO] main: Message broadcast successful to 4/4 clients
+2025-04-20 23:00:51,703 [INFO] main: WebSocket disconnected from 172.28.0.1:54652. Remaining: 3
+2025-04-20 23:00:51,704 [INFO] main: WebSocket disconnected from 172.28.0.1:54618. Remaining: 2
+2025-04-20 23:00:51,818 [INFO] main: New WebSocket connection from 172.28.0.1:42656. Total: 3
+2025-04-20 23:00:51,881 [INFO] ollama_client: Retrieved 7 models from Ollama server
+2025-04-20 23:00:51,883 [INFO] main: New WebSocket connection from 172.28.0.1:42706. Total: 4
+2025-04-20 23:00:51,896 [INFO] ollama_client: Retrieved 7 models from Ollama server
+2025-04-20 23:00:51,906 [INFO] ollama_client: Retrieved 7 models from Ollama server
+2025-04-20 23:00:51,912 [INFO] ollama_client: Retrieved 7 models from Ollama server
+2025-04-20 23:01:00,872 [INFO] main: WebSocket disconnected from 172.28.0.1:42656. Remaining: 3
+2025-04-20 23:01:00,873 [INFO] main: WebSocket disconnected from 172.28.0.1:54544. Remaining: 2
+2025-04-20 23:01:00,873 [INFO] main: WebSocket disconnected from 172.28.0.1:42706. Remaining: 1
+2025-04-20 23:01:00,874 [INFO] main: WebSocket disconnected from 172.28.0.1:54558. Remaining: 0
+2025-04-20 23:01:00,972 [INFO] main: --- Shutting down Projects Hub Backend ---
+2025-04-20 23:01:01,009 [INFO] main: File system watcher stopped.
+2025-04-20 23:09:38,973 [INFO] ollama_client: Initialized Ollama client with base URL: http://host.docker.internal:11434
+2025-04-20 23:09:39,009 [INFO] main: --- Starting Projects Hub Backend ---
+2025-04-20 23:09:39,009 [INFO] main: Watching data directory: /hub_data
+2025-04-20 23:09:39,013 [INFO] main: Hub data directory ready: /hub_data
+2025-04-20 23:09:39,014 [INFO] main: Ensured directory exists: /hub_data/focus_logs
+2025-04-20 23:09:39,064 [INFO] main: File system watcher started successfully.
+2025-04-20 23:09:39,083 [INFO] ollama_client: Retrieved 7 models from Ollama server
+2025-04-20 23:09:40,319 [INFO] main: New WebSocket connection from 172.28.0.1:43544. Total: 1
+2025-04-20 23:09:41,952 [INFO] main: New WebSocket connection from 172.28.0.1:43546. Total: 2
+2025-04-20 23:09:42,699 [INFO] main: WebSocket disconnected from 172.28.0.1:43546. Remaining: 1
+2025-04-20 23:09:43,461 [INFO] main: New WebSocket connection from 172.28.0.1:53960. Total: 2
+2025-04-20 23:09:43,524 [INFO] ollama_client: Retrieved 7 models from Ollama server
+2025-04-20 23:09:43,543 [INFO] ollama_client: Retrieved 7 models from Ollama server
+2025-04-20 23:09:43,545 [INFO] main: New WebSocket connection from 172.28.0.1:53980. Total: 3
+2025-04-20 23:09:43,561 [INFO] ollama_client: Retrieved 7 models from Ollama server
+2025-04-20 23:09:43,574 [INFO] ollama_client: Retrieved 7 models from Ollama server
+2025-04-20 23:09:45,314 [INFO] main: New WebSocket connection from 172.28.0.1:53982. Total: 4
+2025-04-20 23:16:19,450 [INFO] main: Pre-generated summary not found for 2025-04-20, attempting on-demand calculation.
+2025-04-20 23:16:19,451 [INFO] main: Calculating on-demand summary for 2025-04-20 from /hub_data/focus_logs/focus_log_2025-04-20.jsonl
+2025-04-20 23:16:19,471 [INFO] main: Successfully calculated on-demand summary for 2025-04-20
+2025-04-20 23:16:19,478 [INFO] main: Pre-generated summary not found for 2025-04-20, attempting on-demand calculation.
+2025-04-20 23:16:19,479 [INFO] main: Calculating on-demand summary for 2025-04-20 from /hub_data/focus_logs/focus_log_2025-04-20.jsonl
+2025-04-20 23:16:19,486 [INFO] main: Successfully calculated on-demand summary for 2025-04-20
+2025-04-20 23:16:25,825 [INFO] main: Create project request received: New Project 7:16:25 PM
+2025-04-20 23:16:25,838 [INFO] main: Wrote YAML: /hub_data/new-project-7-16-25-pm/project.yaml
+2025-04-20 23:16:25,846 [INFO] main: Wrote YAML: /hub_data/new-project-7-16-25-pm/tasks.yaml
+2025-04-20 23:16:25,848 [INFO] main: File Watcher: Processing 'created' for 'new-project-7-16-25-pm/project.yaml'
+2025-04-20 23:16:25,848 [INFO] main: Broadcasting message of type 'project_updated' to 4 clients
+2025-04-20 23:16:25,849 [INFO] main: Message broadcast successful to 4/4 clients
+2025-04-20 23:16:30,313 [INFO] main: Pre-generated summary not found for 2025-04-20, attempting on-demand calculation.
+2025-04-20 23:16:30,314 [INFO] main: Calculating on-demand summary for 2025-04-20 from /hub_data/focus_logs/focus_log_2025-04-20.jsonl
+2025-04-20 23:16:30,331 [INFO] main: Successfully calculated on-demand summary for 2025-04-20
+2025-04-20 23:16:30,336 [INFO] main: Pre-generated summary not found for 2025-04-20, attempting on-demand calculation.
+2025-04-20 23:16:30,338 [INFO] main: Calculating on-demand summary for 2025-04-20 from /hub_data/focus_logs/focus_log_2025-04-20.jsonl
+2025-04-20 23:16:30,344 [INFO] main: Successfully calculated on-demand summary for 2025-04-20
+2025-04-20 23:16:57,419 [INFO] main: WebSocket disconnected from 172.28.0.1:53980. Remaining: 3
+2025-04-20 23:16:57,420 [INFO] main: WebSocket disconnected from 172.28.0.1:43544. Remaining: 2
+2025-04-20 23:16:57,420 [INFO] main: WebSocket disconnected from 172.28.0.1:53960. Remaining: 1
+2025-04-20 23:16:57,420 [INFO] main: WebSocket disconnected from 172.28.0.1:53982. Remaining: 0
+2025-04-20 23:16:57,519 [INFO] main: --- Shutting down Projects Hub Backend ---
+2025-04-20 23:16:57,557 [INFO] main: File system watcher stopped.
+2025-04-20 23:17:03,282 [INFO] ollama_client: Initialized Ollama client with base URL: http://host.docker.internal:11434
+2025-04-20 23:17:03,312 [INFO] main: --- Starting Projects Hub Backend ---
+2025-04-20 23:17:03,313 [INFO] main: Watching data directory: /hub_data
+2025-04-20 23:17:03,316 [INFO] main: Hub data directory ready: /hub_data
+2025-04-20 23:17:03,317 [INFO] main: Ensured directory exists: /hub_data/focus_logs
+2025-04-20 23:17:03,358 [INFO] main: File system watcher started successfully.
+2025-04-20 23:17:04,722 [INFO] main: New WebSocket connection from 172.28.0.1:54202. Total: 1
+2025-04-20 23:17:05,783 [INFO] main: New WebSocket connection from 172.28.0.1:54210. Total: 2
+2025-04-20 23:17:06,337 [INFO] main: WebSocket disconnected from 172.28.0.1:54210. Remaining: 1
+2025-04-20 23:17:06,880 [INFO] main: Pre-generated summary not found for 2025-04-20, attempting on-demand calculation.
+2025-04-20 23:17:06,881 [WARNING] main: Neither summary nor log file found for 2025-04-20
+2025-04-20 23:17:06,888 [INFO] main: Pre-generated summary not found for 2025-04-20, attempting on-demand calculation.
+2025-04-20 23:17:06,888 [WARNING] main: Neither summary nor log file found for 2025-04-20
+2025-04-20 23:17:06,890 [INFO] main: New WebSocket connection from 172.28.0.1:54246. Total: 2
+2025-04-20 23:17:06,919 [INFO] ollama_client: Retrieved 7 models from Ollama server
+2025-04-20 23:17:06,930 [INFO] ollama_client: Retrieved 7 models from Ollama server
+2025-04-20 23:17:06,931 [INFO] main: New WebSocket connection from 172.28.0.1:54266. Total: 3
+2025-04-20 23:17:06,942 [INFO] ollama_client: Retrieved 7 models from Ollama server
+2025-04-20 23:17:06,948 [INFO] ollama_client: Retrieved 7 models from Ollama server
+2025-04-20 23:17:07,717 [INFO] main: New WebSocket connection from 172.28.0.1:54278. Total: 4
+2025-04-20 23:17:16,823 [INFO] main: Pre-generated summary not found for 2025-04-20, attempting on-demand calculation.
+2025-04-20 23:17:16,823 [WARNING] main: Neither summary nor log file found for 2025-04-20
+2025-04-20 23:17:16,826 [INFO] main: Pre-generated summary not found for 2025-04-20, attempting on-demand calculation.
+2025-04-20 23:17:16,827 [WARNING] main: Neither summary nor log file found for 2025-04-20
+2025-04-20 23:17:19,841 [INFO] main: Create project request received: ASd
+2025-04-20 23:17:19,852 [INFO] main: Wrote YAML: /hub_data/asd/project.yaml
+2025-04-20 23:17:19,858 [INFO] main: Wrote YAML: /hub_data/asd/tasks.yaml
+2025-04-20 23:17:19,859 [INFO] main: File Watcher: Processing 'created' for 'asd/project.yaml'
+2025-04-20 23:17:19,859 [INFO] main: Broadcasting message of type 'project_updated' to 4 clients
+2025-04-20 23:17:19,860 [INFO] main: Message broadcast successful to 4/4 clients
+2025-04-20 23:17:49,051 [INFO] main: WebSocket disconnected from 172.28.0.1:54266. Remaining: 3
+2025-04-20 23:17:49,052 [INFO] main: WebSocket disconnected from 172.28.0.1:54246. Remaining: 2
+2025-04-20 23:17:49,254 [INFO] main: Pre-generated summary not found for 2025-04-20, attempting on-demand calculation.
+2025-04-20 23:17:49,255 [WARNING] main: Neither summary nor log file found for 2025-04-20
+2025-04-20 23:17:49,264 [INFO] main: Pre-generated summary not found for 2025-04-20, attempting on-demand calculation.
+2025-04-20 23:17:49,264 [WARNING] main: Neither summary nor log file found for 2025-04-20
+2025-04-20 23:17:49,265 [INFO] main: New WebSocket connection from 172.28.0.1:46766. Total: 3
+2025-04-20 23:17:49,296 [INFO] ollama_client: Retrieved 7 models from Ollama server
+2025-04-20 23:17:49,309 [INFO] ollama_client: Retrieved 7 models from Ollama server
+2025-04-20 23:17:49,311 [INFO] main: New WebSocket connection from 172.28.0.1:46790. Total: 4
+2025-04-20 23:17:49,322 [INFO] ollama_client: Retrieved 7 models from Ollama server
+2025-04-20 23:17:49,329 [INFO] ollama_client: Retrieved 7 models from Ollama server
+2025-04-20 23:18:10,566 [INFO] main: Create project request received: Test
+2025-04-20 23:18:10,577 [INFO] main: Wrote YAML: /hub_data/test/project.yaml
+2025-04-20 23:18:10,583 [INFO] main: Wrote YAML: /hub_data/test/tasks.yaml
+2025-04-20 23:18:10,584 [INFO] main: File Watcher: Processing 'created' for 'test/project.yaml'
+2025-04-20 23:18:10,584 [INFO] main: Broadcasting message of type 'project_updated' to 4 clients
+2025-04-20 23:18:10,585 [INFO] main: Message broadcast successful to 4/4 clients
+2025-04-20 23:20:08,396 [INFO] main: WebSocket disconnected from 172.28.0.1:54202. Remaining: 3
+2025-04-20 23:20:08,397 [INFO] main: WebSocket disconnected from 172.28.0.1:54278. Remaining: 2
+2025-04-20 23:20:08,398 [INFO] main: WebSocket disconnected from 172.28.0.1:46790. Remaining: 1
+2025-04-20 23:20:08,398 [INFO] main: WebSocket disconnected from 172.28.0.1:46766. Remaining: 0
+2025-04-20 23:20:08,497 [INFO] main: --- Shutting down Projects Hub Backend ---
+2025-04-20 23:20:08,530 [INFO] main: File system watcher stopped.
+2025-04-20 23:20:15,123 [INFO] ollama_client: Initialized Ollama client with base URL: http://host.docker.internal:11434
+2025-04-20 23:20:15,151 [INFO] main: --- Starting Projects Hub Backend ---
+2025-04-20 23:20:15,152 [INFO] main: Watching data directory: /hub_data
+2025-04-20 23:20:15,155 [INFO] main: Hub data directory ready: /hub_data
+2025-04-20 23:20:15,155 [INFO] main: Ensured directory exists: /hub_data/focus_logs
+2025-04-20 23:20:15,216 [INFO] main: File system watcher started successfully.
+2025-04-20 23:20:15,711 [INFO] main: New WebSocket connection from 172.28.0.1:39034. Total: 1
+2025-04-20 23:20:19,513 [INFO] main: Looking for focus logs at: /hub_data/focus_logs/daily_summary_2025-04-20.json or /hub_data/focus_logs/focus_log_2025-04-20.jsonl
+2025-04-20 23:20:19,514 [INFO] main: Pre-generated summary not found for 2025-04-20, attempting on-demand calculation.
+2025-04-20 23:20:19,515 [WARNING] main: Neither summary nor log file found for 2025-04-20
+2025-04-20 23:20:19,524 [INFO] main: Looking for focus logs at: /hub_data/focus_logs/daily_summary_2025-04-20.json or /hub_data/focus_logs/focus_log_2025-04-20.jsonl
+2025-04-20 23:20:19,525 [INFO] main: Pre-generated summary not found for 2025-04-20, attempting on-demand calculation.
+2025-04-20 23:20:19,525 [WARNING] main: Neither summary nor log file found for 2025-04-20
+2025-04-20 23:20:19,541 [INFO] main: New WebSocket connection from 172.28.0.1:39072. Total: 2
+2025-04-20 23:20:19,553 [INFO] ollama_client: Retrieved 7 models from Ollama server
+2025-04-20 23:20:19,571 [INFO] ollama_client: Retrieved 7 models from Ollama server
+2025-04-20 23:20:19,586 [INFO] ollama_client: Retrieved 7 models from Ollama server
+2025-04-20 23:20:19,588 [INFO] main: New WebSocket connection from 172.28.0.1:39104. Total: 3
+2025-04-20 23:20:19,593 [INFO] ollama_client: Retrieved 7 models from Ollama server
+2025-04-20 23:20:19,715 [INFO] main: New WebSocket connection from 172.28.0.1:39116. Total: 4
+2025-04-20 23:20:27,732 [INFO] main: Create project request received: asd
+2025-04-20 23:20:27,744 [INFO] main: Wrote YAML: /hub_data/asd-1/project.yaml
+2025-04-20 23:20:27,752 [INFO] main: Wrote YAML: /hub_data/asd-1/tasks.yaml
+2025-04-20 23:20:27,753 [INFO] main: File Watcher: Processing 'created' for 'asd-1/project.yaml'
+2025-04-20 23:20:27,753 [INFO] main: Broadcasting message of type 'project_updated' to 4 clients
+2025-04-20 23:20:27,754 [INFO] main: Message broadcast successful to 4/4 clients
+2025-04-20 23:20:35,720 [INFO] main: WebSocket disconnected from 172.28.0.1:39104. Remaining: 3
+2025-04-20 23:20:35,721 [INFO] main: WebSocket disconnected from 172.28.0.1:39072. Remaining: 2
+2025-04-20 23:20:35,963 [INFO] main: New WebSocket connection from 172.28.0.1:39404. Total: 3
+2025-04-20 23:20:36,016 [INFO] ollama_client: Retrieved 7 models from Ollama server
+2025-04-20 23:20:36,031 [INFO] ollama_client: Retrieved 7 models from Ollama server
+2025-04-20 23:20:36,032 [INFO] main: New WebSocket connection from 172.28.0.1:39440. Total: 4
+2025-04-20 23:20:36,046 [INFO] ollama_client: Retrieved 7 models from Ollama server
+2025-04-20 23:20:36,053 [INFO] ollama_client: Retrieved 7 models from Ollama server
+2025-04-20 23:20:38,494 [INFO] main: Create project request received: New Project 7:20:38 PM
+2025-04-20 23:20:38,505 [INFO] main: Wrote YAML: /hub_data/new-project-7-20-38-pm/project.yaml
+2025-04-20 23:20:38,510 [INFO] main: Wrote YAML: /hub_data/new-project-7-20-38-pm/tasks.yaml
+2025-04-20 23:20:38,511 [INFO] main: File Watcher: Processing 'created' for 'new-project-7-20-38-pm/project.yaml'
+2025-04-20 23:20:38,512 [INFO] main: Broadcasting message of type 'project_updated' to 4 clients
+2025-04-20 23:20:38,513 [INFO] main: Message broadcast successful to 4/4 clients
+2025-04-20 23:20:46,190 [INFO] main: Looking for focus logs at: /hub_data/focus_logs/daily_summary_2025-04-20.json or /hub_data/focus_logs/focus_log_2025-04-20.jsonl
+2025-04-20 23:20:46,191 [INFO] main: Pre-generated summary not found for 2025-04-20, attempting on-demand calculation.
+2025-04-20 23:20:46,192 [WARNING] main: Neither summary nor log file found for 2025-04-20
+2025-04-20 23:20:46,196 [INFO] main: Looking for focus logs at: /hub_data/focus_logs/daily_summary_2025-04-20.json or /hub_data/focus_logs/focus_log_2025-04-20.jsonl
+2025-04-20 23:20:46,197 [INFO] main: Pre-generated summary not found for 2025-04-20, attempting on-demand calculation.
+2025-04-20 23:20:46,197 [WARNING] main: Neither summary nor log file found for 2025-04-20
+2025-04-20 23:20:49,843 [INFO] main: WebSocket disconnected from 172.28.0.1:39404. Remaining: 3
+2025-04-20 23:20:49,844 [INFO] main: WebSocket disconnected from 172.28.0.1:39440. Remaining: 2
+2025-04-20 23:20:50,056 [INFO] main: Looking for focus logs at: /hub_data/focus_logs/daily_summary_2025-04-20.json or /hub_data/focus_logs/focus_log_2025-04-20.jsonl
+2025-04-20 23:20:50,057 [INFO] main: Pre-generated summary not found for 2025-04-20, attempting on-demand calculation.
+2025-04-20 23:20:50,058 [WARNING] main: Neither summary nor log file found for 2025-04-20
+2025-04-20 23:20:50,077 [INFO] main: Looking for focus logs at: /hub_data/focus_logs/daily_summary_2025-04-20.json or /hub_data/focus_logs/focus_log_2025-04-20.jsonl
+2025-04-20 23:20:50,077 [INFO] main: Pre-generated summary not found for 2025-04-20, attempting on-demand calculation.
+2025-04-20 23:20:50,078 [WARNING] main: Neither summary nor log file found for 2025-04-20
+2025-04-20 23:20:50,079 [INFO] main: New WebSocket connection from 172.28.0.1:55724. Total: 3
+2025-04-20 23:20:50,114 [INFO] ollama_client: Retrieved 7 models from Ollama server
+2025-04-20 23:20:50,131 [INFO] ollama_client: Retrieved 7 models from Ollama server
+2025-04-20 23:20:50,143 [INFO] ollama_client: Retrieved 7 models from Ollama server
+2025-04-20 23:20:50,144 [INFO] main: New WebSocket connection from 172.28.0.1:55748. Total: 4
+2025-04-20 23:20:50,150 [INFO] ollama_client: Retrieved 7 models from Ollama server
+2025-04-20 23:22:06,362 [INFO] main: WebSocket disconnected from 172.28.0.1:39116. Remaining: 3
+2025-04-20 23:22:06,363 [INFO] main: WebSocket disconnected from 172.28.0.1:55724. Remaining: 2
+2025-04-20 23:22:06,363 [INFO] main: WebSocket disconnected from 172.28.0.1:39034. Remaining: 1
+2025-04-20 23:22:06,363 [INFO] main: WebSocket disconnected from 172.28.0.1:55748. Remaining: 0
+2025-04-20 23:22:06,462 [INFO] main: --- Shutting down Projects Hub Backend ---
+2025-04-20 23:22:06,495 [INFO] main: File system watcher stopped.
+2025-04-20 23:22:16,212 [INFO] ollama_client: Initialized Ollama client with base URL: http://host.docker.internal:11434
+2025-04-20 23:22:16,241 [INFO] main: --- Starting Projects Hub Backend ---
+2025-04-20 23:22:16,241 [INFO] main: Watching data directory: /hub_data
+2025-04-20 23:22:16,243 [INFO] main: Hub data directory ready: /hub_data
+2025-04-20 23:22:16,244 [INFO] main: Ensured directory exists: /hub_data/focus_logs
+2025-04-20 23:22:16,304 [INFO] main: File system watcher started successfully.
+2025-04-20 23:22:17,709 [INFO] main: New WebSocket connection from 172.28.0.1:60406. Total: 1
+2025-04-20 23:22:17,711 [INFO] main: New WebSocket connection from 172.28.0.1:60410. Total: 2
+2025-04-20 23:22:20,841 [INFO] main: New WebSocket connection from 172.28.0.1:60412. Total: 3
+2025-04-20 23:22:27,632 [INFO] main: WebSocket disconnected from 172.28.0.1:60410. Remaining: 2
+2025-04-20 23:22:27,632 [INFO] main: WebSocket disconnected from 172.28.0.1:60412. Remaining: 1
+2025-04-20 23:22:27,632 [INFO] main: WebSocket disconnected from 172.28.0.1:60406. Remaining: 0
+2025-04-20 23:22:27,733 [INFO] main: --- Shutting down Projects Hub Backend ---
+2025-04-20 23:22:27,764 [INFO] main: File system watcher stopped.
+2025-04-20 23:22:31,130 [INFO] ollama_client: Initialized Ollama client with base URL: http://host.docker.internal:11434
+2025-04-20 23:22:31,159 [INFO] main: --- Starting Projects Hub Backend ---
+2025-04-20 23:22:31,159 [INFO] main: Watching data directory: /hub_data
+2025-04-20 23:22:31,162 [INFO] main: Hub data directory ready: /hub_data
+2025-04-20 23:22:31,163 [INFO] main: Ensured directory exists: /hub_data/focus_logs
+2025-04-20 23:22:31,229 [INFO] main: File system watcher started successfully.
+2025-04-20 23:22:31,711 [INFO] main: New WebSocket connection from 172.28.0.1:44124. Total: 1
+2025-04-20 23:22:31,712 [INFO] main: New WebSocket connection from 172.28.0.1:44130. Total: 2
+2025-04-20 23:22:32,709 [INFO] main: New WebSocket connection from 172.28.0.1:44142. Total: 3
+2025-04-20 23:22:34,585 [INFO] main: WebSocket disconnected from 172.28.0.1:44142. Remaining: 2
+2025-04-20 23:22:35,170 [INFO] main: Looking for focus logs at: /hub_data/focus_logs/daily_summary_2025-04-20.json or /hub_data/focus_logs/focus_log_2025-04-20.jsonl
+2025-04-20 23:22:35,171 [INFO] main: Pre-generated summary not found for 2025-04-20, attempting on-demand calculation.
+2025-04-20 23:22:35,172 [INFO] main: Calculating on-demand summary for 2025-04-20 from /hub_data/focus_logs/focus_log_2025-04-20.jsonl
+2025-04-20 23:22:35,187 [INFO] main: Successfully calculated on-demand summary for 2025-04-20
+2025-04-20 23:22:35,194 [INFO] main: Looking for focus logs at: /hub_data/focus_logs/daily_summary_2025-04-20.json or /hub_data/focus_logs/focus_log_2025-04-20.jsonl
+2025-04-20 23:22:35,195 [INFO] main: Pre-generated summary not found for 2025-04-20, attempting on-demand calculation.
+2025-04-20 23:22:35,196 [INFO] main: Calculating on-demand summary for 2025-04-20 from /hub_data/focus_logs/focus_log_2025-04-20.jsonl
+2025-04-20 23:22:35,202 [INFO] main: Successfully calculated on-demand summary for 2025-04-20
+2025-04-20 23:22:35,217 [INFO] main: New WebSocket connection from 172.28.0.1:36602. Total: 3
+2025-04-20 23:22:35,230 [INFO] ollama_client: Retrieved 7 models from Ollama server
+2025-04-20 23:22:35,245 [INFO] ollama_client: Retrieved 7 models from Ollama server
+2025-04-20 23:22:35,248 [INFO] main: New WebSocket connection from 172.28.0.1:36610. Total: 4
+2025-04-20 23:22:35,259 [INFO] ollama_client: Retrieved 7 models from Ollama server
+2025-04-20 23:22:35,265 [INFO] ollama_client: Retrieved 7 models from Ollama server
+2025-04-20 23:23:39,091 [INFO] main: WebSocket disconnected from 172.28.0.1:36602. Remaining: 3
+2025-04-20 23:23:39,091 [INFO] main: WebSocket disconnected from 172.28.0.1:36610. Remaining: 2
+2025-04-20 23:23:39,092 [INFO] main: WebSocket disconnected from 172.28.0.1:44124. Remaining: 1
+2025-04-20 23:23:39,092 [INFO] main: WebSocket disconnected from 172.28.0.1:44130. Remaining: 0
+2025-04-20 23:23:39,190 [INFO] main: --- Shutting down Projects Hub Backend ---
+2025-04-20 23:23:39,241 [INFO] main: File system watcher stopped.
+2025-04-20 23:23:46,380 [INFO] ollama_client: Initialized Ollama client with base URL: http://host.docker.internal:11434
+2025-04-20 23:23:46,409 [INFO] main: --- Starting Projects Hub Backend ---
+2025-04-20 23:23:46,409 [INFO] main: Watching data directory: /hub_data
+2025-04-20 23:23:46,412 [INFO] main: Hub data directory ready: /hub_data
+2025-04-20 23:23:46,413 [INFO] main: Ensured directory exists: /hub_data/focus_logs
+2025-04-20 23:23:46,483 [INFO] main: File system watcher started successfully.
+2025-04-20 23:23:47,708 [INFO] main: New WebSocket connection from 172.28.0.1:40026. Total: 1
+2025-04-20 23:23:48,767 [INFO] main: New WebSocket connection from 172.28.0.1:40030. Total: 2
+2025-04-20 23:23:49,717 [INFO] main: New WebSocket connection from 172.28.0.1:40032. Total: 3
+2025-04-20 23:23:49,758 [INFO] main: WebSocket disconnected from 172.28.0.1:40030. Remaining: 2
+2025-04-20 23:23:50,352 [INFO] main: Looking for focus logs at: /hub_data/focus_logs/daily_summary_2025-04-20.json or /hub_data/focus_logs/focus_log_2025-04-20.jsonl
+2025-04-20 23:23:50,353 [INFO] main: Pre-generated summary not found for 2025-04-20, attempting on-demand calculation.
+2025-04-20 23:23:50,355 [INFO] main: Calculating on-demand summary for 2025-04-20 from /hub_data/focus_logs/focus_log_2025-04-20.jsonl
+2025-04-20 23:23:50,372 [INFO] main: Successfully calculated on-demand summary for 2025-04-20
+2025-04-20 23:23:50,381 [INFO] main: Looking for focus logs at: /hub_data/focus_logs/daily_summary_2025-04-20.json or /hub_data/focus_logs/focus_log_2025-04-20.jsonl
+2025-04-20 23:23:50,382 [INFO] main: Pre-generated summary not found for 2025-04-20, attempting on-demand calculation.
+2025-04-20 23:23:50,383 [INFO] main: Calculating on-demand summary for 2025-04-20 from /hub_data/focus_logs/focus_log_2025-04-20.jsonl
+2025-04-20 23:23:50,391 [INFO] main: Successfully calculated on-demand summary for 2025-04-20
+2025-04-20 23:23:50,393 [INFO] main: New WebSocket connection from 172.28.0.1:40056. Total: 3
+2025-04-20 23:23:50,424 [INFO] ollama_client: Retrieved 7 models from Ollama server
+2025-04-20 23:23:50,428 [INFO] main: New WebSocket connection from 172.28.0.1:40076. Total: 4
+2025-04-20 23:23:50,439 [INFO] ollama_client: Retrieved 7 models from Ollama server
+2025-04-20 23:23:50,451 [INFO] ollama_client: Retrieved 7 models from Ollama server
+2025-04-20 23:23:50,457 [INFO] ollama_client: Retrieved 7 models from Ollama server
+2025-04-20 23:23:59,052 [INFO] main: WebSocket disconnected from 172.28.0.1:40056. Remaining: 3
+2025-04-20 23:23:59,053 [INFO] main: WebSocket disconnected from 172.28.0.1:40076. Remaining: 2
+2025-04-20 23:23:59,261 [INFO] main: Looking for focus logs at: /hub_data/focus_logs/daily_summary_2025-04-20.json or /hub_data/focus_logs/focus_log_2025-04-20.jsonl
+2025-04-20 23:23:59,262 [INFO] main: Pre-generated summary not found for 2025-04-20, attempting on-demand calculation.
+2025-04-20 23:23:59,263 [INFO] main: Calculating on-demand summary for 2025-04-20 from /hub_data/focus_logs/focus_log_2025-04-20.jsonl
+2025-04-20 23:23:59,270 [INFO] main: Successfully calculated on-demand summary for 2025-04-20
+2025-04-20 23:23:59,278 [INFO] main: Looking for focus logs at: /hub_data/focus_logs/daily_summary_2025-04-20.json or /hub_data/focus_logs/focus_log_2025-04-20.jsonl
+2025-04-20 23:23:59,279 [INFO] main: Pre-generated summary not found for 2025-04-20, attempting on-demand calculation.
+2025-04-20 23:23:59,280 [INFO] main: Calculating on-demand summary for 2025-04-20 from /hub_data/focus_logs/focus_log_2025-04-20.jsonl
+2025-04-20 23:23:59,286 [INFO] main: Successfully calculated on-demand summary for 2025-04-20
+2025-04-20 23:23:59,300 [INFO] main: New WebSocket connection from 172.28.0.1:34590. Total: 3
+2025-04-20 23:23:59,311 [INFO] ollama_client: Retrieved 7 models from Ollama server
+2025-04-20 23:23:59,328 [INFO] ollama_client: Retrieved 7 models from Ollama server
+2025-04-20 23:23:59,331 [INFO] main: New WebSocket connection from 172.28.0.1:34598. Total: 4
+2025-04-20 23:23:59,342 [INFO] ollama_client: Retrieved 7 models from Ollama server
+2025-04-20 23:23:59,348 [INFO] ollama_client: Retrieved 7 models from Ollama server
+2025-04-20 23:25:11,297 [INFO] main: WebSocket disconnected from 172.28.0.1:34598. Remaining: 3
+2025-04-20 23:25:11,298 [INFO] main: WebSocket disconnected from 172.28.0.1:34590. Remaining: 2
+2025-04-20 23:25:11,299 [INFO] main: WebSocket disconnected from 172.28.0.1:40026. Remaining: 1
+2025-04-20 23:25:11,299 [INFO] main: WebSocket disconnected from 172.28.0.1:40032. Remaining: 0
+2025-04-20 23:25:11,398 [INFO] main: --- Shutting down Projects Hub Backend ---
+2025-04-20 23:25:11,447 [INFO] main: File system watcher stopped.
+2025-04-20 23:25:18,900 [INFO] ollama_client: Initialized Ollama client with base URL: http://host.docker.internal:11434
+2025-04-20 23:25:18,928 [INFO] main: --- Starting Projects Hub Backend ---
+2025-04-20 23:25:18,928 [INFO] main: Watching data directory: /hub_data
+2025-04-20 23:25:18,931 [INFO] main: Hub data directory ready: /hub_data
+2025-04-20 23:25:18,932 [INFO] main: Ensured directory exists: /hub_data/focus_logs
+2025-04-20 23:25:19,000 [INFO] main: File system watcher started successfully.
+2025-04-20 23:25:19,724 [INFO] main: New WebSocket connection from 172.28.0.1:47562. Total: 1
+2025-04-20 23:25:20,714 [INFO] main: New WebSocket connection from 172.28.0.1:47568. Total: 2
+2025-04-20 23:25:21,716 [INFO] main: New WebSocket connection from 172.28.0.1:47572. Total: 3
+2025-04-20 23:25:22,392 [INFO] main: WebSocket disconnected from 172.28.0.1:47562. Remaining: 2
+2025-04-20 23:25:22,983 [INFO] main: Looking for focus logs at: /hub_data/focus_logs/daily_summary_2025-04-20.json or /hub_data/focus_logs/focus_log_2025-04-20.jsonl
+2025-04-20 23:25:22,983 [INFO] main: Pre-generated summary not found for 2025-04-20, attempting on-demand calculation.
+2025-04-20 23:25:22,985 [INFO] main: Calculating on-demand summary for 2025-04-20 from /hub_data/focus_logs/focus_log_2025-04-20.jsonl
+2025-04-20 23:25:23,000 [INFO] main: Successfully calculated on-demand summary for 2025-04-20
+2025-04-20 23:25:23,009 [INFO] main: Looking for focus logs at: /hub_data/focus_logs/daily_summary_2025-04-20.json or /hub_data/focus_logs/focus_log_2025-04-20.jsonl
+2025-04-20 23:25:23,009 [INFO] main: Pre-generated summary not found for 2025-04-20, attempting on-demand calculation.
+2025-04-20 23:25:23,011 [INFO] main: Calculating on-demand summary for 2025-04-20 from /hub_data/focus_logs/focus_log_2025-04-20.jsonl
+2025-04-20 23:25:23,017 [INFO] main: Successfully calculated on-demand summary for 2025-04-20
+2025-04-20 23:25:23,034 [INFO] main: New WebSocket connection from 172.28.0.1:51650. Total: 3
+2025-04-20 23:25:23,045 [INFO] ollama_client: Retrieved 7 models from Ollama server
+2025-04-20 23:25:23,062 [INFO] ollama_client: Retrieved 7 models from Ollama server
+2025-04-20 23:25:23,075 [INFO] ollama_client: Retrieved 7 models from Ollama server
+2025-04-20 23:25:23,076 [INFO] main: New WebSocket connection from 172.28.0.1:51670. Total: 4
+2025-04-20 23:25:23,082 [INFO] ollama_client: Retrieved 7 models from Ollama server
+2025-04-20 23:25:25,977 [INFO] main: WebSocket disconnected from 172.28.0.1:51670. Remaining: 3
+2025-04-20 23:25:25,978 [INFO] main: WebSocket disconnected from 172.28.0.1:51650. Remaining: 2
+2025-04-20 23:25:26,188 [INFO] main: Looking for focus logs at: /hub_data/focus_logs/daily_summary_2025-04-20.json or /hub_data/focus_logs/focus_log_2025-04-20.jsonl
+2025-04-20 23:25:26,189 [INFO] main: Pre-generated summary not found for 2025-04-20, attempting on-demand calculation.
+2025-04-20 23:25:26,191 [INFO] main: Calculating on-demand summary for 2025-04-20 from /hub_data/focus_logs/focus_log_2025-04-20.jsonl
+2025-04-20 23:25:26,197 [INFO] main: Successfully calculated on-demand summary for 2025-04-20
+2025-04-20 23:25:26,210 [INFO] main: Looking for focus logs at: /hub_data/focus_logs/daily_summary_2025-04-20.json or /hub_data/focus_logs/focus_log_2025-04-20.jsonl
+2025-04-20 23:25:26,211 [INFO] main: Pre-generated summary not found for 2025-04-20, attempting on-demand calculation.
+2025-04-20 23:25:26,212 [INFO] main: Calculating on-demand summary for 2025-04-20 from /hub_data/focus_logs/focus_log_2025-04-20.jsonl
+2025-04-20 23:25:26,219 [INFO] main: Successfully calculated on-demand summary for 2025-04-20
+2025-04-20 23:25:26,224 [INFO] main: New WebSocket connection from 172.28.0.1:51680. Total: 3
+2025-04-20 23:25:26,237 [INFO] ollama_client: Retrieved 7 models from Ollama server
+2025-04-20 23:25:26,253 [INFO] ollama_client: Retrieved 7 models from Ollama server
+2025-04-20 23:25:26,268 [INFO] ollama_client: Retrieved 7 models from Ollama server
+2025-04-20 23:25:26,270 [INFO] main: New WebSocket connection from 172.28.0.1:51692. Total: 4
+2025-04-20 23:25:26,274 [INFO] ollama_client: Retrieved 7 models from Ollama server
+2025-04-20 23:26:30,947 [INFO] main: Looking for focus logs at: /hub_data/focus_logs/daily_summary_2025-04-20.json or /hub_data/focus_logs/focus_log_2025-04-20.jsonl
+2025-04-20 23:26:30,948 [INFO] main: Pre-generated summary not found for 2025-04-20, attempting on-demand calculation.
+2025-04-20 23:26:30,949 [INFO] main: Calculating on-demand summary for 2025-04-20 from /hub_data/focus_logs/focus_log_2025-04-20.jsonl
+2025-04-20 23:26:30,963 [INFO] main: Successfully calculated on-demand summary for 2025-04-20
+2025-04-20 23:26:30,968 [INFO] main: Looking for focus logs at: /hub_data/focus_logs/daily_summary_2025-04-20.json or /hub_data/focus_logs/focus_log_2025-04-20.jsonl
+2025-04-20 23:26:30,969 [INFO] main: Pre-generated summary not found for 2025-04-20, attempting on-demand calculation.
+2025-04-20 23:26:30,970 [INFO] main: Calculating on-demand summary for 2025-04-20 from /hub_data/focus_logs/focus_log_2025-04-20.jsonl
+2025-04-20 23:26:30,974 [INFO] main: Successfully calculated on-demand summary for 2025-04-20
+2025-04-20 23:26:57,394 [INFO] main: Create project request received: asd
+2025-04-20 23:26:57,400 [INFO] main: Wrote YAML: /hub_data/asd-2/project.yaml
+2025-04-20 23:26:57,404 [INFO] main: Wrote YAML: /hub_data/asd-2/tasks.yaml
+2025-04-20 23:26:57,405 [INFO] main: File Watcher: Processing 'created' for 'asd-2/project.yaml'
+2025-04-20 23:26:57,405 [INFO] main: Broadcasting message of type 'project_updated' to 4 clients
+2025-04-20 23:26:57,406 [INFO] main: Message broadcast successful to 4/4 clients
+2025-04-20 23:27:04,458 [INFO] main: Create project request received: asd
+2025-04-20 23:27:04,465 [INFO] main: Wrote YAML: /hub_data/asd-3/project.yaml
+2025-04-20 23:27:04,470 [INFO] main: Wrote YAML: /hub_data/asd-3/tasks.yaml
+2025-04-20 23:27:04,471 [INFO] main: File Watcher: Processing 'created' for 'asd-3/project.yaml'
+2025-04-20 23:27:04,471 [INFO] main: Broadcasting message of type 'project_updated' to 4 clients
+2025-04-20 23:27:04,472 [INFO] main: Message broadcast successful to 4/4 clients
+2025-04-20 23:27:08,507 [INFO] main: Create project request received: 5236tg
+2025-04-20 23:27:08,519 [INFO] main: Wrote YAML: /hub_data/5236tg/project.yaml
+2025-04-20 23:27:08,527 [INFO] main: Wrote YAML: /hub_data/5236tg/tasks.yaml
+2025-04-20 23:27:08,528 [INFO] main: File Watcher: Processing 'created' for '5236tg/project.yaml'
+2025-04-20 23:27:08,528 [INFO] main: Broadcasting message of type 'project_updated' to 4 clients
+2025-04-20 23:27:08,529 [INFO] main: Message broadcast successful to 4/4 clients
+2025-04-20 23:27:47,662 [INFO] main: Looking for focus logs at: /hub_data/focus_logs/daily_summary_2025-04-20.json or /hub_data/focus_logs/focus_log_2025-04-20.jsonl
+2025-04-20 23:27:47,663 [INFO] main: Pre-generated summary not found for 2025-04-20, attempting on-demand calculation.
+2025-04-20 23:27:47,665 [INFO] main: Calculating on-demand summary for 2025-04-20 from /hub_data/focus_logs/focus_log_2025-04-20.jsonl
+2025-04-20 23:27:47,680 [INFO] main: Successfully calculated on-demand summary for 2025-04-20
+2025-04-20 23:27:52,952 [INFO] main: Looking for focus logs at: /hub_data/focus_logs/daily_summary_2025-04-20.json or /hub_data/focus_logs/focus_log_2025-04-20.jsonl
+2025-04-20 23:27:52,954 [INFO] main: Pre-generated summary not found for 2025-04-20, attempting on-demand calculation.
+2025-04-20 23:27:52,955 [INFO] main: Calculating on-demand summary for 2025-04-20 from /hub_data/focus_logs/focus_log_2025-04-20.jsonl
+2025-04-20 23:27:52,962 [INFO] main: Successfully calculated on-demand summary for 2025-04-20
+2025-04-20 23:27:52,968 [INFO] main: Looking for focus logs at: /hub_data/focus_logs/daily_summary_2025-04-20.json or /hub_data/focus_logs/focus_log_2025-04-20.jsonl
+2025-04-20 23:27:52,969 [INFO] main: Pre-generated summary not found for 2025-04-20, attempting on-demand calculation.
+2025-04-20 23:27:52,970 [INFO] main: Calculating on-demand summary for 2025-04-20 from /hub_data/focus_logs/focus_log_2025-04-20.jsonl
+2025-04-20 23:27:52,976 [INFO] main: Successfully calculated on-demand summary for 2025-04-20
+2025-04-20 23:28:22,446 [INFO] main: WebSocket disconnected from 172.28.0.1:51692. Remaining: 3
+2025-04-20 23:28:22,447 [INFO] main: WebSocket disconnected from 172.28.0.1:51680. Remaining: 2
+2025-04-20 23:28:22,645 [INFO] main: Looking for focus logs at: /hub_data/focus_logs/daily_summary_2025-04-20.json or /hub_data/focus_logs/focus_log_2025-04-20.jsonl
+2025-04-20 23:28:22,646 [INFO] main: Pre-generated summary not found for 2025-04-20, attempting on-demand calculation.
+2025-04-20 23:28:22,648 [INFO] main: Calculating on-demand summary for 2025-04-20 from /hub_data/focus_logs/focus_log_2025-04-20.jsonl
+2025-04-20 23:28:22,662 [INFO] main: Successfully calculated on-demand summary for 2025-04-20
+2025-04-20 23:28:22,671 [INFO] main: Looking for focus logs at: /hub_data/focus_logs/daily_summary_2025-04-20.json or /hub_data/focus_logs/focus_log_2025-04-20.jsonl
+2025-04-20 23:28:22,672 [INFO] main: Pre-generated summary not found for 2025-04-20, attempting on-demand calculation.
+2025-04-20 23:28:22,673 [INFO] main: Calculating on-demand summary for 2025-04-20 from /hub_data/focus_logs/focus_log_2025-04-20.jsonl
+2025-04-20 23:28:22,679 [INFO] main: Successfully calculated on-demand summary for 2025-04-20
+2025-04-20 23:28:22,681 [INFO] main: New WebSocket connection from 172.28.0.1:43002. Total: 3
+2025-04-20 23:28:22,714 [INFO] ollama_client: Retrieved 7 models from Ollama server
+2025-04-20 23:28:22,726 [INFO] ollama_client: Retrieved 7 models from Ollama server
+2025-04-20 23:28:22,727 [INFO] main: New WebSocket connection from 172.28.0.1:43024. Total: 4
+2025-04-20 23:28:22,739 [INFO] ollama_client: Retrieved 7 models from Ollama server
+2025-04-20 23:28:22,745 [INFO] ollama_client: Retrieved 7 models from Ollama server
+2025-04-20 23:28:26,676 [INFO] main: Create project request received: Test
+2025-04-20 23:28:26,682 [INFO] main: Wrote YAML: /hub_data/test-1/project.yaml
+2025-04-20 23:28:26,687 [INFO] main: Wrote YAML: /hub_data/test-1/tasks.yaml
+2025-04-20 23:28:26,688 [INFO] main: File Watcher: Processing 'created' for 'test-1/project.yaml'
+2025-04-20 23:28:26,688 [INFO] main: Broadcasting message of type 'project_updated' to 4 clients
+2025-04-20 23:28:26,689 [INFO] main: Message broadcast successful to 4/4 clients
+2025-04-20 23:28:36,698 [INFO] main: WebSocket disconnected from 172.28.0.1:43024. Remaining: 3
+2025-04-20 23:28:36,698 [INFO] main: WebSocket disconnected from 172.28.0.1:43002. Remaining: 2
+2025-04-20 23:28:36,908 [INFO] main: New WebSocket connection from 172.28.0.1:37018. Total: 3
+2025-04-20 23:28:36,918 [INFO] ollama_client: Retrieved 7 models from Ollama server
+2025-04-20 23:28:36,931 [INFO] ollama_client: Retrieved 7 models from Ollama server
+2025-04-20 23:28:36,941 [INFO] ollama_client: Retrieved 7 models from Ollama server
+2025-04-20 23:28:36,942 [INFO] main: New WebSocket connection from 172.28.0.1:37042. Total: 4
+2025-04-20 23:28:36,947 [INFO] ollama_client: Retrieved 7 models from Ollama server
+2025-04-20 23:28:38,096 [INFO] main: Looking for focus logs at: /hub_data/focus_logs/daily_summary_2025-04-20.json or /hub_data/focus_logs/focus_log_2025-04-20.jsonl
+2025-04-20 23:28:38,097 [INFO] main: Pre-generated summary not found for 2025-04-20, attempting on-demand calculation.
+2025-04-20 23:28:38,098 [INFO] main: Calculating on-demand summary for 2025-04-20 from /hub_data/focus_logs/focus_log_2025-04-20.jsonl
+2025-04-20 23:28:38,105 [INFO] main: Successfully calculated on-demand summary for 2025-04-20
+2025-04-20 23:28:38,111 [INFO] main: Looking for focus logs at: /hub_data/focus_logs/daily_summary_2025-04-20.json or /hub_data/focus_logs/focus_log_2025-04-20.jsonl
+2025-04-20 23:28:38,112 [INFO] main: Pre-generated summary not found for 2025-04-20, attempting on-demand calculation.
+2025-04-20 23:28:38,113 [INFO] main: Calculating on-demand summary for 2025-04-20 from /hub_data/focus_logs/focus_log_2025-04-20.jsonl
+2025-04-20 23:28:38,118 [INFO] main: Successfully calculated on-demand summary for 2025-04-20
+2025-04-20 23:30:47,015 [INFO] main: Create project request received: OP
+2025-04-20 23:30:47,026 [INFO] main: Wrote YAML: /hub_data/op/project.yaml
+2025-04-20 23:30:47,032 [INFO] main: Wrote YAML: /hub_data/op/tasks.yaml
+2025-04-20 23:30:47,032 [INFO] main: File Watcher: Processing 'created' for 'op/project.yaml'
+2025-04-20 23:30:47,033 [INFO] main: Broadcasting message of type 'project_updated' to 4 clients
+2025-04-20 23:30:47,034 [INFO] main: Message broadcast successful to 4/4 clients
+2025-04-20 23:30:54,458 [INFO] main: Looking for focus logs at: /hub_data/focus_logs/daily_summary_2025-04-20.json or /hub_data/focus_logs/focus_log_2025-04-20.jsonl
+2025-04-20 23:30:54,459 [INFO] main: Pre-generated summary not found for 2025-04-20, attempting on-demand calculation.
+2025-04-20 23:30:54,461 [INFO] main: Calculating on-demand summary for 2025-04-20 from /hub_data/focus_logs/focus_log_2025-04-20.jsonl
+2025-04-20 23:30:54,476 [INFO] main: Successfully calculated on-demand summary for 2025-04-20
+2025-04-20 23:30:54,482 [INFO] main: Looking for focus logs at: /hub_data/focus_logs/daily_summary_2025-04-20.json or /hub_data/focus_logs/focus_log_2025-04-20.jsonl
+2025-04-20 23:30:54,483 [INFO] main: Pre-generated summary not found for 2025-04-20, attempting on-demand calculation.
+2025-04-20 23:30:54,484 [INFO] main: Calculating on-demand summary for 2025-04-20 from /hub_data/focus_logs/focus_log_2025-04-20.jsonl
+2025-04-20 23:30:54,490 [INFO] main: Successfully calculated on-demand summary for 2025-04-20
+2025-04-20 23:30:58,912 [INFO] main: Create project request received: TESTER
+2025-04-20 23:30:58,923 [INFO] main: Wrote YAML: /hub_data/tester/project.yaml
+2025-04-20 23:30:58,930 [INFO] main: Wrote YAML: /hub_data/tester/tasks.yaml
+2025-04-20 23:30:58,931 [INFO] main: File Watcher: Processing 'created' for 'tester/project.yaml'
+2025-04-20 23:30:58,931 [INFO] main: Broadcasting message of type 'project_updated' to 4 clients
+2025-04-20 23:30:58,932 [INFO] main: Message broadcast successful to 4/4 clients
+2025-04-20 23:32:54,728 [INFO] main: WebSocket disconnected from 172.28.0.1:37042. Remaining: 3
+2025-04-20 23:32:54,729 [INFO] main: WebSocket disconnected from 172.28.0.1:37018. Remaining: 2
+2025-04-20 23:32:54,977 [INFO] main: New WebSocket connection from 172.28.0.1:51472. Total: 3
+2025-04-20 23:32:55,000 [INFO] ollama_client: Retrieved 7 models from Ollama server
+2025-04-20 23:32:55,014 [INFO] ollama_client: Retrieved 7 models from Ollama server
+2025-04-20 23:32:55,022 [INFO] main: New WebSocket connection from 172.28.0.1:51518. Total: 4
+2025-04-20 23:32:55,028 [INFO] ollama_client: Retrieved 7 models from Ollama server
+2025-04-20 23:32:55,035 [INFO] ollama_client: Retrieved 7 models from Ollama server
+2025-04-20 23:33:22,697 [INFO] main: WebSocket disconnected from 172.28.0.1:47568. Remaining: 3
+2025-04-20 23:33:22,697 [INFO] main: WebSocket disconnected from 172.28.0.1:51518. Remaining: 2
+2025-04-20 23:33:22,698 [INFO] main: WebSocket disconnected from 172.28.0.1:47572. Remaining: 1
+2025-04-20 23:33:22,698 [INFO] main: WebSocket disconnected from 172.28.0.1:51472. Remaining: 0
+2025-04-20 23:33:22,796 [INFO] main: --- Shutting down Projects Hub Backend ---
+2025-04-20 23:33:22,837 [INFO] main: File system watcher stopped.
+2025-04-20 23:33:29,281 [INFO] ollama_client: Initialized Ollama client with base URL: http://host.docker.internal:11434
+2025-04-20 23:33:29,311 [INFO] main: --- Starting Projects Hub Backend ---
+2025-04-20 23:33:29,311 [INFO] main: Watching data directory: /hub_data
+2025-04-20 23:33:29,313 [INFO] main: Hub data directory ready: /hub_data
+2025-04-20 23:33:29,315 [INFO] main: Ensured directory exists: /hub_data/focus_logs
+2025-04-20 23:33:29,431 [INFO] main: File system watcher started successfully.
+2025-04-20 23:33:29,723 [INFO] main: New WebSocket connection from 172.28.0.1:44892. Total: 1
+2025-04-20 23:33:32,343 [INFO] main: New WebSocket connection from 172.28.0.1:44902. Total: 2
+2025-04-20 23:33:32,720 [INFO] main: New WebSocket connection from 172.28.0.1:44912. Total: 3
+2025-04-20 23:33:33,523 [INFO] main: WebSocket disconnected from 172.28.0.1:44902. Remaining: 2
+2025-04-20 23:33:34,052 [INFO] main: New WebSocket connection from 172.28.0.1:44506. Total: 3
+2025-04-20 23:33:34,080 [INFO] ollama_client: Retrieved 7 models from Ollama server
+2025-04-20 23:33:34,092 [INFO] ollama_client: Retrieved 7 models from Ollama server
+2025-04-20 23:33:34,093 [INFO] main: New WebSocket connection from 172.28.0.1:44556. Total: 4
+2025-04-20 23:33:34,103 [INFO] ollama_client: Retrieved 7 models from Ollama server
+2025-04-20 23:33:34,110 [INFO] ollama_client: Retrieved 7 models from Ollama server
+2025-04-20 23:33:35,226 [INFO] main: Looking for focus logs at: /hub_data/focus_logs/daily_summary_2025-04-20.json or /hub_data/focus_logs/focus_log_2025-04-20.jsonl
+2025-04-20 23:33:35,227 [INFO] main: Pre-generated summary not found for 2025-04-20, attempting on-demand calculation.
+2025-04-20 23:33:35,229 [INFO] main: Calculating on-demand summary for 2025-04-20 from /hub_data/focus_logs/focus_log_2025-04-20.jsonl
+2025-04-20 23:33:35,244 [INFO] main: Successfully calculated on-demand summary for 2025-04-20
+2025-04-20 23:33:35,251 [INFO] main: Looking for focus logs at: /hub_data/focus_logs/daily_summary_2025-04-20.json or /hub_data/focus_logs/focus_log_2025-04-20.jsonl
+2025-04-20 23:33:35,252 [INFO] main: Pre-generated summary not found for 2025-04-20, attempting on-demand calculation.
+2025-04-20 23:33:35,253 [INFO] main: Calculating on-demand summary for 2025-04-20 from /hub_data/focus_logs/focus_log_2025-04-20.jsonl
+2025-04-20 23:33:35,258 [INFO] main: Successfully calculated on-demand summary for 2025-04-20
+2025-04-20 23:33:44,338 [INFO] main: Create project request received: New Project 7:33:44 PM
+2025-04-20 23:33:44,349 [INFO] main: Wrote YAML: /hub_data/new-project-7-33-44-pm/project.yaml
+2025-04-20 23:33:44,355 [INFO] main: Wrote YAML: /hub_data/new-project-7-33-44-pm/tasks.yaml
+2025-04-20 23:33:44,355 [INFO] main: File Watcher: Processing 'created' for 'new-project-7-33-44-pm/project.yaml'
+2025-04-20 23:33:44,356 [INFO] main: Broadcasting message of type 'project_updated' to 4 clients
+2025-04-20 23:33:44,357 [INFO] main: Message broadcast successful to 4/4 clients
+2025-04-20 23:33:45,478 [INFO] main: Create project request received: New Project 7:33:45 PM
+2025-04-20 23:33:45,489 [INFO] main: Wrote YAML: /hub_data/new-project-7-33-45-pm/project.yaml
+2025-04-20 23:33:45,494 [INFO] main: Wrote YAML: /hub_data/new-project-7-33-45-pm/tasks.yaml
+2025-04-20 23:33:45,495 [INFO] main: File Watcher: Processing 'created' for 'new-project-7-33-45-pm/project.yaml'
+2025-04-20 23:33:45,496 [INFO] main: Broadcasting message of type 'project_updated' to 4 clients
+2025-04-20 23:33:45,496 [INFO] main: Message broadcast successful to 4/4 clients
+2025-04-20 23:33:46,408 [INFO] main: Looking for focus logs at: /hub_data/focus_logs/daily_summary_2025-04-20.json or /hub_data/focus_logs/focus_log_2025-04-20.jsonl
+2025-04-20 23:33:46,409 [INFO] main: Pre-generated summary not found for 2025-04-20, attempting on-demand calculation.
+2025-04-20 23:33:46,411 [INFO] main: Calculating on-demand summary for 2025-04-20 from /hub_data/focus_logs/focus_log_2025-04-20.jsonl
+2025-04-20 23:33:46,417 [INFO] main: Successfully calculated on-demand summary for 2025-04-20
+2025-04-20 23:33:46,421 [INFO] main: Looking for focus logs at: /hub_data/focus_logs/daily_summary_2025-04-20.json or /hub_data/focus_logs/focus_log_2025-04-20.jsonl
+2025-04-20 23:33:46,422 [INFO] main: Pre-generated summary not found for 2025-04-20, attempting on-demand calculation.
+2025-04-20 23:33:46,423 [INFO] main: Calculating on-demand summary for 2025-04-20 from /hub_data/focus_logs/focus_log_2025-04-20.jsonl
+2025-04-20 23:33:46,428 [INFO] main: Successfully calculated on-demand summary for 2025-04-20
+2025-04-20 23:33:49,449 [INFO] main: Create project request received: TR
+2025-04-20 23:33:49,461 [INFO] main: Wrote YAML: /hub_data/tr/project.yaml
+2025-04-20 23:33:49,468 [INFO] main: Wrote YAML: /hub_data/tr/tasks.yaml
+2025-04-20 23:33:49,469 [INFO] main: File Watcher: Processing 'created' for 'tr/project.yaml'
+2025-04-20 23:33:49,469 [INFO] main: Broadcasting message of type 'project_updated' to 4 clients
+2025-04-20 23:33:49,470 [INFO] main: Message broadcast successful to 4/4 clients
+2025-04-20 23:34:48,230 [INFO] main: Create project request received: New Project 7:34:48 PM
+2025-04-20 23:34:48,243 [INFO] main: Wrote YAML: /hub_data/new-project-7-34-48-pm/project.yaml
+2025-04-20 23:34:48,252 [INFO] main: Wrote YAML: /hub_data/new-project-7-34-48-pm/tasks.yaml
+2025-04-20 23:34:48,253 [INFO] main: File Watcher: Processing 'created' for 'new-project-7-34-48-pm/project.yaml'
+2025-04-20 23:34:48,254 [INFO] main: Broadcasting message of type 'project_updated' to 4 clients
+2025-04-20 23:34:48,255 [INFO] main: Message broadcast successful to 4/4 clients
+2025-04-20 23:34:54,283 [INFO] main: Create project request received: New Project 7:34:54 PM
+2025-04-20 23:34:54,294 [INFO] main: Wrote YAML: /hub_data/new-project-7-34-54-pm/project.yaml
+2025-04-20 23:34:54,302 [INFO] main: Wrote YAML: /hub_data/new-project-7-34-54-pm/tasks.yaml
+2025-04-20 23:34:54,303 [INFO] main: File Watcher: Processing 'created' for 'new-project-7-34-54-pm/project.yaml'
+2025-04-20 23:34:54,304 [INFO] main: Broadcasting message of type 'project_updated' to 4 clients
+2025-04-20 23:34:54,304 [INFO] main: Message broadcast successful to 4/4 clients
+2025-04-20 23:35:03,795 [INFO] main: Create project request received: New Project 7:35:03 PM
+2025-04-20 23:35:03,806 [INFO] main: Wrote YAML: /hub_data/new-project-7-35-03-pm/project.yaml
+2025-04-20 23:35:03,812 [INFO] main: Wrote YAML: /hub_data/new-project-7-35-03-pm/tasks.yaml
+2025-04-20 23:35:03,813 [INFO] main: File Watcher: Processing 'created' for 'new-project-7-35-03-pm/project.yaml'
+2025-04-20 23:35:03,813 [INFO] main: Broadcasting message of type 'project_updated' to 4 clients
+2025-04-20 23:35:03,814 [INFO] main: Message broadcast successful to 4/4 clients
+2025-04-20 23:35:06,518 [INFO] main: Create project request received: New Project 7:35:06 PM
+2025-04-20 23:35:06,529 [INFO] main: Wrote YAML: /hub_data/new-project-7-35-06-pm/project.yaml
+2025-04-20 23:35:06,535 [INFO] main: Wrote YAML: /hub_data/new-project-7-35-06-pm/tasks.yaml
+2025-04-20 23:35:06,536 [INFO] main: File Watcher: Processing 'created' for 'new-project-7-35-06-pm/project.yaml'
+2025-04-20 23:35:06,537 [INFO] main: Broadcasting message of type 'project_updated' to 4 clients
+2025-04-20 23:35:06,537 [INFO] main: Message broadcast successful to 4/4 clients
+2025-04-20 23:35:07,490 [INFO] main: Create project request received: New Project 7:35:07 PM
+2025-04-20 23:35:07,501 [INFO] main: Wrote YAML: /hub_data/new-project-7-35-07-pm/project.yaml
+2025-04-20 23:35:07,507 [INFO] main: Wrote YAML: /hub_data/new-project-7-35-07-pm/tasks.yaml
+2025-04-20 23:35:07,508 [INFO] main: File Watcher: Processing 'created' for 'new-project-7-35-07-pm/project.yaml'
+2025-04-20 23:35:07,508 [INFO] main: Broadcasting message of type 'project_updated' to 4 clients
+2025-04-20 23:35:07,509 [INFO] main: Message broadcast successful to 4/4 clients
+2025-04-20 23:35:08,378 [INFO] main: Create project request received: New Project 7:35:08 PM
+2025-04-20 23:35:08,388 [INFO] main: Wrote YAML: /hub_data/new-project-7-35-08-pm/project.yaml
+2025-04-20 23:35:08,394 [INFO] main: Wrote YAML: /hub_data/new-project-7-35-08-pm/tasks.yaml
+2025-04-20 23:35:08,395 [INFO] main: File Watcher: Processing 'created' for 'new-project-7-35-08-pm/project.yaml'
+2025-04-20 23:35:08,396 [INFO] main: Broadcasting message of type 'project_updated' to 4 clients
+2025-04-20 23:35:08,397 [INFO] main: Message broadcast successful to 4/4 clients
+2025-04-20 23:35:10,884 [INFO] main: Create project request received: New Project 7:35:10 PM
+2025-04-20 23:35:10,895 [INFO] main: Wrote YAML: /hub_data/new-project-7-35-10-pm/project.yaml
+2025-04-20 23:35:10,901 [INFO] main: Wrote YAML: /hub_data/new-project-7-35-10-pm/tasks.yaml
+2025-04-20 23:35:10,902 [INFO] main: File Watcher: Processing 'created' for 'new-project-7-35-10-pm/project.yaml'
+2025-04-20 23:35:10,902 [INFO] main: Broadcasting message of type 'project_updated' to 4 clients
+2025-04-20 23:35:10,903 [INFO] main: Message broadcast successful to 4/4 clients
+2025-04-20 23:39:09,611 [INFO] main: WebSocket disconnected from 172.28.0.1:44506. Remaining: 3
+2025-04-20 23:39:09,612 [INFO] main: WebSocket disconnected from 172.28.0.1:44892. Remaining: 2
+2025-04-20 23:39:09,612 [INFO] main: WebSocket disconnected from 172.28.0.1:44912. Remaining: 1
+2025-04-20 23:39:09,613 [INFO] main: WebSocket disconnected from 172.28.0.1:44556. Remaining: 0
+2025-04-20 23:39:09,711 [INFO] main: --- Shutting down Projects Hub Backend ---
+2025-04-20 23:39:09,753 [INFO] main: File system watcher stopped.
+2025-04-20 23:39:22,701 [INFO] ollama_client: Initialized Ollama client with base URL: http://host.docker.internal:11434
+2025-04-20 23:39:22,729 [INFO] main: --- Starting Projects Hub Backend ---
+2025-04-20 23:39:22,729 [INFO] main: Watching data directory: /hub_data
+2025-04-20 23:39:22,732 [INFO] main: Hub data directory ready: /hub_data
+2025-04-20 23:39:22,733 [INFO] main: Ensured directory exists: /hub_data/focus_logs
+2025-04-20 23:39:22,912 [INFO] main: File system watcher started successfully.
+2025-04-20 23:39:24,717 [INFO] main: New WebSocket connection from 172.28.0.1:36324. Total: 1
+2025-04-20 23:39:26,723 [INFO] main: New WebSocket connection from 172.28.0.1:36338. Total: 2
+2025-04-20 23:39:27,103 [INFO] main: New WebSocket connection from 172.28.0.1:36370. Total: 3
+2025-04-20 23:39:27,114 [INFO] ollama_client: Retrieved 7 models from Ollama server
+2025-04-20 23:39:27,128 [INFO] ollama_client: Retrieved 7 models from Ollama server
+2025-04-20 23:39:27,140 [INFO] ollama_client: Retrieved 7 models from Ollama server
+2025-04-20 23:39:27,142 [INFO] main: New WebSocket connection from 172.28.0.1:36396. Total: 4
+2025-04-20 23:39:27,147 [INFO] ollama_client: Retrieved 7 models from Ollama server
+2025-04-20 23:43:46,092 [INFO] main: WebSocket disconnected from 172.28.0.1:36370. Remaining: 3
+2025-04-20 23:43:46,092 [INFO] main: WebSocket disconnected from 172.28.0.1:36396. Remaining: 2
+2025-04-20 23:43:46,390 [INFO] main: New WebSocket connection from 172.28.0.1:39424. Total: 3
+2025-04-20 23:43:46,400 [INFO] ollama_client: Retrieved 7 models from Ollama server
+2025-04-20 23:43:46,414 [INFO] ollama_client: Retrieved 7 models from Ollama server
+2025-04-20 23:43:46,424 [INFO] ollama_client: Retrieved 7 models from Ollama server
+2025-04-20 23:43:46,426 [INFO] main: New WebSocket connection from 172.28.0.1:39440. Total: 4
+2025-04-20 23:43:46,431 [INFO] ollama_client: Retrieved 7 models from Ollama server
+2025-04-20 23:45:10,282 [INFO] main: Looking for focus logs at: /hub_data/focus_logs/daily_summary_2025-04-20.json or /hub_data/focus_logs/focus_log_2025-04-20.jsonl
+2025-04-20 23:45:10,283 [INFO] main: Pre-generated summary not found for 2025-04-20, attempting on-demand calculation.
+2025-04-20 23:45:10,284 [INFO] main: Calculating on-demand summary for 2025-04-20 from /hub_data/focus_logs/focus_log_2025-04-20.jsonl
+2025-04-20 23:45:10,299 [INFO] main: Successfully calculated on-demand summary for 2025-04-20
+2025-04-20 23:45:10,304 [INFO] main: Looking for focus logs at: /hub_data/focus_logs/daily_summary_2025-04-20.json or /hub_data/focus_logs/focus_log_2025-04-20.jsonl
+2025-04-20 23:45:10,305 [INFO] main: Pre-generated summary not found for 2025-04-20, attempting on-demand calculation.
+2025-04-20 23:45:10,306 [INFO] main: Calculating on-demand summary for 2025-04-20 from /hub_data/focus_logs/focus_log_2025-04-20.jsonl
+2025-04-20 23:45:10,311 [INFO] main: Successfully calculated on-demand summary for 2025-04-20

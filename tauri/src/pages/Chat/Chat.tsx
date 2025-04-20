@@ -94,11 +94,12 @@ const Chat: React.FC<ChatProps> = ({
     setChatError,
     chatError // Receive error state from parent
 }) => {
-  // Local state for this chat instance
+  // --- Local state for this chat instance
   const [currentChatDetails, setCurrentChatDetails] = useState<{title: string, messages: Message[]} | null>(null);
   const [message, setMessage] = useState('');
   const [loading, setLoading] = useState(false); // Loading state for message response
   const [isFetchingMessages, setIsFetchingMessages] = useState(false); // Separate loading state for fetching messages
+  const [forceUpdateKey, setForceUpdateKey] = useState(0); // Force rerender key
   const bottomRef = useRef<HTMLDivElement | null>(null);
 
   // --- Fetch Messages for Selected Chat ---
@@ -135,31 +136,43 @@ const Chat: React.FC<ChatProps> = ({
       fetchMessages(selectedChatId);
   }, [selectedChatId, fetchMessages]);
 
+  // Force UI update when messages change
   useEffect(() => {
-    // Scroll to bottom, maybe slight delay after messages render
-    const timer = setTimeout(() => {
-        bottomRef.current?.scrollIntoView({ behavior: "auto" }); // Use auto for less jumpiness initially
-    }, 100);
-    return () => clearTimeout(timer);
+    if (currentChatDetails?.messages?.length > 0) {
+      console.log(`Messages array changed, length: ${currentChatDetails.messages.length}`);
+      // Force scrolling to bottom on message change
+      bottomRef.current?.scrollIntoView({ behavior: "smooth" });
+    }
   }, [currentChatDetails?.messages]);
 
   // --- WebSocket Listener ---
   useEffect(() => {
+       console.log('Setting up WebSocket listener for chat messages, current chat ID:', selectedChatId);
        const handleMessageReceived = (wsMessage: any) => {
+           console.log(`WebSocket message received in Chat component:`, wsMessage);
            if (wsMessage.type === 'chat_message_received' && wsMessage.session_id === selectedChatId && wsMessage.message) {
                console.log(`WS: Received message for current chat ${selectedChatId}`);
                 setCurrentChatDetails(prev => {
-                    if (!prev || prev.messages.some(m => m.id === wsMessage.message.id)) return prev;
+                    if (!prev) return prev;
+                    if (prev.messages.some(m => m.id === wsMessage.message.id)) {
+                        console.log('Message already exists in state, not adding duplicate');
+                        return prev;
+                    }
                     // Add validation for received message
                     if (!wsMessage.message.id || !wsMessage.message.content || !wsMessage.message.timestamp) {
                         console.warn("WS: Received invalid message structure", wsMessage.message);
                         return prev;
                     }
-                    return { ...prev, messages: [...prev.messages, wsMessage.message] };
+                    const updatedState = { ...prev, messages: [...prev.messages, wsMessage.message] };
+                    console.log('Updating chat state with new message:', wsMessage.message.content.substring(0, 50));
+                    // Force a rerender by incrementing the key
+                    setTimeout(() => setForceUpdateKey(prev => prev + 1), 10);
+                    return updatedState;
                 });
                 // Use received message for update callback
                 onSessionUpdate({
-                    id: selectedChatId, title: currentChatDetails?.title || "Chat",
+                    id: selectedChatId, 
+                    title: currentChatDetails?.title || "Chat",
                     lastMessage: wsMessage.message.content.substring(0, 50) + (wsMessage.message.content.length > 50 ? '...' : ''),
                     lastUpdated: new Date().toISOString()
                  });
@@ -169,9 +182,20 @@ const Chat: React.FC<ChatProps> = ({
                  fetchMessages(selectedChatId);
            }
        };
+       
+       // Clear any existing listeners first to prevent duplicates
+       eventBus.off('chat_message_received', handleMessageReceived);
+       eventBus.off('chat_session_updated', handleMessageReceived);
+       
+       // Add new listeners
        const unsubMessage = eventBus.on('chat_message_received', handleMessageReceived);
        const unsubSession = eventBus.on('chat_session_updated', handleMessageReceived);
-       return () => { unsubMessage(); unsubSession(); };
+       
+       return () => { 
+           console.log('Cleaning up WebSocket listeners');
+           unsubMessage(); 
+           unsubSession(); 
+       };
   }, [selectedChatId, fetchMessages, currentChatDetails?.title, onSessionUpdate]);
 
   // --- Send Message Handler ---
@@ -194,26 +218,81 @@ const Chat: React.FC<ChatProps> = ({
     setTimeout(() => bottomRef.current?.scrollIntoView({ behavior: "smooth" }), 0);
 
     try {
+      console.log(`Sending message to ${selectedModelId} for chat ${selectedChatId}`);
       const response = await axios.post('http://localhost:8000/chat/message', {
-        message: messageToSend, model_id: selectedModelId, session_id: selectedChatId,
+        message: messageToSend, 
+        model_id: selectedModelId, 
+        session_id: selectedChatId,
       });
 
+      console.log(`Received response from API:`, response.data);
+
       // Update session title in parent if backend changed it
-       if (response.data && response.data.session && response.data.session.title && response.data.session.title !== currentChatDetails?.title) {
-           setCurrentChatDetails(prev => prev ? { ...prev, title: response.data.session.title } : null);
-           onSessionUpdate({ id: selectedChatId, title: response.data.session.title });
-       }
-       // Note: Assistant message should arrive via WebSocket handled by the useEffect listener
+      if (response.data && response.data.session && response.data.session.title && response.data.session.title !== currentChatDetails?.title) {
+        setCurrentChatDetails(prev => prev ? { ...prev, title: response.data.session.title } : null);
+        onSessionUpdate({ id: selectedChatId, title: response.data.session.title });
+      }
+
+      // If we received the assistant's message directly in the response,
+      // update the UI immediately without waiting for the WebSocket
+      if (response.data && response.data.assistant_message) {
+        const assistantMessage = response.data.assistant_message;
+        console.log('Received assistant message directly in response:', assistantMessage.content.substring(0, 50));
+        
+        // IMPORTANT: Force update the UI with the message from the HTTP response
+        // This ensures we see the message even if WebSocket fails
+        setCurrentChatDetails(prev => {
+          if (!prev) return prev;
+          
+          // Check if the message already exists (avoid duplicates)
+          if (prev.messages.some(m => m.id === assistantMessage.id)) {
+            return prev;
+          }
+          
+          // Create a new messages array with the assistant message added
+          const updatedMessages = [...prev.messages, assistantMessage];
+          console.log(`Forcing update with assistant message. Messages count: ${updatedMessages.length}`);
+          
+          // Create a completely new state object to ensure React detects the change
+          return {
+            ...prev,
+            messages: updatedMessages,
+            // Update these fields to match what the server would set
+            lastMessage: "Response from assistant",
+            lastUpdated: new Date().toISOString()
+          };
+        });
+        
+        // Also update the parent component's state
+        onSessionUpdate({
+          id: selectedChatId,
+          title: currentChatDetails?.title || "Chat",
+          lastMessage: assistantMessage.content.substring(0, 50) + 
+            (assistantMessage.content.length > 50 ? '...' : ''),
+          lastUpdated: new Date().toISOString()
+        });
+        
+        // Force scroll to bottom
+        setTimeout(() => bottomRef.current?.scrollIntoView({ behavior: "smooth" }), 100);
+      }
 
     } catch (err) {
       console.error('Failed to get response from LLM:', err);
       setChatError('Failed to get response from the assistant. Please try again.');
-      // Remove the optimistically added user message on failure
-      setCurrentChatDetails(prev => prev ? { ...prev, messages: prev.messages.filter(m => m.id !== userMessage.id) } : null);
+      // Show error message in chat
+      const errorMessage: Message = {
+        id: `error_${Date.now()}`,
+        role: "assistant",
+        content: "Error: Unable to get a response from the model. Please try again.",
+        timestamp: new Date().toISOString(),
+      };
+      setCurrentChatDetails(prev => prev ? { ...prev, messages: [...prev.messages, errorMessage] } : null);
     } finally {
       setLoading(false); // Stop loading spinner
+      // Ensure we scroll to the bottom again after response is added
+      setTimeout(() => bottomRef.current?.scrollIntoView({ behavior: "smooth" }), 100);
     }
-  }, [message, selectedChatId, selectedModelId, currentChatDetails?.title, setChatError, onSessionUpdate]); // Ensure all dependencies are listed
+  }, [message, selectedChatId, selectedModelId, currentChatDetails?.title, setChatError, onSessionUpdate]);
 
 
   // --- KeyDown Handler ---
@@ -229,7 +308,7 @@ const Chat: React.FC<ChatProps> = ({
   const selectedModelName = models.find(m => m.id === selectedModelId)?.name || selectedModelId;
 
   return (
-    <div className="flex flex-col h-full w-full bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100">
+    <div className="flex flex-col h-full w-full bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100" key={`chat-container-${forceUpdateKey}`}>
       {/* Chat Header */}
       <div className="chat-header px-4 py-3 border-b border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-800 flex-shrink-0">
         <h2 className="text-lg font-medium truncate" title={currentChatDetails?.title}>

@@ -1,0 +1,23 @@
+name: Documentation
+description: Template for creating a documentation task
+template:
+  title: "Document: "
+  description: |
+    ## Documentation Purpose
+    
+    ## Target Audience
+    
+    ## Key Sections
+    - 
+    - 
+    - 
+    
+    ## References
+    
+    ## Notes
+    
+  status: todo
+  priority: medium
+  tags:
+    - documentation
+    - docs

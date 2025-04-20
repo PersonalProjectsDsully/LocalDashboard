@@ -1,0 +1,24 @@
+name: New Feature
+description: Template for creating a new feature task
+template:
+  title: "Feature: "
+  description: |
+    ## Feature Description
+    
+    ## User Story
+    As a [type of user], I want [goal] so that [benefit].
+    
+    ## Acceptance Criteria
+    - [ ] 
+    - [ ] 
+    - [ ] 
+    
+    ## Technical Notes
+    
+    ## Dependencies
+    
+  status: todo
+  priority: high
+  tags:
+    - feature
+    - enhancement

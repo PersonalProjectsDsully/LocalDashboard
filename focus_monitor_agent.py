@@ -75,7 +75,10 @@ class FocusMonitorAgent:
         logger.info(f"Initialized FocusMonitorAgent (Window Tracking). Output: {self.focus_logs_dir}, API: {self.api_url or 'Disabled'}")
 
     def _get_current_utc_date(self) -> str:
-         return datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%d")
+         # Make sure to use UTC date for consistency
+         current_date = datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%d")
+         logger.info(f"Current UTC date: {current_date}")
+         return current_date
 
     async def check_backend_status(self):
         """Periodically check the desired active state from the backend."""
@@ -151,6 +154,8 @@ class FocusMonitorAgent:
         """Log focused window activity to JSONL file."""
         if duration <= 0: return
         try:
+            # Make sure focus_logs directory exists
+            self.focus_logs_dir.mkdir(parents=True, exist_ok=True)
             log_file = self.focus_logs_dir / f"focus_log_{self.today}.jsonl"
             log_entry = {
                 "timestamp": window_info["timestamp"], "exe": window_info["exe"],

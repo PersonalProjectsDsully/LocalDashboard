@@ -25,7 +25,10 @@ const Projects: React.FC = () => {
     setError(null);
     try {
       const response = await axios.get('http://localhost:8000/projects');
-      setProjects(response.data.projects || []);
+      console.log('Projects API response:', response.data);
+      // Handle both formats: direct array or {projects: array}
+      const projectsData = Array.isArray(response.data) ? response.data : (response.data.projects || []);
+      setProjects(projectsData);
     } catch (err) {
       console.error('Error fetching projects:', err);
       setError('Failed to load projects. Please check if the backend is running.');
@@ -68,10 +71,28 @@ const Projects: React.FC = () => {
     }
   };
 
-  const handleCreateProject = () => {
-    // TODO: Implement project creation modal/form
-    console.log('Create project clicked - Placeholder');
-    // Example: Trigger modal open state
+  const handleCreateProject = async () => {
+    try {
+      // Create a basic project with default values
+      const newProject = {
+        title: `New Project ${new Date().toLocaleTimeString()}`,
+        status: "planning",
+        tags: ["new"],
+        description: "Add your project description here"
+      };
+      
+      console.log('Creating new project:', newProject);
+      const response = await axios.post('http://localhost:8000/projects', newProject);
+      
+      if (response.data) {
+        console.log('Project created successfully:', response.data);
+        // Fetch updated project list
+        fetchProjects();
+      }
+    } catch (err) {
+      console.error('Error creating project:', err);
+      setError('Failed to create project. Please check if the backend is running.');
+    }
   };
 
   const navigateToTasks = (projectId: string) => {

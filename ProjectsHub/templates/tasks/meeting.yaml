@@ -1,0 +1,26 @@
+name: Meeting
+description: Template for creating a meeting task
+template:
+  title: "Meeting: "
+  description: |
+    ## Agenda
+    
+    ## Participants
+    - 
+    
+    ## Discussion Topics
+    1. 
+    2. 
+    3. 
+    
+    ## Action Items
+    - [ ] 
+    - [ ] 
+    
+    ## Notes
+    
+  status: todo
+  priority: medium
+  tags:
+    - meeting
+    - discussion

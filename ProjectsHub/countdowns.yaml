@@ -1,26 +1,9 @@
-- id: project-deadline
-  title: Project Deadline
-  days: 10
-  time: '18:00'
-  thresholds:
-    green: 15
-    amber: 10
-    red: 5
-
-- id: client-meeting
-  title: Client Meeting
-  days: 3
-  time: '14:30'
-  thresholds:
-    green: 7
-    amber: 3
-    red: 1
-
-- id: code-review
-  title: Code Review
+alarms:
+- id: alarm-1745189700545
+  title: Test
   days: 1
-  time: '10:00'
+  time: null
   thresholds:
-    green: 3
-    amber: 2
-    red: 1
+    red: 3
+    amber: 7
+    green: 14

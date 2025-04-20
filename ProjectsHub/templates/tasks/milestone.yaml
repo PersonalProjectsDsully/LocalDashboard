@@ -1,0 +1,25 @@
+name: Project Milestone
+description: Template for creating a project milestone task
+template:
+  title: "Milestone: "
+  description: |
+    ## Milestone Description
+    
+    ## Key Deliverables
+    - 
+    - 
+    - 
+    
+    ## Success Criteria
+    - 
+    - 
+    
+    ## Dependencies
+    
+    ## Resources Required
+    
+  status: todo
+  priority: high
+  tags:
+    - milestone
+    - planning

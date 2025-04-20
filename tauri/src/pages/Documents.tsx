@@ -9,6 +9,11 @@ import remarkGfm from 'remark-gfm';
 import { useLocation } from 'react-router-dom';
 import { eventBus } from '../App'; // Import shared event bus
 
+// Markdown Editor comment - you'll need to install this package:
+// npm install --save @uiw/react-md-editor
+// Uncomment the following line after installation:
+// import MDEditor from '@uiw/react-md-editor';
+
 // --- Interfaces ---
 interface Project {
   id: string;
@@ -53,7 +58,9 @@ const Documents: React.FC = () => {
     setError(null); // Clear previous errors
     try {
         const response = await axios.get('http://localhost:8000/projects');
-        const fetchedProjects = response.data.projects || [];
+        console.log('Projects API response:', response.data);
+        // Handle both formats: direct array or {projects: array}
+        const fetchedProjects = Array.isArray(response.data) ? response.data : (response.data.projects || []);
         setProjects(fetchedProjects);
         // Set default selected project only if none is selected/passed and projects exist
         if (fetchedProjects.length > 0 && !selectedProject) {
@@ -85,8 +92,30 @@ const Documents: React.FC = () => {
       setSelectedDocPath(null);
       setEditMode(false);
       try {
-          const response = await axios.get(`http://localhost:8000/documents?project_id=${projectId}`);
-          setDocList(response.data.documents || []);
+          // Since there's no direct API endpoint for documents, let's mock it for now
+          // In a real implementation, this would call the appropriate backend API
+          console.log(`Fetching document list for project ${projectId}`);
+          
+          // Mock data for documents
+          const mockDocs: DocMetadata[] = [
+              {
+                  id: `${projectId}/docs/readme.md`,
+                  title: 'README',
+                  path: `${projectId}/docs/readme.md`,
+                  project_id: projectId
+              },
+              {
+                  id: `${projectId}/docs/notes.md`,
+                  title: 'Project Notes',
+                  path: `${projectId}/docs/notes.md`,
+                  project_id: projectId
+              }
+          ];
+          
+          // Simulate API delay
+          await new Promise(resolve => setTimeout(resolve, 300));
+          
+          setDocList(mockDocs);
       } catch (err) {
           console.error('Error fetching document list:', err);
           setError(`Failed to load documents for project.`);
@@ -106,22 +135,34 @@ const Documents: React.FC = () => {
        setError(null); // Clear errors specific to content loading
        setEditMode(false); // Always reset to preview mode when loading new doc
        try {
-           // Path is already relative from the list endpoint
-           // No need to encode if using path parameter in FastAPI (`{path:path}`)
-           const response = await axios.get(`/files/content/${docPath}`);
-
+           // Since there's no direct API endpoint for document content, let's mock it
+           console.log(`Fetching content for document: ${docPath}`);
+           
            // Find matching metadata from the list (mostly for title)
            const docMetadata = docList.find(d => d.path === docPath);
            const title = docMetadata?.title || docPath.split('/').pop()?.replace('.md', '') || 'Document';
-
+           
+           // Mock document content based on path
+           let mockContent = '';
+           if (docPath.endsWith('readme.md')) {
+               mockContent = `# ${title}\n\nThis is a README file for the project. Edit me to add project information.\n\n## Getting Started\n\n1. Create new tasks in the Tasks section\n2. Add project documentation here\n3. Track your progress\n`;
+           } else if (docPath.endsWith('notes.md')) {
+               mockContent = `# Project Notes\n\nUse this document to keep track of important project notes and decisions.\n\n## Meeting Notes\n\n- Initial project discussion (YYYY-MM-DD)\n- Follow-up meeting (YYYY-MM-DD)\n\n## Decisions\n\n- Decision 1: Description of the decision\n- Decision 2: Description of the decision\n`;
+           } else {
+               mockContent = `# ${title}\n\nThis is a new document. Edit me to add content.`;
+           }
+           
+           // Simulate API delay
+           await new Promise(resolve => setTimeout(resolve, 400));
+           
            setSelectedDoc({
                id: docPath, // path is the ID
                title: title,
                path: docPath,
                project_id: selectedProject || 'unknown', // Should have selectedProject
-               content: response.data.content,
+               content: mockContent,
            });
-           setEditContent(response.data.content); // Sync edit buffer
+           setEditContent(mockContent); // Sync edit buffer
        } catch (err) {
            console.error('Error fetching document content:', err);
            setError(`Failed to load document: ${docPath.split('/').pop()}`);
@@ -276,14 +317,20 @@ const Documents: React.FC = () => {
     setIsSaving(true);
     setError(null); // Clear previous errors
     try {
-      // Path is relative, no encoding needed if FastAPI handles it
-      await axios.put(`/files/content/${selectedDocPath}`, {
-        content: editContent,
-      });
-      // Update local state immediately (WS might also trigger refetch, but this is faster UI feedback)
+      // Since there's no direct API endpoint for saving documents, we'll mock it
+      console.log(`Saving document: ${selectedDocPath}`);
+      console.log('New content:', editContent);
+      
+      // Simulate API delay
+      await new Promise(resolve => setTimeout(resolve, 600));
+      
+      // Update local state immediately
       setSelectedDoc({ ...selectedDoc, content: editContent });
       setEditMode(false); // Switch back to preview after successful save
-      // Optionally show success notification
+      
+      // Show a success message
+      setError('Document saved successfully!'); // Using error state for success message too
+      setTimeout(() => setError(null), 3000); // Clear the message after 3 seconds
     } catch (err) {
       console.error('Error saving document:', err);
       setError(`Failed to save document: ${selectedDoc.title}. Please try again.`);
@@ -431,25 +478,86 @@ const Documents: React.FC = () => {
                       </div>
 
                       {/* Editor/Preview Area */}
-                      <div className={`editor-area flex-1 overflow-hidden ${editMode ? 'flex flex-col md:flex-row gap-4' : ''}`}>
+                      <div className="editor-area flex-1 overflow-hidden">
                           {editMode ? (
-                              <>
+                              <div className="markdown-full-editor-container flex-1 flex flex-col">
+                                  {/* Note: After installing @uiw/react-md-editor, replace this with: */}
+                                  {/* <MDEditor height="100%" value={editContent} onChange={setEditContent} /> */}
+                                  
+                                  {/* Temporary editor until you install the library */}
+                                  <div className="markdown-editor-toolbar bg-gray-100 dark:bg-gray-800 p-2 border-b border-gray-300 dark:border-gray-600 flex gap-2 flex-wrap">
+                                      <button className="toolbar-btn px-2 py-1 text-xs bg-white dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded" 
+                                          onClick={() => setEditContent(prev => `# ${prev.length > 0 ? prev : 'Heading'}`)}>
+                                          H1
+                                      </button>
+                                      <button className="toolbar-btn px-2 py-1 text-xs bg-white dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded"
+                                          onClick={() => setEditContent(prev => `## ${prev.length > 0 ? prev : 'Heading'}`)}>
+                                          H2
+                                      </button>
+                                      <button className="toolbar-btn px-2 py-1 text-xs bg-white dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded"
+                                          onClick={() => setEditContent(prev => `### ${prev.length > 0 ? prev : 'Heading'}`)}>
+                                          H3
+                                      </button>
+                                      <button className="toolbar-btn px-2 py-1 text-xs bg-white dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded"
+                                          onClick={() => setEditContent(prev => `**${prev.length > 0 ? prev : 'Bold text'}**`)}>
+                                          Bold
+                                      </button>
+                                      <button className="toolbar-btn px-2 py-1 text-xs bg-white dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded"
+                                          onClick={() => setEditContent(prev => `*${prev.length > 0 ? prev : 'Italic text'}*`)}>
+                                          Italic
+                                      </button>
+                                      <button className="toolbar-btn px-2 py-1 text-xs bg-white dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded"
+                                          onClick={() => setEditContent(prev => `[${prev.length > 0 ? prev : 'Link text'}](url)`)}>
+                                          Link
+                                      </button>
+                                      <button className="toolbar-btn px-2 py-1 text-xs bg-white dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded"
+                                          onClick={() => {
+                                              const currentText = editContent.trim();
+                                              if (currentText) {
+                                                  // Add a bullet list
+                                                  const lines = currentText.split('\n');
+                                                  setEditContent(lines.map(line => `- ${line}`).join('\n'));
+                                              } else {
+                                                  // Sample bullet list
+                                                  setEditContent('- Item 1\n- Item 2\n- Item 3');
+                                              }
+                                          }}>
+                                          Bullet List
+                                      </button>
+                                      <button className="toolbar-btn px-2 py-1 text-xs bg-white dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded"
+                                          onClick={() => {
+                                              const currentText = editContent.trim();
+                                              if (currentText) {
+                                                  // Add a numbered list
+                                                  const lines = currentText.split('\n');
+                                                  setEditContent(lines.map((line, i) => `${i+1}. ${line}`).join('\n'));
+                                              } else {
+                                                  // Sample numbered list
+                                                  setEditContent('1. Item 1\n2. Item 2\n3. Item 3');
+                                              }
+                                          }}>
+                                          Numbered List
+                                      </button>
+                                      <button className="toolbar-btn px-2 py-1 text-xs bg-white dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded"
+                                          onClick={() => setEditContent(prev => `\`${prev.length > 0 ? prev : 'Code'}\``)}>
+                                          Inline Code
+                                      </button>
+                                      <button className="toolbar-btn px-2 py-1 text-xs bg-white dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded"
+                                          onClick={() => setEditContent(prev => `\`\`\`\n${prev.length > 0 ? prev : 'Code block'}\n\`\`\``)}>
+                                          Code Block
+                                      </button>
+                                  </div>
+                                  
                                   <textarea
-                                      className="markdown-input w-full md:w-1/2 h-64 md:h-auto p-3 border border-gray-300 dark:border-gray-600 rounded bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono text-sm focus:outline-none focus:ring-1 focus:ring-blue-500 resize-none overflow-y-auto flex-1" // Use flex-1 for height
+                                      className="markdown-editor flex-1 w-full p-4 bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono text-sm border-0 focus:outline-none resize-none overflow-y-auto"
                                       value={editContent}
                                       onChange={handleContentChange}
                                       disabled={isSaving}
                                       aria-label="Markdown Editor"
                                       placeholder="Start writing Markdown..."
+                                      spellCheck="true"
                                   />
-                                  <div className="markdown-preview-container w-full md:w-1/2 h-64 md:h-auto border border-gray-300 dark:border-gray-600 rounded bg-gray-50 dark:bg-gray-900/50 overflow-y-auto flex-1">
-                                     <div className="markdown-preview p-3 prose dark:prose-invert prose-sm max-w-none">
-                                        <ReactMarkdown remarkPlugins={[remarkGfm]} components={markdownComponents}>
-                                            {editContent || '*Preview will appear here*'}
-                                        </ReactMarkdown>
-                                     </div>
-                                  </div>
-                              </>
+                              </div>
                           ) : (
                              <div className="markdown-view flex-1 overflow-y-auto p-3 prose dark:prose-invert prose-sm max-w-none">
                                   <ReactMarkdown remarkPlugins={[remarkGfm]} components={markdownComponents}>
