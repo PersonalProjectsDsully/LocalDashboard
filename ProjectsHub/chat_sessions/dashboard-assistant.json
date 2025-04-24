@@ -1,0 +1,22 @@
+{
+  "id": "dashboard-assistant",
+  "title": "dashboard-assistant",
+  "lastMessage": "What are my current projects?",
+  "lastUpdated": "2025-04-22T23:17:51.111854",
+  "messages": [
+    {
+      "id": "msg_1745363871_user",
+      "role": "user",
+      "content": "What are my current projects?",
+      "timestamp": "2025-04-22T23:17:51.111246",
+      "model": null
+    },
+    {
+      "id": "resp_1745363871",
+      "role": "assistant",
+      "content": "You have two projects:\n\n1. **Project-A**: Website Redesign (Status: active, Due Date: 2025-05-15)\n2. **Project-B**: Mobile App Development (Status: planning, Due Date: 2025-07-30)",
+      "timestamp": "2025-04-22T23:17:51.111263",
+      "model": "llama3.1:8b"
+    }
+  ]
+}

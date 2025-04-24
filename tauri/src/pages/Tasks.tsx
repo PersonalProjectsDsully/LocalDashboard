@@ -1,29 +1,19 @@
 import React, { useState, useEffect, useMemo, useCallback } from 'react';
 import axios from 'axios';
-// Import react-beautiful-dnd components and types
-// Ensure @types/react-beautiful-dnd is installed (`npm i --save-dev @types/react-beautiful-dnd`)
-import {
-    DragDropContext,
-    Droppable,
-    Draggable,
-    DropResult,
-    DroppableProvided,
-    DroppableStateSnapshot,
-    DraggableProvided,
-    DraggableStateSnapshot
-} from 'react-beautiful-dnd';
-import { useLocation } from 'react-router-dom'; // To potentially get passed projectId
-import { eventBus } from '../App'; // Import shared event bus
+import { useLocation } from 'react-router-dom';
+import { eventBus } from '../App';
+import '../styles/Tasks.css';
+import '../styles/force-dark.css';
 
 // --- Interfaces ---
 interface Task {
   id: string;
   title: string;
   description?: string;
-  status: string; // 'todo', 'in-progress', 'done' (or potentially others)
-  priority?: string; // 'high', 'medium', 'low'
+  status: string;
+  priority?: string;
   due?: string;
-  assigned_to?: string; // Added from YAML example
+  assigned_to?: string;
 }
 
 interface Project {
@@ -32,31 +22,33 @@ interface Project {
 }
 
 // --- Constants ---
+// IMPORTANT: These must match exactly what the server expects
 const COLUMN_IDS = {
-    TODO: 'todo',
-    IN_PROGRESS: 'in-progress',
-    DONE: 'done',
+  TODO: 'todo',
+  IN_PROGRESS: 'in-progress', // Make sure this matches exactly what the server expects
+  DONE: 'done',
 };
 
-// Map internal IDs to display titles
 const columnTitles = {
-    [COLUMN_IDS.TODO]: 'To Do',
-    [COLUMN_IDS.IN_PROGRESS]: 'In Progress',
-    [COLUMN_IDS.DONE]: 'Done',
+  [COLUMN_IDS.TODO]: 'To Do',
+  [COLUMN_IDS.IN_PROGRESS]: 'In Progress',
+  [COLUMN_IDS.DONE]: 'Done',
 };
 
 // --- Component ---
 const Tasks: React.FC = () => {
-  const location = useLocation(); // Get location object to check for passed state
-  const passedProjectId = location.state?.projectId; // Get projectId if passed via navigate
+  const location = useLocation();
+  const passedProjectId = location.state?.projectId;
 
   // --- State ---
   const [tasks, setTasks] = useState<Task[]>([]);
   const [projects, setProjects] = useState<Project[]>([]);
   const [selectedProject, setSelectedProject] = useState<string | null>(passedProjectId || null);
   const [loadingProjects, setLoadingProjects] = useState(true);
-  const [loadingTasks, setLoadingTasks] = useState(false); // Start false, true when fetching tasks
+  const [loadingTasks, setLoadingTasks] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [draggedTask, setDraggedTask] = useState<Task | null>(null);
+  const [debugInfo, setDebugInfo] = useState('');
 
   // --- Data Fetching Callbacks ---
   const fetchProjects = useCallback(async () => {
@@ -65,14 +57,15 @@ const Tasks: React.FC = () => {
     try {
       const response = await axios.get('http://localhost:8000/projects');
       console.log('Projects API response:', response.data);
-      // Handle both formats: direct array or {projects: array}
       const fetchedProjects = Array.isArray(response.data) ? response.data : (response.data.projects || []);
       setProjects(fetchedProjects);
-      // Set default selected project only if none is selected/passed AND projects exist
+      console.log('Fetched projects:', fetchedProjects);
+      
       if (fetchedProjects.length > 0 && !selectedProject) {
         setSelectedProject(fetchedProjects[0].id);
+        console.log('Selected project:', fetchedProjects[0].id);
       } else if (fetchedProjects.length === 0) {
-        setSelectedProject(null); // No projects available
+        setSelectedProject(null);
       }
     } catch (err) {
       console.error('Error fetching projects:', err);
@@ -82,109 +75,136 @@ const Tasks: React.FC = () => {
     } finally {
       setLoadingProjects(false);
     }
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []); // Run once on mount generally
+  }, [selectedProject]);
 
   const fetchTasks = useCallback(async (projectId: string | null) => {
-      if (!projectId) {
-          setTasks([]); // Clear tasks if no project is selected
-          setLoadingTasks(false);
-          return;
-      }
-      setLoadingTasks(true);
-      setError(null); // Clear previous task errors
-      try {
-        // Updated to use the new API endpoint
-        const response = await axios.get(`http://localhost:8000/tasks/${projectId}`);
-        const fetchedTasks = response.data.tasks || [];
+    if (!projectId) {
+      setTasks([]);
+      setLoadingTasks(false);
+      return;
+    }
+    
+    setLoadingTasks(true);
+    setError(null);
+    
+    try {
+      const response = await axios.get(`http://localhost:8000/tasks/${projectId}`);
+      console.log('Tasks API response:', response.data);
+      const fetchedTasks = response.data.tasks || [];
+      console.log('Fetched tasks:', fetchedTasks);
 
-        // Ensure status matches column IDs and default if invalid/missing
-        const correctedTasks = fetchedTasks.map((task: Task) => {
-            // Normalize status: lowercase, replace space/underscore with hyphen
-            const normalizedStatus = task.status?.toLowerCase().replace(/[\s_]/g, '-') || COLUMN_IDS.TODO;
-            // Ensure it's a valid column ID, otherwise default to TODO
-            const validStatus = Object.values(COLUMN_IDS).includes(normalizedStatus) 
-              ? normalizedStatus 
-              : COLUMN_IDS.TODO;
-            return { ...task, status: validStatus };
-        });
-        setTasks(correctedTasks);
-      } catch (err) {
-        console.error(`Error fetching tasks for project ${projectId}:`, err);
-        // Don't show error if it's just 404 (tasks file doesn't exist yet)
-        if (axios.isAxiosError(err) && err.response?.status === 404) {
-            setTasks([]); // Set empty tasks, it's not an error state
-            setError(null);
-        } else {
-            setError(`Failed to load tasks for the selected project.`);
-            setTasks([]); // Clear tasks on other errors
-        }
-      } finally {
-        setLoadingTasks(false);
-      }
-    }, []); // fetchTasks itself doesn't depend on external state
+      // Enhanced debugging
+      const taskStatuses = fetchedTasks.map((t: any) => `${t.id}: ${t.status}`);
+      setDebugInfo(`Task statuses: ${taskStatuses.join(', ')}`);
 
+      // Normalize all task statuses - IMPORTANT for consistency
+      const processedTasks = fetchedTasks.map((task: any) => ({
+        ...task,
+        id: String(task.id),
+        // Ensure status is normalized to match our column IDs
+        status: task.status?.toLowerCase().replace(/[\s_]/g, '-') || COLUMN_IDS.TODO
+      }));
+      
+      console.log('Processed tasks with normalized status:', processedTasks);
+      setTasks(processedTasks);
+    } catch (err) {
+      console.error(`Error fetching tasks for project ${projectId}:`, err);
+      if (axios.isAxiosError(err) && err.response?.status === 404) {
+        setTasks([]);
+        setError(null);
+      } else {
+        setError(`Failed to load tasks for the selected project.`);
+        setTasks([]);
+      }
+    } finally {
+      setLoadingTasks(false);
+    }
+  }, []);
 
   // --- Effects ---
   useEffect(() => {
-    fetchProjects(); // Fetch projects on initial mount
+    fetchProjects();
   }, [fetchProjects]);
 
   useEffect(() => {
-    fetchTasks(selectedProject); // Fetch tasks whenever selected project changes
+    fetchTasks(selectedProject);
   }, [selectedProject, fetchTasks]);
 
   useEffect(() => {
-     // Listen for WebSocket messages indicating task updates for the *currently selected* project
-     const handleTasksUpdate = (message: any) => {
-         if (message?.project_id && message.project_id === selectedProject) {
-             console.log(`Tasks updated via WebSocket for current project ${selectedProject}, refetching...`);
-             fetchTasks(selectedProject); // Refetch tasks for the current project
-         }
-     };
-     const unsubscribe = eventBus.on('tasks_updated', handleTasksUpdate);
-     return () => unsubscribe(); // Cleanup listener on unmount or when selectedProject changes
-  }, [selectedProject, fetchTasks]); // Re-subscribe if selectedProject changes
-
+    const handleTasksUpdate = (message: any) => {
+      if (message?.project_id && message.project_id === selectedProject) {
+        console.log(`Tasks updated via WebSocket for current project ${selectedProject}, refetching...`);
+        fetchTasks(selectedProject);
+      }
+    };
+    const unsubscribe = eventBus.on('tasks_updated', handleTasksUpdate);
+    return () => unsubscribe();
+  }, [selectedProject, fetchTasks]);
 
   // --- Event Handlers ---
   const handleProjectChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
-    setSelectedProject(e.target.value || null); // Set to null if the "Select project" option is chosen
+    setSelectedProject(e.target.value || null);
   };
 
-  const handleDragEnd = async (result: DropResult) => {
-    const { source, destination, draggableId } = result;
-
-    // 1. Check if drop is valid
-    if (!destination) return; // Dropped outside a droppable area
-    if (source.droppableId === destination.droppableId && source.index === destination.index) return; // Dropped in the same place
-
-    const taskToMove = tasks.find(task => task.id === draggableId);
-    if (!taskToMove || !selectedProject) return; // Task or project not found/selected
-
-    // 2. Optimistic UI Update
-    // Create a new array with the task moved to the new status
-    const updatedTasksOptimistic = tasks.map(task =>
-        task.id === draggableId
-            ? { ...task, status: destination.droppableId }
-            : task
-    );
-    setTasks(updatedTasksOptimistic); // Update UI immediately
-
-    // 3. Call Backend API to persist the change
+  const handleEditTask = async (taskId: string, updatedFields: Partial<Task>) => {
+    if (!selectedProject) return;
+    
+    const taskToUpdate = tasks.find(t => String(t.id) === String(taskId));
+    if (!taskToUpdate) {
+      console.error('Task not found for editing:', taskId);
+      return;
+    }
+    
     try {
-      setError(null); // Clear previous errors
-      // Update to use new API endpoint for updating just the status
-      await axios.patch(`http://localhost:8000/tasks/${selectedProject}/${draggableId}/status`, {
-        id: draggableId,
-        status: destination.droppableId, // The ID of the column it was dropped into
-      });
-      // Success! The optimistic update is likely correct.
-      console.log(`Task ${draggableId} status updated to ${destination.droppableId} on backend.`);
+      const updatedTask = { ...taskToUpdate, ...updatedFields };
+      console.log(`Updating task ${taskId} with:`, updatedFields);
+      
+      // Optimistic UI update
+      setTasks(tasks.map(t => String(t.id) === String(taskId) ? updatedTask : t));
+      
+      // Send to server
+      await axios.put(`http://localhost:8000/tasks/${selectedProject}/${taskId}`, updatedTask);
+      console.log(`Task ${taskId} updated successfully`);
     } catch (error) {
-      console.error('Failed to update task status on backend:', error);
-      setError('Failed to save task change. Reverting UI.');
-      // Revert UI change on failure by refetching the last known good state
+      console.error('Failed to update task:', error);
+      setError('Failed to update task. Please try again.');
+      fetchTasks(selectedProject);
+    }
+  };
+
+  const handleUpdateTaskStatus = async (taskId: string, newStatus: string) => {
+    if (!selectedProject) return;
+    
+    const taskToUpdate = tasks.find(t => String(t.id) === String(taskId));
+    if (!taskToUpdate) {
+      console.error('Task not found for status update:', taskId);
+      return;
+    }
+    
+    try {
+      // If already in this status, no need to update
+      if (taskToUpdate.status === newStatus) {
+        console.log(`Task ${taskId} already has status ${newStatus}, no update needed`);
+        return;
+      }
+      
+      console.log(`Updating task ${taskId} status from ${taskToUpdate.status} to ${newStatus}`);
+      
+      // Create updated task
+      const updatedTask = { ...taskToUpdate, status: newStatus };
+      
+      // Optimistic UI update
+      setTasks(prev => prev.map(t => String(t.id) === String(taskId) ? updatedTask : t));
+      
+      // Send to server
+      await axios.put(`http://localhost:8000/tasks/${selectedProject}/${taskId}`, updatedTask);
+      console.log(`Task status updated successfully to ${newStatus}`);
+      
+      // Force a refresh to ensure server state is reflected
+      setTimeout(() => fetchTasks(selectedProject), 500);
+    } catch (error) {
+      console.error('Failed to update task status:', error);
+      setError('Failed to update task status. Please try again.');
       fetchTasks(selectedProject);
     }
   };
@@ -203,7 +223,7 @@ const Tasks: React.FC = () => {
         description: "Click to edit this task",
         status: COLUMN_IDS.TODO,
         priority: "medium",
-        due: new Date(Date.now() + 7 * 24 * 60 * 60 * 1000).toISOString().split('T')[0], // 7 days from now
+        due: new Date(Date.now() + 7 * 24 * 60 * 60 * 1000).toISOString().split('T')[0],
       };
       
       console.log('Creating new task:', newTask);
@@ -211,179 +231,281 @@ const Tasks: React.FC = () => {
       // Optimistic UI update
       setTasks(prev => [...prev, newTask]);
       
-      // Call backend API to create the task
+      // Call backend API
       const response = await axios.post(`http://localhost:8000/tasks/${selectedProject}`, newTask);
       
       if (response.data) {
         console.log('Task created successfully:', response.data);
-        // Refresh tasks to get the server version
         fetchTasks(selectedProject);
       }
     } catch (error) {
       console.error('Failed to create task:', error);
       setError('Failed to create task. Please try again.');
-      // Refresh to get the correct state from server
       fetchTasks(selectedProject);
     }
   };
 
+  // --- Native Drag & Drop Handlers ---
+  const handleDragStart = (e: React.DragEvent<HTMLDivElement>, task: Task) => {
+    e.dataTransfer.setData('taskId', String(task.id));
+    setDraggedTask(task);
+    console.log(`Started dragging task ${task.id} (current status: ${task.status})`);
+    
+    // Add dragging class and set opacity
+    if (e.currentTarget) {
+      e.currentTarget.classList.add('dragging');
+      e.currentTarget.style.opacity = '0.5';
+    }
+  };
+
+  const handleDragEnd = (e: React.DragEvent<HTMLDivElement>) => {
+    setDraggedTask(null);
+    // Remove dragging class and reset opacity
+    if (e.currentTarget) {
+      e.currentTarget.classList.remove('dragging');
+      e.currentTarget.style.opacity = '1';
+    }
+  };
+
+  const handleDragOver = (e: React.DragEvent<HTMLDivElement>) => {
+    e.preventDefault(); // Allow drop
+    e.currentTarget.classList.add('drag-over');
+  };
+
+  const handleDragLeave = (e: React.DragEvent<HTMLDivElement>) => {
+    e.currentTarget.classList.remove('drag-over');
+  };
+
+  const handleDrop = (e: React.DragEvent<HTMLDivElement>, columnStatus: string) => {
+    e.preventDefault();
+    e.currentTarget.classList.remove('drag-over');
+    
+    const taskId = e.dataTransfer.getData('taskId');
+    console.log(`Dropped task ${taskId} into column with status: ${columnStatus}`);
+    
+    if (taskId) {
+      // Debug task status
+      const task = tasks.find(t => String(t.id) === taskId);
+      console.log(`Task being dropped: ${task?.title}, Current status: ${task?.status}, New status: ${columnStatus}`);
+      
+      handleUpdateTaskStatus(taskId, columnStatus);
+    }
+  };
+
   // --- Memoized Derived State ---
-  // Group tasks by their status column ID for rendering
   const tasksByColumn = useMemo(() => {
-      const columns: { [key: string]: Task[] } = {
-          [COLUMN_IDS.TODO]: [],
-          [COLUMN_IDS.IN_PROGRESS]: [],
-          [COLUMN_IDS.DONE]: [],
-      };
-      tasks.forEach(task => {
-          // Ensure task status is valid, default to TODO if not
-          const columnId = Object.values(COLUMN_IDS).includes(task.status)
-              ? task.status
-              : COLUMN_IDS.TODO;
-          columns[columnId].push(task);
+    const columns: { [key: string]: Task[] } = {
+      [COLUMN_IDS.TODO]: [],
+      [COLUMN_IDS.IN_PROGRESS]: [],
+      [COLUMN_IDS.DONE]: [],
+    };
+    
+    console.log("Organizing tasks by column with these column IDs:", Object.values(COLUMN_IDS));
+    
+    tasks.forEach(task => {
+      // Debug each task's assignment
+      console.log(`Task ${task.id} (${task.title}) has status: ${task.status}`);
+      
+      // Get valid column ID or default to TODO
+      let columnId = task.status;
+      
+      // Validate that the column exists, otherwise default to TODO
+      if (!Object.values(COLUMN_IDS).includes(columnId)) {
+        console.log(`Task ${task.id} has invalid status ${task.status}, defaulting to TODO`);
+        columnId = COLUMN_IDS.TODO;
+      }
+      
+      // Push to appropriate column
+      if (columns[columnId]) {
+        columns[columnId].push(task);
+      } else {
+        console.error(`Column ${columnId} not found in columns object. Available columns:`, Object.keys(columns));
+        // Default to TODO if column not found
+        columns[COLUMN_IDS.TODO].push(task);
+      }
+    });
+    
+    // Sort tasks by due date
+    Object.values(columns).forEach(columnTasks => {
+      columnTasks.sort((a, b) => {
+        if (a.due && b.due) return a.due.localeCompare(b.due);
+        if (a.due) return -1;
+        if (b.due) return 1;
+        return 0;
       });
-      // Sort tasks within each column by due date
-      Object.values(columns).forEach(columnTasks => {
-          columnTasks.sort((a, b) => {
-              // Sort by due date (ascending)
-              if (a.due && b.due) return a.due.localeCompare(b.due);
-              if (a.due) return -1; // a has due date, b doesn't
-              if (b.due) return 1;  // b has due date, a doesn't
-              return 0; // neither has due date
-          });
-      });
-      return columns;
-  }, [tasks]); // Recalculate only when the tasks array changes
+    });
+    
+    console.log("Tasks organized by column:", {
+      todo: columns[COLUMN_IDS.TODO].length,
+      inProgress: columns[COLUMN_IDS.IN_PROGRESS].length,
+      done: columns[COLUMN_IDS.DONE].length
+    });
+    
+    return columns;
+  }, [tasks]);
 
   // --- Helper Functions ---
   const getPriorityClass = (priority?: string): string => {
-    if (!priority) return 'border-l-gray-400 dark:border-l-gray-500'; // Neutral border
+    if (!priority) return 'border-l-gray-400 dark:border-l-gray-500';
     switch (priority.toLowerCase()) {
-      case 'high': return 'border-l-red-500';
-      case 'medium': return 'border-l-yellow-400'; // Adjusted yellow
-      case 'low': return 'border-l-blue-500';
+      case 'high': return 'border-l-red-500 dark:border-l-red-400';
+      case 'medium': return 'border-l-yellow-400 dark:border-l-yellow-300';
+      case 'low': return 'border-l-blue-500 dark:border-l-blue-400';
       default: return 'border-l-gray-400 dark:border-l-gray-500';
     }
   };
 
-  // --- Render ---
   return (
     <div className="tasks-container flex flex-col h-full p-4 md:p-6 lg:p-8 w-full overflow-hidden">
       {/* Header */}
-      <div className="header flex flex-col sm:flex-row justify-between items-start sm:items-center mb-6 gap-4 flex-shrink-0">
+      <div className="header flex flex-col sm:flex-row justify-between items-start sm:items-center mb-6 gap-4 flex-shrink-0 dark:text-gray-100">
         <div className="flex items-center gap-4 flex-wrap">
           <h1 className="text-2xl font-bold text-gray-800 dark:text-gray-100">Tasks</h1>
           <select
-            className="project-select p-2 border border-gray-300 dark:border-gray-600 rounded bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-sm"
+            className="project-select p-2 border border-gray-300 dark:border-gray-700 rounded bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-sm"
             value={selectedProject || ''}
             onChange={handleProjectChange}
             disabled={loadingProjects || projects.length === 0}
             aria-label="Select Project"
           >
-            {loadingProjects ? ( <option value="">Loading projects...</option> )
-            : projects.length > 0 ? (
+            {loadingProjects ? (
+              <option value="">Loading projects...</option>
+            ) : projects.length > 0 ? (
               <>
                 <option value="">Select project...</option>
                 {projects.map((project) => (
-                  <option key={project.id} value={project.id}> {project.title} </option>
+                  <option key={project.id} value={project.id}>{project.title}</option>
                 ))}
               </>
-            ) : ( <option value="">No projects available</option> )}
+            ) : (
+              <option value="">No projects available</option>
+            )}
           </select>
         </div>
         <button
-          className="quick-action-button bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded shadow flex items-center gap-2 transition duration-150 ease-in-out text-sm disabled:opacity-50 disabled:cursor-not-allowed"
+          className="quick-action-button bg-blue-500 hover:bg-blue-600 dark:bg-blue-600 dark:hover:bg-blue-700 text-white px-4 py-2 rounded shadow flex items-center gap-2 transition duration-150 ease-in-out text-sm disabled:opacity-50 disabled:cursor-not-allowed"
           onClick={handleCreateTask}
-          disabled={!selectedProject || loadingTasks} // Disable if no project selected or tasks are loading
+          disabled={!selectedProject || loadingTasks}
           title={!selectedProject ? "Select a project first" : "Create a new task"}
         >
-           <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path fillRule="evenodd" d="M10 3a1 1 0 011 1v5h5a1 1 0 110 2h-5v5a1 1 0 11-2 0v-5H4a1 1 0 110-2h5V4a1 1 0 011-1z" clipRule="evenodd" /></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+            <path fillRule="evenodd" d="M10 3a1 1 0 011 1v5h5a1 1 0 110 2h-5v5a1 1 0 11-2 0v-5H4a1 1 0 110-2h5V4a1 1 0 011-1z" clipRule="evenodd" />
+          </svg>
           <span>New Task</span>
         </button>
       </div>
 
       {/* Error Display */}
       {error && (
-         <div className="error-state text-center text-red-600 dark:text-red-400 bg-red-100 dark:bg-red-900/50 p-3 rounded border border-red-300 dark:border-red-700 mb-4 text-sm flex-shrink-0">{error}</div>
+        <div className="error-state text-center text-red-600 dark:text-red-300 bg-red-100 dark:bg-red-900/30 p-3 rounded border border-red-300 dark:border-red-700 mb-4 text-sm flex-shrink-0">
+          {error}
+        </div>
+      )}
+
+      {/* Debug Info (only in development) */}
+      {process.env.NODE_ENV !== 'production' && debugInfo && (
+        <div className="debug-info text-xs text-gray-500 dark:text-gray-400 mb-2 p-1 border-t border-b border-gray-200 dark:border-gray-700">
+          <details>
+            <summary>Debug Info (click to expand)</summary>
+            <pre className="mt-1 whitespace-pre-wrap">{debugInfo}</pre>
+          </details>
+        </div>
       )}
 
       {/* Kanban Board Area */}
-      <div className="flex-1 overflow-hidden"> {/* Container for scrolling */}
+      <div className="flex-1 overflow-hidden">
         {!selectedProject && !loadingProjects ? (
-          <div className="empty-state h-full flex items-center justify-center text-center text-gray-500 dark:text-gray-400 p-8 border-2 border-dashed border-gray-300 dark:border-gray-600 rounded-lg">
+          <div className="empty-state h-full flex items-center justify-center text-center text-gray-500 dark:text-gray-300 p-8 border-2 border-dashed border-gray-300 dark:border-gray-600 rounded-lg">
             <p>Please select a project to view tasks.</p>
           </div>
         ) : loadingTasks ? (
-           <div className="loading-state h-full flex items-center justify-center text-gray-500 dark:text-gray-400">Loading tasks...</div>
+          <div className="loading-state h-full flex items-center justify-center text-gray-500 dark:text-gray-300">
+            Loading tasks...
+          </div>
         ) : (
-          <DragDropContext onDragEnd={handleDragEnd}>
-            <div className="kanban-board h-full grid grid-cols-1 md:grid-cols-3 gap-4"> {/* Grid layout */}
-              {Object.entries(columnTitles).map(([columnId, title]) => (
-                <div key={columnId} className="kanban-column bg-gray-100 dark:bg-gray-800 rounded-lg p-3 flex flex-col h-full overflow-hidden"> {/* Column styling */}
-                  {/* Column Header */}
-                  <div className="kanban-column-header flex justify-between items-center mb-3 px-1 flex-shrink-0">
-                    <h2 className="font-semibold text-gray-700 dark:text-gray-200">{title}</h2>
-                    <span className="task-count text-xs bg-gray-300 dark:bg-gray-600 text-gray-600 dark:text-gray-300 rounded-full px-2 py-0.5">
-                      {tasksByColumn[columnId]?.length || 0}
-                    </span>
-                  </div>
-                  {/* Droppable Area */}
-                  <Droppable droppableId={columnId}>
-                    {(provided: DroppableProvided, snapshot: DroppableStateSnapshot) => (
-                      <div
-                        ref={provided.innerRef}
-                        {...provided.droppableProps}
-                        // Styling for the droppable area, changes when dragging over
-                        className={`kanban-tasks flex-1 space-y-3 overflow-y-auto p-1 rounded-md transition-colors duration-200 ${snapshot.isDraggingOver ? 'bg-blue-50 dark:bg-blue-900/20' : 'bg-transparent'}`}
-                      >
-                        {/* Display tasks or empty message */}
-                        {tasksByColumn[columnId]?.length === 0 && !snapshot.isDraggingOver && (
-                           <div className="text-center text-xs text-gray-400 dark:text-gray-500 pt-4 italic">Drop tasks here</div>
-                        )}
-                        {/* Map and render draggable tasks */}
-                        {tasksByColumn[columnId]?.map((task, index) => (
-                          <Draggable key={task.id} draggableId={task.id} index={index}>
-                            {(provided: DraggableProvided, snapshot: DraggableStateSnapshot) => (
-                              <div
-                                ref={provided.innerRef}
-                                {...provided.draggableProps}
-                                {...provided.dragHandleProps}
-                                // Styling for the draggable card, changes when dragging
-                                className={`kanban-card bg-white dark:bg-gray-700 rounded shadow p-3 border-l-4 cursor-grab active:cursor-grabbing ${getPriorityClass(task.priority)} ${snapshot.isDragging ? 'shadow-lg scale-105 ring-2 ring-blue-400' : 'shadow-sm'}`}
-                                style={{...provided.draggableProps.style}} // Required style overrides from library
-                                title={task.description || task.title} // Tooltip for description
-                              >
-                                {/* Task Content */}
-                                <h3 className="task-title font-medium text-sm text-gray-900 dark:text-white mb-1">{task.title}</h3>
-                                {task.description && (
-                                  <p className="task-description text-xs text-gray-600 dark:text-gray-400 mb-2 line-clamp-2">{task.description}</p>
-                                )}
-                                <div className="task-meta flex justify-between items-center text-xs text-gray-500 dark:text-gray-400">
-                                   {task.due && (
-                                      <span className="task-due flex items-center gap-1" title={`Due: ${task.due}`}>
-                                           <svg xmlns="http://www.w3.org/2000/svg" className="h-3 w-3 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" /></svg>
-                                           {task.due}
-                                       </span>
-                                   )}
-                                   {task.assigned_to && (
-                                       <span className="task-assignee flex items-center gap-1 ml-auto pl-2" title={`Assigned to ${task.assigned_to}`}> {/* Push assignee to right */}
-                                            <svg xmlns="http://www.w3.org/2000/svg" className="h-3 w-3 flex-shrink-0" viewBox="0 0 20 20" fill="currentColor"><path fillRule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clipRule="evenodd" /></svg>
-                                            {task.assigned_to.split(' ')[0]} {/* Show first name only */}
-                                        </span>
-                                   )}
-                                </div>
-                              </div>
-                            )}
-                          </Draggable>
-                        ))}
-                        {provided.placeholder} {/* Placeholder for space while dragging */}
-                      </div>
-                    )}
-                  </Droppable>
+          <div className="kanban-board h-full grid grid-cols-1 md:grid-cols-3 gap-4">
+            {Object.entries(columnTitles).map(([columnId, title]) => (
+              <div 
+                key={columnId} 
+                className="kanban-column bg-gray-100 dark:bg-gray-900 rounded-lg p-3 flex flex-col h-full overflow-hidden border border-transparent dark:border-gray-700"
+              >
+                {/* Column Header */}
+                <div className="kanban-column-header flex justify-between items-center mb-3 px-1 flex-shrink-0">
+                  <h2 className="font-semibold text-gray-700 dark:text-gray-100">{title}</h2>
+                  <span className="task-count text-xs bg-gray-300 dark:bg-gray-600 text-gray-600 dark:text-gray-300 rounded-full px-2 py-0.5">
+                    {tasksByColumn[columnId]?.length || 0}
+                  </span>
                 </div>
-              ))}
-            </div>
-          </DragDropContext>
+                
+                {/* Droppable Area */}
+                <div
+                  className="kanban-tasks flex-1 space-y-3 overflow-y-auto p-1 rounded-md transition-colors duration-200"
+                  onDragOver={handleDragOver}
+                  onDragLeave={handleDragLeave}
+                  onDrop={(e) => handleDrop(e, columnId)}
+                  data-column-id={columnId} // For debugging
+                >
+                  {/* Empty state */}
+                  {tasksByColumn[columnId]?.length === 0 && (
+                    <div className="text-center text-xs text-gray-400 dark:text-gray-500 pt-4 italic">
+                      Drop tasks here ({columnId})
+                    </div>
+                  )}
+                  
+                  {/* Tasks */}
+                  {tasksByColumn[columnId]?.map((task) => (
+                    <div
+                      key={task.id}
+                      className={`kanban-card rounded-lg border-l-4 p-3 cursor-move ${getPriorityClass(task.priority)} shadow-sm hover:shadow-md hover:bg-white dark:hover:bg-gray-700 transition-all duration-200 priority-${task.priority?.toLowerCase() || 'normal'}`}
+                      draggable
+                      onDragStart={(e) => handleDragStart(e, task)}
+                      onDragEnd={handleDragEnd}
+                      data-task-id={task.id}
+                      data-task-status={task.status}
+                    >
+                      {/* Task Content */}
+                      <div
+                        className="task-content-wrapper"
+                        onClick={() => {
+                          const newTitle = prompt('Edit task title:', task.title);
+                          if (newTitle && newTitle !== task.title) {
+                            const newDesc = prompt('Edit task description:', task.description || '');
+                            handleEditTask(task.id, {
+                              title: newTitle,
+                              description: newDesc || task.description
+                            });
+                          }
+                        }}
+                      >
+                        <h3 className="task-title font-medium text-sm text-gray-900 dark:text-white mb-1">
+                          {task.title}
+                        </h3>
+                        {task.description && (
+                          <p className="task-description text-xs text-gray-600 dark:text-gray-300 mb-2 line-clamp-2">
+                            {task.description}
+                          </p>
+                        )}
+                      </div>
+                      
+                      {/* Task Metadata */}
+                      <div className="task-meta flex justify-between items-center text-xs text-gray-500 dark:text-gray-400">
+                        {task.due && (
+                          <span className="task-due dark:text-gray-300" title={`Due: ${task.due}`}>
+                            {task.due}
+                          </span>
+                        )}
+                        {task.assigned_to && (
+                          <span className="task-assignee ml-auto pl-2 dark:text-gray-300" title={`Assigned to ${task.assigned_to}`}>
+                            {task.assigned_to.split(' ')[0]}
+                          </span>
+                        )}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
         )}
       </div>
     </div>

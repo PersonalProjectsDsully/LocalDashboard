@@ -13,10 +13,19 @@ interface Project {
   team?: { name: string; role: string }[];
 }
 
+interface DeleteConfirmationProps {
+  isOpen: boolean;
+  projectId: string;
+  projectTitle: string;
+  onConfirm: () => void;
+  onCancel: () => void;
+}
+
 const Projects: React.FC = () => {
   const [projects, setProjects] = useState<Project[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
+  const [deleteConfirmation, setDeleteConfirmation] = useState<{isOpen: boolean; projectId: string; projectTitle: string}>({isOpen: false, projectId: '', projectTitle: ''});
   const navigate = useNavigate();
 
   const fetchProjects = async () => {
@@ -103,6 +112,35 @@ const Projects: React.FC = () => {
      navigate('/documents', { state: { projectId: projectId } });
   };
 
+  const openDeleteConfirmation = (projectId: string, projectTitle: string) => {
+    setDeleteConfirmation({
+      isOpen: true,
+      projectId,
+      projectTitle
+    });
+  };
+
+  const closeDeleteConfirmation = () => {
+    setDeleteConfirmation({
+      isOpen: false,
+      projectId: '',
+      projectTitle: ''
+    });
+  };
+
+  const handleDeleteProject = async () => {
+    const { projectId } = deleteConfirmation;
+    try {
+      await axios.delete(`http://localhost:8000/projects/${projectId}`);
+      setProjects(projects.filter(project => project.id !== projectId));
+      closeDeleteConfirmation();
+    } catch (err) {
+      console.error('Error deleting project:', err);
+      setError('Failed to delete project. Please check if the backend is running.');
+      closeDeleteConfirmation();
+    }
+  };
+
   return (
     <div className="projects-container p-4 md:p-6 lg:p-8 w-full h-full flex flex-col">
       <div className="header flex flex-col sm:flex-row justify-between items-start sm:items-center mb-6 gap-4">
@@ -126,6 +164,34 @@ const Projects: React.FC = () => {
       {loading ? (
         <div className="loading-state flex-1 flex items-center justify-center text-gray-500 dark:text-gray-400">Loading projects...</div>
       ) : (
+        <>
+        {/* Delete Confirmation Modal */}
+        {deleteConfirmation.isOpen && (
+          <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+            <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-xl max-w-md w-full">
+              <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">Delete Project</h3>
+              <p className="text-gray-700 dark:text-gray-300 mb-6">
+                Are you sure you want to delete <span className="font-semibold">{deleteConfirmation.projectTitle}</span>? 
+                This action cannot be undone and all project data will be permanently removed.
+              </p>
+              <div className="flex justify-end gap-3">
+                <button 
+                  className="px-4 py-2 text-gray-700 dark:text-gray-300 border border-gray-300 dark:border-gray-600 rounded hover:bg-gray-100 dark:hover:bg-gray-700"
+                  onClick={closeDeleteConfirmation}
+                >
+                  Cancel
+                </button>
+                <button 
+                  className="px-4 py-2 bg-red-600 text-white rounded hover:bg-red-700"
+                  onClick={handleDeleteProject}
+                >
+                  Delete
+                </button>
+              </div>
+            </div>
+          </div>
+        )}
+        
         <div className="projects-grid flex-1 overflow-y-auto pb-4 pr-1"> {/* Allow vertical scroll */}
              {projects.length > 0 ? (
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 md:gap-6">
@@ -157,8 +223,7 @@ const Projects: React.FC = () => {
                         <div className="project-actions mt-auto flex justify-end gap-3 pt-3 border-t border-gray-200 dark:border-gray-700">
                         <button className="action-button text-sm text-blue-600 dark:text-blue-400 hover:underline" onClick={() => navigateToTasks(project.id)} title="View Tasks">Tasks</button>
                         <button className="action-button text-sm text-blue-600 dark:text-blue-400 hover:underline" onClick={() => navigateToDocs(project.id)} title="View Documents">Docs</button>
-                        {/* Add Edit button functionality later */}
-                        {/* <button className="action-button text-sm text-gray-600 dark:text-gray-400 hover:underline">Edit</button> */}
+                        <button className="action-button text-sm text-red-600 dark:text-red-400 hover:underline" onClick={(e) => { e.stopPropagation(); openDeleteConfirmation(project.id, project.title); }} title="Delete Project">Delete</button>
                         </div>
                     </div>
                     ))}
@@ -178,6 +243,7 @@ const Projects: React.FC = () => {
                 </div>
             )}
         </div>
+        </>
       )}
     </div>
   );

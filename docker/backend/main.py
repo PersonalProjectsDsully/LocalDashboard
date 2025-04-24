@@ -7,7 +7,7 @@ import json
 import yaml
 import asyncio
 from typing import List, Dict, Any, Optional, Set
-from datetime import datetime, timezone, timedelta # Added timedelta
+from datetime import datetime, timezone, timedelta
 import logging
 from pathlib import Path as FilePath
 import time
@@ -16,7 +16,9 @@ from watchdog.events import FileSystemEventHandler, FileModifiedEvent, FileCreat
 import requests
 from contextlib import suppress
 from concurrent.futures import Future
-import re # For keyword extraction
+import re
+
+from update_alarm_legacy import update_alarm_legacy
 
 # Import the Ollama client
 from ollama_client import OllamaClient
@@ -27,6 +29,10 @@ from task_models import (
     TaskAssigneeUpdate, TaskStatistics, TaskTemplate, TaskFromTemplate
 )
 from tasks_service import TasksService
+
+# Import LLM Task Controller
+from llm_task_controller import LLMTaskController
+from llm_json_extractor import extract_json_from_llm_response
 
 # --- Logging Setup ---
 logging.basicConfig(
@@ -55,12 +61,14 @@ app.add_middleware(
 
 # --- Constants and Global State ---
 HUB_DATA_PATH = FilePath("/hub_data").resolve()
+FOCUS_TIMER_PATH = FilePath(r"C:\Users\admin\Desktop\FocusTimer\focus_logs").resolve()
 focus_monitor_active = True
 main_event_loop: Optional[asyncio.AbstractEventLoop] = None
 
 # Initialize services
 ollama_client = OllamaClient(base_url="http://host.docker.internal:11434")
 tasks_service = TasksService(HUB_DATA_PATH)
+llm_task_controller = LLMTaskController(tasks_service)
 
 # Service dependencies
 def get_tasks_service() -> TasksService:
@@ -227,8 +235,20 @@ class Alarm(BaseModel):
     id: str
     title: str
     days: int
+    hours: Optional[int] = 0
+    minutes: Optional[int] = 0
+    seconds: Optional[int] = 0
     time: Optional[str] = None
     thresholds: Dict[str, int]
+    recurrence: Optional[str] = None  # 'once', 'daily', 'weekly', 'monthly'
+    startDate: Optional[str] = None
+    startTime: Optional[str] = None
+    endDate: Optional[str] = None
+    endTime: Optional[str] = None
+    daysOfWeek: Optional[List[int]] = None  # 0-6 (Sunday to Saturday)
+    status: Optional[str] = None  # 'active', 'paused', 'completed'
+    lastUpdated: Optional[str] = None
+    targetDate: Optional[str] = None  # ISO date string for target date/time
     
 class TaskUpdate(BaseModel): 
     id: str
@@ -278,6 +298,11 @@ class ChatRequest(BaseModel):
     model_config = {
         'protected_namespaces': ()
     }
+
+class LLMTaskRequest(BaseModel):
+    command: str
+    model_id: str = "llama3"
+    system_prompt: Optional[str] = None
 
 # --- Helper Functions ---
 def read_yaml_file(file_path: FilePath) -> Any:
@@ -508,12 +533,14 @@ def calculate_summary_from_log(log_file_path: FilePath, date_str: str) -> Dict[s
         app_breakdown_list.sort(key=lambda x: x["timeSpent"], reverse=True)
         summary["appBreakdown"] = app_breakdown_list
 
-        # Screenshots (find associated PNGs for the date)
+        # Look for screenshots in the focus logs directory
         focus_logs_dir = log_file_path.parent
-        summary["screenshots"] = sorted([f.name for f in focus_logs_dir.glob(f"screenshot_{date_str}_*.png")])
+        screenshots = [f.name for f in focus_logs_dir.glob(f"screenshot_{date_str}_*.png")]
+        summary["screenshots"] = screenshots
 
         # Keywords (find associated TXTs for the date)
         all_keywords = set()
+        
         for ocr_file in focus_logs_dir.glob(f"screenshot_{date_str}_*.txt"):
             try:
                 with open(ocr_file, "r", encoding="utf-8") as f: 
@@ -540,6 +567,260 @@ def calculate_summary_from_log(log_file_path: FilePath, date_str: str) -> Dict[s
          logger.error(f"Failed to calculate on-demand summary for {date_str}: {e}", exc_info=True)
          summary["error"] = f"Failed to calculate summary: {e}"
          return summary
+
+# --- Alarms API ---
+@app.get("/alarms")
+async def get_alarms():
+    """Get all alarms from the countdowns.yaml file."""
+    try:
+        alarms_file = HUB_DATA_PATH / "countdowns.yaml"
+        if not alarms_file.exists():
+            return {"alarms": []}
+        
+        alarms_data = read_yaml_file(alarms_file)
+        if not alarms_data or "alarms" not in alarms_data:
+            return {"alarms": []}
+        
+        return alarms_data
+    except Exception as e:
+        logger.error(f"Error getting alarms: {e}", exc_info=True)
+        raise HTTPException(status_code=500, detail=f"Error getting alarms: {e}")
+
+@app.post("/alarms/update-countdowns")
+async def update_alarm_countdowns():
+    """Update countdown timers for all alarms based on recurrence rules."""
+    try:
+        alarms_file = HUB_DATA_PATH / "countdowns.yaml"
+        if not alarms_file.exists():
+            return {"status": "success", "message": "No alarms file found"}
+        
+        alarms_data = read_yaml_file(alarms_file)
+        if not alarms_data or "alarms" not in alarms_data:
+            return {"status": "success", "message": "No alarms found"}
+        
+        alarms = alarms_data["alarms"]
+        updated = False
+        now = datetime.now(timezone.utc)
+        
+        for i, alarm in enumerate(alarms):
+            # Skip if alarm is paused or completed
+            if alarm.get("status") == "paused" or alarm.get("status") == "completed":
+                continue
+            
+            # Update lastUpdated timestamp
+            alarm["lastUpdated"] = now.isoformat()
+            
+            # If targetDate is present, use that for countdown calculation
+            if alarm.get("targetDate"):
+                try:
+                    target_date = datetime.fromisoformat(alarm["targetDate"].replace('Z', '+00:00'))
+                    time_diff = target_date - now
+                    
+                    # Calculate days, hours, minutes, seconds
+                    total_seconds = max(0, time_diff.total_seconds())
+                    days = int(total_seconds // 86400)
+                    hours = int((total_seconds % 86400) // 3600)
+                    minutes = int((total_seconds % 3600) // 60)
+                    seconds = int(total_seconds % 60)
+                    
+                    # Update alarm with new values
+                    alarm["days"] = days
+                    alarm["hours"] = hours
+                    alarm["minutes"] = minutes
+                    alarm["seconds"] = seconds
+                    updated = True
+                    
+                    # Check if countdown reached zero
+                    if total_seconds <= 0:
+                        # For one-time alarms, mark as completed
+                        if not alarm.get("recurrence") or alarm.get("recurrence") == "once":
+                            alarm["status"] = "completed"
+                            alarm["days"] = 0
+                            alarm["hours"] = 0
+                            alarm["minutes"] = 0
+                            alarm["seconds"] = 0
+                        # For recurring alarms, reset based on recurrence type
+                        else:
+                            recurrence = alarm.get("recurrence")
+                            new_target = datetime.now(timezone.utc)
+                            
+                            if recurrence == "daily":
+                                new_target = new_target + timedelta(days=1)
+                            elif recurrence == "weekly":
+                                new_target = new_target + timedelta(days=7)
+                            elif recurrence == "monthly":
+                                # Add approximately 30 days for a month
+                                new_target = new_target + timedelta(days=30)
+                                
+                            # Update target date and time values
+                            alarm["targetDate"] = new_target.isoformat()
+                            alarm["days"] = 1 if recurrence == "daily" else 7 if recurrence == "weekly" else 30
+                            alarm["hours"] = 0
+                            alarm["minutes"] = 0
+                            alarm["seconds"] = 0
+                            
+                except (ValueError, TypeError) as e:
+                    logger.warning(f"Error parsing targetDate for alarm {alarm.get('id')}: {e}")
+                    # Fall back to legacy behavior
+                    update_alarm_legacy(alarm)
+                    updated = True
+            else:
+                # Legacy behavior for alarms without targetDate
+                update_alarm_legacy(alarm)
+                updated = True
+        
+        # If any alarm was updated, write changes and broadcast
+        if updated:
+            write_yaml_file(alarms_file, alarms_data)
+            await manager.broadcast({"type": "alarms_updated"})
+        
+        return {"status": "success", "message": "Alarms updated", "updated_count": len(alarms)}
+    except Exception as e:
+        logger.error(f"Error updating alarm countdowns: {e}", exc_info=True)
+        raise HTTPException(status_code=500, detail=f"Error updating alarm countdowns: {e}")
+
+@app.post("/alarms")
+async def create_alarm(alarm: Alarm):
+    """Create a new alarm."""
+    try:
+        alarms_file = HUB_DATA_PATH / "countdowns.yaml"
+        alarms_data = {"alarms": []}
+        
+        if alarms_file.exists():
+            existing_data = read_yaml_file(alarms_file)
+            if existing_data and "alarms" in existing_data:
+                alarms_data = existing_data
+        
+        # Generate a unique ID if not provided
+        if not alarm.id:
+            alarm.id = f"alarm-{int(time.time())}"
+        
+        # Add the new alarm
+        alarm_dict = alarm.dict(exclude_unset=True)
+        
+        # Ensure hours, minutes, seconds fields are present
+        if "hours" not in alarm_dict:
+            alarm_dict["hours"] = 0
+        if "minutes" not in alarm_dict:
+            alarm_dict["minutes"] = 0
+        if "seconds" not in alarm_dict:
+            alarm_dict["seconds"] = 0
+            
+        # Always calculate and store targetDate for precise countdown
+        if not alarm_dict.get("targetDate"):
+            now = datetime.now(timezone.utc)
+            target = now + timedelta(
+                days=alarm_dict.get("days", 0),
+                hours=alarm_dict.get("hours", 0),
+                minutes=alarm_dict.get("minutes", 0),
+                seconds=alarm_dict.get("seconds", 0)
+            )
+            alarm_dict["targetDate"] = target.isoformat()
+            
+        alarms_data["alarms"].append(alarm_dict)
+        
+        # Write back to file
+        write_yaml_file(alarms_file, alarms_data)
+        
+        return alarm_dict
+    except Exception as e:
+        logger.error(f"Error creating alarm: {e}", exc_info=True)
+        raise HTTPException(status_code=500, detail=f"Error creating alarm: {e}")
+
+@app.put("/alarms/{alarm_id}")
+async def update_alarm(alarm_id: str, alarm: Alarm):
+    """Update a specific alarm."""
+    try:
+        alarms_file = HUB_DATA_PATH / "countdowns.yaml"
+        if not alarms_file.exists():
+            raise HTTPException(status_code=404, detail="Alarms file not found")
+        
+        alarms_data = read_yaml_file(alarms_file)
+        if not alarms_data or "alarms" not in alarms_data:
+            raise HTTPException(status_code=404, detail="No alarms found")
+        
+        # Find and update the alarm
+        alarm_found = False
+        for i, existing_alarm in enumerate(alarms_data["alarms"]):
+            if existing_alarm.get("id") == alarm_id:
+                alarm_dict = alarm.dict(exclude_unset=True)
+                # Ensure hours, minutes, seconds fields are present
+                if "hours" not in alarm_dict:
+                    alarm_dict["hours"] = existing_alarm.get("hours", 0)
+                if "minutes" not in alarm_dict:
+                    alarm_dict["minutes"] = existing_alarm.get("minutes", 0)
+                if "seconds" not in alarm_dict:
+                    alarm_dict["seconds"] = existing_alarm.get("seconds", 0)
+                
+                # If days/hours/minutes/seconds changed but targetDate wasn't updated,
+                # recalculate the targetDate
+                time_changed = (
+                    alarm_dict.get("days") != existing_alarm.get("days") or
+                    alarm_dict.get("hours") != existing_alarm.get("hours") or
+                    alarm_dict.get("minutes") != existing_alarm.get("minutes") or
+                    alarm_dict.get("seconds") != existing_alarm.get("seconds")
+                )
+                target_unchanged = "targetDate" not in alarm_dict
+                
+                if time_changed and target_unchanged:
+                    now = datetime.now(timezone.utc)
+                    target = now + timedelta(
+                        days=alarm_dict.get("days", 0),
+                        hours=alarm_dict.get("hours", 0),
+                        minutes=alarm_dict.get("minutes", 0),
+                        seconds=alarm_dict.get("seconds", 0)
+                    )
+                    alarm_dict["targetDate"] = target.isoformat()
+                    
+                alarms_data["alarms"][i] = alarm_dict
+                alarm_found = True
+                break
+        
+        if not alarm_found:
+            raise HTTPException(status_code=404, detail=f"Alarm not found: {alarm_id}")
+        
+        # Write back to file
+        write_yaml_file(alarms_file, alarms_data)
+        
+        return alarm.dict()
+    except HTTPException:
+        raise
+    except Exception as e:
+        logger.error(f"Error updating alarm: {e}", exc_info=True)
+        raise HTTPException(status_code=500, detail=f"Error updating alarm: {e}")
+
+@app.delete("/alarms/{alarm_id}")
+async def delete_alarm(alarm_id: str):
+    """Delete a specific alarm."""
+    try:
+        alarms_file = HUB_DATA_PATH / "countdowns.yaml"
+        if not alarms_file.exists():
+            raise HTTPException(status_code=404, detail="Alarms file not found")
+        
+        alarms_data = read_yaml_file(alarms_file)
+        if not alarms_data or "alarms" not in alarms_data:
+            raise HTTPException(status_code=404, detail="No alarms found")
+        
+        # Find and remove the alarm
+        alarm_found = False
+        for i, existing_alarm in enumerate(alarms_data["alarms"]):
+            if existing_alarm.get("id") == alarm_id:
+                alarms_data["alarms"].pop(i)
+                alarm_found = True
+                break
+        
+        if not alarm_found:
+            raise HTTPException(status_code=404, detail=f"Alarm not found: {alarm_id}")
+        
+        # Write back to file
+        write_yaml_file(alarms_file, alarms_data)
+        
+        return {"status": "success", "message": f"Alarm deleted: {alarm_id}"}
+    except HTTPException:
+        raise
+    except Exception as e:
+        logger.error(f"Error deleting alarm: {e}", exc_info=True)
+        raise HTTPException(status_code=500, detail=f"Error deleting alarm: {e}")
 
 # --- Test Endpoints ---
 @app.get("/test-simple")
@@ -574,10 +855,22 @@ async def debug_ping():
         "timestamp": datetime.now().isoformat()
     }
 
-# --- Focus Monitor Status Endpoint ---
+# --- Focus Monitor Endpoints ---
 @app.get("/focus/status")
 async def get_focus_status():
     """Get the current focus monitor status."""
+    return {"active": focus_monitor_active}
+
+@app.post("/focus/toggle")
+async def toggle_focus_status():
+    """Toggle the focus monitor status."""
+    global focus_monitor_active
+    focus_monitor_active = not focus_monitor_active
+    logger.info(f"Focus monitor toggled to: {focus_monitor_active}")
+    
+    # Broadcast the status change to all connected clients
+    await manager.broadcast({"type": "focus_status_changed", "active": focus_monitor_active})
+    
     return {"active": focus_monitor_active}
 
 # --- WebSocket Endpoint ---
@@ -592,53 +885,72 @@ async def websocket_endpoint(websocket: WebSocket):
     except WebSocketDisconnect:
         await manager.disconnect(websocket)
 
+# --- Focus Logs File Access Endpoints ---
+@app.get("/focus_logs/{filename}")
+async def get_focus_log_file(filename: str):
+    """Serve focus log files (screenshots, text files, etc.) directly from FocusTimer directory."""
+    # Validate the filename is safe
+    if ".." in filename or "/" in filename or "\\" in filename:
+        raise HTTPException(status_code=400, detail="Invalid filename")
+    
+    # Direct path to the file
+    file_path = FOCUS_TIMER_PATH / filename
+    
+    if not file_path.exists():
+        raise HTTPException(status_code=404, detail="File not found")
+    
+    return FileResponse(str(file_path))
+
 # --- Focus Summary Endpoint ---
 @app.get("/focus/summary")
 async def get_focus_summary(date: str):
     """
     Get focus summary for a specific date.
-    Tries to read pre-generated summary JSON first.
-    If not found, calculates it on-the-fly from the JSONL log file.
+    Always reads directly from C:\Users\admin\Desktop\FocusTimer\focus_logs.
+    If no pre-generated summary is found, calculates it on-the-fly from the JSONL log file.
     """
     try:
         datetime.strptime(date, "%Y-%m-%d")
     except ValueError:
         raise HTTPException(status_code=400, detail="Invalid date format, use YYYY-MM-DD")
 
-    # Log paths for debugging
-    summary_file = HUB_DATA_PATH / "focus_logs" / f"daily_summary_{date}.json"
-    log_file = HUB_DATA_PATH / "focus_logs" / f"focus_log_{date}.jsonl"
+    # Direct path to FocusTimer directory
+    focus_timer_dir = FilePath(r"C:\Users\admin\Desktop\FocusTimer\focus_logs")
+    focus_timer_summary_file = focus_timer_dir / f"daily_summary_{date}.json"
+    focus_timer_log_file = focus_timer_dir / f"focus_log_{date}.jsonl"
     
-    logger.info(f"Looking for focus logs at: {summary_file} or {log_file}")
+    logger.info(f"Looking for focus logs directly in: {focus_timer_dir}")
 
-    # 1. Try reading the pre-generated summary file
-    summary_data = read_json_file(summary_file)
-    if summary_data is not None:
-        logger.info(f"Serving pre-generated summary for {date}")
-        return summary_data
+    # 1. First try reading pre-generated summary from FocusTimer
+    if focus_timer_summary_file.exists():
+        summary_data = read_json_file(focus_timer_summary_file)
+        if summary_data is not None:
+            logger.info(f"Serving pre-generated summary from FocusTimer for {date}")
+            return summary_data
 
-    # 2. If pre-generated doesn't exist, try generating on-demand from log
-    logger.info(f"Pre-generated summary not found for {date}, attempting on-demand calculation.")
-    if not log_file.exists():
-        logger.warning(f"Neither summary nor log file found for {date}")
-        # Return default empty structure instead of 404 for better UX
-        return { 
-            "date": date, 
-            "totalTime": 0, 
-            "appBreakdown": [], 
-            "screenshots": [],
-            "keywords": [], 
-            "focusScore": 0, 
-            "distractionEvents": 0, 
-            "meetingTime": 0,
-            "productiveApps": [], 
-            "distractionApps": [], 
-            "status": "No log data found" 
-        }
+    # 2. Try generating from log file in FocusTimer
+    logger.info(f"Pre-generated summary not found, attempting on-demand calculation.")
+    if focus_timer_log_file.exists():
+        logger.info(f"Calculating from FocusTimer log file")
+        calculated_summary = calculate_summary_from_log(focus_timer_log_file, date)
+        return calculated_summary
 
-    # Calculate summary from the log file
-    calculated_summary = calculate_summary_from_log(log_file, date)
-    return calculated_summary
+    # 3. No log files found
+    logger.warning(f"No focus log files found for {date}")
+    # Return default empty structure instead of 404 for better UX
+    return { 
+        "date": date, 
+        "totalTime": 0, 
+        "appBreakdown": [], 
+        "screenshots": [],
+        "keywords": [], 
+        "focusScore": 0, 
+        "distractionEvents": 0, 
+        "meetingTime": 0,
+        "productiveApps": [], 
+        "distractionApps": [], 
+        "status": "No log data found" 
+    }
 
 # --- Projects API ---
 @app.get("/projects")
@@ -748,6 +1060,164 @@ async def delete_project(project_id: str):
     except Exception as e:
         logger.error(f"Error deleting project: {e}", exc_info=True)
         raise HTTPException(status_code=500, detail=f"Error deleting project: {e}")
+
+# --- LLM Task Controller Routes ---
+@app.post("/llm/tasks/process")
+async def process_llm_task_command(request: LLMTaskRequest):
+    """Process a natural language command for task management with LLM."""
+    try:
+        # Prepare system prompt with project and task context
+        projects = llm_task_controller.get_all_projects()
+        
+        # Build context section with current projects and tasks
+        context = "CURRENT PROJECTS AND TASKS:\n\n"
+        for project in projects:
+            project_id = project.get('id')
+            context += f"Project: {project.get('title')} ({project_id})\n"
+            context += f"Description: {project.get('description', 'No description')}\n"
+            context += f"Status: {project.get('status', 'Unknown')}\n"
+            
+            tasks = llm_task_controller.get_project_tasks(project_id)
+            context += "Tasks:\n"
+            for task in tasks:
+                context += f"- [{task.get('status', 'unknown')}] {task.get('id')}: {task.get('title')} " \
+                          f"(Priority: {task.get('priority', 'unknown')}, " \
+                          f"Due: {task.get('due', 'not set')}, " \
+                          f"Assigned to: {task.get('assigned_to', 'unassigned')})\n"
+            context += "\n"
+        
+        # Use custom system prompt if provided, otherwise use default
+        system_prompt = request.system_prompt
+        if not system_prompt:
+            system_prompt = f"""You are an AI assistant that helps manage tasks in a local dashboard. 
+            You can perform actions on tasks by responding with specific JSON formatted commands.
+
+            {context}
+
+            When I ask you to perform an action on tasks, you should:
+            1. Provide a brief natural language explanation of what you understand and what you're going to do
+            2. Include a valid JSON object that I can parse to execute the action
+            3. Add any additional advice or context after the JSON
+
+            It's perfectly fine to have normal text before and after the JSON, but make sure the JSON itself is properly formatted.
+            Ideally, place the JSON in a code block like this:
+
+            ```json
+            {{
+                "action": "create_task",
+                "project_id": "Project-A",
+                "task": {{
+                    "title": "Task title",
+                    "description": "Task description",
+                    "status": "todo",
+                    "priority": "medium",
+                    "due": "YYYY-MM-DD",
+                    "assigned_to": "Person Name"
+                }}
+            }}
+            ```
+
+            For updating a task:
+            ```json
+            {{
+                "action": "update_task",
+                "project_id": "Project-A",
+                "task_id": "task-1",
+                "updates": {{
+                    "status": "in-progress"
+                    // Add any other fields you want to update
+                }}
+            }}
+            ```
+
+            For deleting a task:
+            ```json
+            {{
+                "action": "delete_task",
+                "project_id": "Project-A",
+                "task_id": "task-1"
+            }}
+            ```
+
+            For getting tasks in a project:
+            ```json
+            {{
+                "action": "get_tasks",
+                "project_id": "Project-A"
+            }}
+            ```
+
+            For getting all projects:
+            ```json
+            {{
+                "action": "get_projects"
+            }}
+            ```
+
+            Task status options: "todo", "in-progress", "done"
+            Priority options: "low", "medium", "high"
+
+            Make sure your JSON is properly formatted and contains all required fields for the action."""
+
+        # Generate LLM response
+        messages = [
+            {"role": "system", "content": system_prompt},
+            {"role": "user", "content": request.command}
+        ]
+        
+        logger.info(f"Sending task command to LLM: {request.command}")
+        llm_response = ollama_client.chat_completion(request.model_id, messages)
+        
+        if not llm_response or "content" not in llm_response:
+            logger.error("Failed to get response from LLM")
+            return {"success": False, "error": "Failed to get response from LLM"}
+        
+        # Extract JSON from the response
+        content = llm_response.get("content", "")
+        logger.info(f"Received LLM response, extracting JSON")
+        extracted_json = extract_json_from_llm_response(content)
+        
+        if not extracted_json:
+            logger.warning(f"Could not extract valid JSON from LLM response")
+            return {
+                "success": False, 
+                "error": "Could not extract JSON command from LLM response",
+                "llm_response": content
+            }
+        
+        # Process the command
+        result = llm_task_controller.process_llm_response(extracted_json)
+        
+        # If successful, broadcast task update if applicable
+        if result.get("success") and result.get("action") in ["create_task", "update_task", "delete_task"] \
+           and result.get("project_id"):
+            await manager.broadcast({"type": "tasks_updated", "project_id": result.get("project_id")})
+        
+        # Add LLM response to the result
+        result["llm_response"] = content
+        return result
+        
+    except Exception as e:
+        logger.error(f"Error processing LLM task command: {e}", exc_info=True)
+        return {"success": False, "error": str(e)}
+
+@app.post("/llm/tasks/direct-json")
+async def process_direct_json(json_data: Dict[str, Any]):
+    """Process JSON actions directly without LLM interpretation."""
+    try:
+        json_str = json.dumps(json_data)
+        result = llm_task_controller.process_llm_response(json_str)
+        
+        # If successful, broadcast task update if applicable
+        if result.get("success") and result.get("action") in ["create_task", "update_task", "delete_task"] \
+           and result.get("project_id"):
+            await manager.broadcast({"type": "tasks_updated", "project_id": result.get("project_id")})
+            
+        return result
+    except Exception as e:
+        logger.error(f"Error processing direct JSON: {e}", exc_info=True)
+        return {"success": False, "error": str(e)}
+
 
 # --- Tasks Routes (standard) ---
 @app.get("/tasks")
@@ -978,744 +1448,6 @@ async def delete_project_task(project_id: str, task_id: str):
         logger.error(f"Error deleting task: {e}", exc_info=True)
         raise HTTPException(status_code=500, detail=f"Error deleting task: {e}")
 
-# --- Alarms API ---
-@app.get("/alarms")
-async def get_alarms():
-    """Get all alarms from the countdowns.yaml file."""
-    try:
-        alarms_file = HUB_DATA_PATH / "countdowns.yaml"
-        if not alarms_file.exists():
-            return {"alarms": []}
-        
-        alarms_data = read_yaml_file(alarms_file)
-        if not alarms_data or "alarms" not in alarms_data:
-            return {"alarms": []}
-        
-        return alarms_data
-    except Exception as e:
-        logger.error(f"Error getting alarms: {e}", exc_info=True)
-        raise HTTPException(status_code=500, detail=f"Error getting alarms: {e}")
-
-@app.post("/alarms")
-async def create_alarm(alarm: Alarm):
-    """Create a new alarm."""
-    try:
-        alarms_file = HUB_DATA_PATH / "countdowns.yaml"
-        alarms_data = {"alarms": []}
-        
-        if alarms_file.exists():
-            existing_data = read_yaml_file(alarms_file)
-            if existing_data and "alarms" in existing_data:
-                alarms_data = existing_data
-        
-        # Generate a unique ID if not provided
-        if not alarm.id:
-            alarm.id = f"alarm-{int(time.time())}"
-        
-        # Add the new alarm
-        alarm_dict = alarm.dict()
-        alarms_data["alarms"].append(alarm_dict)
-        
-        # Write back to file
-        write_yaml_file(alarms_file, alarms_data)
-        
-        return alarm_dict
-    except Exception as e:
-        logger.error(f"Error creating alarm: {e}", exc_info=True)
-        raise HTTPException(status_code=500, detail=f"Error creating alarm: {e}")
-
-@app.put("/alarms/{alarm_id}")
-async def update_alarm(alarm_id: str, alarm: Alarm):
-    """Update a specific alarm."""
-    try:
-        alarms_file = HUB_DATA_PATH / "countdowns.yaml"
-        if not alarms_file.exists():
-            raise HTTPException(status_code=404, detail="Alarms file not found")
-        
-        alarms_data = read_yaml_file(alarms_file)
-        if not alarms_data or "alarms" not in alarms_data:
-            raise HTTPException(status_code=404, detail="No alarms found")
-        
-        # Find and update the alarm
-        alarm_found = False
-        for i, existing_alarm in enumerate(alarms_data["alarms"]):
-            if existing_alarm.get("id") == alarm_id:
-                alarms_data["alarms"][i] = alarm.dict()
-                alarm_found = True
-                break
-        
-        if not alarm_found:
-            raise HTTPException(status_code=404, detail=f"Alarm not found: {alarm_id}")
-        
-        # Write back to file
-        write_yaml_file(alarms_file, alarms_data)
-        
-        return alarm.dict()
-    except HTTPException:
-        raise
-    except Exception as e:
-        logger.error(f"Error updating alarm: {e}", exc_info=True)
-        raise HTTPException(status_code=500, detail=f"Error updating alarm: {e}")
-
-@app.delete("/alarms/{alarm_id}")
-async def delete_alarm(alarm_id: str):
-    """Delete a specific alarm."""
-    try:
-        alarms_file = HUB_DATA_PATH / "countdowns.yaml"
-        if not alarms_file.exists():
-            raise HTTPException(status_code=404, detail="Alarms file not found")
-        
-        alarms_data = read_yaml_file(alarms_file)
-        if not alarms_data or "alarms" not in alarms_data:
-            raise HTTPException(status_code=404, detail="No alarms found")
-        
-        # Find and remove the alarm
-        alarm_found = False
-        for i, existing_alarm in enumerate(alarms_data["alarms"]):
-            if existing_alarm.get("id") == alarm_id:
-                alarms_data["alarms"].pop(i)
-                alarm_found = True
-                break
-        
-        if not alarm_found:
-            raise HTTPException(status_code=404, detail=f"Alarm not found: {alarm_id}")
-        
-        # Write back to file
-        write_yaml_file(alarms_file, alarms_data)
-        
-        return {"status": "success", "message": f"Alarm deleted: {alarm_id}"}
-    except HTTPException:
-        raise
-    except Exception as e:
-        logger.error(f"Error deleting alarm: {e}", exc_info=True)
-        raise HTTPException(status_code=500, detail=f"Error deleting alarm: {e}")
-
-# --- Tasks API ---
-@app.get("/api/tasks", response_model=List[TaskInDB], tags=["tasks"])
-async def get_all_tasks(tasks_service: TasksService = Depends(get_tasks_service)):
-    """Get all tasks from all projects."""
-    try:
-        tasks = tasks_service.get_all_tasks()
-        return tasks
-    except Exception as e:
-        logger.error(f"Error getting all tasks: {e}", exc_info=True)
-        raise HTTPException(status_code=500, detail=f"Error getting all tasks: {str(e)}")
-
-@app.get("/api/tasks/search", response_model=List[TaskInDB], tags=["tasks"])
-async def search_tasks(
-    q: Optional[str] = Query(None, description="Search text in title and description"),
-    status: Optional[str] = Query(None, description="Filter by status"),
-    due_before: Optional[str] = Query(None, description="Filter by due date before (YYYY-MM-DD)"),
-    due_after: Optional[str] = Query(None, description="Filter by due date after (YYYY-MM-DD)"),
-    assigned_to: Optional[str] = Query(None, description="Filter by assignee"),
-    priority: Optional[str] = Query(None, description="Filter by priority"),
-    project_id: Optional[str] = Query(None, description="Filter by project ID"),
-    tags: Optional[List[str]] = Query(None, description="Filter by tags"),
-    tasks_service: TasksService = Depends(get_tasks_service)
-):
-    """Search for tasks with various filters."""
-    try:
-        tasks = tasks_service.search_tasks(
-            query=q,
-            status=status,
-            due_before=due_before,
-            due_after=due_after,
-            assigned_to=assigned_to,
-            priority=priority,
-            project_id=project_id,
-            tags=tags
-        )
-        return tasks
-    except Exception as e:
-        logger.error(f"Error searching tasks: {e}", exc_info=True)
-        raise HTTPException(status_code=500, detail=f"Error searching tasks: {str(e)}")
-
-@app.get("/api/tasks/statistics", response_model=TaskStatistics, tags=["tasks"])
-async def get_task_statistics(tasks_service: TasksService = Depends(get_tasks_service)):
-    """Get statistics about all tasks."""
-    try:
-        statistics = tasks_service.get_task_statistics()
-        return statistics
-    except Exception as e:
-        logger.error(f"Error getting task statistics: {e}", exc_info=True)
-        raise HTTPException(status_code=500, detail=f"Error getting task statistics: {str(e)}")
-
-@app.get("/api/projects/{project_id}/tasks", response_model=List[TaskInDB], tags=["tasks"])
-async def get_project_tasks(
-    project_id: str = FastAPIPath(..., description="Project ID"),
-    tasks_service: TasksService = Depends(get_tasks_service)
-):
-    """Get all tasks for a specific project."""
-    if not _is_safe_path(project_id):
-        raise HTTPException(status_code=400, detail="Invalid project ID")
-    
-    try:
-        tasks = tasks_service.get_project_tasks(project_id)
-        return tasks
-    except Exception as e:
-        logger.error(f"Error getting tasks for project {project_id}: {e}", exc_info=True)
-        raise HTTPException(status_code=500, detail=f"Error getting tasks: {str(e)}")
-
-@app.get("/api/projects/{project_id}/tasks/{task_id}", response_model=TaskInDB, tags=["tasks"])
-async def get_task(
-    project_id: str = FastAPIPath(..., description="Project ID"),
-    task_id: str = FastAPIPath(..., description="Task ID"),
-    tasks_service: TasksService = Depends(get_tasks_service)
-):
-    """Get a specific task from a project."""
-    if not _is_safe_path(project_id):
-        raise HTTPException(status_code=400, detail="Invalid project ID")
-    
-    try:
-        task = tasks_service.get_task(project_id, task_id)
-        if not task:
-            raise HTTPException(status_code=404, detail=f"Task not found: {task_id}")
-        return task
-    except HTTPException:
-        raise
-    except Exception as e:
-        logger.error(f"Error getting task {task_id} from project {project_id}: {e}", exc_info=True)
-        raise HTTPException(status_code=500, detail=f"Error getting task: {str(e)}")
-
-@app.post("/api/projects/{project_id}/tasks", response_model=TaskInDB, status_code=201, tags=["tasks"])
-async def create_task(
-    project_id: str = FastAPIPath(..., description="Project ID"),
-    task: TaskCreate = None,
-    tasks_service: TasksService = Depends(get_tasks_service)
-):
-    """Create a new task in a project."""
-    if not _is_safe_path(project_id):
-        raise HTTPException(status_code=400, detail="Invalid project ID")
-    
-    # Check if project exists
-    project_dir = HUB_DATA_PATH / project_id
-    if not project_dir.exists() or not project_dir.is_dir():
-        raise HTTPException(status_code=404, detail=f"Project not found: {project_id}")
-    
-    try:
-        created_task = tasks_service.create_task(project_id, task.dict(exclude_unset=True))
-        
-        # Broadcast task update via WebSocket
-        await manager.broadcast({"type": "tasks_updated", "project_id": project_id})
-        
-        return created_task
-    except Exception as e:
-        logger.error(f"Error creating task in project {project_id}: {e}", exc_info=True)
-        raise HTTPException(status_code=500, detail=f"Error creating task: {str(e)}")
-
-@app.put("/api/projects/{project_id}/tasks/{task_id}", response_model=TaskInDB, tags=["tasks"])
-async def update_task(
-    project_id: str = FastAPIPath(..., description="Project ID"),
-    task_id: str = FastAPIPath(..., description="Task ID"),
-    task: TaskUpdate = None,
-    tasks_service: TasksService = Depends(get_tasks_service)
-):
-    """Update a specific task in a project."""
-    if not _is_safe_path(project_id):
-        raise HTTPException(status_code=400, detail="Invalid project ID")
-    
-    try:
-        # Convert the TaskUpdate model to a dict, add the id
-        task_dict = task.dict(exclude_unset=True)
-        task_dict["id"] = task_id
-        
-        updated_task = tasks_service.update_task(project_id, task_id, task_dict)
-        if not updated_task:
-            raise HTTPException(status_code=404, detail=f"Task not found: {task_id}")
-        
-        # Broadcast task update via WebSocket
-        await manager.broadcast({"type": "tasks_updated", "project_id": project_id})
-        
-        return updated_task
-    except HTTPException:
-        raise
-    except Exception as e:
-        logger.error(f"Error updating task {task_id} in project {project_id}: {e}", exc_info=True)
-        raise HTTPException(status_code=500, detail=f"Error updating task: {str(e)}")
-
-@app.delete("/api/projects/{project_id}/tasks/{task_id}", tags=["tasks"])
-async def delete_task(
-    project_id: str = FastAPIPath(..., description="Project ID"),
-    task_id: str = FastAPIPath(..., description="Task ID"),
-    tasks_service: TasksService = Depends(get_tasks_service)
-):
-    """Delete a specific task in a project."""
-    if not _is_safe_path(project_id):
-        raise HTTPException(status_code=400, detail="Invalid project ID")
-    
-    try:
-        success = tasks_service.delete_task(project_id, task_id)
-        if not success:
-            raise HTTPException(status_code=404, detail=f"Task not found: {task_id}")
-        
-        # Broadcast task update via WebSocket
-        await manager.broadcast({"type": "tasks_updated", "project_id": project_id})
-        
-        return {"status": "success", "message": f"Task deleted: {task_id}"}
-    except HTTPException:
-        raise
-    except Exception as e:
-        logger.error(f"Error deleting task {task_id} in project {project_id}: {e}", exc_info=True)
-        raise HTTPException(status_code=500, detail=f"Error deleting task: {str(e)}")
-
-@app.patch("/api/projects/{project_id}/tasks/{task_id}/status", response_model=TaskInDB, tags=["tasks"])
-async def update_task_status(
-    project_id: str = FastAPIPath(..., description="Project ID"),
-    task_id: str = FastAPIPath(..., description="Task ID"),
-    status_update: TaskStatusUpdate = None,
-    tasks_service: TasksService = Depends(get_tasks_service)
-):
-    """Update only the status of a task (for quick status changes)."""
-    if not _is_safe_path(project_id):
-        raise HTTPException(status_code=400, detail="Invalid project ID")
-    
-    try:
-        updated_task = tasks_service.update_task_status(project_id, task_id, status_update.status)
-        if not updated_task:
-            raise HTTPException(status_code=404, detail=f"Task not found: {task_id}")
-        
-        # Broadcast task update via WebSocket
-        await manager.broadcast({"type": "tasks_updated", "project_id": project_id})
-        
-        return updated_task
-    except HTTPException:
-        raise
-    except Exception as e:
-        logger.error(f"Error updating status for task {task_id} in project {project_id}: {e}", exc_info=True)
-        raise HTTPException(status_code=500, detail=f"Error updating task status: {str(e)}")
-
-@app.get("/api/task_templates", response_model=List[TaskTemplate], tags=["tasks"])
-async def get_task_templates(tasks_service: TasksService = Depends(get_tasks_service)):
-    """Get all available task templates."""
-    try:
-        templates = tasks_service.get_task_templates()
-        return templates
-    except Exception as e:
-        logger.error(f"Error getting task templates: {e}", exc_info=True)
-        raise HTTPException(status_code=500, detail=f"Error getting task templates: {str(e)}")
-
-@app.post("/api/projects/{project_id}/tasks/from_template", response_model=TaskInDB, status_code=201, tags=["tasks"])
-async def create_task_from_template(
-    project_id: str = FastAPIPath(..., description="Project ID"),
-    template_request: TaskFromTemplate = None,
-    tasks_service: TasksService = Depends(get_tasks_service)
-):
-    """Create a new task from a template."""
-    if not _is_safe_path(project_id):
-        raise HTTPException(status_code=400, detail="Invalid project ID")
-    
-    # Check if project exists
-    project_dir = HUB_DATA_PATH / project_id
-    if not project_dir.exists() or not project_dir.is_dir():
-        raise HTTPException(status_code=404, detail=f"Project not found: {project_id}")
-    
-    try:
-        # Extract template ID and override data
-        template_id = template_request.template_id
-        task_data = template_request.dict(exclude={"template_id"}, exclude_unset=True)
-        
-        created_task = tasks_service.create_task_from_template(project_id, template_id, task_data)
-        if not created_task:
-            raise HTTPException(status_code=404, detail=f"Template not found: {template_id}")
-        
-        # Broadcast task update via WebSocket
-        await manager.broadcast({"type": "tasks_updated", "project_id": project_id})
-        
-        return created_task
-    except HTTPException:
-        raise
-    except Exception as e:
-        logger.error(f"Error creating task from template in project {project_id}: {e}", exc_info=True)
-        raise HTTPException(status_code=500, detail=f"Error creating task from template: {str(e)}")
-
-# --- Chat API Endpoints ---
-@app.get("/chat/models")
-async def get_chat_models():
-    """Get all available chat models."""
-    try:
-        # Query actual models from Ollama
-        ollama_models = ollama_client.get_models()
-        
-        # If we couldn't get any models from Ollama, fall back to default models
-        if not ollama_models:
-            logger.warning("Could not retrieve models from Ollama, using default models")
-            ollama_models = [
-                {
-                    "id": "llama3",
-                    "name": "Llama 3 8B",
-                    "provider": "ollama",
-                    "description": "Meta's Llama 3 8B model"
-                },
-                {
-                    "id": "mistral",
-                    "name": "Mistral 7B",
-                    "provider": "ollama",
-                    "description": "Mistral AI's 7B model"
-                }
-            ]
-            
-        # Add Claude for completeness (not actually available through Ollama)
-        models = ollama_models + [
-            {
-                "id": "claude",
-                "name": "Claude",
-                "provider": "anthropic",
-                "description": "Anthropic's Claude model (mock - not available)"
-            }
-        ]
-        return models
-    except Exception as e:
-        logger.error(f"Error getting chat models: {e}", exc_info=True)
-        raise HTTPException(status_code=500, detail=f"Error getting chat models: {e}")
-
-@app.get("/chat/sessions")
-async def get_chat_sessions():
-    """Get all chat sessions."""
-    try:
-        chat_dir = HUB_DATA_PATH / "chat_sessions"
-        chat_dir.mkdir(exist_ok=True)
-        
-        sessions = []
-        for file in chat_dir.glob("*.json"):
-            try:
-                session_data = read_json_file(file)
-                if session_data:
-                    sessions.append(session_data)
-            except Exception as e:
-                logger.warning(f"Error reading chat session file {file}: {e}")
-        
-        # Sort by last updated timestamp
-        sessions.sort(key=lambda s: s.get("lastUpdated", ""), reverse=True)
-        return sessions
-    except Exception as e:
-        logger.error(f"Error getting chat sessions: {e}", exc_info=True)
-        raise HTTPException(status_code=500, detail=f"Error getting chat sessions: {e}")
-
-@app.get("/chat/sessions/{session_id}")
-async def get_chat_session(session_id: str):
-    """Get a specific chat session by ID."""
-    try:
-        session_file = HUB_DATA_PATH / "chat_sessions" / f"{session_id}.json"
-        if not session_file.exists():
-            raise HTTPException(status_code=404, detail=f"Chat session not found: {session_id}")
-        
-        session_data = read_json_file(session_file)
-        if not session_data:
-            raise HTTPException(status_code=500, detail=f"Error reading chat session: {session_id}")
-        
-        return session_data
-    except HTTPException:
-        raise
-    except Exception as e:
-        logger.error(f"Error getting chat session: {e}", exc_info=True)
-        raise HTTPException(status_code=500, detail=f"Error getting chat session: {e}")
-
-@app.post("/chat/sessions")
-async def create_chat_session(session: ChatSession):
-    """Create a new chat session."""
-    try:
-        chat_dir = HUB_DATA_PATH / "chat_sessions"
-        chat_dir.mkdir(exist_ok=True)
-        
-        session_file = chat_dir / f"{session.id}.json"
-        if session_file.exists():
-            raise HTTPException(status_code=400, detail=f"Chat session already exists: {session.id}")
-        
-        session_data = session.dict()
-        with open(session_file, "w", encoding="utf-8") as f:
-            json.dump(session_data, f, indent=2)
-        
-        return session_data
-    except HTTPException:
-        raise
-    except Exception as e:
-        logger.error(f"Error creating chat session: {e}", exc_info=True)
-        raise HTTPException(status_code=500, detail=f"Error creating chat session: {e}")
-
-@app.put("/chat/sessions/{session_id}")
-async def update_chat_session(session_id: str, session: ChatSession):
-    """Update a specific chat session."""
-    try:
-        chat_dir = HUB_DATA_PATH / "chat_sessions"
-        chat_dir.mkdir(exist_ok=True)
-        
-        session_file = chat_dir / f"{session_id}.json"
-        if not session_file.exists():
-            raise HTTPException(status_code=404, detail=f"Chat session not found: {session_id}")
-        
-        # Make sure the session ID matches the path parameter
-        if session.id != session_id:
-            raise HTTPException(status_code=400, detail="Session ID mismatch")
-        
-        session_data = session.dict()
-        with open(session_file, "w", encoding="utf-8") as f:
-            json.dump(session_data, f, indent=2)
-        
-        # Broadcast session update via WebSocket
-        await manager.broadcast({"type": "chat_session_updated", "session_id": session_id})
-        
-        return session_data
-    except HTTPException:
-        raise
-    except Exception as e:
-        logger.error(f"Error updating chat session: {e}", exc_info=True)
-        raise HTTPException(status_code=500, detail=f"Error updating chat session: {e}")
-
-@app.delete("/chat/sessions/{session_id}")
-async def delete_chat_session(session_id: str):
-    """Delete a specific chat session."""
-    try:
-        session_file = HUB_DATA_PATH / "chat_sessions" / f"{session_id}.json"
-        if not session_file.exists():
-            raise HTTPException(status_code=404, detail=f"Chat session not found: {session_id}")
-        
-        # Delete the file
-        session_file.unlink()
-        
-        # Broadcast session deletion via WebSocket
-        await manager.broadcast({"type": "chat_session_deleted", "session_id": session_id})
-        
-        return {"status": "success", "message": f"Chat session deleted: {session_id}"}
-    except HTTPException:
-        raise
-    except Exception as e:
-        logger.error(f"Error deleting chat session: {e}", exc_info=True)
-        raise HTTPException(status_code=500, detail=f"Error deleting chat session: {e}")
-
-@app.post("/chat/message")
-async def send_chat_message(request: ChatRequest):
-    """Send a message to the LLM and get a response."""
-    try:
-        # First get the session
-        session_file = HUB_DATA_PATH / "chat_sessions" / f"{request.session_id}.json"
-        if not session_file.exists():
-            raise HTTPException(status_code=404, detail=f"Chat session not found: {request.session_id}")
-        
-        session_data = read_json_file(session_file)
-        if not session_data:
-            raise HTTPException(status_code=500, detail=f"Error reading chat session: {request.session_id}")
-        
-        # Create user message
-        user_message = {
-            "id": f"msg_{int(time.time() * 1000)}",
-            "role": "user",
-            "content": request.message,
-            "timestamp": datetime.now(timezone.utc).isoformat()
-        }
-        
-        # Add user message to session
-        if "messages" not in session_data:
-            session_data["messages"] = []
-        session_data["messages"].append(user_message)
-        session_data["lastMessage"] = request.message
-        session_data["lastUpdated"] = datetime.now(timezone.utc).isoformat()
-        
-        # Get model info
-        models = await get_chat_models()
-        model_info = next((m for m in models if m["id"] == request.model_id), None)
-        model_name = model_info["name"] if model_info else request.model_id
-        
-        # Determine if we should use Ollama or return a mock response
-        assistant_message = None
-        if request.model_id == "claude":
-            # Mock response for Claude since we don't have it
-            assistant_message = {
-                "id": f"msg_{int(time.time() * 1000)}",
-                "role": "assistant",
-                "content": "This is a mock response from Claude. The actual Claude API is not integrated with this dashboard.",
-                "timestamp": datetime.now(timezone.utc).isoformat(),
-                "model": "Claude (mock)"
-            }
-        else:
-            # Call Ollama API for real response
-            logger.info(f"Sending message to Ollama model {request.model_id}")
-            try:
-                # Convert existing messages to format expected by Ollama
-                previous_messages = []
-                if "messages" in session_data:
-                    for msg in session_data["messages"]:
-                        if msg.get("role") in ["user", "assistant", "system"]:
-                            previous_messages.append({
-                                "role": msg["role"],
-                                "content": msg["content"]
-                            })
-                
-                # Get response from Ollama
-                ollama_response = ollama_client.chat_completion(
-                    model_id=request.model_id,
-                    messages=previous_messages,
-                    temperature=0.7
-                )
-                
-                # Format the response
-                assistant_message = {
-                    "id": ollama_response.get("id", f"msg_{int(time.time() * 1000)}"),
-                    "role": "assistant",
-                    "content": ollama_response.get("content", "No response from model"),
-                    "timestamp": datetime.now(timezone.utc).isoformat(),
-                    "model": model_name
-                }
-            except Exception as e:
-                logger.error(f"Error calling Ollama API: {e}", exc_info=True)
-                assistant_message = {
-                    "id": f"error_{int(time.time() * 1000)}",
-                    "role": "assistant",
-                    "content": f"Error communicating with Ollama: {str(e)}",
-                    "timestamp": datetime.now(timezone.utc).isoformat(),
-                    "model": model_name
-                }
-        
-        # Add assistant message to session
-        session_data["messages"].append(assistant_message)
-        session_data["lastMessage"] = "Response from assistant"
-        session_data["lastUpdated"] = datetime.now(timezone.utc).isoformat()
-        
-        # Update session title if it's a new session
-        if not session_data.get("title") or session_data.get("title") == "New Chat":
-            # Extract a title from the first user message
-            if len(session_data["messages"]) <= 2:  # This is the first exchange
-                title = request.message
-                if len(title) > 30:
-                    title = title[:27] + "..."
-                session_data["title"] = title
-        
-        # Update session file
-        with open(session_file, "w", encoding="utf-8") as f:
-            json.dump(session_data, f, indent=2)
-        
-        # Broadcast session update via WebSocket
-        try:
-            logger.info(f"Broadcasting chat message via WebSocket for session {request.session_id}")
-            await manager.broadcast({
-                "type": "chat_message_received", 
-                "session_id": request.session_id,
-                "message": assistant_message
-            })
-        except Exception as ws_error:
-            logger.error(f"Error broadcasting message via websocket: {ws_error}")
-        
-        return {
-            "session": session_data,
-            "user_message": user_message,
-            "assistant_message": assistant_message
-        }
-    except HTTPException:
-        raise
-    except Exception as e:
-        logger.error(f"Error processing chat message: {e}", exc_info=True)
-        raise HTTPException(status_code=500, detail=f"Error processing chat message: {e}")
-
-# --- Workspace Management ---
-@app.post("/workspace/initialize")
-async def initialize_workspace():
-    """Initialize the workspace by creating necessary directories and files."""
-    try:
-        # Create basic directory structure
-        for dir_name in ["templates", "assets", "docs"]:
-            dir_path = HUB_DATA_PATH / dir_name
-            dir_path.mkdir(exist_ok=True)
-
-        # Create initial configuration files if they don't exist
-        config_files = {
-            "workspace_state.json": {
-                "initialized": True,
-                "last_opened": datetime.now(timezone.utc).isoformat()
-            },
-            "countdowns.yaml": {
-                "alarms": []
-            },
-            "00-meta.yaml": {
-                "workspace_name": "My Projects Hub",
-                "created_at": datetime.now(timezone.utc).isoformat(),
-                "settings": {
-                    "theme": "system",
-                    "default_view": "grid"
-                }
-            }
-        }
-
-        for filename, content in config_files.items():
-            file_path = HUB_DATA_PATH / filename
-            if not file_path.exists():
-                if filename.endswith('.json'):
-                    with open(file_path, 'w', encoding='utf-8') as f:
-                        json.dump(content, f, indent=2)
-                else:  # .yaml files
-                    write_yaml_file(file_path, content)
-
-        # Create a welcome project
-        welcome_project_dir = HUB_DATA_PATH / "welcome-project"
-        if not welcome_project_dir.exists():
-            welcome_project_dir.mkdir(exist_ok=True)
-            (welcome_project_dir / "docs").mkdir(exist_ok=True)
-            (welcome_project_dir / "assets").mkdir(exist_ok=True)
-
-            # Create project.yaml
-            write_yaml_file(welcome_project_dir / "project.yaml", {
-                "title": "Welcome to Projects Hub",
-                "status": "active",
-                "description": "This is your first project. Feel free to explore and customize it!",
-                "tags": ["welcome", "getting-started"]
-            })
-
-            # Create tasks.yaml
-            write_yaml_file(welcome_project_dir / "tasks.yaml", {
-                "tasks": [
-                    {
-                        "id": "task-1",
-                        "title": "Explore the dashboard",
-                        "status": "todo",
-                        "priority": "medium",
-                        "description": "Take a tour of the main dashboard features"
-                    },
-                    {
-                        "id": "task-2",
-                        "title": "Create your first project",
-                        "status": "todo",
-                        "priority": "high",
-                        "description": "Click the 'New Project' button to create your own project"
-                    }
-                ]
-            })
-
-            # Create welcome document
-            welcome_doc = welcome_project_dir / "docs" / "getting-started.md"
-            welcome_doc.write_text("""# Welcome to Projects Hub!
-
-This is your personal project management workspace. Here's what you can do:
-
-1. **Create Projects**: Organize your work into projects
-2. **Track Tasks**: Keep track of your to-dos and progress
-3. **Write Documents**: Create and organize documentation
-4. **Set Alarms**: Never miss important deadlines
-5. **Monitor Focus**: Track your productivity
-
-Need help? Check out the documentation or reach out to support.
-
-Happy organizing! 🚀
-""")
-
-        return {"status": "success", "message": "Workspace initialized successfully"}
-
-    except Exception as e:
-        logger.error(f"Failed to initialize workspace: {e}", exc_info=True)
-        raise HTTPException(status_code=500, detail=f"Failed to initialize workspace: {e}")
-
-# --- Workspace Status ---
-@app.get("/workspace/status")
-async def get_workspace_status():
-    """Get the current workspace initialization status."""
-    try:
-        workspace_file = HUB_DATA_PATH / "workspace_state.json"
-        if not workspace_file.exists():
-            return {"initialized": False, "error": "Workspace not initialized"}
-        
-        state = read_json_file(workspace_file)
-        return {"initialized": state.get("initialized", False), "last_opened": state.get("last_opened")}
-    except Exception as e:
-        logger.error(f"Failed to get workspace status: {e}", exc_info=True)
-        return {"initialized": False, "error": str(e)}
-
 # --- Startup and Shutdown Events ---
 @app.on_event("startup")
 async def startup_event():
@@ -1786,6 +1518,403 @@ async def shutdown_event():
              logger.info("File system watcher stopped.")
         except Exception as e:
              logger.warning(f"Error joining observer thread: {e}")
+
+# --- Meta API Endpoints ---
+@app.get("/meta/pinned_docs")
+async def get_pinned_docs():
+    """Get all pinned documents from 00-meta.yaml."""
+    try:
+        meta_file = HUB_DATA_PATH / "00-meta.yaml"
+        if not meta_file.exists():
+            return {"pinned_docs": []}
+        
+        meta_data = read_yaml_file(meta_file)
+        if not meta_data or "pinned_docs" not in meta_data:
+            return {"pinned_docs": []}
+        
+        # Format the response
+        pinned_docs = []
+        for doc_path in meta_data["pinned_docs"]:
+            # Extract project ID from path
+            path_parts = doc_path.split('/')
+            if len(path_parts) >= 2:
+                project_id = path_parts[0]
+                title = path_parts[-1].replace('.md', '')
+                # Try to read the project info to get proper title
+                project_file = HUB_DATA_PATH / project_id / "project.yaml"
+                project_title = ""
+                if project_file.exists():
+                    project_data = read_yaml_file(project_file)
+                    if project_data and "title" in project_data:
+                        project_title = project_data["title"]
+                
+                # Get file metadata
+                full_path = HUB_DATA_PATH / doc_path
+                last_modified = None
+                if full_path.exists():
+                    last_modified = datetime.fromtimestamp(full_path.stat().st_mtime).isoformat()
+                
+                pinned_docs.append({
+                    "id": doc_path,
+                    "title": title,
+                    "path": doc_path,
+                    "project_id": project_id,
+                    "project_title": project_title,
+                    "lastModified": last_modified
+                })
+        
+        return {"pinned_docs": pinned_docs}
+    except Exception as e:
+        logger.error(f"Error getting pinned documents: {e}", exc_info=True)
+        raise HTTPException(status_code=500, detail=f"Error getting pinned documents: {e}")
+
+@app.post("/meta/pinned_docs/{doc_path:path}")
+async def pin_document(doc_path: str):
+    """Add a document to pinned documents list."""
+    if not _is_safe_path(doc_path):
+        raise HTTPException(status_code=400, detail="Invalid document path")
+    
+    logger.info(f"Pinning document: {doc_path}")
+    
+    try:
+        # Get existing meta data
+        meta_file = HUB_DATA_PATH / "00-meta.yaml"
+        meta_data = {"pinned_docs": []}
+        
+        if meta_file.exists():
+            existing_data = read_yaml_file(meta_file)
+            if existing_data:
+                meta_data = existing_data
+        
+        # Ensure pinned_docs key exists
+        if "pinned_docs" not in meta_data:
+            meta_data["pinned_docs"] = []
+        
+        # Add if not already pinned
+        if doc_path not in meta_data["pinned_docs"]:
+            meta_data["pinned_docs"].append(doc_path)
+            write_yaml_file(meta_file, meta_data)
+            await manager.broadcast({"type": "meta_updated", "action": "pin_added", "path": doc_path})
+        
+        return {"status": "success", "message": f"Document pinned: {doc_path}"}
+    except Exception as e:
+        logger.error(f"Error pinning document: {e}", exc_info=True)
+        raise HTTPException(status_code=500, detail=f"Error pinning document: {e}")
+
+@app.delete("/meta/pinned_docs/{doc_path:path}")
+async def unpin_document(doc_path: str):
+    """Remove a document from pinned documents list."""
+    if not _is_safe_path(doc_path):
+        raise HTTPException(status_code=400, detail="Invalid document path")
+    
+    logger.info(f"Unpinning document: {doc_path}")
+    
+    try:
+        # Get existing meta data
+        meta_file = HUB_DATA_PATH / "00-meta.yaml"
+        if not meta_file.exists():
+            raise HTTPException(status_code=404, detail="Meta file not found")
+        
+        meta_data = read_yaml_file(meta_file)
+        if not meta_data or "pinned_docs" not in meta_data:
+            raise HTTPException(status_code=404, detail="No pinned documents found")
+        
+        # Remove if exists
+        if doc_path in meta_data["pinned_docs"]:
+            meta_data["pinned_docs"].remove(doc_path)
+            write_yaml_file(meta_file, meta_data)
+            await manager.broadcast({"type": "meta_updated", "action": "pin_removed", "path": doc_path})
+        
+        return {"status": "success", "message": f"Document unpinned: {doc_path}"}
+    except HTTPException:
+        raise
+    except Exception as e:
+        logger.error(f"Error unpinning document: {e}", exc_info=True)
+        raise HTTPException(status_code=500, detail=f"Error unpinning document: {e}")
+
+@app.put("/meta/pinned_docs")
+async def reorder_pinned_docs(pinned_docs: List[str]):
+    """Update the order of pinned documents."""
+    logger.info(f"Reordering pinned documents: {pinned_docs}")
+    
+    try:
+        # Get existing meta data
+        meta_file = HUB_DATA_PATH / "00-meta.yaml"
+        meta_data = {}
+        
+        if meta_file.exists():
+            existing_data = read_yaml_file(meta_file)
+            if existing_data:
+                meta_data = existing_data
+        
+        # Update pinned_docs order
+        meta_data["pinned_docs"] = pinned_docs
+        write_yaml_file(meta_file, meta_data)
+        await manager.broadcast({"type": "meta_updated", "action": "pins_reordered"})
+        
+        return {"status": "success", "message": "Pinned documents reordered", "pinned_docs": pinned_docs}
+    except Exception as e:
+        logger.error(f"Error reordering pinned documents: {e}", exc_info=True)
+        raise HTTPException(status_code=500, detail=f"Error reordering pinned documents: {e}")
+
+# --- Chat with LLM Task Control Integration ---
+@app.post("/chat/completion")
+async def chat_completion(request: ChatRequest):
+    """Get a chat completion from an LLM with additional task control."""
+    try:
+        logger.info(f"Chat request received for model: {request.model_id}")
+        
+        # Create messages array from the request
+        messages = []
+        
+        # Build context data based on what the user requested
+        context_data = request.context_data if request.context_data else {}
+        
+        # Check if we should include workspace data (projects, tasks, documents)
+        system_context = ""
+        
+        # PROJECTS
+        if context_data.get("include_projects", False) or context_data.get("include_all", False):
+            logger.info("Including project information in context")
+            try:
+                projects = []
+                for item in HUB_DATA_PATH.iterdir():
+                    if item.is_dir() and not item.name.startswith('.') and not item.name.startswith('_'):
+                        project_file = item / "project.yaml"
+                        if project_file.exists():
+                            project_data = read_yaml_file(project_file)
+                            if project_data:
+                                project_data["id"] = item.name
+                                projects.append(project_data)
+                
+                if projects:
+                    project_context = "### PROJECTS ###\n\n"
+                    for project in projects:
+                        project_context += f"Project ID: {project.get('id')}\n"
+                        project_context += f"Title: {project.get('title')}\n"
+                        project_context += f"Status: {project.get('status', 'Unknown')}\n"
+                        if project.get('description'):
+                            project_context += f"Description: {project.get('description')}\n"
+                        if project.get('tags'):
+                            project_context += f"Tags: {', '.join(project.get('tags'))}\n"
+                        if project.get('due'):
+                            project_context += f"Due Date: {project.get('due')}\n"
+                        project_context += "\n"
+                    
+                    system_context += project_context
+                    logger.info(f"Added project context for {len(projects)} projects")
+            except Exception as e:
+                logger.error(f"Error gathering project information: {e}")
+        
+        # TASKS
+        if context_data.get("include_tasks", False) or context_data.get("include_all", False):
+            logger.info("Including tasks information in context")
+            try:
+                all_tasks = []
+                for item in HUB_DATA_PATH.iterdir():
+                    if item.is_dir() and not item.name.startswith('.') and not item.name.startswith('_'):
+                        project_id = item.name
+                        tasks_file = item / "tasks.yaml"
+                        if tasks_file.exists():
+                            task_data = read_yaml_file(tasks_file)
+                            if task_data:
+                                # Handle different formats
+                                if isinstance(task_data, list):
+                                    tasks_list = task_data
+                                elif isinstance(task_data, dict) and "tasks" in task_data:
+                                    tasks_list = task_data["tasks"]
+                                else:
+                                    tasks_list = []
+                                    
+                                # Add project_id to each task
+                                for task in tasks_list:
+                                    task["project_id"] = project_id
+                                    all_tasks.append(task)
+                
+                if all_tasks:
+                    tasks_context = "\n### TASKS ###\n\n"
+                    
+                    # Group tasks by project
+                    tasks_by_project = {}
+                    for task in all_tasks:
+                        project_id = task.get('project_id')
+                        if project_id not in tasks_by_project:
+                            tasks_by_project[project_id] = []
+                        tasks_by_project[project_id].append(task)
+                    
+                    # Format tasks grouped by project
+                    for project_id, tasks in tasks_by_project.items():
+                        tasks_context += f"Project: {project_id}\n"
+                        for task in tasks:
+                            tasks_context += f"  - ID: {task.get('id')}\n"
+                            tasks_context += f"    Title: {task.get('title')}\n"
+                            tasks_context += f"    Status: {task.get('status', 'Unknown')}\n"
+                            if task.get('description'):
+                                tasks_context += f"    Description: {task.get('description')}\n"
+                            if task.get('priority'):
+                                tasks_context += f"    Priority: {task.get('priority')}\n"
+                            if task.get('due'):
+                                tasks_context += f"    Due: {task.get('due')}\n"
+                            if task.get('assigned_to'):
+                                tasks_context += f"    Assigned to: {task.get('assigned_to')}\n"
+                            tasks_context += "\n"
+                        tasks_context += "\n"
+                    
+                    system_context += tasks_context
+                    logger.info(f"Added context for {len(all_tasks)} tasks")
+            except Exception as e:
+                logger.error(f"Error gathering tasks information: {e}")
+        
+        # DOCUMENTS
+        if context_data.get("include_documents", False) or context_data.get("include_all", False):
+            logger.info("Including documents information in context")
+            try:
+                docs_context = "\n### DOCUMENTS ###\n\n"
+                docs_count = 0
+                
+                for item in HUB_DATA_PATH.iterdir():
+                    if item.is_dir() and not item.name.startswith('.') and not item.name.startswith('_'):
+                        project_id = item.name
+                        docs_dir = item / "docs"
+                        
+                        if docs_dir.exists() and docs_dir.is_dir():
+                            docs = list(docs_dir.glob("*.md"))
+                            
+                            if docs:
+                                docs_context += f"Project: {project_id}\n"
+                                for doc in docs:
+                                    docs_count += 1
+                                    docs_context += f"  - {doc.name}\n"
+                                    
+                                    # Option: include document content (careful with token limits)
+                                    if context_data.get("include_document_content", False):
+                                        try:
+                                            content = read_text_file(doc)
+                                            docs_context += f"    Content preview: {content[:200]}...\n"
+                                        except Exception as doc_err:
+                                            logger.error(f"Error reading document content: {doc_err}")
+                                docs_context += "\n"
+                
+                if docs_count > 0:
+                    system_context += docs_context
+                    logger.info(f"Added context for {docs_count} documents")
+            except Exception as e:
+                logger.error(f"Error gathering documents information: {e}")
+        
+        # Add system context if we have any
+        if system_context:
+            messages.append({"role": "system", "content": system_context})
+            logger.info("Added system context with workspace data")
+        
+        # Check if there's a session with history
+        session_path = HUB_DATA_PATH / "chat_sessions" / f"{request.session_id}.json"
+        if session_path.exists():
+            try:
+                session_data = read_json_file(session_path)
+                if session_data and "messages" in session_data:
+                    # Only keep the last few messages to avoid context overflow
+                    saved_messages = session_data["messages"][-10:]
+                    messages.extend([{"role": msg["role"], "content": msg["content"]} for msg in saved_messages])
+            except Exception as e:
+                logger.error(f"Error reading chat session: {e}")
+        
+        # Add the new user message
+        messages.append({"role": "user", "content": request.message})
+        
+        # Get LLM response
+        response = ollama_client.chat_completion(request.model_id, messages)
+        
+        if response:
+            # Extract content and check if it contains a task control command
+            content = response.get("content", "")
+            extracted_json = extract_json_from_llm_response(content)
+            
+            # If it seems to be a task control command, process it
+            if extracted_json:
+                logger.info(f"Detected task control JSON in chat response, processing command")
+                result = llm_task_controller.process_llm_response(extracted_json)
+                
+                # If successful, broadcast task update if applicable
+                if result.get("success") and result.get("action") in ["create_task", "update_task", "delete_task"] \
+                and result.get("project_id"):
+                    await manager.broadcast({"type": "tasks_updated", "project_id": result.get("project_id")})
+                    
+                # Add a note to the response that a task action was performed
+                if result.get("success"):
+                    action_type = result.get("action", "")
+                    action_note = ""
+                    if action_type == "create_task":
+                        action_note = "✅ Task created successfully."
+                    elif action_type == "update_task":
+                        action_note = "✅ Task updated successfully."
+                    elif action_type == "delete_task":
+                        action_note = "✅ Task deleted successfully."
+                    elif action_type == "get_tasks" or action_type == "get_projects":
+                        action_note = "✅ Information retrieved successfully."
+                        
+                    if action_note:
+                        content = f"{content}\n\n{action_note}"
+                        response["content"] = content
+            
+            # Add the new message to the session
+            try:
+                # Create the user message entry
+                user_message = {
+                    "id": f"msg_{int(time.time())}_user",
+                    "role": "user",
+                    "content": request.message,
+                    "timestamp": datetime.now().isoformat(),
+                    "model": None
+                }
+                
+                # Create the assistant message entry
+                assistant_message = {
+                    "id": response.get("id", f"msg_{int(time.time())}_assistant"),
+                    "role": "assistant",
+                    "content": content,
+                    "timestamp": datetime.now().isoformat(),
+                    "model": request.model_id
+                }
+                
+                # Read or create session
+                session_data = {
+                    "id": request.session_id,
+                    "title": request.session_id,
+                    "lastMessage": datetime.now().isoformat(),
+                    "lastUpdated": datetime.now().isoformat(),
+                    "messages": []
+                }
+                
+                if session_path.exists():
+                    try:
+                        existing_session = read_json_file(session_path)
+                        if existing_session:
+                            session_data = existing_session
+                    except Exception as e:
+                        logger.warning(f"Error reading existing session, creating new: {e}")
+                
+                # Append the new messages
+                session_data["messages"].append(user_message)
+                session_data["messages"].append(assistant_message)
+                session_data["lastMessage"] = request.message[:50] + ("..." if len(request.message) > 50 else "")
+                session_data["lastUpdated"] = datetime.now().isoformat()
+                
+                # Ensure the sessions directory exists
+                (HUB_DATA_PATH / "chat_sessions").mkdir(exist_ok=True)
+                
+                # Write back to file
+                with open(session_path, "w", encoding="utf-8") as f:
+                    json.dump(session_data, f, ensure_ascii=False, indent=2)
+                    
+            except Exception as e:
+                logger.error(f"Error saving chat session: {e}")
+                
+            return response
+        else:
+            return {"error": "No response from model"}
+    except Exception as e:
+        logger.error(f"Error in chat completion: {e}", exc_info=True)
+        return {"error": str(e)}
 
 # --- Main Execution Guard ---
 if __name__ == "__main__":

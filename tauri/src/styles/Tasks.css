@@ -1,0 +1,84 @@
+/* Native drag and drop styles */
+.kanban-card {
+  cursor: move;
+  user-select: none;
+  position: relative;
+  transition: all 0.2s ease;
+}
+
+.kanban-card.dragging {
+  opacity: 0.5;
+  transform: scale(1.05);
+  z-index: 100;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.kanban-tasks {
+  min-height: 100px;
+  transition: background-color 0.2s ease;
+}
+
+.kanban-tasks.drag-over {
+  background-color: rgba(59, 130, 246, 0.1);
+}
+
+@media (prefers-color-scheme: dark) {
+  .kanban-tasks.drag-over {
+    background-color: rgba(59, 130, 246, 0.2);
+  }
+  
+  .kanban-card {
+    background-color: #1e293b;
+    color: #f8fafc;
+  }
+  
+  .kanban-card:hover {
+    background-color: #334155;
+  }
+}
+
+/* Drop indication animations */
+@keyframes pulse-border {
+  0% {
+    border-color: rgba(59, 130, 246, 0.3);
+  }
+  50% {
+    border-color: rgba(59, 130, 246, 0.8);
+  }
+  100% {
+    border-color: rgba(59, 130, 246, 0.3);
+  }
+}
+
+.kanban-tasks.drag-over {
+  border: 2px dashed rgba(59, 130, 246, 0.5);
+  animation: pulse-border 1.5s infinite;
+}
+
+/* Priority indicators */
+.kanban-card.priority-high {
+  border-left-color: #ef4444;
+}
+
+.kanban-card.priority-medium {
+  border-left-color: #f59e0b;
+}
+
+.kanban-card.priority-low {
+  border-left-color: #3b82f6;
+}
+
+/* Dark mode overrides */
+@media (prefers-color-scheme: dark) {
+  .kanban-card.priority-high {
+    border-left-color: #f87171;
+  }
+  
+  .kanban-card.priority-medium {
+    border-left-color: #fbbf24;
+  }
+  
+  .kanban-card.priority-low {
+    border-left-color: #60a5fa;
+  }
+}

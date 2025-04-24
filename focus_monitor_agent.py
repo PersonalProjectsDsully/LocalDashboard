@@ -69,7 +69,8 @@ class FocusMonitorAgent:
         self.window_start_time: float = time.time()
         self.today: str = self._get_current_utc_date()
 
-        self.focus_logs_dir = self.output_dir / "focus_logs"
+        # Always use the FocusTimer/focus_logs directory for logs
+        self.focus_logs_dir = Path(r"C:\Users\admin\Desktop\FocusTimer\focus_logs")
         self.focus_logs_dir.mkdir(parents=True, exist_ok=True)
 
         logger.info(f"Initialized FocusMonitorAgent (Window Tracking). Output: {self.focus_logs_dir}, API: {self.api_url or 'Disabled'}")
@@ -279,6 +280,11 @@ class FocusMonitorAgent:
                 # Check desired state from backend and toggle internal state if needed
                 self.toggle_active()
 
+                # Skip processing if not active
+                if not self.active:
+                    await asyncio.sleep(max(0.1, interval - (time.time() - main_loop_start_time)))
+                    continue
+                
                 # Day Change Check (using UTC)
                 current_day_utc = self._get_current_utc_date()
                 if current_day_utc != self.today:
@@ -286,12 +292,7 @@ class FocusMonitorAgent:
                     self._generate_daily_summary() # Generate final summary for previous day
                     self.today = current_day_utc
                     logger.info(f"Updated current tracking date to {self.today}")
-
-                # Skip processing if not active
-                if not self.active:
-                    await asyncio.sleep(max(0.1, interval - (time.time() - main_loop_start_time)))
-                    continue
-
+                
                 # Get current focused window details
                 current_window_info = self._get_focused_window_details()
 

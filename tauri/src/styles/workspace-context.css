@@ -1,0 +1,92 @@
+/* Workspace Context Styles */
+
+.workspace-context-settings {
+  transition: all 0.2s ease-in-out;
+}
+
+.workspace-context-badge {
+  display: inline-flex;
+  align-items: center;
+  font-size: 0.65rem;
+  color: #10b981;
+  margin-left: 0.5rem;
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.2s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Custom checkbox styles */
+.workspace-context-settings input[type="checkbox"] {
+  accent-color: #3b82f6;
+}
+
+/* Toggle switch for workspace context */
+.context-toggle {
+  position: relative;
+  display: inline-block;
+  width: 32px;
+  height: 16px;
+}
+
+.context-toggle input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.context-toggle-slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: .3s;
+  border-radius: 16px;
+}
+
+.context-toggle-slider:before {
+  position: absolute;
+  content: "";
+  height: 12px;
+  width: 12px;
+  left: 2px;
+  bottom: 2px;
+  background-color: white;
+  transition: .3s;
+  border-radius: 50%;
+}
+
+input:checked + .context-toggle-slider {
+  background-color: #3b82f6;
+}
+
+input:checked + .context-toggle-slider:before {
+  transform: translateX(16px);
+}
+
+/* Dark mode adjustments */
+.dark .context-toggle-slider {
+  background-color: #4b5563;
+}
+
+.dark .context-toggle-slider:before {
+  background-color: #d1d5db;
+}
+
+.dark input:checked + .context-toggle-slider {
+  background-color: #3b82f6;
+}

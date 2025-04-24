@@ -1,0 +1,22 @@
+{
+  "id": "74d7a4da-bee7-4205-90aa-556ef623b012",
+  "title": "74d7a4da-bee7-4205-90aa-556ef623b012",
+  "lastMessage": "What are my current projects?",
+  "lastUpdated": "2025-04-23T10:41:23.869173",
+  "messages": [
+    {
+      "id": "msg_1745404883_user",
+      "role": "user",
+      "content": "What are my current projects?",
+      "timestamp": "2025-04-23T10:41:23.868378",
+      "model": null
+    },
+    {
+      "id": "resp_1745404883",
+      "role": "assistant",
+      "content": "Based on the provided data, your current projects are:\n\n*   **Project-A: Website Redesign** (Status: active)\n*   **Project-B: Mobile App Development** (Status: planning)",
+      "timestamp": "2025-04-23T10:41:23.868388",
+      "model": "gemma3:27b-it-qat"
+    }
+  ]
+}

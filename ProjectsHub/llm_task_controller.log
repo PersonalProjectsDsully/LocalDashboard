@@ -1,0 +1,381 @@
+2025-04-22 22:16:55,281 - ollama_client - INFO - Initialized Ollama client with base URL: http://host.docker.internal:11434
+2025-04-22 22:16:55,282 - llm_task_controller - INFO - Initialized LLMTaskController
+2025-04-22 22:16:55,306 - main - INFO - --- Starting Projects Hub Backend ---
+2025-04-22 22:16:55,306 - main - INFO - Watching data directory: /hub_data
+2025-04-22 22:16:55,310 - main - INFO - Hub data directory ready: /hub_data
+2025-04-22 22:16:55,311 - main - INFO - Ensured directory exists: /hub_data/focus_logs
+2025-04-22 22:16:55,347 - main - INFO - File system watcher started successfully.
+2025-04-22 22:16:55,349 - main - INFO - File Watcher: Processing 'modified' for 'llm_task_controller.log'
+2025-04-22 22:16:57,047 - main - INFO - New WebSocket connection from 172.28.0.1:58250. Total: 1
+2025-04-22 22:16:57,049 - main - INFO - File Watcher: Processing 'modified' for 'llm_task_controller.log'
+2025-04-22 22:16:58,042 - main - INFO - New WebSocket connection from 172.28.0.1:58260. Total: 2
+2025-04-22 22:29:05,487 - main - INFO - WebSocket disconnected from 172.28.0.1:58250. Remaining: 1
+2025-04-22 22:29:05,489 - main - INFO - File Watcher: Processing 'modified' for 'llm_task_controller.log'
+2025-04-22 22:29:06,240 - main - INFO - New WebSocket connection from 172.28.0.1:51494. Total: 2
+2025-04-22 22:29:06,256 - main - INFO - New WebSocket connection from 172.28.0.1:51512. Total: 3
+2025-04-22 22:47:41,740 - main - INFO - WebSocket disconnected from 172.28.0.1:51494. Remaining: 2
+2025-04-22 22:47:41,741 - main - INFO - WebSocket disconnected from 172.28.0.1:58260. Remaining: 1
+2025-04-22 22:47:41,742 - main - INFO - WebSocket disconnected from 172.28.0.1:51512. Remaining: 0
+2025-04-22 22:47:41,743 - main - INFO - File Watcher: Processing 'modified' for 'llm_task_controller.log'
+2025-04-22 22:47:41,840 - main - INFO - --- Shutting down Projects Hub Backend ---
+2025-04-22 22:47:41,881 - main - INFO - File system watcher stopped.
+2025-04-22 22:47:47,900 - ollama_client - INFO - Initialized Ollama client with base URL: http://host.docker.internal:11434
+2025-04-22 22:47:47,900 - llm_task_controller - INFO - Initialized LLMTaskController
+2025-04-22 22:47:47,923 - main - INFO - --- Starting Projects Hub Backend ---
+2025-04-22 22:47:47,923 - main - INFO - Watching data directory: /hub_data
+2025-04-22 22:47:47,926 - main - INFO - Hub data directory ready: /hub_data
+2025-04-22 22:47:47,927 - main - INFO - Ensured directory exists: /hub_data/focus_logs
+2025-04-22 22:47:47,958 - main - INFO - File system watcher started successfully.
+2025-04-22 22:47:47,960 - main - INFO - File Watcher: Processing 'modified' for 'llm_task_controller.log'
+2025-04-22 22:47:49,992 - main - INFO - New WebSocket connection from 172.28.0.1:37316. Total: 1
+2025-04-22 22:47:49,994 - main - INFO - File Watcher: Processing 'modified' for 'llm_task_controller.log'
+2025-04-22 22:47:51,726 - main - INFO - WebSocket disconnected from 172.28.0.1:37316. Remaining: 0
+2025-04-22 22:47:51,727 - main - INFO - File Watcher: Processing 'modified' for 'llm_task_controller.log'
+2025-04-22 22:47:52,046 - main - INFO - New WebSocket connection from 172.28.0.1:37326. Total: 1
+2025-04-22 22:47:52,411 - main - INFO - New WebSocket connection from 172.28.0.1:47550. Total: 2
+2025-04-22 22:47:52,425 - main - INFO - New WebSocket connection from 172.28.0.1:47568. Total: 3
+2025-04-22 22:50:39,998 - llm_task_controller - WARNING - Project file not found: /hub_data/chat_sessions/project.yaml
+2025-04-22 22:50:40,001 - llm_task_controller - WARNING - Project file not found: /hub_data/focus_logs/project.yaml
+2025-04-22 22:50:40,029 - llm_task_controller - WARNING - Project file not found: /hub_data/templates/project.yaml
+2025-04-22 22:50:40,057 - main - INFO - Sending task command to LLM: What are my current projects?
+2025-04-22 22:50:40,057 - ollama_client - INFO - Sending chat request to Ollama for model: llama3.1:8b
+2025-04-22 22:50:43,040 - main - INFO - Received LLM response, extracting JSON
+2025-04-22 22:50:43,041 - llm_json_extractor - INFO - Found valid JSON in code block with action field
+2025-04-22 22:50:43,045 - llm_task_controller - WARNING - Project file not found: /hub_data/chat_sessions/project.yaml
+2025-04-22 22:50:43,046 - llm_task_controller - WARNING - Project file not found: /hub_data/focus_logs/project.yaml
+2025-04-22 22:50:43,057 - llm_task_controller - WARNING - Project file not found: /hub_data/templates/project.yaml
+2025-04-22 22:50:43,059 - main - INFO - File Watcher: Processing 'modified' for 'llm_task_controller.log'
+2025-04-22 22:50:43,059 - main - INFO - File Watcher: Processing 'modified' for 'llm_task_controller.log'
+2025-04-22 22:53:34,268 - main - INFO - WebSocket disconnected from 172.28.0.1:37326. Remaining: 2
+2025-04-22 22:53:34,269 - main - INFO - WebSocket disconnected from 172.28.0.1:47550. Remaining: 1
+2025-04-22 22:53:34,269 - main - INFO - WebSocket disconnected from 172.28.0.1:47568. Remaining: 0
+2025-04-22 22:53:34,271 - main - INFO - File Watcher: Processing 'modified' for 'llm_task_controller.log'
+2025-04-22 22:53:34,369 - main - INFO - --- Shutting down Projects Hub Backend ---
+2025-04-22 22:53:34,403 - main - INFO - File system watcher stopped.
+2025-04-22 22:53:40,602 - ollama_client - INFO - Initialized Ollama client with base URL: http://host.docker.internal:11434
+2025-04-22 22:53:40,602 - llm_task_controller - INFO - Initialized LLMTaskController
+2025-04-22 22:53:40,629 - main - INFO - --- Starting Projects Hub Backend ---
+2025-04-22 22:53:40,630 - main - INFO - Watching data directory: /hub_data
+2025-04-22 22:53:40,633 - main - INFO - Hub data directory ready: /hub_data
+2025-04-22 22:53:40,635 - main - INFO - Ensured directory exists: /hub_data/focus_logs
+2025-04-22 22:53:40,676 - main - INFO - File system watcher started successfully.
+2025-04-22 22:53:40,678 - main - INFO - File Watcher: Processing 'modified' for 'llm_task_controller.log'
+2025-04-22 22:53:43,452 - main - INFO - New WebSocket connection from 172.28.0.1:37706. Total: 1
+2025-04-22 22:53:43,454 - main - INFO - File Watcher: Processing 'modified' for 'llm_task_controller.log'
+2025-04-22 22:53:43,628 - main - INFO - WebSocket disconnected from 172.28.0.1:37706. Remaining: 0
+2025-04-22 22:53:44,529 - main - INFO - New WebSocket connection from 172.28.0.1:37726. Total: 1
+2025-04-22 22:53:44,532 - main - INFO - File Watcher: Processing 'modified' for 'llm_task_controller.log'
+2025-04-22 22:53:44,545 - main - INFO - New WebSocket connection from 172.28.0.1:37742. Total: 2
+2025-04-22 22:53:45,040 - main - INFO - New WebSocket connection from 172.28.0.1:37754. Total: 3
+2025-04-22 22:54:14,557 - main - INFO - WebSocket disconnected from 172.28.0.1:37742. Remaining: 2
+2025-04-22 22:54:14,558 - main - INFO - WebSocket disconnected from 172.28.0.1:37726. Remaining: 1
+2025-04-22 22:54:14,559 - main - INFO - File Watcher: Processing 'modified' for 'llm_task_controller.log'
+2025-04-22 22:54:14,685 - main - INFO - New WebSocket connection from 172.28.0.1:49488. Total: 2
+2025-04-22 22:54:14,699 - main - INFO - New WebSocket connection from 172.28.0.1:49522. Total: 3
+2025-04-22 22:55:35,406 - llm_task_controller - WARNING - Project file not found: /hub_data/chat_sessions/project.yaml
+2025-04-22 22:55:35,408 - llm_task_controller - WARNING - Project file not found: /hub_data/focus_logs/project.yaml
+2025-04-22 22:55:35,420 - llm_task_controller - WARNING - Project file not found: /hub_data/templates/project.yaml
+2025-04-22 22:55:35,434 - main - INFO - Sending task command to LLM: What are my current projects?
+2025-04-22 22:55:35,434 - ollama_client - INFO - Sending chat request to Ollama for model: llama3.1:8b
+2025-04-22 22:55:47,512 - main - INFO - Received LLM response, extracting JSON
+2025-04-22 22:55:47,512 - llm_json_extractor - INFO - Found valid JSON in code block with action field
+2025-04-22 22:55:47,517 - llm_task_controller - WARNING - Project file not found: /hub_data/chat_sessions/project.yaml
+2025-04-22 22:55:47,519 - llm_task_controller - WARNING - Project file not found: /hub_data/focus_logs/project.yaml
+2025-04-22 22:55:47,529 - llm_task_controller - WARNING - Project file not found: /hub_data/templates/project.yaml
+2025-04-22 22:55:47,531 - main - INFO - File Watcher: Processing 'modified' for 'llm_task_controller.log'
+2025-04-22 22:55:47,532 - main - INFO - File Watcher: Processing 'modified' for 'llm_task_controller.log'
+2025-04-22 23:07:44,277 - main - INFO - New WebSocket connection from 172.28.0.1:52090. Total: 4
+2025-04-22 23:07:44,280 - main - INFO - File Watcher: Processing 'modified' for 'llm_task_controller.log'
+2025-04-22 23:07:44,301 - main - INFO - New WebSocket connection from 172.28.0.1:52116. Total: 5
+2025-04-22 23:15:11,325 - main - INFO - WebSocket disconnected from 172.28.0.1:52116. Remaining: 4
+2025-04-22 23:15:11,326 - main - INFO - WebSocket disconnected from 172.28.0.1:37754. Remaining: 3
+2025-04-22 23:15:11,327 - main - INFO - WebSocket disconnected from 172.28.0.1:49522. Remaining: 2
+2025-04-22 23:15:11,327 - main - INFO - WebSocket disconnected from 172.28.0.1:52090. Remaining: 1
+2025-04-22 23:15:11,328 - main - INFO - WebSocket disconnected from 172.28.0.1:49488. Remaining: 0
+2025-04-22 23:15:11,329 - main - INFO - File Watcher: Processing 'modified' for 'llm_task_controller.log'
+2025-04-22 23:15:11,426 - main - INFO - --- Shutting down Projects Hub Backend ---
+2025-04-22 23:15:11,460 - main - INFO - File system watcher stopped.
+2025-04-22 23:15:20,439 - ollama_client - INFO - Initialized Ollama client with base URL: http://host.docker.internal:11434
+2025-04-22 23:15:20,439 - llm_task_controller - INFO - Initialized LLMTaskController
+2025-04-22 23:15:20,465 - main - INFO - --- Starting Projects Hub Backend ---
+2025-04-22 23:15:20,465 - main - INFO - Watching data directory: /hub_data
+2025-04-22 23:15:20,468 - main - INFO - Hub data directory ready: /hub_data
+2025-04-22 23:15:20,470 - main - INFO - Ensured directory exists: /hub_data/focus_logs
+2025-04-22 23:15:20,512 - main - INFO - File system watcher started successfully.
+2025-04-22 23:15:20,513 - main - INFO - File Watcher: Processing 'modified' for 'llm_task_controller.log'
+2025-04-22 23:15:20,871 - main - INFO - New WebSocket connection from 172.28.0.1:47340. Total: 1
+2025-04-22 23:15:20,873 - main - INFO - New WebSocket connection from 172.28.0.1:47344. Total: 2
+2025-04-22 23:15:23,038 - main - INFO - New WebSocket connection from 172.28.0.1:51300. Total: 3
+2025-04-22 23:15:23,040 - main - INFO - File Watcher: Processing 'modified' for 'llm_task_controller.log'
+2025-04-22 23:15:23,755 - main - INFO - WebSocket disconnected from 172.28.0.1:47340. Remaining: 2
+2025-04-22 23:15:23,758 - main - INFO - WebSocket disconnected from 172.28.0.1:47344. Remaining: 1
+2025-04-22 23:15:24,630 - main - INFO - New WebSocket connection from 172.28.0.1:51310. Total: 2
+2025-04-22 23:15:24,634 - main - INFO - File Watcher: Processing 'modified' for 'llm_task_controller.log'
+2025-04-22 23:15:24,647 - main - INFO - New WebSocket connection from 172.28.0.1:51332. Total: 3
+2025-04-22 23:15:28,148 - main - INFO - WebSocket disconnected from 172.28.0.1:51310. Remaining: 2
+2025-04-22 23:15:28,149 - main - INFO - WebSocket disconnected from 172.28.0.1:51332. Remaining: 1
+2025-04-22 23:15:28,151 - main - INFO - File Watcher: Processing 'modified' for 'llm_task_controller.log'
+2025-04-22 23:15:28,230 - main - INFO - New WebSocket connection from 172.28.0.1:51342. Total: 2
+2025-04-22 23:15:28,246 - main - INFO - New WebSocket connection from 172.28.0.1:51346. Total: 3
+2025-04-22 23:17:49,869 - main - INFO - Chat request received for model: llama3.1:8b
+2025-04-22 23:17:49,870 - main - INFO - Including project information in context
+2025-04-22 23:17:49,892 - main - INFO - Added project context for 2 projects
+2025-04-22 23:17:49,892 - main - INFO - Including tasks information in context
+2025-04-22 23:17:49,917 - main - INFO - Added context for 15 tasks
+2025-04-22 23:17:49,918 - main - INFO - Including documents information in context
+2025-04-22 23:17:49,935 - main - INFO - Added context for 7 documents
+2025-04-22 23:17:49,936 - main - INFO - Added system context with workspace data
+2025-04-22 23:17:49,937 - ollama_client - INFO - Sending chat request to Ollama for model: llama3.1:8b
+2025-04-22 23:17:51,110 - llm_json_extractor - WARNING - No valid JSON found in LLM response
+2025-04-22 23:17:51,115 - main - INFO - File Watcher: Processing 'modified' for 'llm_task_controller.log'
+2025-04-22 23:17:51,116 - main - INFO - File Watcher: Processing 'modified' for 'llm_task_controller.log'
+2025-04-22 23:20:36,324 - main - INFO - WebSocket disconnected from 172.28.0.1:51342. Remaining: 2
+2025-04-22 23:20:36,325 - main - INFO - WebSocket disconnected from 172.28.0.1:51346. Remaining: 1
+2025-04-22 23:20:36,327 - main - INFO - File Watcher: Processing 'modified' for 'llm_task_controller.log'
+2025-04-22 23:20:36,475 - main - INFO - New WebSocket connection from 172.28.0.1:39264. Total: 2
+2025-04-22 23:20:36,493 - main - INFO - New WebSocket connection from 172.28.0.1:39286. Total: 3
+2025-04-22 23:20:36,977 - main - INFO - WebSocket disconnected from 172.28.0.1:39264. Remaining: 2
+2025-04-22 23:20:36,977 - main - INFO - WebSocket disconnected from 172.28.0.1:39286. Remaining: 1
+2025-04-22 23:20:37,056 - main - INFO - New WebSocket connection from 172.28.0.1:39296. Total: 2
+2025-04-22 23:20:37,071 - main - INFO - New WebSocket connection from 172.28.0.1:39298. Total: 3
+2025-04-22 23:21:00,607 - main - INFO - WebSocket disconnected from 172.28.0.1:39298. Remaining: 2
+2025-04-22 23:21:00,608 - main - INFO - WebSocket disconnected from 172.28.0.1:39296. Remaining: 1
+2025-04-22 23:21:00,609 - main - INFO - File Watcher: Processing 'modified' for 'llm_task_controller.log'
+2025-04-22 23:21:00,713 - main - INFO - New WebSocket connection from 172.28.0.1:54712. Total: 2
+2025-04-22 23:21:00,729 - main - INFO - New WebSocket connection from 172.28.0.1:54744. Total: 3
+2025-04-22 23:21:02,448 - main - INFO - Looking for focus logs in primary location: /focus_timer/focus_logs/daily_summary_2025-04-22.json or /focus_timer/focus_logs/focus_log_2025-04-22.jsonl
+2025-04-22 23:21:02,449 - main - INFO - Fallback locations: /hub_data/focus_logs/daily_summary_2025-04-22.json or /hub_data/focus_logs/focus_log_2025-04-22.jsonl
+2025-04-22 23:21:02,450 - main - INFO - Pre-generated summary not found, attempting on-demand calculation.
+2025-04-22 23:21:02,452 - main - INFO - Calculating from FocusTimer log file
+2025-04-22 23:21:02,452 - main - INFO - Calculating on-demand summary for 2025-04-22 from /focus_timer/focus_logs/focus_log_2025-04-22.jsonl
+2025-04-22 23:21:02,478 - main - INFO - Successfully calculated on-demand summary for 2025-04-22
+2025-04-22 23:21:02,480 - main - INFO - File Watcher: Processing 'modified' for 'llm_task_controller.log'
+2025-04-22 23:21:02,512 - main - INFO - Looking for focus logs in primary location: /focus_timer/focus_logs/daily_summary_2025-04-22.json or /focus_timer/focus_logs/focus_log_2025-04-22.jsonl
+2025-04-22 23:21:02,512 - main - INFO - Fallback locations: /hub_data/focus_logs/daily_summary_2025-04-22.json or /hub_data/focus_logs/focus_log_2025-04-22.jsonl
+2025-04-22 23:21:02,514 - main - INFO - Pre-generated summary not found, attempting on-demand calculation.
+2025-04-22 23:21:02,515 - main - INFO - Calculating from FocusTimer log file
+2025-04-22 23:21:02,515 - main - INFO - Calculating on-demand summary for 2025-04-22 from /focus_timer/focus_logs/focus_log_2025-04-22.jsonl
+2025-04-22 23:21:02,530 - main - INFO - Successfully calculated on-demand summary for 2025-04-22
+2025-04-22 23:25:20,243 - main - INFO - WebSocket disconnected from 172.28.0.1:54744. Remaining: 2
+2025-04-22 23:25:20,244 - main - INFO - WebSocket disconnected from 172.28.0.1:54712. Remaining: 1
+2025-04-22 23:25:20,245 - main - INFO - File Watcher: Processing 'modified' for 'llm_task_controller.log'
+2025-04-22 23:25:20,366 - main - INFO - New WebSocket connection from 172.28.0.1:58942. Total: 2
+2025-04-22 23:25:20,381 - main - INFO - New WebSocket connection from 172.28.0.1:58956. Total: 3
+2025-04-22 23:25:50,630 - main - INFO - Chat request received for model: llama3.1:8b
+2025-04-22 23:25:50,631 - main - INFO - Including project information in context
+2025-04-22 23:25:50,648 - main - INFO - Added project context for 2 projects
+2025-04-22 23:25:50,649 - main - INFO - Including tasks information in context
+2025-04-22 23:25:50,672 - main - INFO - Added context for 15 tasks
+2025-04-22 23:25:50,672 - main - INFO - Added system context with workspace data
+2025-04-22 23:25:50,673 - ollama_client - INFO - Sending chat request to Ollama for model: llama3.1:8b
+2025-04-22 23:25:53,760 - llm_json_extractor - WARNING - No valid JSON found in LLM response
+2025-04-22 23:25:53,765 - main - INFO - File Watcher: Processing 'modified' for 'llm_task_controller.log'
+2025-04-22 23:25:53,766 - main - INFO - File Watcher: Processing 'modified' for 'llm_task_controller.log'
+2025-04-22 23:26:27,141 - main - INFO - Chat request received for model: llama3.1:8b
+2025-04-22 23:26:27,142 - main - INFO - Including project information in context
+2025-04-22 23:26:27,160 - main - INFO - Added project context for 2 projects
+2025-04-22 23:26:27,160 - main - INFO - Including tasks information in context
+2025-04-22 23:26:27,184 - main - INFO - Added context for 15 tasks
+2025-04-22 23:26:27,184 - main - INFO - Added system context with workspace data
+2025-04-22 23:26:27,188 - ollama_client - INFO - Sending chat request to Ollama for model: llama3.1:8b
+2025-04-22 23:26:29,530 - llm_json_extractor - WARNING - No valid JSON found in LLM response
+2025-04-22 23:26:29,538 - main - INFO - File Watcher: Processing 'modified' for 'llm_task_controller.log'
+2025-04-22 23:26:29,538 - main - INFO - File Watcher: Processing 'modified' for 'llm_task_controller.log'
+2025-04-22 23:26:30,943 - main - INFO - WebSocket disconnected from 172.28.0.1:58956. Remaining: 2
+2025-04-22 23:26:30,944 - main - INFO - WebSocket disconnected from 172.28.0.1:58942. Remaining: 1
+2025-04-22 23:26:30,945 - main - INFO - File Watcher: Processing 'modified' for 'llm_task_controller.log'
+2025-04-22 23:26:31,094 - main - INFO - New WebSocket connection from 172.28.0.1:46318. Total: 2
+2025-04-22 23:26:31,109 - main - INFO - New WebSocket connection from 172.28.0.1:46332. Total: 3
+2025-04-22 23:27:28,010 - main - INFO - Chat request received for model: gemma3:27b-it-qat
+2025-04-22 23:27:28,011 - main - INFO - Including project information in context
+2025-04-22 23:27:28,034 - main - INFO - Added project context for 2 projects
+2025-04-22 23:27:28,034 - main - INFO - Including tasks information in context
+2025-04-22 23:27:28,058 - main - INFO - Added context for 15 tasks
+2025-04-22 23:27:28,058 - main - INFO - Added system context with workspace data
+2025-04-22 23:27:28,063 - ollama_client - INFO - Sending chat request to Ollama for model: gemma3:27b-it-qat
+2025-04-22 23:28:09,177 - llm_json_extractor - WARNING - No valid JSON found in LLM response
+2025-04-22 23:28:09,187 - main - INFO - File Watcher: Processing 'modified' for 'llm_task_controller.log'
+2025-04-22 23:28:09,187 - main - INFO - File Watcher: Processing 'modified' for 'llm_task_controller.log'
+2025-04-22 23:40:06,011 - main - INFO - WebSocket disconnected from 172.28.0.1:46318. Remaining: 2
+2025-04-22 23:40:06,012 - main - INFO - WebSocket disconnected from 172.28.0.1:46332. Remaining: 1
+2025-04-22 23:40:06,014 - main - INFO - File Watcher: Processing 'modified' for 'llm_task_controller.log'
+2025-04-22 23:40:06,321 - main - INFO - New WebSocket connection from 172.28.0.1:48596. Total: 2
+2025-04-22 23:40:06,338 - main - INFO - New WebSocket connection from 172.28.0.1:48620. Total: 3
+2025-04-22 23:40:10,769 - main - INFO - WebSocket disconnected from 172.28.0.1:51300. Remaining: 2
+2025-04-22 23:40:10,770 - main - INFO - WebSocket disconnected from 172.28.0.1:48620. Remaining: 1
+2025-04-22 23:40:10,770 - main - INFO - WebSocket disconnected from 172.28.0.1:48596. Remaining: 0
+2025-04-22 23:40:10,772 - main - INFO - File Watcher: Processing 'modified' for 'llm_task_controller.log'
+2025-04-22 23:40:10,869 - main - INFO - --- Shutting down Projects Hub Backend ---
+2025-04-22 23:40:10,907 - main - INFO - File system watcher stopped.
+2025-04-22 23:40:17,767 - ollama_client - INFO - Initialized Ollama client with base URL: http://host.docker.internal:11434
+2025-04-22 23:40:17,768 - llm_task_controller - INFO - Initialized LLMTaskController
+2025-04-22 23:40:17,793 - main - INFO - --- Starting Projects Hub Backend ---
+2025-04-22 23:40:17,793 - main - INFO - Watching data directory: /hub_data
+2025-04-22 23:40:17,797 - main - INFO - Hub data directory ready: /hub_data
+2025-04-22 23:40:17,798 - main - INFO - Ensured directory exists: /hub_data/focus_logs
+2025-04-22 23:40:17,835 - main - INFO - File system watcher started successfully.
+2025-04-22 23:40:17,837 - main - INFO - File Watcher: Processing 'modified' for 'llm_task_controller.log'
+2025-04-22 23:40:19,038 - main - INFO - New WebSocket connection from 172.28.0.1:53312. Total: 1
+2025-04-22 23:40:19,040 - main - INFO - File Watcher: Processing 'modified' for 'llm_task_controller.log'
+2025-04-22 23:40:19,630 - main - INFO - New WebSocket connection from 172.28.0.1:53320. Total: 2
+2025-04-22 23:40:20,881 - main - INFO - WebSocket disconnected from 172.28.0.1:53320. Remaining: 1
+2025-04-22 23:40:20,883 - main - INFO - File Watcher: Processing 'modified' for 'llm_task_controller.log'
+2025-04-22 23:40:21,872 - main - INFO - New WebSocket connection from 172.28.0.1:53332. Total: 2
+2025-04-22 23:40:21,891 - main - INFO - New WebSocket connection from 172.28.0.1:53346. Total: 3
+2025-04-22 23:40:21,893 - main - INFO - File Watcher: Processing 'modified' for 'llm_task_controller.log'
+2025-04-22 23:40:40,245 - main - INFO - Chat request received for model: llama3.1:8b
+2025-04-22 23:40:40,246 - main - INFO - Including project information in context
+2025-04-22 23:40:40,268 - main - INFO - Added project context for 2 projects
+2025-04-22 23:40:40,269 - main - INFO - Including tasks information in context
+2025-04-22 23:40:40,293 - main - INFO - Added context for 15 tasks
+2025-04-22 23:40:40,293 - main - INFO - Added system context with workspace data
+2025-04-22 23:40:40,298 - ollama_client - INFO - Sending chat request to Ollama for model: llama3.1:8b
+2025-04-22 23:40:50,697 - llm_json_extractor - WARNING - No valid JSON found in LLM response
+2025-04-22 23:40:50,706 - main - INFO - File Watcher: Processing 'modified' for 'llm_task_controller.log'
+2025-04-22 23:40:50,707 - main - INFO - File Watcher: Processing 'modified' for 'llm_task_controller.log'
+2025-04-22 23:42:27,575 - main - INFO - WebSocket disconnected from 172.28.0.1:53346. Remaining: 2
+2025-04-22 23:42:27,575 - main - INFO - WebSocket disconnected from 172.28.0.1:53332. Remaining: 1
+2025-04-22 23:42:27,577 - main - INFO - File Watcher: Processing 'modified' for 'llm_task_controller.log'
+2025-04-22 23:42:27,832 - main - INFO - New WebSocket connection from 172.28.0.1:52434. Total: 2
+2025-04-22 23:42:27,851 - main - INFO - New WebSocket connection from 172.28.0.1:52456. Total: 3
+2025-04-22 23:44:56,482 - main - INFO - WebSocket disconnected from 172.28.0.1:52434. Remaining: 2
+2025-04-22 23:44:56,483 - main - INFO - WebSocket disconnected from 172.28.0.1:52456. Remaining: 1
+2025-04-22 23:44:56,484 - main - INFO - File Watcher: Processing 'modified' for 'llm_task_controller.log'
+2025-04-22 23:44:56,715 - main - INFO - New WebSocket connection from 172.28.0.1:42076. Total: 2
+2025-04-22 23:44:56,731 - main - INFO - New WebSocket connection from 172.28.0.1:42080. Total: 3
+2025-04-22 23:46:43,812 - main - INFO - Chat request received for model: llama3.1:8b
+2025-04-22 23:46:43,812 - main - INFO - Including project information in context
+2025-04-22 23:46:43,833 - main - INFO - Added project context for 2 projects
+2025-04-22 23:46:43,833 - main - INFO - Including tasks information in context
+2025-04-22 23:46:43,853 - main - INFO - Added context for 15 tasks
+2025-04-22 23:46:43,854 - main - INFO - Added system context with workspace data
+2025-04-22 23:46:43,857 - ollama_client - INFO - Sending chat request to Ollama for model: llama3.1:8b
+2025-04-22 23:46:47,012 - llm_json_extractor - WARNING - No valid JSON found in LLM response
+2025-04-22 23:46:47,020 - main - INFO - File Watcher: Processing 'modified' for 'llm_task_controller.log'
+2025-04-22 23:46:47,020 - main - INFO - File Watcher: Processing 'modified' for 'llm_task_controller.log'
+2025-04-22 23:47:15,893 - main - INFO - WebSocket disconnected from 172.28.0.1:42080. Remaining: 2
+2025-04-22 23:47:15,894 - main - INFO - WebSocket disconnected from 172.28.0.1:53312. Remaining: 1
+2025-04-22 23:47:15,894 - main - INFO - WebSocket disconnected from 172.28.0.1:42076. Remaining: 0
+2025-04-22 23:47:15,895 - main - INFO - File Watcher: Processing 'modified' for 'llm_task_controller.log'
+2025-04-22 23:47:15,993 - main - INFO - --- Shutting down Projects Hub Backend ---
+2025-04-22 23:47:16,027 - main - INFO - File system watcher stopped.
+2025-04-22 23:47:21,641 - ollama_client - INFO - Initialized Ollama client with base URL: http://host.docker.internal:11434
+2025-04-22 23:47:21,641 - llm_task_controller - INFO - Initialized LLMTaskController
+2025-04-22 23:47:21,664 - main - INFO - --- Starting Projects Hub Backend ---
+2025-04-22 23:47:21,664 - main - INFO - Watching data directory: /hub_data
+2025-04-22 23:47:21,667 - main - INFO - Hub data directory ready: /hub_data
+2025-04-22 23:47:21,668 - main - INFO - Ensured directory exists: /hub_data/focus_logs
+2025-04-22 23:47:21,700 - main - INFO - File system watcher started successfully.
+2025-04-22 23:47:21,702 - main - INFO - File Watcher: Processing 'modified' for 'llm_task_controller.log'
+2025-04-22 23:47:25,780 - main - INFO - New WebSocket connection from 172.28.0.1:53624. Total: 1
+2025-04-22 23:47:25,783 - main - INFO - File Watcher: Processing 'modified' for 'llm_task_controller.log'
+2025-04-22 23:47:25,985 - main - INFO - WebSocket disconnected from 172.28.0.1:53624. Remaining: 0
+2025-04-22 23:47:26,043 - main - INFO - New WebSocket connection from 172.28.0.1:53634. Total: 1
+2025-04-22 23:47:26,706 - main - INFO - New WebSocket connection from 172.28.0.1:53652. Total: 2
+2025-04-22 23:47:26,721 - main - INFO - New WebSocket connection from 172.28.0.1:53656. Total: 3
+2025-04-22 23:49:15,261 - main - INFO - Chat request received for model: llama3.1:8b
+2025-04-22 23:49:15,261 - main - INFO - Including project information in context
+2025-04-22 23:49:15,286 - main - INFO - Added project context for 2 projects
+2025-04-22 23:49:15,287 - main - INFO - Including tasks information in context
+2025-04-22 23:49:15,311 - main - INFO - Added context for 15 tasks
+2025-04-22 23:49:15,311 - main - INFO - Added system context with workspace data
+2025-04-22 23:49:15,313 - ollama_client - INFO - Sending chat request to Ollama for model: llama3.1:8b
+2025-04-22 23:49:16,387 - llm_json_extractor - WARNING - No valid JSON found in LLM response
+2025-04-22 23:49:16,392 - main - INFO - File Watcher: Processing 'modified' for 'llm_task_controller.log'
+2025-04-22 23:49:16,392 - main - INFO - File Watcher: Processing 'modified' for 'llm_task_controller.log'
+2025-04-22 23:59:28,090 - main - INFO - WebSocket disconnected from 172.28.0.1:53656. Remaining: 2
+2025-04-22 23:59:28,091 - main - INFO - WebSocket disconnected from 172.28.0.1:53652. Remaining: 1
+2025-04-22 23:59:28,092 - main - INFO - File Watcher: Processing 'modified' for 'llm_task_controller.log'
+2025-04-22 23:59:28,323 - main - INFO - New WebSocket connection from 172.28.0.1:45244. Total: 2
+2025-04-22 23:59:28,338 - main - INFO - New WebSocket connection from 172.28.0.1:45264. Total: 3
+2025-04-22 23:59:37,449 - main - INFO - Chat request received for model: llama3.1:8b
+2025-04-22 23:59:37,450 - main - INFO - Including project information in context
+2025-04-22 23:59:37,470 - main - INFO - Added project context for 2 projects
+2025-04-22 23:59:37,470 - main - INFO - Including tasks information in context
+2025-04-22 23:59:37,492 - main - INFO - Added context for 15 tasks
+2025-04-22 23:59:37,492 - main - INFO - Added system context with workspace data
+2025-04-22 23:59:37,497 - ollama_client - INFO - Sending chat request to Ollama for model: llama3.1:8b
+2025-04-22 23:59:41,708 - llm_json_extractor - WARNING - No valid JSON found in LLM response
+2025-04-22 23:59:41,716 - main - INFO - File Watcher: Processing 'modified' for 'llm_task_controller.log'
+2025-04-22 23:59:41,717 - main - INFO - File Watcher: Processing 'modified' for 'llm_task_controller.log'
+2025-04-23 00:08:08,050 - main - INFO - WebSocket disconnected from 172.28.0.1:45244. Remaining: 2
+2025-04-23 00:08:08,051 - main - INFO - WebSocket disconnected from 172.28.0.1:45264. Remaining: 1
+2025-04-23 00:08:08,053 - main - INFO - File Watcher: Processing 'modified' for 'llm_task_controller.log'
+2025-04-23 00:08:17,389 - main - INFO - New WebSocket connection from 172.28.0.1:41028. Total: 2
+2025-04-23 00:08:17,392 - main - INFO - File Watcher: Processing 'modified' for 'llm_task_controller.log'
+2025-04-23 00:08:17,403 - main - INFO - New WebSocket connection from 172.28.0.1:41034. Total: 3
+2025-04-23 00:12:12,019 - main - INFO - WebSocket disconnected from 172.28.0.1:53634. Remaining: 2
+2025-04-23 00:12:12,021 - main - INFO - File Watcher: Processing 'modified' for 'llm_task_controller.log'
+2025-04-23 00:12:13,371 - main - INFO - Looking for focus logs in primary location: /focus_timer/focus_logs/daily_summary_2025-04-22.json or /focus_timer/focus_logs/focus_log_2025-04-22.jsonl
+2025-04-23 00:12:13,372 - main - INFO - Fallback locations: /hub_data/focus_logs/daily_summary_2025-04-22.json or /hub_data/focus_logs/focus_log_2025-04-22.jsonl
+2025-04-23 00:12:13,386 - main - INFO - Serving pre-generated summary from FocusTimer for 2025-04-22
+2025-04-23 00:12:13,388 - main - INFO - File Watcher: Processing 'modified' for 'llm_task_controller.log'
+2025-04-23 00:12:13,415 - main - INFO - Looking for focus logs in primary location: /focus_timer/focus_logs/daily_summary_2025-04-22.json or /focus_timer/focus_logs/focus_log_2025-04-22.jsonl
+2025-04-23 00:12:13,416 - main - INFO - Fallback locations: /hub_data/focus_logs/daily_summary_2025-04-22.json or /hub_data/focus_logs/focus_log_2025-04-22.jsonl
+2025-04-23 00:12:13,420 - main - INFO - Serving pre-generated summary from FocusTimer for 2025-04-22
+2025-04-23 00:12:13,453 - main - INFO - New WebSocket connection from 172.28.0.1:59548. Total: 3
+2025-04-23 00:12:13,472 - main - INFO - New WebSocket connection from 172.28.0.1:59572. Total: 4
+2025-04-23 00:12:27,338 - main - INFO - WebSocket disconnected from 172.28.0.1:59548. Remaining: 3
+2025-04-23 00:12:27,339 - main - INFO - WebSocket disconnected from 172.28.0.1:59572. Remaining: 2
+2025-04-23 00:12:27,340 - main - INFO - File Watcher: Processing 'modified' for 'llm_task_controller.log'
+2025-04-23 00:12:27,353 - main - INFO - WebSocket disconnected from 172.28.0.1:41034. Remaining: 1
+2025-04-23 00:12:27,353 - main - INFO - WebSocket disconnected from 172.28.0.1:41028. Remaining: 0
+2025-04-23 00:12:27,611 - main - INFO - New WebSocket connection from 172.28.0.1:55674. Total: 1
+2025-04-23 00:12:27,613 - main - INFO - Looking for focus logs in primary location: /focus_timer/focus_logs/daily_summary_2025-04-22.json or /focus_timer/focus_logs/focus_log_2025-04-22.jsonl
+2025-04-23 00:12:27,613 - main - INFO - Fallback locations: /hub_data/focus_logs/daily_summary_2025-04-22.json or /hub_data/focus_logs/focus_log_2025-04-22.jsonl
+2025-04-23 00:12:27,619 - main - INFO - Serving pre-generated summary from FocusTimer for 2025-04-22
+2025-04-23 00:12:27,625 - main - INFO - Looking for focus logs in primary location: /focus_timer/focus_logs/daily_summary_2025-04-22.json or /focus_timer/focus_logs/focus_log_2025-04-22.jsonl
+2025-04-23 00:12:27,625 - main - INFO - Fallback locations: /hub_data/focus_logs/daily_summary_2025-04-22.json or /hub_data/focus_logs/focus_log_2025-04-22.jsonl
+2025-04-23 00:12:27,629 - main - INFO - Serving pre-generated summary from FocusTimer for 2025-04-22
+2025-04-23 00:12:27,686 - main - INFO - New WebSocket connection from 172.28.0.1:55736. Total: 2
+2025-04-23 00:12:27,734 - main - INFO - New WebSocket connection from 172.28.0.1:55758. Total: 3
+2025-04-23 00:12:27,747 - main - INFO - New WebSocket connection from 172.28.0.1:55778. Total: 4
+2025-04-23 00:12:51,781 - main - INFO - Looking for focus logs in primary location: /focus_timer/focus_logs/daily_summary_2025-04-22.json or /focus_timer/focus_logs/focus_log_2025-04-22.jsonl
+2025-04-23 00:12:51,781 - main - INFO - Fallback locations: /hub_data/focus_logs/daily_summary_2025-04-22.json or /hub_data/focus_logs/focus_log_2025-04-22.jsonl
+2025-04-23 00:12:51,785 - main - INFO - Serving pre-generated summary from FocusTimer for 2025-04-22
+2025-04-23 00:12:51,787 - main - INFO - File Watcher: Processing 'modified' for 'llm_task_controller.log'
+2025-04-23 00:12:51,790 - main - INFO - Looking for focus logs in primary location: /focus_timer/focus_logs/daily_summary_2025-04-22.json or /focus_timer/focus_logs/focus_log_2025-04-22.jsonl
+2025-04-23 00:12:51,791 - main - INFO - Fallback locations: /hub_data/focus_logs/daily_summary_2025-04-22.json or /hub_data/focus_logs/focus_log_2025-04-22.jsonl
+2025-04-23 00:12:51,794 - main - INFO - Serving pre-generated summary from FocusTimer for 2025-04-22
+2025-04-23 00:12:54,130 - main - INFO - Looking for focus logs in primary location: /focus_timer/focus_logs/daily_summary_2025-04-22.json or /focus_timer/focus_logs/focus_log_2025-04-22.jsonl
+2025-04-23 00:12:54,131 - main - INFO - Fallback locations: /hub_data/focus_logs/daily_summary_2025-04-22.json or /hub_data/focus_logs/focus_log_2025-04-22.jsonl
+2025-04-23 00:12:54,135 - main - INFO - Serving pre-generated summary from FocusTimer for 2025-04-22
+2025-04-23 00:12:54,159 - main - INFO - File Watcher: Processing 'modified' for 'llm_task_controller.log'
+2025-04-23 00:12:54,160 - main - INFO - Looking for focus logs in primary location: /focus_timer/focus_logs/daily_summary_2025-04-22.json or /focus_timer/focus_logs/focus_log_2025-04-22.jsonl
+2025-04-23 00:12:54,160 - main - INFO - Fallback locations: /hub_data/focus_logs/daily_summary_2025-04-22.json or /hub_data/focus_logs/focus_log_2025-04-22.jsonl
+2025-04-23 00:12:54,163 - main - INFO - Serving pre-generated summary from FocusTimer for 2025-04-22
+2025-04-23 10:40:37,289 - main - INFO - WebSocket disconnected from 172.28.0.1:55674. Remaining: 3
+2025-04-23 10:40:37,290 - main - INFO - WebSocket disconnected from 172.28.0.1:55736. Remaining: 2
+2025-04-23 10:40:37,291 - main - INFO - File Watcher: Processing 'modified' for 'llm_task_controller.log'
+2025-04-23 10:40:38,505 - main - INFO - Looking for focus logs in primary location: /focus_timer/focus_logs/daily_summary_2025-04-23.json or /focus_timer/focus_logs/focus_log_2025-04-23.jsonl
+2025-04-23 10:40:38,506 - main - INFO - Fallback locations: /hub_data/focus_logs/daily_summary_2025-04-23.json or /hub_data/focus_logs/focus_log_2025-04-23.jsonl
+2025-04-23 10:40:38,509 - main - INFO - Pre-generated summary not found, attempting on-demand calculation.
+2025-04-23 10:40:38,510 - main - INFO - Calculating from FocusTimer log file
+2025-04-23 10:40:38,510 - main - INFO - Calculating on-demand summary for 2025-04-23 from /focus_timer/focus_logs/focus_log_2025-04-23.jsonl
+2025-04-23 10:40:38,532 - main - INFO - Successfully calculated on-demand summary for 2025-04-23
+2025-04-23 10:40:38,542 - main - INFO - File Watcher: Processing 'modified' for 'llm_task_controller.log'
+2025-04-23 10:40:38,543 - main - INFO - Looking for focus logs in primary location: /focus_timer/focus_logs/daily_summary_2025-04-23.json or /focus_timer/focus_logs/focus_log_2025-04-23.jsonl
+2025-04-23 10:40:38,543 - main - INFO - Fallback locations: /hub_data/focus_logs/daily_summary_2025-04-23.json or /hub_data/focus_logs/focus_log_2025-04-23.jsonl
+2025-04-23 10:40:38,545 - main - INFO - Pre-generated summary not found, attempting on-demand calculation.
+2025-04-23 10:40:38,546 - main - INFO - Calculating from FocusTimer log file
+2025-04-23 10:40:38,546 - main - INFO - Calculating on-demand summary for 2025-04-23 from /focus_timer/focus_logs/focus_log_2025-04-23.jsonl
+2025-04-23 10:40:38,557 - main - INFO - Successfully calculated on-demand summary for 2025-04-23
+2025-04-23 10:40:38,602 - main - INFO - New WebSocket connection from 172.28.0.1:47666. Total: 3
+2025-04-23 10:40:38,640 - main - INFO - New WebSocket connection from 172.28.0.1:47680. Total: 4
+2025-04-23 10:40:55,046 - main - INFO - Chat request received for model: gemma3:27b-it-qat
+2025-04-23 10:40:55,047 - main - INFO - Including project information in context
+2025-04-23 10:40:55,062 - main - INFO - Added project context for 2 projects
+2025-04-23 10:40:55,062 - main - INFO - Including tasks information in context
+2025-04-23 10:40:55,093 - main - INFO - Added context for 15 tasks
+2025-04-23 10:40:55,093 - main - INFO - Added system context with workspace data
+2025-04-23 10:40:55,094 - ollama_client - INFO - Sending chat request to Ollama for model: gemma3:27b-it-qat
+2025-04-23 10:41:23,867 - llm_json_extractor - WARNING - No valid JSON found in LLM response
+2025-04-23 10:41:23,872 - main - INFO - File Watcher: Processing 'modified' for 'llm_task_controller.log'
+2025-04-23 10:41:23,873 - main - INFO - File Watcher: Processing 'modified' for 'llm_task_controller.log'
+2025-04-23 11:41:10,007 - main - INFO - WebSocket disconnected from 172.28.0.1:55758. Remaining: 3
+2025-04-23 11:41:10,008 - main - INFO - WebSocket disconnected from 172.28.0.1:47666. Remaining: 2
+2025-04-23 11:41:10,008 - main - INFO - WebSocket disconnected from 172.28.0.1:55778. Remaining: 1
+2025-04-23 11:41:10,009 - main - INFO - WebSocket disconnected from 172.28.0.1:47680. Remaining: 0
+2025-04-23 11:41:10,010 - main - INFO - File Watcher: Processing 'modified' for 'llm_task_controller.log'
+2025-04-23 11:41:10,106 - main - INFO - --- Shutting down Projects Hub Backend ---
+2025-04-23 11:41:10,148 - main - INFO - File system watcher stopped.

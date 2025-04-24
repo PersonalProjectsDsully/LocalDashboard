@@ -1,0 +1,96 @@
+/* Force Dark Mode Styles */
+/* This can be imported to force dark mode regardless of system settings */
+
+/* Base colors */
+:root {
+  --bg-primary: #0f172a !important;      /* slate-900 */
+  --bg-secondary: #1e293b !important;    /* slate-800 */
+  --bg-surface: #1e293b !important;      /* slate-800 */
+  --bg-card: #1e293b !important;         /* slate-800 */
+  
+  --text-primary: #f8fafc !important;    /* slate-50 */
+  --text-secondary: #e2e8f0 !important;  /* slate-200 */
+  --text-muted: #94a3b8 !important;      /* slate-400 */
+  
+  --border-subtle: #334155 !important;   /* slate-700 */
+  --border-strong: #475569 !important;   /* slate-600 */
+}
+
+/* Main content */
+.main-content {
+  background-color: var(--bg-primary) !important;
+  color: var(--text-primary) !important;
+}
+
+/* Kanban UI */
+.kanban-column {
+  background-color: #0f172a !important; 
+  border: 1px solid #334155 !important;
+}
+
+.kanban-column-header h2 {
+  color: #f8fafc !important;
+}
+
+.kanban-card {
+  background-color: #1e293b !important;
+  color: #f8fafc !important;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3) !important;
+  border: 1px solid #334155 !important;
+}
+
+.kanban-card:hover {
+  background-color: #334155 !important;
+}
+
+.kanban-card .task-title {
+  color: #f8fafc !important;
+}
+
+.kanban-card .task-description {
+  color: #cbd5e1 !important;
+}
+
+.kanban-card .task-meta {
+  color: #94a3b8 !important;
+}
+
+/* Priority indicators */
+.kanban-card.priority-high,
+.kanban-card.border-l-red-500 {
+  border-left-color: #ef4444 !important; /* red-500 */
+}
+
+.kanban-card.priority-medium,
+.kanban-card.border-l-yellow-400 {
+  border-left-color: #f59e0b !important; /* amber-500 */
+}
+
+.kanban-card.priority-low,
+.kanban-card.border-l-blue-500 {
+  border-left-color: #3b82f6 !important; /* blue-500 */
+}
+
+/* Empty states */
+.empty-state, 
+.task-empty-placeholder {
+  border-color: #334155 !important;
+  color: #94a3b8 !important;
+}
+
+/* Form elements */
+select, button, input {
+  background-color: #1e293b !important;
+  color: #f8fafc !important;
+  border-color: #475569 !important;
+}
+
+button.bg-blue-500,
+button.bg-blue-600 {
+  background-color: #3b82f6 !important; /* blue-500 */
+}
+
+button.bg-blue-500:hover,
+button.bg-blue-600:hover {
+  background-color: #2563eb !important; /* blue-600 */
+}

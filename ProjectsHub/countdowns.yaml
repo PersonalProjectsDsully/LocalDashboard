@@ -1,9 +1,1 @@
-alarms:
-- id: alarm-1745189700545
-  title: Test
-  days: 1
-  time: null
-  thresholds:
-    red: 3
-    amber: 7
-    green: 14
+alarms: []

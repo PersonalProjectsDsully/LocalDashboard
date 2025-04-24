@@ -1,47 +1,48 @@
 - id: task-1
   title: Create wireframes
   description: Design initial wireframes for homepage, about page, and contact page
-  status: done
+  status: in-progress
   priority: high
+  due: '2025-04-10'
   assigned_to: Jane Smith
-  due: 2025-04-10
-
+  updated_at: '2025-04-22T11:50:02.884106'
 - id: task-2
   title: Develop homepage
   description: Implement the homepage based on approved wireframes
-  status: in-progress
+  status: todo
   priority: high
+  due: '2025-04-25'
   assigned_to: Bob Johnson
-  due: 2025-04-25
-
+  updated_at: '2025-04-22T11:50:12.422373'
 - id: task-3
   title: Implement responsive design
   description: Ensure the website works well on mobile devices
-  status: todo
+  status: in-progress
   priority: medium
+  due: '2025-05-05'
   assigned_to: Bob Johnson
-  due: 2025-05-05
-
+  updated_at: '2025-04-21T23:09:28.234373'
 - id: task-4
   title: Content migration
   description: Move content from old website to new CMS
-  status: todo
+  status: done
   priority: medium
+  due: '2025-05-10'
   assigned_to: John Doe
-  due: 2025-05-10
-
+  updated_at: '2025-04-22T11:50:10.939110'
 - id: task-5
   title: User testing
   description: Conduct user testing sessions with 5-10 participants
-  status: todo
+  status: in-progress
   priority: high
+  due: '2025-05-12'
   assigned_to: Jane Smith
-  due: 2025-05-12
-
+  updated_at: '2025-04-21T23:09:29.284184'
 - id: task-6
   title: Launch website
   description: Deploy the new website to production
-  status: todo
+  status: in-progress
   priority: high
+  due: '2025-05-15'
   assigned_to: John Doe
-  due: 2025-05-15
+  updated_at: '2025-04-22T11:50:08.582865'

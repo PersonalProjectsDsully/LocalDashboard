@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, useLocation } from 'react-router-dom';
 import axios from 'axios';
 import { KBarProvider } from 'kbar';
 import Sidebar from './components/Sidebar';
@@ -61,6 +61,7 @@ export const eventBus = {
 
 
 function App() {
+  const location = useLocation();
   const [isWsConnected, setIsWsConnected] = useState(false);
   const [wsClient, setWsClient] = useState<WebSocket | null>(null);
   const [activityItems, setActivityItems] = useState<ActivityItem[]>([]);

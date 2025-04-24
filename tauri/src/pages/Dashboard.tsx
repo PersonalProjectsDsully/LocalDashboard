@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef, useCallback } from 'react';
+import React, { useState, useEffect, useRef, useCallback, useMemo } from 'react';
 import axios from 'axios';
 import { format, formatDistanceToNow } from 'date-fns';
 import { useNavigate } from 'react-router-dom';
@@ -35,7 +35,11 @@ interface Alarm {
   id: string;
   title: string;
   days: number;
+  hours?: number;
+  minutes?: number;
+  seconds?: number;
   time?: string;
+  targetDate?: string;
   thresholds: {
     green: number;
     amber: number;
@@ -65,78 +69,92 @@ const COLORS = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042', '#8884D8', '#82CA9D'
 
 // --- PinnedDocCard Component ---
 const PinnedDocCard: React.FC<{
-  doc: PinnedDoc;
-  index: number;
-  moveDoc: (dragIndex: number, hoverIndex: number) => void;
-  togglePin: (id: string) => void;
-}> = ({ doc, index, moveDoc, togglePin }) => {
+doc: PinnedDoc;
+index: number;
+moveDoc: (dragIndex: number, hoverIndex: number) => void;
+togglePin: (id: string) => void;
+  openDocument: (doc: PinnedDoc) => void;
+}> = ({ doc, index, moveDoc, togglePin, openDocument }) => {
   const ref = useRef<HTMLDivElement>(null);
+const navigate = useNavigate();
 
-  const [{ isDragging }, drag] = useDrag({
-    type: ItemTypes.PINNED_DOC,
-    item: (): DragItem => ({ type: ItemTypes.PINNED_DOC, id: doc.id, index }),
+const [{ isDragging }, drag] = useDrag({
+type: ItemTypes.PINNED_DOC,
+  item: (): DragItem => ({ type: ItemTypes.PINNED_DOC, id: doc.id, index }),
     collect: (monitor) => ({ isDragging: monitor.isDragging() }),
-  });
+});
 
-  const [, drop] = useDrop<DragItem, void, unknown>({
-    accept: ItemTypes.PINNED_DOC,
-    hover: (item: DragItem, monitor: DropTargetMonitor<DragItem, void>) => {
-      if (!ref.current) return;
-      const dragIndex = item.index;
-      const hoverIndex = index;
-      if (dragIndex === hoverIndex) return;
-      const hoverBoundingRect = ref.current.getBoundingClientRect();
-      const hoverMiddleY = (hoverBoundingRect.bottom - hoverBoundingRect.top) / 2;
-      const clientOffset = monitor.getClientOffset();
-      // Ensure clientOffset is not null and assert type
-      if (!clientOffset) return;
-      const hoverClientY = (clientOffset as XYCoord).y - hoverBoundingRect.top;
-      if (dragIndex < hoverIndex && hoverClientY < hoverMiddleY) return;
-      if (dragIndex > hoverIndex && hoverClientY > hoverMiddleY) return;
-      moveDoc(dragIndex, hoverIndex);
-      item.index = hoverIndex; // Mutate monitor item for performance
+const [, drop] = useDrop<DragItem, void, unknown>({
+accept: ItemTypes.PINNED_DOC,
+hover: (item: DragItem, monitor: DropTargetMonitor<DragItem, void>) => {
+if (!ref.current) return;
+const dragIndex = item.index;
+const hoverIndex = index;
+if (dragIndex === hoverIndex) return;
+const hoverBoundingRect = ref.current.getBoundingClientRect();
+const hoverMiddleY = (hoverBoundingRect.bottom - hoverBoundingRect.top) / 2;
+const clientOffset = monitor.getClientOffset();
+// Ensure clientOffset is not null and assert type
+if (!clientOffset) return;
+const hoverClientY = (clientOffset as XYCoord).y - hoverBoundingRect.top;
+if (dragIndex < hoverIndex && hoverClientY < hoverMiddleY) return;
+if (dragIndex > hoverIndex && hoverClientY > hoverMiddleY) return;
+  moveDoc(dragIndex, hoverIndex);
+    item.index = hoverIndex; // Mutate monitor item for performance
     },
-  });
+});
 
   drag(drop(ref));
-  const opacity = isDragging ? 0.4 : 1;
+const opacity = isDragging ? 0.4 : 1;
 
-  const getFileIcon = (path: string = '') => {
-    const extension = path.split('.').pop()?.toLowerCase();
-    switch (extension) {
-      case 'md': return '📄'; case 'pdf': return '📕'; case 'doc': case 'docx': return '📘';
-      case 'xls': case 'xlsx': return '📗'; case 'ppt': case 'pptx': return '📙';
-      case 'jpg': case 'jpeg': case 'png': case 'gif': case 'svg': return '🖼️';
-      case 'zip': case 'rar': case '7z': return '📦'; case 'exe': return '⚙️'; case 'txt': return '📝';
-      case 'yaml': case 'json': return '{..}'; case 'html': return '</>'; case 'css': return '#{}';
-      case 'js': case 'ts': return ' J S '; case 'jsx': case 'tsx': return '<R>';
-      default: return '📎';
+const getFileIcon = (path: string = '') => {
+const extension = path.split('.').pop()?.toLowerCase();
+switch (extension) {
+case 'md': return '📄'; case 'pdf': return '📕'; case 'doc': case 'docx': return '📘';
+case 'xls': case 'xlsx': return '📗'; case 'ppt': case 'pptx': return '📙';
+case 'jpg': case 'jpeg': case 'png': case 'gif': case 'svg': return '🖼️';
+case 'zip': case 'rar': case '7z': return '📦'; case 'exe': return '⚙️'; case 'txt': return '📝';
+case 'yaml': case 'json': return '{..}'; case 'html': return '</>'; case 'css': return '#{}'; 
+  case 'js': case 'ts': return ' J S '; case 'jsx': case 'tsx': return '<R>';
+    default: return '📎';
     }
-  };
+};
 
-  return (
-    <div
-      ref={ref}
-      className="card doc-card bg-white dark:bg-gray-800 shadow rounded p-3 flex items-start gap-3 border border-gray-200 dark:border-gray-700 cursor-grab active:cursor-grabbing transition-opacity"
-      style={{ opacity }}
-      title={`Path: ${doc.path}\nLast Modified: ${doc.lastModified ? format(new Date(doc.lastModified), 'Pp') : 'N/A'}`}
-    >
-      <div className="doc-icon text-xl text-gray-500 dark:text-gray-400 mt-1 flex-shrink-0">
-        {getFileIcon(doc.path)}
-      </div>
-      <div className="doc-content flex-1 overflow-hidden">
-        <h3 className="doc-title text-sm font-medium text-gray-800 dark:text-gray-100 truncate">{doc.title || doc.path}</h3>
-        <p className="doc-path text-xs text-gray-500 dark:text-gray-400 truncate">{doc.path}</p>
-        {doc.lastModified && (
-          <p className="doc-last-modified text-xs text-gray-500 dark:text-gray-400 mt-1">
-            Modified: {formatDistanceToNow(new Date(doc.lastModified), { addSuffix: true })}
-          </p>
-        )}
-      </div>
-      <div className="doc-actions ml-auto flex-shrink-0">
+const handleCardClick = (e: React.MouseEvent) => {
+// Don't navigate if clicking on the unpin button
+if ((e.target as HTMLElement).closest('.pin-button')) {
+return;
+}
+openDocument(doc);
+};
+
+return (
+<div
+ref={ref}
+className="card doc-card bg-white dark:bg-gray-800 shadow rounded p-3 flex items-start gap-3 border border-gray-200 dark:border-gray-700 cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-750 active:cursor-grabbing transition-opacity"
+style={{ opacity }}
+title={`Path: ${doc.path}\nLast Modified: ${doc.lastModified ? format(new Date(doc.lastModified), 'Pp') : 'N/A'}`}
+onClick={handleCardClick}
+>
+<div className="doc-icon text-xl text-gray-500 dark:text-gray-400 mt-1 flex-shrink-0">
+  {getFileIcon(doc.path)}
+</div>
+<div className="doc-content flex-1 overflow-hidden">
+<h3 className="doc-title text-sm font-medium text-gray-800 dark:text-gray-100 truncate">{doc.title || doc.path}</h3>
+<p className="doc-path text-xs text-gray-500 dark:text-gray-400 truncate">{doc.path}</p>
+{doc.lastModified && (
+  <p className="doc-last-modified text-xs text-gray-500 dark:text-gray-400 mt-1">
+  Modified: {formatDistanceToNow(new Date(doc.lastModified), { addSuffix: true })}
+  </p>
+  )}
+  </div>
+    <div className="doc-actions ml-auto flex-shrink-0">
         <button
-          className={`pin-button text-lg ${true ? 'text-yellow-500 hover:text-yellow-400' : 'text-gray-400 hover:text-gray-600 dark:hover:text-gray-300'}`}
-          onClick={() => togglePin(doc.id)}
+          className="pin-button text-lg text-yellow-500 hover:text-yellow-400"
+          onClick={(e) => {
+            e.stopPropagation(); // Prevent card click propagation
+            togglePin(doc.id);
+          }}
           title="Unpin document"
           aria-label="Unpin document"
         >
@@ -156,6 +174,117 @@ const EmptyDocCard: React.FC = () => {
   );
 };
 
+
+// --- AlarmCountdown Component ---
+const AlarmCountdown: React.FC<{ alarm: Alarm }> = ({ alarm }) => {
+  // Calculate correct initial time immediately
+  const calculateTimeRemaining = useCallback(() => {
+    let targetDate: Date | null = null;
+    
+    // If we have a targetDate, use it to calculate time difference
+    if (alarm.targetDate) {
+      targetDate = new Date(alarm.targetDate);
+    } else if (alarm.days || alarm.hours || alarm.minutes || alarm.seconds) {
+      // Create a virtual target date based on current values
+      const now = new Date();
+      targetDate = new Date(now.getTime());
+      targetDate.setDate(targetDate.getDate() + (alarm.days || 0));
+      targetDate.setHours(targetDate.getHours() + (alarm.hours || 0));
+      targetDate.setMinutes(targetDate.getMinutes() + (alarm.minutes || 0));
+      targetDate.setSeconds(targetDate.getSeconds() + (alarm.seconds || 0));
+    }
+    
+    if (targetDate) {
+      // Calculate based on the fixed target date for consistent countdown
+      const now = new Date();
+      const diff = Math.max(0, Math.floor((targetDate.getTime() - now.getTime()) / 1000));
+      
+      // Convert seconds to days, hours, minutes, seconds
+      const days = Math.floor(diff / 86400);
+      const hours = Math.floor((diff % 86400) / 3600);
+      const minutes = Math.floor((diff % 3600) / 60);
+      const seconds = diff % 60;
+      
+      return { days, hours, minutes, seconds };
+    }
+    
+    // Fallback to alarm values
+    return { 
+      days: alarm.days || 0, 
+      hours: alarm.hours || 0, 
+      minutes: alarm.minutes || 0, 
+      seconds: alarm.seconds || 0 
+    };
+  }, [alarm]);
+  
+  // Initialize state with correct values immediately
+  const [timeRemaining, setTimeRemaining] = useState(calculateTimeRemaining());
+  
+  // Update countdown in real-time
+  useEffect(() => {
+    // Make sure we're starting with fresh values when alarm changes
+    setTimeRemaining(calculateTimeRemaining());
+    
+    // Create reference to targetDate for interval
+    let targetDate: Date | null = null;
+    
+    // If we have a targetDate, use it to calculate time difference
+    if (alarm.targetDate) {
+      targetDate = new Date(alarm.targetDate);
+    } else if (alarm.days || alarm.hours || alarm.minutes || alarm.seconds) {
+      // Create a virtual target date based on current values
+      const now = new Date();
+      targetDate = new Date(now.getTime());
+      targetDate.setDate(targetDate.getDate() + (alarm.days || 0));
+      targetDate.setHours(targetDate.getHours() + (alarm.hours || 0));
+      targetDate.setMinutes(targetDate.getMinutes() + (alarm.minutes || 0));
+      targetDate.setSeconds(targetDate.getSeconds() + (alarm.seconds || 0));
+    }
+    
+    // Start the timer
+    const timer = setInterval(() => {
+      if (targetDate) {
+        // Always calculate based on the fixed target date for consistent countdown
+        const now = new Date();
+        const diff = Math.max(0, Math.floor((targetDate.getTime() - now.getTime()) / 1000));
+        
+        // Convert seconds to days, hours, minutes, seconds
+        const days = Math.floor(diff / 86400);
+        const hours = Math.floor((diff % 86400) / 3600);
+        const minutes = Math.floor((diff % 3600) / 60);
+        const seconds = diff % 60;
+        
+        setTimeRemaining({ days, hours, minutes, seconds });
+      } else {
+        // Fallback local countdown mode (less accurate)
+        setTimeRemaining(prev => {
+          // Calculate total seconds
+          let totalSeconds = (prev.days * 86400) + (prev.hours * 3600) + (prev.minutes * 60) + prev.seconds;
+          
+          // Decrement by 1 second
+          totalSeconds = Math.max(0, totalSeconds - 1);
+          
+          // Convert back to days, hours, minutes, seconds
+          const days = Math.floor(totalSeconds / 86400);
+          const hours = Math.floor((totalSeconds % 86400) / 3600);
+          const minutes = Math.floor((totalSeconds % 3600) / 60);
+          const seconds = totalSeconds % 60;
+          
+          return { days, hours, minutes, seconds };
+        });
+      }
+    }, 1000);
+    
+    return () => clearInterval(timer);
+  }, [alarm, calculateTimeRemaining]);
+  
+  // Format time as DD:HH:MM:SS
+  return (
+    <span className="text-base font-mono font-bold flex-shrink-0 ml-2">
+      {String(timeRemaining.days).padStart(2, '0')}:{String(timeRemaining.hours).padStart(2, '0')}:{String(timeRemaining.minutes).padStart(2, '0')}:{String(timeRemaining.seconds).padStart(2, '0')}
+    </span>
+  );
+};
 
 // --- Dashboard Component ---
 const Dashboard: React.FC = () => {
@@ -240,20 +369,39 @@ const Dashboard: React.FC = () => {
     };
 
     const fetchPinnedDocs = async () => {
-        // TODO: Replace with actual API call, e.g., GET /meta/pinned_docs
         try {
-             console.log("Fetching pinned docs (using mock data)...");
-             await new Promise(resolve => setTimeout(resolve, 200)); // Simulate delay
-             const mockDocsData = [
-                 { id: 'Project-A/docs/overview.md', title: 'Project Overview', path: 'Project-A/docs/overview.md', lastModified: '2025-04-18T14:30:00Z' },
-                 { id: 'Project-B/docs/meeting-notes.md', title: 'Meeting Notes', path: 'Project-B/docs/meeting-notes.md', lastModified: '2025-04-15T10:00:00Z' },
-                 { id: 'Project-A/docs/roadmap.md', title: 'Development Roadmap', path: 'Project-A/docs/roadmap.md', lastModified: '2025-04-16T09:15:00Z' },
-             ];
-             setPinnedDocs(mockDocsData);
+             console.log("Fetching pinned docs from API...");
+             const res = await axios.get('http://localhost:8000/meta/pinned_docs');
+             setPinnedDocs(res.data.pinned_docs || []);
         } catch (err) {
              console.error('Error fetching pinned docs:', err);
-             setPinnedDocs([]);
-             errorsAccumulator.push('Failed to load pinned documents.');
+             // Fall back to local storage if available as a backup
+             try {
+                const storedDocs = localStorage.getItem('pinnedDocs');
+                if (storedDocs) {
+                    const parsedDocs = JSON.parse(storedDocs);
+                    setPinnedDocs(parsedDocs);
+                } else {
+                    // Fall back to mock data if API is unavailable and no localStorage
+                    console.log("API and localStorage unavailable, using mock data");
+                    const mockDocsData = [
+                        { id: 'Project-A/docs/overview.md', title: 'Project Overview', path: 'Project-A/docs/overview.md', lastModified: '2025-04-18T14:30:00Z' },
+                        { id: 'Project-B/docs/meeting-notes.md', title: 'Meeting Notes', path: 'Project-B/docs/meeting-notes.md', lastModified: '2025-04-15T10:00:00Z' },
+                        { id: 'Project-A/docs/roadmap.md', title: 'Development Roadmap', path: 'Project-A/docs/roadmap.md', lastModified: '2025-04-16T09:15:00Z' },
+                    ];
+                    setPinnedDocs(mockDocsData);
+                    // Save to localStorage for future use
+                    try {
+                        localStorage.setItem('pinnedDocs', JSON.stringify(mockDocsData));
+                    } catch (e) {
+                        console.error('Failed to save mock data to localStorage:', e);
+                    }
+                }
+             } catch (storageErr) {
+                console.error('Error reading from localStorage:', storageErr);
+                setPinnedDocs([]);
+                errorsAccumulator.push('Failed to load pinned documents.');
+             }
         } finally { setLoadingPinnedDocs(false); }
     };
 
@@ -306,9 +454,17 @@ const Dashboard: React.FC = () => {
 
   // --- Helper Functions ---
   const getAlarmStatus = (alarm: Alarm): 'red' | 'amber' | 'green' => {
-    const daysLeft = alarm.days;
-    if (daysLeft <= alarm.thresholds.red) return 'red';
-    if (daysLeft <= alarm.thresholds.amber) return 'amber';
+    // Calculate total time in days (including hours, minutes, seconds)
+    const days = alarm.days || 0;
+    const hours = alarm.hours || 0;
+    const minutes = alarm.minutes || 0;
+    const seconds = alarm.seconds || 0;
+    
+    // Convert everything to days for threshold comparison
+    const totalDays = days + (hours / 24) + (minutes / 1440) + (seconds / 86400);
+    
+    if (totalDays <= alarm.thresholds.red) return 'red';
+    if (totalDays <= alarm.thresholds.amber) return 'amber';
     return 'green';
   };
 
@@ -429,19 +585,99 @@ const Dashboard: React.FC = () => {
         const newDocs = [...prevDocs];
         const [draggedDoc] = newDocs.splice(dragIndex, 1);
         newDocs.splice(hoverIndex, 0, draggedDoc);
-        // TODO: API Call - Persist this new order
-        console.log("New pinned doc order (needs saving via API):", newDocs.map(d => d.path));
-        // axios.put('/meta/pinned_docs', { paths: newDocs.map(d => d.path) });
+        
+        // Persist the new order via API
+        const docPaths = newDocs.map(d => d.path);
+        console.log("New pinned doc order - saving via API:", docPaths);
+        
+        // Use setTimeout to not block the UI update
+        setTimeout(() => {
+            // Update localStorage first for resilience
+            try {
+                localStorage.setItem('pinnedDocs', JSON.stringify(newDocs));
+                console.log("Updated localStorage with new pinned docs order");
+            } catch (e) {
+                console.error('Failed to update localStorage:', e);
+            }
+            
+            // Then try the API
+            axios.put('http://localhost:8000/meta/pinned_docs', docPaths)
+                .then(() => {
+                    console.log("Successfully updated pinned docs order via API");
+                })
+                .catch(err => {
+                    console.error("Failed to update pinned docs order via API:", err);
+                    console.log("Using localStorage order only");
+                    setError("API unavailable: Document order saved locally only");
+                    // Clear error after a few seconds
+                    setTimeout(() => setError(null), 3000);
+                });
+        }, 300); // Small delay for better UX
+        
         return newDocs;
     });
   }, []);
 
   const togglePin = (id: string) => {
-    // TODO: API Call - Remove doc from pinned list in 00-meta.yaml
-    console.log('Toggle pin for doc (needs API call):', id);
+    // Find the doc being unpinned
+    const docToUnpin = pinnedDocs.find(doc => doc.id === id);
+    if (!docToUnpin) return;
+    
+    console.log('Unpinning document:', docToUnpin.path);
+    
     // Optimistically remove from UI
     setPinnedDocs(prev => prev.filter(doc => doc.id !== id));
+    
+    // Update localStorage first for resilience
+    try {
+      const storedDocs = localStorage.getItem('pinnedDocs');
+      if (storedDocs) {
+        const parsedDocs = JSON.parse(storedDocs);
+        const updatedDocs = parsedDocs.filter((doc: any) => 
+          doc.id !== id && doc.path !== docToUnpin.path
+        );
+        localStorage.setItem('pinnedDocs', JSON.stringify(updatedDocs));
+        console.log("Updated localStorage after unpinning");
+      }
+    } catch (storageErr) {
+      console.error('Failed to update localStorage:', storageErr);
+    }
+    
+    // Call API to unpin
+    axios.delete(`http://localhost:8000/meta/pinned_docs/${encodeURIComponent(docToUnpin.path)}`)
+        .then(() => {
+            console.log("Successfully unpinned document via API");
+        })
+        .catch(err => {
+            console.error("Failed to unpin document via API:", err);
+            console.log("Document unpinned locally only");
+            // No UI revert needed since we've already updated localStorage
+            setError("API unavailable: Document unpinned locally only");
+            // Clear error after a few seconds
+            setTimeout(() => setError(null), 3000);
+        });
   };
+  
+  const openDocument = useCallback((doc: PinnedDoc) => {
+    console.log('Opening document:', doc.path);
+    
+    // Extract project ID from path
+    const pathParts = doc.path.split('/');
+    if (pathParts.length < 2) {
+        setError("Invalid document path. Cannot open.");
+        return;
+    }
+    
+    const projectId = pathParts[0];
+    
+    // Navigate to Documents page with the selected project and document
+    navigate('/documents', { 
+        state: { 
+            projectId: projectId,
+            docPath: doc.path 
+        } 
+    });
+  }, [navigate]);
 
 
   // --- Render ---
@@ -503,13 +739,12 @@ const Dashboard: React.FC = () => {
                                 return (
                                 <div key={alarm.id} className={`card alarm-card shadow rounded p-3 border-l-4 ${getAlarmStatusClasses(status)}`} title={`Thresholds: R<=${alarm.thresholds.red}, A<=${alarm.thresholds.amber}, G>${alarm.thresholds.amber}`}>
                                     <div className="flex justify-between items-center">
-                                        <h3 className="text-base font-medium flex items-center gap-2">
-                                            <span className={`alarm-icon text-lg`}>⏰</span>
+                                        <h3 className="text-base font-medium">
                                             {alarm.title}
                                         </h3>
-                                        <span className="text-base font-bold flex-shrink-0 ml-2">{alarm.days}d</span>
+                                        <AlarmCountdown alarm={alarm} />
                                     </div>
-                                    {alarm.time && <p className="text-xs text-gray-500 dark:text-gray-400 mt-1 ml-7">Due at {alarm.time}</p>}
+                                    {alarm.time && <p className="text-xs text-gray-500 dark:text-gray-400 mt-1">Due at {alarm.time}</p>}
                                 </div>
                                 )
                             })
@@ -527,7 +762,14 @@ const Dashboard: React.FC = () => {
                         {loadingPinnedDocs ? ( <div className="text-gray-500 dark:text-gray-400 text-sm p-4 text-center">Loading pinned docs...</div> )
                         : pinnedDocs.length > 0 ? (
                             pinnedDocs.map((doc, index) => (
-                            <PinnedDocCard key={doc.id} doc={doc} index={index} moveDoc={moveDoc} togglePin={togglePin} />
+                            <PinnedDocCard 
+                              key={doc.id} 
+                              doc={doc} 
+                              index={index} 
+                              moveDoc={moveDoc} 
+                              togglePin={togglePin} 
+                              openDocument={openDocument}
+                            />
                             ))
                         ) : ( <EmptyDocCard /> )}
                         </div>

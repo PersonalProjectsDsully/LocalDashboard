@@ -1,0 +1,36 @@
+{
+  "id": "68559ad1-edac-4a1a-acb7-b82d442f7147",
+  "title": "68559ad1-edac-4a1a-acb7-b82d442f7147",
+  "lastMessage": "What Projects am I working on right now?\n\n",
+  "lastUpdated": "2025-04-22T23:59:41.713320",
+  "messages": [
+    {
+      "id": "msg_1745365756_user",
+      "role": "user",
+      "content": "What Projects am I working on right now?",
+      "timestamp": "2025-04-22T23:49:16.388232",
+      "model": null
+    },
+    {
+      "id": "resp_1745365756",
+      "role": "assistant",
+      "content": "You are currently working on the following projects:\n\n1. Project-A: Website Redesign (Status: active)\n2. Project-B: Mobile App Development (Status: planning) \n\nHowever, based on the task status, it seems you are actively working on tasks within Project-A.",
+      "timestamp": "2025-04-22T23:49:16.388242",
+      "model": "llama3.1:8b"
+    },
+    {
+      "id": "msg_1745366381_user",
+      "role": "user",
+      "content": "What Projects am I working on right now?\n\n",
+      "timestamp": "2025-04-22T23:59:41.709450",
+      "model": null
+    },
+    {
+      "id": "resp_1745366381",
+      "role": "assistant",
+      "content": "Based on the task statuses, it appears that you are currently working on:\n\n1. Project-A: Website Redesign (Status: in-progress for tasks task-3 and task-5)\n\nYou are actively working on tasks related to implementing responsive design (task-3) and user testing (task-5) within Project-A.",
+      "timestamp": "2025-04-22T23:59:41.709463",
+      "model": "llama3.1:8b"
+    }
+  ]
+}

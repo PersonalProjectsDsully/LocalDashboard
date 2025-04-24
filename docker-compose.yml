@@ -5,6 +5,7 @@ services:
     build: docker/backend
     volumes:
       - ./ProjectsHub:/hub_data
+      - C:/Users/admin/Desktop/FocusTimer:/focus_timer
     ports:
       - "8000:8000"
     restart: unless-stopped

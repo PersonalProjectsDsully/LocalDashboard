@@ -1,0 +1,34 @@
+{
+  "id": "10e98024-131e-4436-af8b-79789c9e5069",
+  "title": "Chat 4/21/2025, 7:28:45 AM",
+  "lastMessage": "Response from assistant",
+  "lastUpdated": "2025-04-21T12:44:58.795719+00:00",
+  "messages": [
+    {
+      "id": "msg_1745234961452",
+      "role": "user",
+      "content": "test",
+      "timestamp": "2025-04-21T11:29:21.452899+00:00"
+    },
+    {
+      "id": "resp_1745234965",
+      "role": "assistant",
+      "content": "Okay, I see your \"test\"! \n\nIs there anything specific you'd like me to *do* with this test?  For example, are you:\n\n* **Checking if I'm responding?** (Yes, I am!)\n* **Testing my speed?**\n* **Testing a specific command or question?**\n* **Just seeing what I say?**\n\nLet me know what you want me to do, or if you just wanted to see if I worked, then great!  I'm here and ready to help.\n\n\n\n",
+      "timestamp": "2025-04-21T11:29:25.004133+00:00",
+      "model": "gemma3:27b-it-qat"
+    },
+    {
+      "id": "msg_1745239470984",
+      "role": "user",
+      "content": "Good morning",
+      "timestamp": "2025-04-21T12:44:30.984685+00:00"
+    },
+    {
+      "id": "resp_1745239498",
+      "role": "assistant",
+      "content": "Good morning to you too! \u2600\ufe0f \n\nI hope you have a wonderful day ahead. Is there anything I can help you with this morning? Perhaps you'd like:\n\n* **A news update?**\n* **A fun fact?**\n* **Help with a task?**\n* **Just a friendly chat?**\n\n\n\n",
+      "timestamp": "2025-04-21T12:44:58.795706+00:00",
+      "model": "gemma3:27b-it-qat"
+    }
+  ]
+}

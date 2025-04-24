@@ -2255,3 +2255,1745 @@ NameError: name 'time' is not defined. Did you forget to import 'time'
 2025-04-20 23:45:10,305 [INFO] main: Pre-generated summary not found for 2025-04-20, attempting on-demand calculation.
 2025-04-20 23:45:10,306 [INFO] main: Calculating on-demand summary for 2025-04-20 from /hub_data/focus_logs/focus_log_2025-04-20.jsonl
 2025-04-20 23:45:10,311 [INFO] main: Successfully calculated on-demand summary for 2025-04-20
+2025-04-20 23:50:02,420 [INFO] main: WebSocket disconnected from 172.28.0.1:39424. Remaining: 3
+2025-04-20 23:50:02,421 [INFO] main: WebSocket disconnected from 172.28.0.1:39440. Remaining: 2
+2025-04-20 23:50:02,574 [INFO] main: New WebSocket connection from 172.28.0.1:60082. Total: 3
+2025-04-20 23:50:02,766 [INFO] ollama_client: Retrieved 7 models from Ollama server
+2025-04-20 23:50:02,767 [INFO] main: New WebSocket connection from 172.28.0.1:60120. Total: 4
+2025-04-20 23:50:02,779 [INFO] ollama_client: Retrieved 7 models from Ollama server
+2025-04-20 23:50:02,790 [INFO] ollama_client: Retrieved 7 models from Ollama server
+2025-04-20 23:50:02,796 [INFO] ollama_client: Retrieved 7 models from Ollama server
+2025-04-20 23:52:46,161 [INFO] main: Looking for focus logs at: /hub_data/focus_logs/daily_summary_2025-04-20.json or /hub_data/focus_logs/focus_log_2025-04-20.jsonl
+2025-04-20 23:52:46,162 [INFO] main: Pre-generated summary not found for 2025-04-20, attempting on-demand calculation.
+2025-04-20 23:52:46,164 [INFO] main: Calculating on-demand summary for 2025-04-20 from /hub_data/focus_logs/focus_log_2025-04-20.jsonl
+2025-04-20 23:52:46,180 [INFO] main: Successfully calculated on-demand summary for 2025-04-20
+2025-04-20 23:52:46,184 [INFO] main: Looking for focus logs at: /hub_data/focus_logs/daily_summary_2025-04-20.json or /hub_data/focus_logs/focus_log_2025-04-20.jsonl
+2025-04-20 23:52:46,185 [INFO] main: Pre-generated summary not found for 2025-04-20, attempting on-demand calculation.
+2025-04-20 23:52:46,186 [INFO] main: Calculating on-demand summary for 2025-04-20 from /hub_data/focus_logs/focus_log_2025-04-20.jsonl
+2025-04-20 23:52:46,191 [INFO] main: Successfully calculated on-demand summary for 2025-04-20
+2025-04-20 23:52:54,190 [INFO] ollama_client: Retrieved 7 models from Ollama server
+2025-04-20 23:53:04,521 [INFO] ollama_client: Retrieved 7 models from Ollama server
+2025-04-21 00:00:07,358 [INFO] main: WebSocket disconnected from 172.28.0.1:60082. Remaining: 3
+2025-04-21 00:00:07,359 [INFO] main: WebSocket disconnected from 172.28.0.1:36338. Remaining: 2
+2025-04-21 00:00:07,359 [INFO] main: WebSocket disconnected from 172.28.0.1:36324. Remaining: 1
+2025-04-21 00:00:07,360 [INFO] main: WebSocket disconnected from 172.28.0.1:60120. Remaining: 0
+2025-04-21 00:00:07,458 [INFO] main: --- Shutting down Projects Hub Backend ---
+2025-04-21 00:00:07,491 [INFO] main: File system watcher stopped.
+2025-04-21 00:00:17,884 [INFO] ollama_client: Initialized Ollama client with base URL: http://host.docker.internal:11434
+2025-04-21 00:00:17,913 [INFO] main: --- Starting Projects Hub Backend ---
+2025-04-21 00:00:17,914 [INFO] main: Watching data directory: /hub_data
+2025-04-21 00:00:17,916 [INFO] main: Hub data directory ready: /hub_data
+2025-04-21 00:00:17,917 [INFO] main: Ensured directory exists: /hub_data/focus_logs
+2025-04-21 00:00:18,056 [INFO] main: File system watcher started successfully.
+2025-04-21 00:00:18,731 [INFO] main: New WebSocket connection from 172.28.0.1:49576. Total: 1
+2025-04-21 00:00:21,715 [INFO] main: New WebSocket connection from 172.28.0.1:49582. Total: 2
+2025-04-21 00:00:21,978 [INFO] main: New WebSocket connection from 172.28.0.1:49588. Total: 3
+2025-04-21 00:00:22,011 [INFO] main: WebSocket disconnected from 172.28.0.1:49588. Remaining: 2
+2025-04-21 00:00:34,594 [INFO] main: WebSocket disconnected from 172.28.0.1:49576. Remaining: 1
+2025-04-21 00:00:34,595 [INFO] main: WebSocket disconnected from 172.28.0.1:49582. Remaining: 0
+2025-04-21 00:00:34,694 [INFO] main: --- Shutting down Projects Hub Backend ---
+2025-04-21 00:00:34,730 [INFO] main: File system watcher stopped.
+2025-04-21 00:01:42,564 [INFO] ollama_client: Initialized Ollama client with base URL: http://host.docker.internal:11434
+2025-04-21 00:01:42,593 [INFO] main: --- Starting Projects Hub Backend ---
+2025-04-21 00:01:42,593 [INFO] main: Watching data directory: /hub_data
+2025-04-21 00:01:42,596 [INFO] main: Hub data directory ready: /hub_data
+2025-04-21 00:01:42,597 [INFO] main: Ensured directory exists: /hub_data/focus_logs
+2025-04-21 00:01:42,776 [INFO] main: File system watcher started successfully.
+2025-04-21 00:01:43,753 [INFO] main: New WebSocket connection from 172.28.0.1:43538. Total: 1
+2025-04-21 00:01:44,729 [INFO] main: New WebSocket connection from 172.28.0.1:43544. Total: 2
+2025-04-21 00:02:24,970 [INFO] main: WebSocket disconnected from 172.28.0.1:43544. Remaining: 1
+2025-04-21 00:02:24,971 [INFO] main: WebSocket disconnected from 172.28.0.1:43538. Remaining: 0
+2025-04-21 00:02:25,071 [INFO] main: --- Shutting down Projects Hub Backend ---
+2025-04-21 00:02:25,105 [INFO] main: File system watcher stopped.
+2025-04-21 00:10:03,383 [INFO] ollama_client: Initialized Ollama client with base URL: http://host.docker.internal:11434
+2025-04-21 00:10:03,411 [INFO] main: --- Starting Projects Hub Backend ---
+2025-04-21 00:10:03,411 [INFO] main: Watching data directory: /hub_data
+2025-04-21 00:10:03,413 [INFO] main: Hub data directory ready: /hub_data
+2025-04-21 00:10:03,414 [INFO] main: Ensured directory exists: /hub_data/focus_logs
+2025-04-21 00:10:03,553 [INFO] main: File system watcher started successfully.
+2025-04-21 00:10:07,217 [INFO] main: New WebSocket connection from 172.28.0.1:44308. Total: 1
+2025-04-21 00:10:08,275 [INFO] main: New WebSocket connection from 172.28.0.1:44324. Total: 2
+2025-04-21 00:10:09,776 [INFO] main: New WebSocket connection from 172.28.0.1:44340. Total: 3
+2025-04-21 00:10:09,801 [INFO] ollama_client: Retrieved 7 models from Ollama server
+2025-04-21 00:10:09,818 [INFO] ollama_client: Retrieved 7 models from Ollama server
+2025-04-21 00:10:09,820 [INFO] main: New WebSocket connection from 172.28.0.1:44372. Total: 4
+2025-04-21 00:10:09,830 [INFO] ollama_client: Retrieved 7 models from Ollama server
+2025-04-21 00:10:09,895 [INFO] ollama_client: Retrieved 7 models from Ollama server
+2025-04-21 00:11:26,186 [INFO] main: WebSocket disconnected from 172.28.0.1:44372. Remaining: 3
+2025-04-21 00:11:26,187 [INFO] main: WebSocket disconnected from 172.28.0.1:44340. Remaining: 2
+2025-04-21 00:11:26,316 [INFO] main: New WebSocket connection from 172.28.0.1:37354. Total: 3
+2025-04-21 00:11:26,504 [INFO] ollama_client: Retrieved 7 models from Ollama server
+2025-04-21 00:11:26,510 [INFO] main: New WebSocket connection from 172.28.0.1:37412. Total: 4
+2025-04-21 00:11:26,521 [INFO] ollama_client: Retrieved 7 models from Ollama server
+2025-04-21 00:11:26,532 [INFO] ollama_client: Retrieved 7 models from Ollama server
+2025-04-21 00:11:26,538 [INFO] ollama_client: Retrieved 7 models from Ollama server
+2025-04-21 00:11:39,983 [INFO] main: WebSocket disconnected from 172.28.0.1:37412. Remaining: 3
+2025-04-21 00:11:39,984 [INFO] main: WebSocket disconnected from 172.28.0.1:37354. Remaining: 2
+2025-04-21 00:11:40,090 [INFO] main: New WebSocket connection from 172.28.0.1:34532. Total: 3
+2025-04-21 00:11:40,272 [INFO] ollama_client: Retrieved 7 models from Ollama server
+2025-04-21 00:11:40,273 [INFO] main: New WebSocket connection from 172.28.0.1:34556. Total: 4
+2025-04-21 00:11:40,289 [INFO] ollama_client: Retrieved 7 models from Ollama server
+2025-04-21 00:11:40,299 [INFO] ollama_client: Retrieved 7 models from Ollama server
+2025-04-21 00:11:40,305 [INFO] ollama_client: Retrieved 7 models from Ollama server
+2025-04-21 00:13:55,360 [INFO] main: WebSocket disconnected from 172.28.0.1:34532. Remaining: 3
+2025-04-21 00:13:55,361 [INFO] main: WebSocket disconnected from 172.28.0.1:34556. Remaining: 2
+2025-04-21 00:13:55,472 [INFO] main: New WebSocket connection from 172.28.0.1:49082. Total: 3
+2025-04-21 00:13:55,672 [INFO] ollama_client: Retrieved 7 models from Ollama server
+2025-04-21 00:13:55,679 [INFO] main: New WebSocket connection from 172.28.0.1:49134. Total: 4
+2025-04-21 00:13:55,689 [INFO] ollama_client: Retrieved 7 models from Ollama server
+2025-04-21 00:13:55,700 [INFO] ollama_client: Retrieved 7 models from Ollama server
+2025-04-21 00:13:55,705 [INFO] ollama_client: Retrieved 7 models from Ollama server
+2025-04-21 00:14:22,400 [INFO] main: WebSocket disconnected from 172.28.0.1:49082. Remaining: 3
+2025-04-21 00:14:22,401 [INFO] main: WebSocket disconnected from 172.28.0.1:49134. Remaining: 2
+2025-04-21 00:14:22,579 [INFO] main: New WebSocket connection from 172.28.0.1:60688. Total: 3
+2025-04-21 00:14:22,674 [INFO] ollama_client: Retrieved 7 models from Ollama server
+2025-04-21 00:14:22,685 [INFO] ollama_client: Retrieved 7 models from Ollama server
+2025-04-21 00:14:22,692 [INFO] main: New WebSocket connection from 172.28.0.1:55480. Total: 4
+2025-04-21 00:14:22,696 [INFO] ollama_client: Retrieved 7 models from Ollama server
+2025-04-21 00:14:22,702 [INFO] ollama_client: Retrieved 7 models from Ollama server
+2025-04-21 00:15:15,145 [INFO] main: Create task request received for project 5236tg: New Task 8:15:15 PM
+2025-04-21 00:15:15,161 [INFO] main: Wrote YAML: /hub_data/5236tg/tasks.yaml
+2025-04-21 00:15:15,161 [INFO] main: Broadcasting message of type 'tasks_updated' to 4 clients
+2025-04-21 00:15:15,162 [INFO] main: Message broadcast successful to 4/4 clients
+2025-04-21 00:15:27,681 [INFO] main: WebSocket disconnected from 172.28.0.1:60688. Remaining: 3
+2025-04-21 00:15:27,681 [INFO] main: WebSocket disconnected from 172.28.0.1:55480. Remaining: 2
+2025-04-21 00:15:28,012 [INFO] main: New WebSocket connection from 172.28.0.1:40344. Total: 3
+2025-04-21 00:15:28,112 [INFO] ollama_client: Retrieved 7 models from Ollama server
+2025-04-21 00:15:28,128 [INFO] main: New WebSocket connection from 172.28.0.1:40382. Total: 4
+2025-04-21 00:15:28,133 [INFO] ollama_client: Retrieved 7 models from Ollama server
+2025-04-21 00:15:28,144 [INFO] ollama_client: Retrieved 7 models from Ollama server
+2025-04-21 00:15:28,150 [INFO] ollama_client: Retrieved 7 models from Ollama server
+2025-04-21 00:33:57,312 [INFO] main: WebSocket disconnected from 172.28.0.1:44324. Remaining: 3
+2025-04-21 00:33:57,313 [INFO] main: WebSocket disconnected from 172.28.0.1:40344. Remaining: 2
+2025-04-21 00:33:57,314 [INFO] main: WebSocket disconnected from 172.28.0.1:44308. Remaining: 1
+2025-04-21 00:33:57,314 [INFO] main: WebSocket disconnected from 172.28.0.1:40382. Remaining: 0
+2025-04-21 00:33:57,413 [INFO] main: --- Shutting down Projects Hub Backend ---
+2025-04-21 00:33:57,452 [INFO] main: File system watcher stopped.
+2025-04-21 00:34:10,926 [INFO] ollama_client: Initialized Ollama client with base URL: http://host.docker.internal:11434
+2025-04-21 00:34:10,953 [INFO] main: --- Starting Projects Hub Backend ---
+2025-04-21 00:34:10,953 [INFO] main: Watching data directory: /hub_data
+2025-04-21 00:34:10,956 [INFO] main: Hub data directory ready: /hub_data
+2025-04-21 00:34:10,957 [INFO] main: Ensured directory exists: /hub_data/focus_logs
+2025-04-21 00:34:11,104 [INFO] main: File system watcher started successfully.
+2025-04-21 00:34:12,722 [INFO] main: New WebSocket connection from 172.28.0.1:35866. Total: 1
+2025-04-21 00:34:14,259 [INFO] main: New WebSocket connection from 172.28.0.1:35876. Total: 2
+2025-04-21 00:34:14,711 [INFO] main: New WebSocket connection from 172.28.0.1:35888. Total: 3
+2025-04-21 00:34:15,373 [INFO] main: WebSocket disconnected from 172.28.0.1:35876. Remaining: 2
+2025-04-21 00:34:15,994 [INFO] main: New WebSocket connection from 172.28.0.1:35910. Total: 3
+2025-04-21 00:34:16,108 [INFO] ollama_client: Retrieved 7 models from Ollama server
+2025-04-21 00:34:16,126 [INFO] ollama_client: Retrieved 7 models from Ollama server
+2025-04-21 00:34:16,133 [INFO] main: New WebSocket connection from 172.28.0.1:35942. Total: 4
+2025-04-21 00:34:16,138 [INFO] ollama_client: Retrieved 7 models from Ollama server
+2025-04-21 00:34:16,144 [INFO] ollama_client: Retrieved 7 models from Ollama server
+2025-04-21 00:34:47,590 [INFO] main: Create task request received for project 5236tg: New Task 8:34:47 PM
+2025-04-21 00:34:47,610 [INFO] main: Wrote YAML: /hub_data/5236tg/tasks.yaml
+2025-04-21 00:34:47,610 [INFO] main: Broadcasting message of type 'tasks_updated' to 4 clients
+2025-04-21 00:34:47,611 [INFO] main: Message broadcast successful to 4/4 clients
+2025-04-21 00:34:53,295 [INFO] main: Create task request received for project 5236tg: New Task 8:34:53 PM
+2025-04-21 00:34:53,314 [INFO] main: Wrote YAML: /hub_data/5236tg/tasks.yaml
+2025-04-21 00:34:53,314 [INFO] main: Broadcasting message of type 'tasks_updated' to 4 clients
+2025-04-21 00:34:53,315 [INFO] main: Message broadcast successful to 4/4 clients
+2025-04-21 00:34:55,586 [INFO] main: Create task request received for project 5236tg: New Task 8:34:55 PM
+2025-04-21 00:34:55,605 [INFO] main: Wrote YAML: /hub_data/5236tg/tasks.yaml
+2025-04-21 00:34:55,605 [INFO] main: Broadcasting message of type 'tasks_updated' to 4 clients
+2025-04-21 00:34:55,606 [INFO] main: Message broadcast successful to 4/4 clients
+2025-04-21 00:35:05,314 [INFO] main: Create task request received for project 5236tg: New Task 8:35:05 PM
+2025-04-21 00:35:05,334 [INFO] main: Wrote YAML: /hub_data/5236tg/tasks.yaml
+2025-04-21 00:35:05,335 [INFO] main: Broadcasting message of type 'tasks_updated' to 4 clients
+2025-04-21 00:35:05,336 [INFO] main: Message broadcast successful to 4/4 clients
+2025-04-21 00:38:17,046 [INFO] main: WebSocket disconnected from 172.28.0.1:35942. Remaining: 3
+2025-04-21 00:38:17,047 [INFO] main: WebSocket disconnected from 172.28.0.1:35910. Remaining: 2
+2025-04-21 00:38:17,482 [INFO] main: New WebSocket connection from 172.28.0.1:37992. Total: 3
+2025-04-21 00:38:17,494 [INFO] ollama_client: Retrieved 7 models from Ollama server
+2025-04-21 00:38:17,516 [INFO] ollama_client: Retrieved 7 models from Ollama server
+2025-04-21 00:38:17,519 [INFO] main: New WebSocket connection from 172.28.0.1:38032. Total: 4
+2025-04-21 00:38:17,531 [INFO] ollama_client: Retrieved 7 models from Ollama server
+2025-04-21 00:38:17,544 [INFO] ollama_client: Retrieved 7 models from Ollama server
+2025-04-21 00:38:23,730 [INFO] main: Wrote YAML: /hub_data/5236tg/tasks.yaml
+2025-04-21 00:38:23,731 [INFO] main: Broadcasting message of type 'tasks_updated' to 4 clients
+2025-04-21 00:38:23,732 [INFO] main: Message broadcast successful to 4/4 clients
+2025-04-21 00:39:57,362 [INFO] main: WebSocket disconnected from 172.28.0.1:38032. Remaining: 3
+2025-04-21 00:39:57,362 [INFO] main: WebSocket disconnected from 172.28.0.1:37992. Remaining: 2
+2025-04-21 00:39:57,575 [INFO] main: New WebSocket connection from 172.28.0.1:42100. Total: 3
+2025-04-21 00:39:57,691 [INFO] ollama_client: Retrieved 7 models from Ollama server
+2025-04-21 00:39:57,693 [INFO] main: New WebSocket connection from 172.28.0.1:42134. Total: 4
+2025-04-21 00:39:57,705 [INFO] ollama_client: Retrieved 7 models from Ollama server
+2025-04-21 00:39:57,718 [INFO] ollama_client: Retrieved 7 models from Ollama server
+2025-04-21 00:39:57,724 [INFO] ollama_client: Retrieved 7 models from Ollama server
+2025-04-21 00:40:21,647 [INFO] main: WebSocket disconnected from 172.28.0.1:35888. Remaining: 3
+2025-04-21 00:40:21,648 [INFO] main: WebSocket disconnected from 172.28.0.1:42134. Remaining: 2
+2025-04-21 00:40:21,649 [INFO] main: WebSocket disconnected from 172.28.0.1:35866. Remaining: 1
+2025-04-21 00:40:21,649 [INFO] main: WebSocket disconnected from 172.28.0.1:42100. Remaining: 0
+2025-04-21 00:40:21,747 [INFO] main: --- Shutting down Projects Hub Backend ---
+2025-04-21 00:40:21,787 [INFO] main: File system watcher stopped.
+2025-04-21 00:40:28,962 [INFO] ollama_client: Initialized Ollama client with base URL: http://host.docker.internal:11434
+2025-04-21 00:40:28,989 [INFO] main: --- Starting Projects Hub Backend ---
+2025-04-21 00:40:28,990 [INFO] main: Watching data directory: /hub_data
+2025-04-21 00:40:28,992 [INFO] main: Hub data directory ready: /hub_data
+2025-04-21 00:40:28,993 [INFO] main: Ensured directory exists: /hub_data/focus_logs
+2025-04-21 00:40:29,179 [INFO] main: File system watcher started successfully.
+2025-04-21 00:40:29,714 [INFO] main: New WebSocket connection from 172.28.0.1:58174. Total: 1
+2025-04-21 00:40:31,714 [INFO] main: New WebSocket connection from 172.28.0.1:58182. Total: 2
+2025-04-21 00:40:32,632 [INFO] main: New WebSocket connection from 172.28.0.1:49340. Total: 3
+2025-04-21 00:40:39,506 [INFO] main: WebSocket disconnected from 172.28.0.1:58182. Remaining: 2
+2025-04-21 00:40:39,506 [INFO] main: WebSocket disconnected from 172.28.0.1:58174. Remaining: 1
+2025-04-21 00:40:39,507 [INFO] main: WebSocket disconnected from 172.28.0.1:49340. Remaining: 0
+2025-04-21 00:40:39,605 [INFO] main: --- Shutting down Projects Hub Backend ---
+2025-04-21 00:40:39,637 [INFO] main: File system watcher stopped.
+2025-04-21 00:40:43,135 [INFO] ollama_client: Initialized Ollama client with base URL: http://host.docker.internal:11434
+2025-04-21 00:40:43,164 [INFO] main: --- Starting Projects Hub Backend ---
+2025-04-21 00:40:43,164 [INFO] main: Watching data directory: /hub_data
+2025-04-21 00:40:43,166 [INFO] main: Hub data directory ready: /hub_data
+2025-04-21 00:40:43,167 [INFO] main: Ensured directory exists: /hub_data/focus_logs
+2025-04-21 00:40:43,350 [INFO] main: File system watcher started successfully.
+2025-04-21 00:40:44,714 [INFO] main: New WebSocket connection from 172.28.0.1:52856. Total: 1
+2025-04-21 00:40:44,716 [INFO] main: New WebSocket connection from 172.28.0.1:52872. Total: 2
+2025-04-21 00:40:47,470 [INFO] main: New WebSocket connection from 172.28.0.1:52888. Total: 3
+2025-04-21 00:40:48,445 [INFO] main: WebSocket disconnected from 172.28.0.1:52888. Remaining: 2
+2025-04-21 00:40:49,450 [INFO] main: New WebSocket connection from 172.28.0.1:52932. Total: 3
+2025-04-21 00:40:49,462 [INFO] ollama_client: Retrieved 7 models from Ollama server
+2025-04-21 00:40:49,488 [INFO] ollama_client: Retrieved 7 models from Ollama server
+2025-04-21 00:40:49,489 [INFO] main: New WebSocket connection from 172.28.0.1:52958. Total: 4
+2025-04-21 00:40:49,502 [INFO] ollama_client: Retrieved 7 models from Ollama server
+2025-04-21 00:40:49,508 [INFO] ollama_client: Retrieved 7 models from Ollama server
+2025-04-21 00:43:03,653 [INFO] main: WebSocket disconnected from 172.28.0.1:52932. Remaining: 3
+2025-04-21 00:43:03,653 [INFO] main: WebSocket disconnected from 172.28.0.1:52958. Remaining: 2
+2025-04-21 00:43:03,857 [INFO] main: New WebSocket connection from 172.28.0.1:55116. Total: 3
+2025-04-21 00:43:03,961 [INFO] ollama_client: Retrieved 7 models from Ollama server
+2025-04-21 00:43:03,981 [INFO] ollama_client: Retrieved 7 models from Ollama server
+2025-04-21 00:43:03,987 [INFO] main: New WebSocket connection from 172.28.0.1:55142. Total: 4
+2025-04-21 00:43:03,993 [INFO] ollama_client: Retrieved 7 models from Ollama server
+2025-04-21 00:43:03,999 [INFO] ollama_client: Retrieved 7 models from Ollama server
+2025-04-21 00:44:11,883 [INFO] main: Wrote YAML: /hub_data/countdowns.yaml
+2025-04-21 00:44:11,884 [INFO] main: File Watcher: Processing 'modified' for 'countdowns.yaml'
+2025-04-21 00:44:11,884 [INFO] main: Broadcasting message of type 'alarms_updated' to 4 clients
+2025-04-21 00:44:11,885 [INFO] main: Message broadcast successful to 4/4 clients
+2025-04-21 00:44:29,753 [INFO] main: Looking for focus logs at: /hub_data/focus_logs/daily_summary_2025-04-20.json or /hub_data/focus_logs/focus_log_2025-04-20.jsonl
+2025-04-21 00:44:29,765 [INFO] main: Serving pre-generated summary for 2025-04-20
+2025-04-21 00:44:29,770 [INFO] main: Looking for focus logs at: /hub_data/focus_logs/daily_summary_2025-04-20.json or /hub_data/focus_logs/focus_log_2025-04-20.jsonl
+2025-04-21 00:44:29,773 [INFO] main: Serving pre-generated summary for 2025-04-20
+2025-04-21 00:46:21,064 [INFO] main: WebSocket disconnected from 172.28.0.1:55142. Remaining: 3
+2025-04-21 00:46:21,065 [INFO] main: WebSocket disconnected from 172.28.0.1:55116. Remaining: 2
+2025-04-21 00:46:21,256 [INFO] main: New WebSocket connection from 172.28.0.1:58784. Total: 3
+2025-04-21 00:46:21,354 [INFO] ollama_client: Retrieved 7 models from Ollama server
+2025-04-21 00:46:21,372 [INFO] ollama_client: Retrieved 7 models from Ollama server
+2025-04-21 00:46:21,379 [INFO] main: New WebSocket connection from 172.28.0.1:58818. Total: 4
+2025-04-21 00:46:21,383 [INFO] ollama_client: Retrieved 7 models from Ollama server
+2025-04-21 00:46:21,389 [INFO] ollama_client: Retrieved 7 models from Ollama server
+2025-04-21 00:46:28,581 [INFO] main: WebSocket disconnected from 172.28.0.1:58784. Remaining: 3
+2025-04-21 00:46:28,581 [INFO] main: WebSocket disconnected from 172.28.0.1:52872. Remaining: 2
+2025-04-21 00:46:28,582 [INFO] main: WebSocket disconnected from 172.28.0.1:52856. Remaining: 1
+2025-04-21 00:46:28,582 [INFO] main: WebSocket disconnected from 172.28.0.1:58818. Remaining: 0
+2025-04-21 00:46:28,681 [INFO] main: --- Shutting down Projects Hub Backend ---
+2025-04-21 00:46:28,712 [INFO] main: File system watcher stopped.
+2025-04-21 00:46:35,250 [INFO] ollama_client: Initialized Ollama client with base URL: http://host.docker.internal:11434
+2025-04-21 00:46:35,277 [INFO] main: --- Starting Projects Hub Backend ---
+2025-04-21 00:46:35,278 [INFO] main: Watching data directory: /hub_data
+2025-04-21 00:46:35,280 [INFO] main: Hub data directory ready: /hub_data
+2025-04-21 00:46:35,281 [INFO] main: Ensured directory exists: /hub_data/focus_logs
+2025-04-21 00:46:35,460 [INFO] main: File system watcher started successfully.
+2025-04-21 00:46:35,719 [INFO] main: New WebSocket connection from 172.28.0.1:54102. Total: 1
+2025-04-21 00:46:37,053 [INFO] main: New WebSocket connection from 172.28.0.1:54116. Total: 2
+2025-04-21 00:46:38,612 [INFO] main: WebSocket disconnected from 172.28.0.1:54116. Remaining: 1
+2025-04-21 00:46:38,718 [INFO] main: New WebSocket connection from 172.28.0.1:54132. Total: 2
+2025-04-21 00:46:39,115 [INFO] main: New WebSocket connection from 172.28.0.1:54156. Total: 3
+2025-04-21 00:46:39,312 [INFO] ollama_client: Retrieved 7 models from Ollama server
+2025-04-21 00:46:39,322 [INFO] main: New WebSocket connection from 172.28.0.1:54202. Total: 4
+2025-04-21 00:46:39,334 [INFO] ollama_client: Retrieved 7 models from Ollama server
+2025-04-21 00:46:39,346 [INFO] ollama_client: Retrieved 7 models from Ollama server
+2025-04-21 00:46:39,352 [INFO] ollama_client: Retrieved 7 models from Ollama server
+2025-04-21 00:46:45,686 [INFO] main: WebSocket disconnected from 172.28.0.1:54156. Remaining: 3
+2025-04-21 00:46:45,687 [INFO] main: WebSocket disconnected from 172.28.0.1:54202. Remaining: 2
+2025-04-21 00:46:45,861 [INFO] main: New WebSocket connection from 172.28.0.1:59972. Total: 3
+2025-04-21 00:46:45,971 [INFO] ollama_client: Retrieved 7 models from Ollama server
+2025-04-21 00:46:45,985 [INFO] main: New WebSocket connection from 172.28.0.1:59996. Total: 4
+2025-04-21 00:46:45,990 [INFO] ollama_client: Retrieved 7 models from Ollama server
+2025-04-21 00:46:46,001 [INFO] ollama_client: Retrieved 7 models from Ollama server
+2025-04-21 00:46:46,007 [INFO] ollama_client: Retrieved 7 models from Ollama server
+2025-04-21 00:49:13,162 [INFO] main: WebSocket disconnected from 172.28.0.1:59996. Remaining: 3
+2025-04-21 00:49:13,163 [INFO] main: WebSocket disconnected from 172.28.0.1:59972. Remaining: 2
+2025-04-21 00:49:13,206 [INFO] main: WebSocket disconnected from 172.28.0.1:54132. Remaining: 1
+2025-04-21 00:49:16,733 [INFO] main: WebSocket disconnected from 172.28.0.1:54102. Remaining: 0
+2025-04-21 00:49:16,834 [INFO] main: --- Shutting down Projects Hub Backend ---
+2025-04-21 00:49:16,875 [INFO] main: File system watcher stopped.
+2025-04-21 00:49:22,660 [INFO] ollama_client: Initialized Ollama client with base URL: http://host.docker.internal:11434
+2025-04-21 00:49:22,688 [INFO] main: --- Starting Projects Hub Backend ---
+2025-04-21 00:49:22,688 [INFO] main: Watching data directory: /hub_data
+2025-04-21 00:49:22,690 [INFO] main: Hub data directory ready: /hub_data
+2025-04-21 00:49:22,691 [INFO] main: Ensured directory exists: /hub_data/focus_logs
+2025-04-21 00:49:22,866 [INFO] main: File system watcher started successfully.
+2025-04-21 00:49:24,718 [INFO] main: New WebSocket connection from 172.28.0.1:53976. Total: 1
+2025-04-21 00:49:30,594 [INFO] main: New WebSocket connection from 172.28.0.1:54000. Total: 2
+2025-04-21 00:49:30,610 [INFO] main: Looking for focus logs at: /hub_data/focus_logs/daily_summary_2025-04-20.json or /hub_data/focus_logs/focus_log_2025-04-20.jsonl
+2025-04-21 00:49:30,612 [INFO] main: Serving pre-generated summary for 2025-04-20
+2025-04-21 00:49:30,625 [INFO] main: Looking for focus logs at: /hub_data/focus_logs/daily_summary_2025-04-20.json or /hub_data/focus_logs/focus_log_2025-04-20.jsonl
+2025-04-21 00:49:30,628 [INFO] main: Serving pre-generated summary for 2025-04-20
+2025-04-21 00:49:30,642 [INFO] ollama_client: Retrieved 7 models from Ollama server
+2025-04-21 00:49:30,647 [INFO] main: New WebSocket connection from 172.28.0.1:54044. Total: 3
+2025-04-21 00:49:30,652 [INFO] ollama_client: Retrieved 7 models from Ollama server
+2025-04-21 00:49:30,664 [INFO] ollama_client: Retrieved 7 models from Ollama server
+2025-04-21 00:49:30,670 [INFO] ollama_client: Retrieved 7 models from Ollama server
+2025-04-21 00:49:42,468 [INFO] main: WebSocket disconnected from 172.28.0.1:54000. Remaining: 2
+2025-04-21 00:49:42,468 [INFO] main: WebSocket disconnected from 172.28.0.1:54044. Remaining: 1
+2025-04-21 00:49:42,551 [INFO] main: WebSocket disconnected from 172.28.0.1:53976. Remaining: 0
+2025-04-21 00:49:50,399 [INFO] main: --- Shutting down Projects Hub Backend ---
+2025-04-21 00:49:50,444 [INFO] main: File system watcher stopped.
+2025-04-21 00:50:02,460 [INFO] ollama_client: Initialized Ollama client with base URL: http://host.docker.internal:11434
+2025-04-21 00:50:02,491 [INFO] main: --- Starting Projects Hub Backend ---
+2025-04-21 00:50:02,492 [INFO] main: Watching data directory: /hub_data
+2025-04-21 00:50:02,495 [INFO] main: Hub data directory ready: /hub_data
+2025-04-21 00:50:02,496 [INFO] main: Ensured directory exists: /hub_data/focus_logs
+2025-04-21 00:50:02,694 [INFO] main: File system watcher started successfully.
+2025-04-21 00:50:07,820 [INFO] main: New WebSocket connection from 172.28.0.1:34948. Total: 1
+2025-04-21 00:50:07,847 [INFO] ollama_client: Retrieved 7 models from Ollama server
+2025-04-21 00:50:07,859 [INFO] ollama_client: Retrieved 7 models from Ollama server
+2025-04-21 00:50:07,861 [INFO] main: New WebSocket connection from 172.28.0.1:35002. Total: 2
+2025-04-21 00:50:07,924 [INFO] ollama_client: Retrieved 7 models from Ollama server
+2025-04-21 00:50:07,976 [INFO] ollama_client: Retrieved 7 models from Ollama server
+2025-04-21 00:50:23,482 [INFO] main: WebSocket disconnected from 172.28.0.1:34948. Remaining: 1
+2025-04-21 00:50:23,483 [INFO] main: WebSocket disconnected from 172.28.0.1:35002. Remaining: 0
+2025-04-21 00:50:38,807 [INFO] main: --- Shutting down Projects Hub Backend ---
+2025-04-21 00:50:38,843 [INFO] main: File system watcher stopped.
+2025-04-21 00:50:40,730 [INFO] ollama_client: Initialized Ollama client with base URL: http://host.docker.internal:11434
+2025-04-21 00:50:40,758 [INFO] main: --- Starting Projects Hub Backend ---
+2025-04-21 00:50:40,758 [INFO] main: Watching data directory: /hub_data
+2025-04-21 00:50:40,760 [INFO] main: Hub data directory ready: /hub_data
+2025-04-21 00:50:40,761 [INFO] main: Ensured directory exists: /hub_data/focus_logs
+2025-04-21 00:50:40,927 [INFO] main: File system watcher started successfully.
+2025-04-21 00:50:48,344 [INFO] main: --- Shutting down Projects Hub Backend ---
+2025-04-21 00:50:48,381 [INFO] main: File system watcher stopped.
+2025-04-21 00:50:51,806 [INFO] ollama_client: Initialized Ollama client with base URL: http://host.docker.internal:11434
+2025-04-21 00:50:51,836 [INFO] main: --- Starting Projects Hub Backend ---
+2025-04-21 00:50:51,836 [INFO] main: Watching data directory: /hub_data
+2025-04-21 00:50:51,839 [INFO] main: Hub data directory ready: /hub_data
+2025-04-21 00:50:51,840 [INFO] main: Ensured directory exists: /hub_data/focus_logs
+2025-04-21 00:50:52,024 [INFO] main: File system watcher started successfully.
+2025-04-21 00:50:57,509 [INFO] main: New WebSocket connection from 172.28.0.1:46868. Total: 1
+2025-04-21 00:50:57,619 [INFO] ollama_client: Retrieved 7 models from Ollama server
+2025-04-21 00:50:57,640 [INFO] ollama_client: Retrieved 7 models from Ollama server
+2025-04-21 00:50:57,648 [INFO] main: New WebSocket connection from 172.28.0.1:46916. Total: 2
+2025-04-21 00:50:57,652 [INFO] ollama_client: Retrieved 7 models from Ollama server
+2025-04-21 00:50:57,658 [INFO] ollama_client: Retrieved 7 models from Ollama server
+2025-04-21 00:54:06,522 [INFO] main: WebSocket disconnected from 172.28.0.1:46868. Remaining: 1
+2025-04-21 00:54:06,523 [INFO] main: WebSocket disconnected from 172.28.0.1:46916. Remaining: 0
+2025-04-21 00:54:10,164 [INFO] main: --- Shutting down Projects Hub Backend ---
+2025-04-21 00:54:10,205 [INFO] main: File system watcher stopped.
+2025-04-21 00:54:13,678 [INFO] ollama_client: Initialized Ollama client with base URL: http://host.docker.internal:11434
+2025-04-21 00:54:13,706 [INFO] main: --- Starting Projects Hub Backend ---
+2025-04-21 00:54:13,706 [INFO] main: Watching data directory: /hub_data
+2025-04-21 00:54:13,708 [INFO] main: Hub data directory ready: /hub_data
+2025-04-21 00:54:13,709 [INFO] main: Ensured directory exists: /hub_data/focus_logs
+2025-04-21 00:54:13,886 [INFO] main: File system watcher started successfully.
+2025-04-21 00:54:24,311 [INFO] main: --- Shutting down Projects Hub Backend ---
+2025-04-21 00:54:24,344 [INFO] main: File system watcher stopped.
+2025-04-21 00:54:28,140 [INFO] ollama_client: Initialized Ollama client with base URL: http://host.docker.internal:11434
+2025-04-21 00:54:28,169 [INFO] main: --- Starting Projects Hub Backend ---
+2025-04-21 00:54:28,170 [INFO] main: Watching data directory: /hub_data
+2025-04-21 00:54:28,172 [INFO] main: Hub data directory ready: /hub_data
+2025-04-21 00:54:28,173 [INFO] main: Ensured directory exists: /hub_data/focus_logs
+2025-04-21 00:54:28,398 [INFO] main: File system watcher started successfully.
+2025-04-21 00:54:31,869 [INFO] main: New WebSocket connection from 172.28.0.1:38374. Total: 1
+2025-04-21 00:54:31,903 [INFO] ollama_client: Retrieved 7 models from Ollama server
+2025-04-21 00:54:31,916 [INFO] ollama_client: Retrieved 7 models from Ollama server
+2025-04-21 00:54:31,917 [INFO] main: New WebSocket connection from 172.28.0.1:38426. Total: 2
+2025-04-21 00:54:31,989 [INFO] ollama_client: Retrieved 7 models from Ollama server
+2025-04-21 00:54:32,032 [INFO] ollama_client: Retrieved 7 models from Ollama server
+2025-04-21 00:54:37,072 [INFO] main: Wrote YAML: /hub_data/5236tg/tasks.yaml
+2025-04-21 00:54:37,072 [INFO] main: Broadcasting message of type 'tasks_updated' to 2 clients
+2025-04-21 00:54:37,073 [INFO] main: Message broadcast successful to 2/2 clients
+2025-04-21 00:54:38,627 [INFO] main: Wrote YAML: /hub_data/5236tg/tasks.yaml
+2025-04-21 00:54:38,627 [INFO] main: Broadcasting message of type 'tasks_updated' to 2 clients
+2025-04-21 00:54:38,628 [INFO] main: Message broadcast successful to 2/2 clients
+2025-04-21 00:54:39,763 [INFO] main: Wrote YAML: /hub_data/5236tg/tasks.yaml
+2025-04-21 00:54:39,764 [INFO] main: Broadcasting message of type 'tasks_updated' to 2 clients
+2025-04-21 00:54:39,765 [INFO] main: Message broadcast successful to 2/2 clients
+2025-04-21 00:54:40,918 [INFO] main: Wrote YAML: /hub_data/5236tg/tasks.yaml
+2025-04-21 00:54:40,919 [INFO] main: Broadcasting message of type 'tasks_updated' to 2 clients
+2025-04-21 00:54:40,919 [INFO] main: Message broadcast successful to 2/2 clients
+2025-04-21 00:54:43,394 [INFO] main: Wrote YAML: /hub_data/5236tg/tasks.yaml
+2025-04-21 00:54:43,395 [INFO] main: Broadcasting message of type 'tasks_updated' to 2 clients
+2025-04-21 00:54:43,395 [INFO] main: Message broadcast successful to 2/2 clients
+2025-04-21 00:54:45,158 [INFO] main: Wrote YAML: /hub_data/5236tg/tasks.yaml
+2025-04-21 00:54:45,159 [INFO] main: Broadcasting message of type 'tasks_updated' to 2 clients
+2025-04-21 00:54:45,159 [INFO] main: Message broadcast successful to 2/2 clients
+2025-04-21 00:54:53,283 [INFO] main: Wrote YAML: /hub_data/5236tg/tasks.yaml
+2025-04-21 00:54:53,284 [INFO] main: Broadcasting message of type 'tasks_updated' to 2 clients
+2025-04-21 00:54:53,284 [INFO] main: Message broadcast successful to 2/2 clients
+2025-04-21 00:58:34,315 [INFO] main: WebSocket disconnected from 172.28.0.1:38426. Remaining: 1
+2025-04-21 00:58:34,315 [INFO] main: WebSocket disconnected from 172.28.0.1:38374. Remaining: 0
+2025-04-21 00:58:34,415 [INFO] main: --- Shutting down Projects Hub Backend ---
+2025-04-21 00:58:34,464 [INFO] main: File system watcher stopped.
+2025-04-21 00:58:39,349 [INFO] ollama_client: Initialized Ollama client with base URL: http://host.docker.internal:11434
+2025-04-21 00:58:39,376 [INFO] main: --- Starting Projects Hub Backend ---
+2025-04-21 00:58:39,377 [INFO] main: Watching data directory: /hub_data
+2025-04-21 00:58:39,379 [INFO] main: Hub data directory ready: /hub_data
+2025-04-21 00:58:39,379 [INFO] main: Ensured directory exists: /hub_data/focus_logs
+2025-04-21 00:58:39,560 [INFO] main: File system watcher started successfully.
+2025-04-21 00:58:41,230 [INFO] main: New WebSocket connection from 172.28.0.1:37186. Total: 1
+2025-04-21 00:58:45,776 [INFO] main: WebSocket disconnected from 172.28.0.1:37186. Remaining: 0
+2025-04-21 00:58:45,876 [INFO] main: --- Shutting down Projects Hub Backend ---
+2025-04-21 00:58:45,913 [INFO] main: File system watcher stopped.
+2025-04-21 00:58:49,190 [INFO] ollama_client: Initialized Ollama client with base URL: http://host.docker.internal:11434
+2025-04-21 00:58:49,218 [INFO] main: --- Starting Projects Hub Backend ---
+2025-04-21 00:58:49,218 [INFO] main: Watching data directory: /hub_data
+2025-04-21 00:58:49,221 [INFO] main: Hub data directory ready: /hub_data
+2025-04-21 00:58:49,222 [INFO] main: Ensured directory exists: /hub_data/focus_logs
+2025-04-21 00:58:49,414 [INFO] main: File system watcher started successfully.
+2025-04-21 00:58:54,009 [INFO] main: New WebSocket connection from 172.28.0.1:50794. Total: 1
+2025-04-21 00:58:54,203 [INFO] ollama_client: Retrieved 7 models from Ollama server
+2025-04-21 00:58:54,210 [INFO] main: New WebSocket connection from 172.28.0.1:50812. Total: 2
+2025-04-21 00:58:54,222 [INFO] ollama_client: Retrieved 7 models from Ollama server
+2025-04-21 00:58:54,232 [INFO] ollama_client: Retrieved 7 models from Ollama server
+2025-04-21 00:58:54,238 [INFO] ollama_client: Retrieved 7 models from Ollama server
+2025-04-21 00:58:56,921 [INFO] main: Wrote YAML: /hub_data/5236tg/tasks.yaml
+2025-04-21 00:58:56,921 [INFO] main: Broadcasting message of type 'tasks_updated' to 2 clients
+2025-04-21 00:58:56,922 [INFO] main: Message broadcast successful to 2/2 clients
+2025-04-21 00:58:58,168 [INFO] main: Wrote YAML: /hub_data/5236tg/tasks.yaml
+2025-04-21 00:58:58,169 [INFO] main: Broadcasting message of type 'tasks_updated' to 2 clients
+2025-04-21 00:58:58,169 [INFO] main: Message broadcast successful to 2/2 clients
+2025-04-21 00:58:59,567 [INFO] main: Wrote YAML: /hub_data/5236tg/tasks.yaml
+2025-04-21 00:58:59,567 [INFO] main: Broadcasting message of type 'tasks_updated' to 2 clients
+2025-04-21 00:58:59,568 [INFO] main: Message broadcast successful to 2/2 clients
+2025-04-21 00:59:01,131 [INFO] main: WebSocket disconnected from 172.28.0.1:50812. Remaining: 1
+2025-04-21 00:59:01,131 [INFO] main: WebSocket disconnected from 172.28.0.1:50794. Remaining: 0
+2025-04-21 00:59:01,387 [INFO] main: New WebSocket connection from 172.28.0.1:50836. Total: 1
+2025-04-21 00:59:01,471 [INFO] ollama_client: Retrieved 7 models from Ollama server
+2025-04-21 00:59:01,497 [INFO] ollama_client: Retrieved 7 models from Ollama server
+2025-04-21 00:59:01,507 [INFO] ollama_client: Retrieved 7 models from Ollama server
+2025-04-21 00:59:01,508 [INFO] main: New WebSocket connection from 172.28.0.1:50864. Total: 2
+2025-04-21 00:59:01,513 [INFO] ollama_client: Retrieved 7 models from Ollama server
+2025-04-21 01:00:03,732 [INFO] main: WebSocket disconnected from 172.28.0.1:50836. Remaining: 1
+2025-04-21 01:00:03,733 [INFO] main: WebSocket disconnected from 172.28.0.1:50864. Remaining: 0
+2025-04-21 01:00:03,831 [INFO] main: --- Shutting down Projects Hub Backend ---
+2025-04-21 01:00:03,870 [INFO] main: File system watcher stopped.
+2025-04-21 01:02:51,114 [INFO] ollama_client: Initialized Ollama client with base URL: http://host.docker.internal:11434
+2025-04-21 01:02:51,145 [INFO] main: --- Starting Projects Hub Backend ---
+2025-04-21 01:02:51,146 [INFO] main: Watching data directory: /hub_data
+2025-04-21 01:02:51,149 [INFO] main: Hub data directory ready: /hub_data
+2025-04-21 01:02:51,150 [INFO] main: Ensured directory exists: /hub_data/focus_logs
+2025-04-21 01:02:51,336 [INFO] main: File system watcher started successfully.
+2025-04-21 01:03:04,228 [INFO] main: New WebSocket connection from 172.28.0.1:34702. Total: 1
+2025-04-21 01:03:04,450 [INFO] ollama_client: Retrieved 7 models from Ollama server
+2025-04-21 01:03:04,452 [INFO] main: New WebSocket connection from 172.28.0.1:34748. Total: 2
+2025-04-21 01:03:04,466 [INFO] ollama_client: Retrieved 7 models from Ollama server
+2025-04-21 01:03:04,481 [INFO] ollama_client: Retrieved 7 models from Ollama server
+2025-04-21 01:03:04,487 [INFO] ollama_client: Retrieved 7 models from Ollama server
+2025-04-21 01:03:06,166 [INFO] main: Wrote YAML: /hub_data/5236tg/tasks.yaml
+2025-04-21 01:03:06,166 [INFO] main: Broadcasting message of type 'tasks_updated' to 2 clients
+2025-04-21 01:03:06,167 [INFO] main: Message broadcast successful to 2/2 clients
+2025-04-21 01:03:07,063 [INFO] main: Wrote YAML: /hub_data/5236tg/tasks.yaml
+2025-04-21 01:03:07,063 [INFO] main: Broadcasting message of type 'tasks_updated' to 2 clients
+2025-04-21 01:03:07,064 [INFO] main: Message broadcast successful to 2/2 clients
+2025-04-21 01:03:09,202 [INFO] main: Wrote YAML: /hub_data/5236tg/tasks.yaml
+2025-04-21 01:03:09,203 [INFO] main: Broadcasting message of type 'tasks_updated' to 2 clients
+2025-04-21 01:03:09,203 [INFO] main: Message broadcast successful to 2/2 clients
+2025-04-21 01:03:10,115 [INFO] main: Wrote YAML: /hub_data/5236tg/tasks.yaml
+2025-04-21 01:03:10,115 [INFO] main: Broadcasting message of type 'tasks_updated' to 2 clients
+2025-04-21 01:03:10,116 [INFO] main: Message broadcast successful to 2/2 clients
+2025-04-21 01:03:11,382 [INFO] main: WebSocket disconnected from 172.28.0.1:34748. Remaining: 1
+2025-04-21 01:03:11,383 [INFO] main: WebSocket disconnected from 172.28.0.1:34702. Remaining: 0
+2025-04-21 01:03:11,549 [INFO] main: New WebSocket connection from 172.28.0.1:34772. Total: 1
+2025-04-21 01:03:11,757 [INFO] ollama_client: Retrieved 7 models from Ollama server
+2025-04-21 01:03:11,759 [INFO] main: New WebSocket connection from 172.28.0.1:34820. Total: 2
+2025-04-21 01:03:11,764 [INFO] ollama_client: Retrieved 7 models from Ollama server
+2025-04-21 01:03:11,775 [INFO] ollama_client: Retrieved 7 models from Ollama server
+2025-04-21 01:03:11,781 [INFO] ollama_client: Retrieved 7 models from Ollama server
+2025-04-21 01:04:38,775 [INFO] main: Wrote YAML: /hub_data/5236tg/tasks.yaml
+2025-04-21 01:04:38,776 [INFO] main: Broadcasting message of type 'tasks_updated' to 2 clients
+2025-04-21 01:04:38,777 [INFO] main: Message broadcast successful to 2/2 clients
+2025-04-21 01:04:39,657 [INFO] main: Wrote YAML: /hub_data/5236tg/tasks.yaml
+2025-04-21 01:04:39,658 [INFO] main: Broadcasting message of type 'tasks_updated' to 2 clients
+2025-04-21 01:04:39,658 [INFO] main: Message broadcast successful to 2/2 clients
+2025-04-21 01:04:41,701 [INFO] main: Looking for focus logs at: /hub_data/focus_logs/daily_summary_2025-04-20.json or /hub_data/focus_logs/focus_log_2025-04-20.jsonl
+2025-04-21 01:04:41,704 [INFO] main: Serving pre-generated summary for 2025-04-20
+2025-04-21 01:04:41,710 [INFO] main: Looking for focus logs at: /hub_data/focus_logs/daily_summary_2025-04-20.json or /hub_data/focus_logs/focus_log_2025-04-20.jsonl
+2025-04-21 01:04:41,713 [INFO] main: Serving pre-generated summary for 2025-04-20
+2025-04-21 10:18:06,855 [INFO] ollama_client: Initialized Ollama client with base URL: http://host.docker.internal:11434
+2025-04-21 10:18:06,885 [INFO] main: --- Starting Projects Hub Backend ---
+2025-04-21 10:18:06,885 [INFO] main: Watching data directory: /hub_data
+2025-04-21 10:18:06,887 [INFO] main: Hub data directory ready: /hub_data
+2025-04-21 10:18:06,888 [INFO] main: Ensured directory exists: /hub_data/focus_logs
+2025-04-21 10:18:07,067 [INFO] main: File system watcher started successfully.
+2025-04-21 11:27:27,813 [INFO] main: --- Shutting down Projects Hub Backend ---
+2025-04-21 11:27:27,850 [INFO] main: File system watcher stopped.
+2025-04-21 11:27:31,538 [INFO] ollama_client: Initialized Ollama client with base URL: http://host.docker.internal:11434
+2025-04-21 11:27:31,566 [INFO] main: --- Starting Projects Hub Backend ---
+2025-04-21 11:27:31,567 [INFO] main: Watching data directory: /hub_data
+2025-04-21 11:27:31,569 [INFO] main: Hub data directory ready: /hub_data
+2025-04-21 11:27:31,570 [INFO] main: Ensured directory exists: /hub_data/focus_logs
+2025-04-21 11:27:31,767 [INFO] main: File system watcher started successfully.
+2025-04-21 11:27:36,035 [INFO] main: New WebSocket connection from 172.28.0.1:52244. Total: 1
+2025-04-21 11:27:36,103 [INFO] ollama_client: Retrieved 8 models from Ollama server
+2025-04-21 11:27:36,120 [INFO] ollama_client: Retrieved 8 models from Ollama server
+2025-04-21 11:27:36,122 [INFO] main: New WebSocket connection from 172.28.0.1:52282. Total: 2
+2025-04-21 11:27:36,132 [INFO] ollama_client: Retrieved 8 models from Ollama server
+2025-04-21 11:27:36,188 [INFO] ollama_client: Retrieved 8 models from Ollama server
+2025-04-21 11:27:43,693 [INFO] ollama_client: Retrieved 8 models from Ollama server
+2025-04-21 11:27:43,694 [INFO] main: Sending message to Ollama model gemma3:27b-it-qat
+2025-04-21 11:27:43,694 [INFO] ollama_client: Sending chat request to Ollama for model: gemma3:27b-it-qat
+2025-04-21 11:27:50,373 [INFO] main: Broadcasting chat message via WebSocket for session 1745164108066
+2025-04-21 11:27:50,374 [INFO] main: Broadcasting message of type 'chat_message_received' to 2 clients
+2025-04-21 11:27:50,375 [INFO] main: Message broadcast successful to 2/2 clients
+2025-04-21 11:28:40,471 [INFO] main: Broadcasting message of type 'chat_session_deleted' to 2 clients
+2025-04-21 11:28:40,471 [INFO] main: Message broadcast successful to 2/2 clients
+2025-04-21 11:28:40,608 [INFO] ollama_client: Retrieved 8 models from Ollama server
+2025-04-21 11:28:40,615 [INFO] ollama_client: Retrieved 8 models from Ollama server
+2025-04-21 11:28:43,625 [INFO] main: Broadcasting message of type 'chat_session_deleted' to 2 clients
+2025-04-21 11:28:43,626 [INFO] main: Message broadcast successful to 2/2 clients
+2025-04-21 11:28:43,660 [INFO] ollama_client: Retrieved 8 models from Ollama server
+2025-04-21 11:28:43,666 [INFO] ollama_client: Retrieved 8 models from Ollama server
+2025-04-21 11:28:44,819 [INFO] main: Broadcasting message of type 'chat_session_deleted' to 2 clients
+2025-04-21 11:28:44,820 [INFO] main: Message broadcast successful to 2/2 clients
+2025-04-21 11:28:44,860 [INFO] ollama_client: Retrieved 8 models from Ollama server
+2025-04-21 11:28:44,866 [INFO] ollama_client: Retrieved 8 models from Ollama server
+2025-04-21 11:28:45,305 [INFO] main: Broadcasting message of type 'chat_session_deleted' to 2 clients
+2025-04-21 11:28:45,306 [INFO] main: Message broadcast successful to 2/2 clients
+2025-04-21 11:28:45,340 [INFO] ollama_client: Retrieved 8 models from Ollama server
+2025-04-21 11:28:45,345 [INFO] ollama_client: Retrieved 8 models from Ollama server
+2025-04-21 11:28:45,979 [INFO] ollama_client: Retrieved 8 models from Ollama server
+2025-04-21 11:28:53,640 [INFO] ollama_client: Retrieved 8 models from Ollama server
+2025-04-21 11:29:18,397 [INFO] main: WebSocket disconnected from 172.28.0.1:52244. Remaining: 1
+2025-04-21 11:29:18,398 [INFO] main: WebSocket disconnected from 172.28.0.1:52282. Remaining: 0
+2025-04-21 11:29:18,493 [INFO] main: New WebSocket connection from 172.28.0.1:37986. Total: 1
+2025-04-21 11:29:18,504 [INFO] ollama_client: Retrieved 8 models from Ollama server
+2025-04-21 11:29:18,519 [INFO] ollama_client: Retrieved 8 models from Ollama server
+2025-04-21 11:29:18,529 [INFO] ollama_client: Retrieved 8 models from Ollama server
+2025-04-21 11:29:18,531 [INFO] main: New WebSocket connection from 172.28.0.1:38016. Total: 2
+2025-04-21 11:29:18,536 [INFO] ollama_client: Retrieved 8 models from Ollama server
+2025-04-21 11:29:21,457 [INFO] ollama_client: Retrieved 8 models from Ollama server
+2025-04-21 11:29:21,458 [INFO] main: Sending message to Ollama model gemma3:27b-it-qat
+2025-04-21 11:29:21,458 [INFO] ollama_client: Sending chat request to Ollama for model: gemma3:27b-it-qat
+2025-04-21 11:29:25,014 [INFO] main: Broadcasting chat message via WebSocket for session 10e98024-131e-4436-af8b-79789c9e5069
+2025-04-21 11:29:25,014 [INFO] main: Broadcasting message of type 'chat_message_received' to 2 clients
+2025-04-21 11:29:25,015 [INFO] main: Message broadcast successful to 2/2 clients
+2025-04-21 11:33:03,384 [INFO] main: Looking for focus logs at: /hub_data/focus_logs/daily_summary_2025-04-21.json or /hub_data/focus_logs/focus_log_2025-04-21.jsonl
+2025-04-21 11:33:03,385 [INFO] main: Pre-generated summary not found for 2025-04-21, attempting on-demand calculation.
+2025-04-21 11:33:03,386 [INFO] main: Calculating on-demand summary for 2025-04-21 from /hub_data/focus_logs/focus_log_2025-04-21.jsonl
+2025-04-21 11:33:03,400 [INFO] main: Successfully calculated on-demand summary for 2025-04-21
+2025-04-21 11:33:03,406 [INFO] main: Looking for focus logs at: /hub_data/focus_logs/daily_summary_2025-04-21.json or /hub_data/focus_logs/focus_log_2025-04-21.jsonl
+2025-04-21 11:33:03,406 [INFO] main: Pre-generated summary not found for 2025-04-21, attempting on-demand calculation.
+2025-04-21 11:33:03,408 [INFO] main: Calculating on-demand summary for 2025-04-21 from /hub_data/focus_logs/focus_log_2025-04-21.jsonl
+2025-04-21 11:33:03,413 [INFO] main: Successfully calculated on-demand summary for 2025-04-21
+2025-04-21 12:44:14,992 [INFO] main: WebSocket disconnected from 172.28.0.1:37986. Remaining: 1
+2025-04-21 12:44:14,993 [INFO] main: WebSocket disconnected from 172.28.0.1:38016. Remaining: 0
+2025-04-21 12:44:15,107 [INFO] main: Looking for focus logs at: /hub_data/focus_logs/daily_summary_2025-04-21.json or /hub_data/focus_logs/focus_log_2025-04-21.jsonl
+2025-04-21 12:44:15,108 [INFO] main: Pre-generated summary not found for 2025-04-21, attempting on-demand calculation.
+2025-04-21 12:44:15,110 [INFO] main: Calculating on-demand summary for 2025-04-21 from /hub_data/focus_logs/focus_log_2025-04-21.jsonl
+2025-04-21 12:44:15,125 [INFO] main: Successfully calculated on-demand summary for 2025-04-21
+2025-04-21 12:44:15,140 [INFO] main: Looking for focus logs at: /hub_data/focus_logs/daily_summary_2025-04-21.json or /hub_data/focus_logs/focus_log_2025-04-21.jsonl
+2025-04-21 12:44:15,141 [INFO] main: Pre-generated summary not found for 2025-04-21, attempting on-demand calculation.
+2025-04-21 12:44:15,142 [INFO] main: Calculating on-demand summary for 2025-04-21 from /hub_data/focus_logs/focus_log_2025-04-21.jsonl
+2025-04-21 12:44:15,149 [INFO] main: Successfully calculated on-demand summary for 2025-04-21
+2025-04-21 12:44:15,151 [INFO] main: New WebSocket connection from 172.28.0.1:49350. Total: 1
+2025-04-21 12:44:15,252 [INFO] ollama_client: Retrieved 8 models from Ollama server
+2025-04-21 12:44:15,264 [INFO] ollama_client: Retrieved 8 models from Ollama server
+2025-04-21 12:44:15,265 [INFO] main: New WebSocket connection from 172.28.0.1:49384. Total: 2
+2025-04-21 12:44:15,277 [INFO] ollama_client: Retrieved 8 models from Ollama server
+2025-04-21 12:44:15,283 [INFO] ollama_client: Retrieved 8 models from Ollama server
+2025-04-21 12:44:30,989 [INFO] ollama_client: Retrieved 8 models from Ollama server
+2025-04-21 12:44:30,989 [INFO] main: Sending message to Ollama model gemma3:27b-it-qat
+2025-04-21 12:44:30,990 [INFO] ollama_client: Sending chat request to Ollama for model: gemma3:27b-it-qat
+2025-04-21 12:44:58,797 [INFO] main: Broadcasting chat message via WebSocket for session 10e98024-131e-4436-af8b-79789c9e5069
+2025-04-21 12:44:58,798 [INFO] main: Broadcasting message of type 'chat_message_received' to 2 clients
+2025-04-21 12:44:58,799 [INFO] main: Message broadcast successful to 2/2 clients
+2025-04-21 12:45:07,968 [INFO] main: Wrote YAML: /hub_data/5236tg/tasks.yaml
+2025-04-21 12:45:07,968 [INFO] main: Broadcasting message of type 'tasks_updated' to 2 clients
+2025-04-21 12:45:07,969 [INFO] main: Message broadcast successful to 2/2 clients
+2025-04-21 12:45:12,252 [INFO] main: Wrote YAML: /hub_data/5236tg/tasks.yaml
+2025-04-21 12:45:12,253 [INFO] main: Broadcasting message of type 'tasks_updated' to 2 clients
+2025-04-21 12:45:12,254 [INFO] main: Message broadcast successful to 2/2 clients
+2025-04-21 12:45:13,770 [INFO] main: Wrote YAML: /hub_data/5236tg/tasks.yaml
+2025-04-21 12:45:13,771 [INFO] main: Broadcasting message of type 'tasks_updated' to 2 clients
+2025-04-21 12:45:13,772 [INFO] main: Message broadcast successful to 2/2 clients
+2025-04-21 12:45:19,056 [INFO] main: Create task request received for project 5236tg: New Task 8:45:19 AM
+2025-04-21 12:45:19,069 [INFO] main: Wrote YAML: /hub_data/5236tg/tasks.yaml
+2025-04-21 12:45:19,069 [INFO] main: Broadcasting message of type 'tasks_updated' to 2 clients
+2025-04-21 12:45:19,070 [INFO] main: Message broadcast successful to 2/2 clients
+2025-04-21 12:45:26,990 [INFO] main: Wrote YAML: /hub_data/5236tg/tasks.yaml
+2025-04-21 12:45:26,990 [INFO] main: Broadcasting message of type 'tasks_updated' to 2 clients
+2025-04-21 12:45:26,991 [INFO] main: Message broadcast successful to 2/2 clients
+2025-04-21 12:45:48,965 [INFO] main: Looking for focus logs at: /hub_data/focus_logs/daily_summary_2025-04-21.json or /hub_data/focus_logs/focus_log_2025-04-21.jsonl
+2025-04-21 12:45:48,966 [INFO] main: Pre-generated summary not found for 2025-04-21, attempting on-demand calculation.
+2025-04-21 12:45:48,967 [INFO] main: Calculating on-demand summary for 2025-04-21 from /hub_data/focus_logs/focus_log_2025-04-21.jsonl
+2025-04-21 12:45:48,982 [INFO] main: Successfully calculated on-demand summary for 2025-04-21
+2025-04-21 12:45:48,984 [INFO] main: Looking for focus logs at: /hub_data/focus_logs/daily_summary_2025-04-21.json or /hub_data/focus_logs/focus_log_2025-04-21.jsonl
+2025-04-21 12:45:48,985 [INFO] main: Pre-generated summary not found for 2025-04-21, attempting on-demand calculation.
+2025-04-21 12:45:48,986 [INFO] main: Calculating on-demand summary for 2025-04-21 from /hub_data/focus_logs/focus_log_2025-04-21.jsonl
+2025-04-21 12:45:48,992 [INFO] main: Successfully calculated on-demand summary for 2025-04-21
+2025-04-21 12:45:58,381 [INFO] main: Create project request received: dasd
+2025-04-21 12:45:58,385 [INFO] main: Wrote YAML: /hub_data/dasd/project.yaml
+2025-04-21 12:45:58,389 [INFO] main: Wrote YAML: /hub_data/dasd/tasks.yaml
+2025-04-21 12:45:58,390 [INFO] main: File Watcher: Processing 'created' for 'dasd/project.yaml'
+2025-04-21 12:45:58,390 [INFO] main: Broadcasting message of type 'project_updated' to 2 clients
+2025-04-21 12:45:58,391 [INFO] main: Message broadcast successful to 2/2 clients
+2025-04-21 19:17:38,149 [INFO] main: New WebSocket connection from 172.28.0.1:57668. Total: 3
+2025-04-21 19:17:38,278 [INFO] ollama_client: Retrieved 8 models from Ollama server
+2025-04-21 19:17:38,279 [INFO] main: New WebSocket connection from 172.28.0.1:57710. Total: 4
+2025-04-21 19:17:38,291 [INFO] ollama_client: Retrieved 8 models from Ollama server
+2025-04-21 19:17:38,305 [INFO] ollama_client: Retrieved 8 models from Ollama server
+2025-04-21 19:17:38,311 [INFO] ollama_client: Retrieved 8 models from Ollama server
+2025-04-21 19:17:42,126 [INFO] main: WebSocket disconnected from 172.28.0.1:57668. Remaining: 3
+2025-04-21 19:17:42,127 [INFO] main: WebSocket disconnected from 172.28.0.1:57710. Remaining: 2
+2025-04-21 19:17:43,563 [INFO] main: Looking for focus logs at: /hub_data/focus_logs/daily_summary_2025-04-21.json or /hub_data/focus_logs/focus_log_2025-04-21.jsonl
+2025-04-21 19:17:43,564 [INFO] main: Pre-generated summary not found for 2025-04-21, attempting on-demand calculation.
+2025-04-21 19:17:43,565 [INFO] main: Calculating on-demand summary for 2025-04-21 from /hub_data/focus_logs/focus_log_2025-04-21.jsonl
+2025-04-21 19:17:43,580 [INFO] main: Successfully calculated on-demand summary for 2025-04-21
+2025-04-21 19:17:43,588 [INFO] main: Looking for focus logs at: /hub_data/focus_logs/daily_summary_2025-04-21.json or /hub_data/focus_logs/focus_log_2025-04-21.jsonl
+2025-04-21 19:17:43,589 [INFO] main: Pre-generated summary not found for 2025-04-21, attempting on-demand calculation.
+2025-04-21 19:17:43,591 [INFO] main: Calculating on-demand summary for 2025-04-21 from /hub_data/focus_logs/focus_log_2025-04-21.jsonl
+2025-04-21 19:17:43,598 [INFO] main: Successfully calculated on-demand summary for 2025-04-21
+2025-04-21 19:17:43,610 [INFO] main: New WebSocket connection from 172.28.0.1:57742. Total: 3
+2025-04-21 19:17:43,619 [INFO] ollama_client: Retrieved 8 models from Ollama server
+2025-04-21 19:17:43,637 [INFO] main: New WebSocket connection from 172.28.0.1:57766. Total: 4
+2025-04-21 19:17:43,653 [INFO] ollama_client: Retrieved 8 models from Ollama server
+2025-04-21 19:17:43,659 [INFO] ollama_client: Retrieved 8 models from Ollama server
+2025-04-21 19:17:43,702 [INFO] ollama_client: Retrieved 8 models from Ollama server
+2025-04-21 19:19:46,855 [INFO] main: WebSocket disconnected from 172.28.0.1:57766. Remaining: 3
+2025-04-21 19:19:46,856 [INFO] main: WebSocket disconnected from 172.28.0.1:49384. Remaining: 2
+2025-04-21 19:19:46,856 [INFO] main: WebSocket disconnected from 172.28.0.1:57742. Remaining: 1
+2025-04-21 19:19:46,857 [INFO] main: WebSocket disconnected from 172.28.0.1:49350. Remaining: 0
+2025-04-21 19:19:46,955 [INFO] main: --- Shutting down Projects Hub Backend ---
+2025-04-21 19:19:46,992 [INFO] main: File system watcher stopped.
+2025-04-21 22:26:15,469 [INFO] ollama_client: Initialized Ollama client with base URL: http://host.docker.internal:11434
+2025-04-21 22:26:15,500 [INFO] main: --- Starting Projects Hub Backend ---
+2025-04-21 22:26:15,500 [INFO] main: Watching data directory: /hub_data
+2025-04-21 22:26:15,503 [INFO] main: Hub data directory ready: /hub_data
+2025-04-21 22:26:15,505 [INFO] main: Ensured directory exists: /hub_data/focus_logs
+2025-04-21 22:26:15,745 [INFO] main: File system watcher started successfully.
+2025-04-21 22:26:19,683 [INFO] main: New WebSocket connection from 172.28.0.1:57474. Total: 1
+2025-04-21 22:26:19,776 [INFO] main: New WebSocket connection from 172.28.0.1:57476. Total: 2
+2025-04-21 22:28:29,642 [INFO] main: Looking for focus logs at: /hub_data/focus_logs/daily_summary_2025-04-21.json or /hub_data/focus_logs/focus_log_2025-04-21.jsonl
+2025-04-21 22:28:29,643 [INFO] main: Pre-generated summary not found for 2025-04-21, attempting on-demand calculation.
+2025-04-21 22:28:29,645 [INFO] main: Calculating on-demand summary for 2025-04-21 from /hub_data/focus_logs/focus_log_2025-04-21.jsonl
+2025-04-21 22:28:29,662 [INFO] main: Successfully calculated on-demand summary for 2025-04-21
+2025-04-21 22:28:29,671 [INFO] main: Looking for focus logs at: /hub_data/focus_logs/daily_summary_2025-04-21.json or /hub_data/focus_logs/focus_log_2025-04-21.jsonl
+2025-04-21 22:28:29,672 [INFO] main: Pre-generated summary not found for 2025-04-21, attempting on-demand calculation.
+2025-04-21 22:28:29,673 [INFO] main: Calculating on-demand summary for 2025-04-21 from /hub_data/focus_logs/focus_log_2025-04-21.jsonl
+2025-04-21 22:28:29,681 [INFO] main: Successfully calculated on-demand summary for 2025-04-21
+2025-04-21 22:28:29,683 [INFO] main: New WebSocket connection from 172.28.0.1:41998. Total: 3
+2025-04-21 22:28:29,718 [INFO] ollama_client: Retrieved 8 models from Ollama server
+2025-04-21 22:28:29,720 [INFO] main: New WebSocket connection from 172.28.0.1:42040. Total: 4
+2025-04-21 22:28:29,732 [INFO] ollama_client: Retrieved 8 models from Ollama server
+2025-04-21 22:28:29,744 [INFO] ollama_client: Retrieved 8 models from Ollama server
+2025-04-21 22:28:29,751 [INFO] ollama_client: Retrieved 8 models from Ollama server
+2025-04-21 22:28:43,763 [INFO] main: WebSocket disconnected from 172.28.0.1:42040. Remaining: 3
+2025-04-21 22:28:43,764 [INFO] main: WebSocket disconnected from 172.28.0.1:41998. Remaining: 2
+2025-04-21 22:28:43,929 [INFO] main: New WebSocket connection from 172.28.0.1:36492. Total: 3
+2025-04-21 22:28:44,026 [INFO] ollama_client: Retrieved 8 models from Ollama server
+2025-04-21 22:28:44,037 [INFO] ollama_client: Retrieved 8 models from Ollama server
+2025-04-21 22:28:44,044 [INFO] main: New WebSocket connection from 172.28.0.1:36518. Total: 4
+2025-04-21 22:28:44,048 [INFO] ollama_client: Retrieved 8 models from Ollama server
+2025-04-21 22:28:44,054 [INFO] ollama_client: Retrieved 8 models from Ollama server
+2025-04-21 22:34:05,552 [INFO] main: WebSocket disconnected from 172.28.0.1:57474. Remaining: 3
+2025-04-21 22:34:05,553 [INFO] main: WebSocket disconnected from 172.28.0.1:57476. Remaining: 2
+2025-04-21 22:34:05,553 [INFO] main: WebSocket disconnected from 172.28.0.1:36518. Remaining: 1
+2025-04-21 22:34:05,554 [INFO] main: WebSocket disconnected from 172.28.0.1:36492. Remaining: 0
+2025-04-21 22:34:05,652 [INFO] main: --- Shutting down Projects Hub Backend ---
+2025-04-21 22:34:05,690 [INFO] main: File system watcher stopped.
+2025-04-21 22:34:10,924 [INFO] ollama_client: Initialized Ollama client with base URL: http://host.docker.internal:11434
+2025-04-21 22:34:10,953 [INFO] main: --- Starting Projects Hub Backend ---
+2025-04-21 22:34:10,954 [INFO] main: Watching data directory: /hub_data
+2025-04-21 22:34:10,956 [INFO] main: Hub data directory ready: /hub_data
+2025-04-21 22:34:10,958 [INFO] main: Ensured directory exists: /hub_data/focus_logs
+2025-04-21 22:34:10,987 [INFO] main: File system watcher started successfully.
+2025-04-21 22:34:14,636 [INFO] main: New WebSocket connection from 172.28.0.1:56720. Total: 1
+2025-04-21 22:34:15,395 [INFO] main: New WebSocket connection from 172.28.0.1:56754. Total: 2
+2025-04-21 22:34:15,439 [INFO] ollama_client: Retrieved 8 models from Ollama server
+2025-04-21 22:34:15,453 [INFO] ollama_client: Retrieved 8 models from Ollama server
+2025-04-21 22:34:15,455 [INFO] main: New WebSocket connection from 172.28.0.1:56794. Total: 3
+2025-04-21 22:34:15,468 [INFO] ollama_client: Retrieved 8 models from Ollama server
+2025-04-21 22:34:15,476 [INFO] ollama_client: Retrieved 8 models from Ollama server
+2025-04-21 22:34:15,646 [INFO] main: New WebSocket connection from 172.28.0.1:56808. Total: 4
+2025-04-21 22:34:18,832 [INFO] main: Focus monitor toggled to: False
+2025-04-21 22:34:18,832 [INFO] main: Broadcasting message of type 'focus_status_changed' to 4 clients
+2025-04-21 22:34:18,833 [INFO] main: Message broadcast successful to 4/4 clients
+2025-04-21 22:35:40,428 [INFO] main: WebSocket disconnected from 172.28.0.1:56720. Remaining: 3
+2025-04-21 22:35:40,429 [INFO] main: WebSocket disconnected from 172.28.0.1:56754. Remaining: 2
+2025-04-21 22:35:40,429 [INFO] main: WebSocket disconnected from 172.28.0.1:56794. Remaining: 1
+2025-04-21 22:35:40,430 [INFO] main: WebSocket disconnected from 172.28.0.1:56808. Remaining: 0
+2025-04-21 22:35:40,528 [INFO] main: --- Shutting down Projects Hub Backend ---
+2025-04-21 22:35:40,567 [INFO] main: File system watcher stopped.
+2025-04-21 22:35:46,178 [INFO] ollama_client: Initialized Ollama client with base URL: http://host.docker.internal:11434
+2025-04-21 22:35:46,210 [INFO] main: --- Starting Projects Hub Backend ---
+2025-04-21 22:35:46,211 [INFO] main: Watching data directory: /hub_data
+2025-04-21 22:35:46,214 [INFO] main: Hub data directory ready: /hub_data
+2025-04-21 22:35:46,215 [INFO] main: Ensured directory exists: /hub_data/focus_logs
+2025-04-21 22:35:46,245 [INFO] main: File system watcher started successfully.
+2025-04-21 22:35:47,646 [INFO] main: New WebSocket connection from 172.28.0.1:45888. Total: 1
+2025-04-21 22:35:48,646 [INFO] main: New WebSocket connection from 172.28.0.1:45894. Total: 2
+2025-04-21 22:35:50,121 [INFO] main: New WebSocket connection from 172.28.0.1:45950. Total: 3
+2025-04-21 22:35:50,136 [INFO] ollama_client: Retrieved 8 models from Ollama server
+2025-04-21 22:35:50,151 [INFO] ollama_client: Retrieved 8 models from Ollama server
+2025-04-21 22:35:50,169 [INFO] ollama_client: Retrieved 8 models from Ollama server
+2025-04-21 22:35:50,170 [INFO] main: New WebSocket connection from 172.28.0.1:45980. Total: 4
+2025-04-21 22:35:50,176 [INFO] ollama_client: Retrieved 8 models from Ollama server
+2025-04-21 22:36:06,689 [INFO] main: WebSocket disconnected from 172.28.0.1:45950. Remaining: 3
+2025-04-21 22:36:06,690 [INFO] main: WebSocket disconnected from 172.28.0.1:45980. Remaining: 2
+2025-04-21 22:36:07,119 [INFO] main: New WebSocket connection from 172.28.0.1:59854. Total: 3
+2025-04-21 22:36:07,161 [INFO] main: New WebSocket connection from 172.28.0.1:59876. Total: 4
+2025-04-21 22:36:07,181 [INFO] ollama_client: Retrieved 8 models from Ollama server
+2025-04-21 22:36:07,194 [INFO] ollama_client: Retrieved 8 models from Ollama server
+2025-04-21 22:36:07,206 [INFO] ollama_client: Retrieved 8 models from Ollama server
+2025-04-21 22:36:07,214 [INFO] ollama_client: Retrieved 8 models from Ollama server
+2025-04-21 22:36:14,085 [INFO] main: Focus monitor toggled to: False
+2025-04-21 22:36:14,085 [INFO] main: Broadcasting message of type 'focus_status_changed' to 4 clients
+2025-04-21 22:36:14,086 [INFO] main: Message broadcast successful to 4/4 clients
+2025-04-21 22:36:32,336 [INFO] main: Focus monitor toggled to: True
+2025-04-21 22:36:32,337 [INFO] main: Broadcasting message of type 'focus_status_changed' to 4 clients
+2025-04-21 22:36:32,337 [INFO] main: Message broadcast successful to 4/4 clients
+2025-04-21 22:46:22,650 [INFO] main: WebSocket disconnected from 172.28.0.1:59876. Remaining: 3
+2025-04-21 22:46:22,651 [INFO] main: WebSocket disconnected from 172.28.0.1:59854. Remaining: 2
+2025-04-21 22:46:22,908 [INFO] main: New WebSocket connection from 172.28.0.1:59568. Total: 3
+2025-04-21 22:46:22,943 [INFO] ollama_client: Retrieved 8 models from Ollama server
+2025-04-21 22:46:22,955 [INFO] ollama_client: Retrieved 8 models from Ollama server
+2025-04-21 22:46:22,956 [INFO] main: New WebSocket connection from 172.28.0.1:59596. Total: 4
+2025-04-21 22:46:22,966 [INFO] ollama_client: Retrieved 8 models from Ollama server
+2025-04-21 22:46:22,975 [INFO] ollama_client: Retrieved 8 models from Ollama server
+2025-04-21 22:46:31,270 [INFO] main: WebSocket disconnected from 172.28.0.1:59596. Remaining: 3
+2025-04-21 22:46:31,271 [INFO] main: WebSocket disconnected from 172.28.0.1:59568. Remaining: 2
+2025-04-21 22:46:31,369 [INFO] main: New WebSocket connection from 172.28.0.1:57620. Total: 3
+2025-04-21 22:46:31,435 [INFO] ollama_client: Retrieved 8 models from Ollama server
+2025-04-21 22:46:31,436 [INFO] main: New WebSocket connection from 172.28.0.1:57672. Total: 4
+2025-04-21 22:46:31,449 [INFO] ollama_client: Retrieved 8 models from Ollama server
+2025-04-21 22:46:31,462 [INFO] ollama_client: Retrieved 8 models from Ollama server
+2025-04-21 22:46:31,468 [INFO] ollama_client: Retrieved 8 models from Ollama server
+2025-04-21 22:50:17,912 [INFO] main: WebSocket disconnected from 172.28.0.1:57620. Remaining: 3
+2025-04-21 22:50:17,913 [INFO] main: WebSocket disconnected from 172.28.0.1:57672. Remaining: 2
+2025-04-21 22:50:18,063 [INFO] main: New WebSocket connection from 172.28.0.1:56320. Total: 3
+2025-04-21 22:50:18,100 [INFO] ollama_client: Retrieved 8 models from Ollama server
+2025-04-21 22:50:18,108 [INFO] main: New WebSocket connection from 172.28.0.1:56344. Total: 4
+2025-04-21 22:50:18,174 [INFO] ollama_client: Retrieved 8 models from Ollama server
+2025-04-21 22:50:18,188 [INFO] ollama_client: Retrieved 8 models from Ollama server
+2025-04-21 22:50:18,194 [INFO] ollama_client: Retrieved 8 models from Ollama server
+2025-04-21 23:05:00,848 [INFO] main: Looking for focus logs at: /hub_data/focus_logs/daily_summary_2025-04-21.json or /hub_data/focus_logs/focus_log_2025-04-21.jsonl
+2025-04-21 23:05:00,849 [INFO] main: Pre-generated summary not found for 2025-04-21, attempting on-demand calculation.
+2025-04-21 23:05:00,850 [INFO] main: Calculating on-demand summary for 2025-04-21 from /hub_data/focus_logs/focus_log_2025-04-21.jsonl
+2025-04-21 23:05:00,868 [INFO] main: Successfully calculated on-demand summary for 2025-04-21
+2025-04-21 23:05:00,880 [INFO] main: Looking for focus logs at: /hub_data/focus_logs/daily_summary_2025-04-21.json or /hub_data/focus_logs/focus_log_2025-04-21.jsonl
+2025-04-21 23:05:00,881 [INFO] main: Pre-generated summary not found for 2025-04-21, attempting on-demand calculation.
+2025-04-21 23:05:00,883 [INFO] main: Calculating on-demand summary for 2025-04-21 from /hub_data/focus_logs/focus_log_2025-04-21.jsonl
+2025-04-21 23:05:00,891 [INFO] main: Successfully calculated on-demand summary for 2025-04-21
+2025-04-21 23:05:39,315 [INFO] main: Looking for focus logs at: /hub_data/focus_logs/daily_summary_2025-04-21.json or /hub_data/focus_logs/focus_log_2025-04-21.jsonl
+2025-04-21 23:05:39,316 [INFO] main: Pre-generated summary not found for 2025-04-21, attempting on-demand calculation.
+2025-04-21 23:05:39,318 [INFO] main: Calculating on-demand summary for 2025-04-21 from /hub_data/focus_logs/focus_log_2025-04-21.jsonl
+2025-04-21 23:05:39,325 [INFO] main: Successfully calculated on-demand summary for 2025-04-21
+2025-04-21 23:05:39,331 [INFO] main: Looking for focus logs at: /hub_data/focus_logs/daily_summary_2025-04-21.json or /hub_data/focus_logs/focus_log_2025-04-21.jsonl
+2025-04-21 23:05:39,331 [INFO] main: Pre-generated summary not found for 2025-04-21, attempting on-demand calculation.
+2025-04-21 23:05:39,332 [INFO] main: Calculating on-demand summary for 2025-04-21 from /hub_data/focus_logs/focus_log_2025-04-21.jsonl
+2025-04-21 23:05:39,340 [INFO] main: Successfully calculated on-demand summary for 2025-04-21
+2025-04-21 23:09:20,544 [INFO] main: Looking for focus logs at: /hub_data/focus_logs/daily_summary_2025-04-21.json or /hub_data/focus_logs/focus_log_2025-04-21.jsonl
+2025-04-21 23:09:20,545 [INFO] main: Pre-generated summary not found for 2025-04-21, attempting on-demand calculation.
+2025-04-21 23:09:20,546 [INFO] main: Calculating on-demand summary for 2025-04-21 from /hub_data/focus_logs/focus_log_2025-04-21.jsonl
+2025-04-21 23:09:20,566 [INFO] main: Successfully calculated on-demand summary for 2025-04-21
+2025-04-21 23:09:20,571 [INFO] main: Looking for focus logs at: /hub_data/focus_logs/daily_summary_2025-04-21.json or /hub_data/focus_logs/focus_log_2025-04-21.jsonl
+2025-04-21 23:09:20,572 [INFO] main: Pre-generated summary not found for 2025-04-21, attempting on-demand calculation.
+2025-04-21 23:09:20,573 [INFO] main: Calculating on-demand summary for 2025-04-21 from /hub_data/focus_logs/focus_log_2025-04-21.jsonl
+2025-04-21 23:09:20,581 [INFO] main: Successfully calculated on-demand summary for 2025-04-21
+2025-04-21 23:09:28,242 [INFO] main: Wrote YAML: /hub_data/Project-A/tasks.yaml
+2025-04-21 23:09:28,242 [INFO] main: Broadcasting message of type 'tasks_updated' to 4 clients
+2025-04-21 23:09:28,243 [INFO] main: Message broadcast successful to 4/4 clients
+2025-04-21 23:09:29,292 [INFO] main: Wrote YAML: /hub_data/Project-A/tasks.yaml
+2025-04-21 23:09:29,293 [INFO] main: Broadcasting message of type 'tasks_updated' to 4 clients
+2025-04-21 23:09:29,294 [INFO] main: Message broadcast successful to 4/4 clients
+2025-04-21 23:09:30,334 [INFO] main: Wrote YAML: /hub_data/Project-A/tasks.yaml
+2025-04-21 23:09:30,334 [INFO] main: Broadcasting message of type 'tasks_updated' to 4 clients
+2025-04-21 23:09:30,335 [INFO] main: Message broadcast successful to 4/4 clients
+2025-04-21 23:09:31,342 [INFO] main: Wrote YAML: /hub_data/Project-A/tasks.yaml
+2025-04-21 23:09:31,343 [INFO] main: Broadcasting message of type 'tasks_updated' to 4 clients
+2025-04-21 23:09:31,343 [INFO] main: Message broadcast successful to 4/4 clients
+2025-04-21 23:09:32,644 [INFO] main: Wrote YAML: /hub_data/Project-A/tasks.yaml
+2025-04-21 23:09:32,644 [INFO] main: Broadcasting message of type 'tasks_updated' to 4 clients
+2025-04-21 23:09:32,645 [INFO] main: Message broadcast successful to 4/4 clients
+2025-04-21 23:09:33,906 [INFO] main: Wrote YAML: /hub_data/Project-A/tasks.yaml
+2025-04-21 23:09:33,906 [INFO] main: Broadcasting message of type 'tasks_updated' to 4 clients
+2025-04-21 23:09:33,907 [INFO] main: Message broadcast successful to 4/4 clients
+2025-04-21 23:09:34,786 [INFO] main: Wrote YAML: /hub_data/Project-A/tasks.yaml
+2025-04-21 23:09:34,787 [INFO] main: Broadcasting message of type 'tasks_updated' to 4 clients
+2025-04-21 23:09:34,787 [INFO] main: Message broadcast successful to 4/4 clients
+2025-04-21 23:09:35,755 [INFO] main: Wrote YAML: /hub_data/Project-A/tasks.yaml
+2025-04-21 23:09:35,755 [INFO] main: Broadcasting message of type 'tasks_updated' to 4 clients
+2025-04-21 23:09:35,756 [INFO] main: Message broadcast successful to 4/4 clients
+2025-04-21 23:10:09,398 [INFO] main: Looking for focus logs at: /hub_data/focus_logs/daily_summary_2025-04-21.json or /hub_data/focus_logs/focus_log_2025-04-21.jsonl
+2025-04-21 23:10:09,399 [INFO] main: Pre-generated summary not found for 2025-04-21, attempting on-demand calculation.
+2025-04-21 23:10:09,401 [INFO] main: Calculating on-demand summary for 2025-04-21 from /hub_data/focus_logs/focus_log_2025-04-21.jsonl
+2025-04-21 23:10:09,418 [INFO] main: Successfully calculated on-demand summary for 2025-04-21
+2025-04-21 23:10:09,424 [INFO] main: Looking for focus logs at: /hub_data/focus_logs/daily_summary_2025-04-21.json or /hub_data/focus_logs/focus_log_2025-04-21.jsonl
+2025-04-21 23:10:09,425 [INFO] main: Pre-generated summary not found for 2025-04-21, attempting on-demand calculation.
+2025-04-21 23:10:09,426 [INFO] main: Calculating on-demand summary for 2025-04-21 from /hub_data/focus_logs/focus_log_2025-04-21.jsonl
+2025-04-21 23:10:09,434 [INFO] main: Successfully calculated on-demand summary for 2025-04-21
+2025-04-21 23:17:07,105 [INFO] main: WebSocket disconnected from 172.28.0.1:56320. Remaining: 3
+2025-04-21 23:17:07,106 [INFO] main: WebSocket disconnected from 172.28.0.1:56344. Remaining: 2
+2025-04-21 23:25:41,043 [INFO] main: Looking for focus logs at: /hub_data/focus_logs/daily_summary_2025-04-21.json or /hub_data/focus_logs/focus_log_2025-04-21.jsonl
+2025-04-21 23:25:41,044 [INFO] main: Pre-generated summary not found for 2025-04-21, attempting on-demand calculation.
+2025-04-21 23:25:41,045 [INFO] main: Calculating on-demand summary for 2025-04-21 from /hub_data/focus_logs/focus_log_2025-04-21.jsonl
+2025-04-21 23:25:41,062 [INFO] main: Successfully calculated on-demand summary for 2025-04-21
+2025-04-21 23:25:41,071 [INFO] main: Looking for focus logs at: /hub_data/focus_logs/daily_summary_2025-04-21.json or /hub_data/focus_logs/focus_log_2025-04-21.jsonl
+2025-04-21 23:25:41,072 [INFO] main: Pre-generated summary not found for 2025-04-21, attempting on-demand calculation.
+2025-04-21 23:25:41,073 [INFO] main: Calculating on-demand summary for 2025-04-21 from /hub_data/focus_logs/focus_log_2025-04-21.jsonl
+2025-04-21 23:25:41,081 [INFO] main: Successfully calculated on-demand summary for 2025-04-21
+2025-04-21 23:25:41,082 [INFO] main: New WebSocket connection from 172.28.0.1:38986. Total: 3
+2025-04-21 23:25:41,108 [INFO] ollama_client: Retrieved 8 models from Ollama server
+2025-04-21 23:25:41,110 [INFO] main: New WebSocket connection from 172.28.0.1:39026. Total: 4
+2025-04-21 23:25:41,121 [INFO] ollama_client: Retrieved 8 models from Ollama server
+2025-04-21 23:25:41,131 [INFO] ollama_client: Retrieved 8 models from Ollama server
+2025-04-21 23:25:41,137 [INFO] ollama_client: Retrieved 8 models from Ollama server
+2025-04-21 23:25:47,952 [INFO] main: Wrote YAML: /hub_data/countdowns.yaml
+2025-04-21 23:25:47,953 [INFO] main: File Watcher: Processing 'modified' for 'countdowns.yaml'
+2025-04-21 23:25:47,954 [INFO] main: Broadcasting message of type 'alarms_updated' to 4 clients
+2025-04-21 23:25:47,954 [INFO] main: Message broadcast successful to 4/4 clients
+2025-04-21 23:25:47,970 [INFO] main: Looking for focus logs at: /hub_data/focus_logs/daily_summary_2025-04-21.json or /hub_data/focus_logs/focus_log_2025-04-21.jsonl
+2025-04-21 23:25:47,970 [INFO] main: Pre-generated summary not found for 2025-04-21, attempting on-demand calculation.
+2025-04-21 23:25:47,972 [INFO] main: Calculating on-demand summary for 2025-04-21 from /hub_data/focus_logs/focus_log_2025-04-21.jsonl
+2025-04-21 23:25:47,989 [INFO] main: Successfully calculated on-demand summary for 2025-04-21
+2025-04-21 23:26:01,214 [INFO] main: Wrote YAML: /hub_data/countdowns.yaml
+2025-04-21 23:26:01,215 [INFO] main: File Watcher: Processing 'modified' for 'countdowns.yaml'
+2025-04-21 23:26:01,215 [INFO] main: Broadcasting message of type 'alarms_updated' to 4 clients
+2025-04-21 23:26:01,216 [INFO] main: Message broadcast successful to 4/4 clients
+2025-04-21 23:26:01,224 [INFO] main: Looking for focus logs at: /hub_data/focus_logs/daily_summary_2025-04-21.json or /hub_data/focus_logs/focus_log_2025-04-21.jsonl
+2025-04-21 23:26:01,225 [INFO] main: Pre-generated summary not found for 2025-04-21, attempting on-demand calculation.
+2025-04-21 23:26:01,226 [INFO] main: Calculating on-demand summary for 2025-04-21 from /hub_data/focus_logs/focus_log_2025-04-21.jsonl
+2025-04-21 23:26:01,235 [INFO] main: Successfully calculated on-demand summary for 2025-04-21
+2025-04-21 23:26:08,958 [INFO] main: Wrote YAML: /hub_data/countdowns.yaml
+2025-04-21 23:26:08,959 [INFO] main: File Watcher: Processing 'modified' for 'countdowns.yaml'
+2025-04-21 23:26:08,959 [INFO] main: Broadcasting message of type 'alarms_updated' to 4 clients
+2025-04-21 23:26:08,960 [INFO] main: Message broadcast successful to 4/4 clients
+2025-04-21 23:26:08,967 [INFO] main: Looking for focus logs at: /hub_data/focus_logs/daily_summary_2025-04-21.json or /hub_data/focus_logs/focus_log_2025-04-21.jsonl
+2025-04-21 23:26:08,968 [INFO] main: Pre-generated summary not found for 2025-04-21, attempting on-demand calculation.
+2025-04-21 23:26:08,970 [INFO] main: Calculating on-demand summary for 2025-04-21 from /hub_data/focus_logs/focus_log_2025-04-21.jsonl
+2025-04-21 23:26:08,979 [INFO] main: Successfully calculated on-demand summary for 2025-04-21
+2025-04-21 23:26:09,987 [INFO] main: Wrote YAML: /hub_data/countdowns.yaml
+2025-04-21 23:26:09,988 [INFO] main: File Watcher: Processing 'modified' for 'countdowns.yaml'
+2025-04-21 23:26:09,988 [INFO] main: Broadcasting message of type 'alarms_updated' to 4 clients
+2025-04-21 23:26:09,989 [INFO] main: Message broadcast successful to 4/4 clients
+2025-04-21 23:26:09,991 [INFO] main: Looking for focus logs at: /hub_data/focus_logs/daily_summary_2025-04-21.json or /hub_data/focus_logs/focus_log_2025-04-21.jsonl
+2025-04-21 23:26:09,992 [INFO] main: Pre-generated summary not found for 2025-04-21, attempting on-demand calculation.
+2025-04-21 23:26:09,993 [INFO] main: Calculating on-demand summary for 2025-04-21 from /hub_data/focus_logs/focus_log_2025-04-21.jsonl
+2025-04-21 23:26:10,001 [INFO] main: Successfully calculated on-demand summary for 2025-04-21
+2025-04-21 23:36:49,678 [INFO] main: Looking for focus logs at: /hub_data/focus_logs/daily_summary_2025-04-21.json or /hub_data/focus_logs/focus_log_2025-04-21.jsonl
+2025-04-21 23:36:49,680 [INFO] main: Pre-generated summary not found for 2025-04-21, attempting on-demand calculation.
+2025-04-21 23:36:49,681 [INFO] main: Calculating on-demand summary for 2025-04-21 from /hub_data/focus_logs/focus_log_2025-04-21.jsonl
+2025-04-21 23:36:49,698 [INFO] main: Successfully calculated on-demand summary for 2025-04-21
+2025-04-21 23:36:49,705 [INFO] main: Looking for focus logs at: /hub_data/focus_logs/daily_summary_2025-04-21.json or /hub_data/focus_logs/focus_log_2025-04-21.jsonl
+2025-04-21 23:36:49,706 [INFO] main: Pre-generated summary not found for 2025-04-21, attempting on-demand calculation.
+2025-04-21 23:36:49,707 [INFO] main: Calculating on-demand summary for 2025-04-21 from /hub_data/focus_logs/focus_log_2025-04-21.jsonl
+2025-04-21 23:36:49,716 [INFO] main: Successfully calculated on-demand summary for 2025-04-21
+2025-04-21 23:38:12,654 [INFO] main: WebSocket disconnected from 172.28.0.1:38986. Remaining: 3
+2025-04-21 23:38:12,654 [INFO] main: WebSocket disconnected from 172.28.0.1:39026. Remaining: 2
+2025-04-21 23:38:12,906 [INFO] main: New WebSocket connection from 172.28.0.1:60198. Total: 3
+2025-04-21 23:38:12,932 [INFO] main: New WebSocket connection from 172.28.0.1:60208. Total: 4
+2025-04-21 23:38:12,950 [INFO] ollama_client: Retrieved 8 models from Ollama server
+2025-04-21 23:38:12,963 [INFO] ollama_client: Retrieved 8 models from Ollama server
+2025-04-21 23:38:12,974 [INFO] ollama_client: Retrieved 8 models from Ollama server
+2025-04-21 23:38:12,981 [INFO] ollama_client: Retrieved 8 models from Ollama server
+2025-04-21 23:38:15,256 [INFO] main: Looking for focus logs at: /hub_data/focus_logs/daily_summary_2025-04-21.json or /hub_data/focus_logs/focus_log_2025-04-21.jsonl
+2025-04-21 23:38:15,257 [INFO] main: Pre-generated summary not found for 2025-04-21, attempting on-demand calculation.
+2025-04-21 23:38:15,258 [INFO] main: Calculating on-demand summary for 2025-04-21 from /hub_data/focus_logs/focus_log_2025-04-21.jsonl
+2025-04-21 23:38:15,276 [INFO] main: Successfully calculated on-demand summary for 2025-04-21
+2025-04-21 23:38:15,285 [INFO] main: Looking for focus logs at: /hub_data/focus_logs/daily_summary_2025-04-21.json or /hub_data/focus_logs/focus_log_2025-04-21.jsonl
+2025-04-21 23:38:15,286 [INFO] main: Pre-generated summary not found for 2025-04-21, attempting on-demand calculation.
+2025-04-21 23:38:15,287 [INFO] main: Calculating on-demand summary for 2025-04-21 from /hub_data/focus_logs/focus_log_2025-04-21.jsonl
+2025-04-21 23:38:15,296 [INFO] main: Successfully calculated on-demand summary for 2025-04-21
+2025-04-21 23:47:50,708 [INFO] main: WebSocket disconnected from 172.28.0.1:60198. Remaining: 3
+2025-04-21 23:47:50,708 [INFO] main: WebSocket disconnected from 172.28.0.1:60208. Remaining: 2
+2025-04-21 23:47:50,966 [INFO] main: New WebSocket connection from 172.28.0.1:56454. Total: 3
+2025-04-21 23:47:50,982 [INFO] ollama_client: Retrieved 8 models from Ollama server
+2025-04-21 23:47:50,996 [INFO] ollama_client: Retrieved 8 models from Ollama server
+2025-04-21 23:47:51,013 [INFO] ollama_client: Retrieved 8 models from Ollama server
+2025-04-21 23:47:51,014 [INFO] main: New WebSocket connection from 172.28.0.1:56472. Total: 4
+2025-04-21 23:47:51,020 [INFO] ollama_client: Retrieved 8 models from Ollama server
+2025-04-21 23:47:55,388 [INFO] main: WebSocket disconnected from 172.28.0.1:56454. Remaining: 3
+2025-04-21 23:47:55,389 [INFO] main: WebSocket disconnected from 172.28.0.1:56472. Remaining: 2
+2025-04-21 23:47:55,516 [INFO] main: New WebSocket connection from 172.28.0.1:57010. Total: 3
+2025-04-21 23:47:55,528 [INFO] ollama_client: Retrieved 8 models from Ollama server
+2025-04-21 23:47:55,544 [INFO] ollama_client: Retrieved 8 models from Ollama server
+2025-04-21 23:47:55,560 [INFO] ollama_client: Retrieved 8 models from Ollama server
+2025-04-21 23:47:55,562 [INFO] main: New WebSocket connection from 172.28.0.1:57018. Total: 4
+2025-04-21 23:47:55,569 [INFO] ollama_client: Retrieved 8 models from Ollama server
+2025-04-21 23:47:56,578 [INFO] main: Wrote YAML: /hub_data/countdowns.yaml
+2025-04-21 23:47:56,579 [INFO] main: File Watcher: Processing 'modified' for 'countdowns.yaml'
+2025-04-21 23:47:56,579 [INFO] main: Broadcasting message of type 'alarms_updated' to 4 clients
+2025-04-21 23:47:56,580 [INFO] main: Message broadcast successful to 4/4 clients
+2025-04-21 23:47:56,587 [INFO] main: Looking for focus logs at: /hub_data/focus_logs/daily_summary_2025-04-21.json or /hub_data/focus_logs/focus_log_2025-04-21.jsonl
+2025-04-21 23:47:56,588 [INFO] main: Pre-generated summary not found for 2025-04-21, attempting on-demand calculation.
+2025-04-21 23:47:56,589 [INFO] main: Calculating on-demand summary for 2025-04-21 from /hub_data/focus_logs/focus_log_2025-04-21.jsonl
+2025-04-21 23:47:56,607 [INFO] main: Successfully calculated on-demand summary for 2025-04-21
+2025-04-21 23:47:57,622 [INFO] main: Wrote YAML: /hub_data/countdowns.yaml
+2025-04-21 23:47:57,622 [INFO] main: File Watcher: Processing 'modified' for 'countdowns.yaml'
+2025-04-21 23:47:57,623 [INFO] main: Broadcasting message of type 'alarms_updated' to 4 clients
+2025-04-21 23:47:57,623 [INFO] main: Message broadcast successful to 4/4 clients
+2025-04-21 23:47:57,630 [INFO] main: Looking for focus logs at: /hub_data/focus_logs/daily_summary_2025-04-21.json or /hub_data/focus_logs/focus_log_2025-04-21.jsonl
+2025-04-21 23:47:57,631 [INFO] main: Pre-generated summary not found for 2025-04-21, attempting on-demand calculation.
+2025-04-21 23:47:57,632 [INFO] main: Calculating on-demand summary for 2025-04-21 from /hub_data/focus_logs/focus_log_2025-04-21.jsonl
+2025-04-21 23:47:57,642 [INFO] main: Successfully calculated on-demand summary for 2025-04-21
+2025-04-21 23:47:58,622 [INFO] main: Wrote YAML: /hub_data/countdowns.yaml
+2025-04-21 23:47:58,624 [INFO] main: File Watcher: Processing 'modified' for 'countdowns.yaml'
+2025-04-21 23:47:58,624 [INFO] main: Broadcasting message of type 'alarms_updated' to 4 clients
+2025-04-21 23:47:58,625 [INFO] main: Message broadcast successful to 4/4 clients
+2025-04-21 23:47:58,627 [INFO] main: Looking for focus logs at: /hub_data/focus_logs/daily_summary_2025-04-21.json or /hub_data/focus_logs/focus_log_2025-04-21.jsonl
+2025-04-21 23:47:58,628 [INFO] main: Pre-generated summary not found for 2025-04-21, attempting on-demand calculation.
+2025-04-21 23:47:58,629 [INFO] main: Calculating on-demand summary for 2025-04-21 from /hub_data/focus_logs/focus_log_2025-04-21.jsonl
+2025-04-21 23:47:58,637 [INFO] main: Successfully calculated on-demand summary for 2025-04-21
+2025-04-21 23:48:48,104 [INFO] main: WebSocket disconnected from 172.28.0.1:57018. Remaining: 3
+2025-04-21 23:48:48,105 [INFO] main: WebSocket disconnected from 172.28.0.1:57010. Remaining: 2
+2025-04-21 23:48:48,256 [INFO] main: New WebSocket connection from 172.28.0.1:60416. Total: 3
+2025-04-21 23:48:48,286 [INFO] ollama_client: Retrieved 8 models from Ollama server
+2025-04-21 23:48:48,301 [INFO] ollama_client: Retrieved 8 models from Ollama server
+2025-04-21 23:48:48,303 [INFO] main: New WebSocket connection from 172.28.0.1:60472. Total: 4
+2025-04-21 23:48:48,315 [INFO] ollama_client: Retrieved 8 models from Ollama server
+2025-04-21 23:48:48,321 [INFO] ollama_client: Retrieved 8 models from Ollama server
+2025-04-21 23:50:46,554 [INFO] main: WebSocket disconnected from 172.28.0.1:45894. Remaining: 3
+2025-04-21 23:54:07,476 [INFO] main: WebSocket disconnected from 172.28.0.1:60472. Remaining: 2
+2025-04-21 23:54:07,477 [INFO] main: WebSocket disconnected from 172.28.0.1:60416. Remaining: 1
+2025-04-21 23:54:07,612 [INFO] main: New WebSocket connection from 172.28.0.1:59340. Total: 2
+2025-04-21 23:54:07,643 [INFO] ollama_client: Retrieved 8 models from Ollama server
+2025-04-21 23:54:07,651 [INFO] main: New WebSocket connection from 172.28.0.1:59386. Total: 3
+2025-04-21 23:54:07,661 [INFO] ollama_client: Retrieved 8 models from Ollama server
+2025-04-21 23:54:07,673 [INFO] ollama_client: Retrieved 8 models from Ollama server
+2025-04-21 23:54:07,680 [INFO] ollama_client: Retrieved 8 models from Ollama server
+2025-04-21 23:54:41,931 [INFO] main: WebSocket disconnected from 172.28.0.1:59340. Remaining: 2
+2025-04-21 23:54:41,932 [INFO] main: WebSocket disconnected from 172.28.0.1:59386. Remaining: 1
+2025-04-21 23:54:41,932 [INFO] main: WebSocket disconnected from 172.28.0.1:45888. Remaining: 0
+2025-04-21 23:54:42,031 [INFO] main: --- Shutting down Projects Hub Backend ---
+2025-04-21 23:54:42,066 [INFO] main: File system watcher stopped.
+2025-04-21 23:54:51,996 [INFO] ollama_client: Initialized Ollama client with base URL: http://host.docker.internal:11434
+2025-04-21 23:54:52,015 [INFO] main: --- Starting Projects Hub Backend ---
+2025-04-21 23:54:52,015 [INFO] main: Watching data directory: /hub_data
+2025-04-21 23:54:52,019 [INFO] main: Hub data directory ready: /hub_data
+2025-04-21 23:54:52,020 [INFO] main: Ensured directory exists: /hub_data/focus_logs
+2025-04-21 23:54:52,058 [INFO] main: File system watcher started successfully.
+2025-04-21 23:54:54,560 [INFO] main: New WebSocket connection from 172.28.0.1:33676. Total: 1
+2025-04-21 23:54:55,582 [INFO] main: WebSocket disconnected from 172.28.0.1:33676. Remaining: 0
+2025-04-21 23:54:55,640 [INFO] main: New WebSocket connection from 172.28.0.1:33678. Total: 1
+2025-04-21 23:54:56,276 [INFO] main: New WebSocket connection from 172.28.0.1:33700. Total: 2
+2025-04-21 23:54:56,295 [INFO] main: New WebSocket connection from 172.28.0.1:33720. Total: 3
+2025-04-21 23:55:05,830 [INFO] main: WebSocket disconnected from 172.28.0.1:33720. Remaining: 2
+2025-04-21 23:55:05,831 [INFO] main: WebSocket disconnected from 172.28.0.1:33700. Remaining: 1
+2025-04-21 23:55:06,050 [INFO] main: New WebSocket connection from 172.28.0.1:48620. Total: 2
+2025-04-21 23:55:06,069 [INFO] main: New WebSocket connection from 172.28.0.1:48662. Total: 3
+2025-04-21 23:56:38,062 [INFO] main: WebSocket disconnected from 172.28.0.1:33678. Remaining: 2
+2025-04-21 23:58:04,643 [INFO] main: Wrote YAML: /hub_data/countdowns.yaml
+2025-04-21 23:58:04,656 [INFO] main: Wrote YAML: /hub_data/countdowns.yaml
+2025-04-21 23:58:04,657 [INFO] main: File Watcher: Processing 'modified' for 'countdowns.yaml'
+2025-04-21 23:58:04,657 [INFO] main: Broadcasting message of type 'alarms_updated' to 2 clients
+2025-04-21 23:58:04,660 [INFO] main: Message broadcast successful to 2/2 clients
+2025-04-21 23:58:42,654 [INFO] main: Wrote YAML: /hub_data/countdowns.yaml
+2025-04-21 23:58:42,666 [INFO] main: Wrote YAML: /hub_data/countdowns.yaml
+2025-04-21 23:58:42,667 [INFO] main: File Watcher: Processing 'modified' for 'countdowns.yaml'
+2025-04-21 23:58:42,667 [INFO] main: Broadcasting message of type 'alarms_updated' to 2 clients
+2025-04-21 23:58:42,669 [INFO] main: Message broadcast successful to 2/2 clients
+2025-04-21 23:59:38,647 [INFO] main: Wrote YAML: /hub_data/countdowns.yaml
+2025-04-21 23:59:38,649 [INFO] main: File Watcher: Processing 'modified' for 'countdowns.yaml'
+2025-04-21 23:59:38,649 [INFO] main: Broadcasting message of type 'alarms_updated' to 2 clients
+2025-04-21 23:59:38,661 [INFO] main: Wrote YAML: /hub_data/countdowns.yaml
+2025-04-21 23:59:38,663 [INFO] main: Message broadcast successful to 2/2 clients
+2025-04-22 00:00:38,644 [INFO] main: Wrote YAML: /hub_data/countdowns.yaml
+2025-04-22 00:00:38,656 [INFO] main: Wrote YAML: /hub_data/countdowns.yaml
+2025-04-22 00:00:38,657 [INFO] main: File Watcher: Processing 'modified' for 'countdowns.yaml'
+2025-04-22 00:00:38,658 [INFO] main: Broadcasting message of type 'alarms_updated' to 2 clients
+2025-04-22 00:00:38,659 [INFO] main: Message broadcast successful to 2/2 clients
+2025-04-22 00:01:38,638 [INFO] main: Wrote YAML: /hub_data/countdowns.yaml
+2025-04-22 00:01:38,651 [INFO] main: Wrote YAML: /hub_data/countdowns.yaml
+2025-04-22 00:01:38,652 [INFO] main: File Watcher: Processing 'modified' for 'countdowns.yaml'
+2025-04-22 00:01:38,653 [INFO] main: Broadcasting message of type 'alarms_updated' to 2 clients
+2025-04-22 00:01:38,654 [INFO] main: Message broadcast successful to 2/2 clients
+2025-04-22 00:02:38,645 [INFO] main: Wrote YAML: /hub_data/countdowns.yaml
+2025-04-22 00:02:38,657 [INFO] main: Wrote YAML: /hub_data/countdowns.yaml
+2025-04-22 00:02:38,659 [INFO] main: File Watcher: Processing 'modified' for 'countdowns.yaml'
+2025-04-22 00:02:38,659 [INFO] main: Broadcasting message of type 'alarms_updated' to 2 clients
+2025-04-22 00:02:38,661 [INFO] main: Message broadcast successful to 2/2 clients
+2025-04-22 00:03:38,645 [INFO] main: Wrote YAML: /hub_data/countdowns.yaml
+2025-04-22 00:03:38,656 [INFO] main: Wrote YAML: /hub_data/countdowns.yaml
+2025-04-22 00:03:38,658 [INFO] main: File Watcher: Processing 'modified' for 'countdowns.yaml'
+2025-04-22 00:03:38,658 [INFO] main: Broadcasting message of type 'alarms_updated' to 2 clients
+2025-04-22 00:03:38,659 [INFO] main: Message broadcast successful to 2/2 clients
+2025-04-22 00:04:38,640 [INFO] main: Wrote YAML: /hub_data/countdowns.yaml
+2025-04-22 00:04:38,651 [INFO] main: Wrote YAML: /hub_data/countdowns.yaml
+2025-04-22 00:04:38,652 [INFO] main: File Watcher: Processing 'modified' for 'countdowns.yaml'
+2025-04-22 00:04:38,653 [INFO] main: Broadcasting message of type 'alarms_updated' to 2 clients
+2025-04-22 00:04:38,654 [INFO] main: Message broadcast successful to 2/2 clients
+2025-04-22 00:04:46,926 [INFO] main: WebSocket disconnected from 172.28.0.1:48662. Remaining: 1
+2025-04-22 00:04:46,926 [INFO] main: WebSocket disconnected from 172.28.0.1:48620. Remaining: 0
+2025-04-22 00:04:58,193 [INFO] main: --- Shutting down Projects Hub Backend ---
+2025-04-22 00:04:58,232 [INFO] main: File system watcher stopped.
+2025-04-22 00:05:05,201 [INFO] ollama_client: Initialized Ollama client with base URL: http://host.docker.internal:11434
+2025-04-22 00:05:05,223 [INFO] main: --- Starting Projects Hub Backend ---
+2025-04-22 00:05:05,223 [INFO] main: Watching data directory: /hub_data
+2025-04-22 00:05:05,226 [INFO] main: Hub data directory ready: /hub_data
+2025-04-22 00:05:05,228 [INFO] main: Ensured directory exists: /hub_data/focus_logs
+2025-04-22 00:05:05,267 [INFO] main: File system watcher started successfully.
+2025-04-22 00:08:21,471 [INFO] main: New WebSocket connection from 172.28.0.1:53192. Total: 1
+2025-04-22 00:08:21,476 [INFO] main: Looking for focus logs at: /hub_data/focus_logs/daily_summary_2025-04-21.json or /hub_data/focus_logs/focus_log_2025-04-21.jsonl
+2025-04-22 00:08:21,489 [INFO] main: Serving pre-generated summary for 2025-04-21
+2025-04-22 00:08:21,496 [INFO] main: Looking for focus logs at: /hub_data/focus_logs/daily_summary_2025-04-21.json or /hub_data/focus_logs/focus_log_2025-04-21.jsonl
+2025-04-22 00:08:21,499 [INFO] main: Serving pre-generated summary for 2025-04-21
+2025-04-22 00:08:21,513 [INFO] main: New WebSocket connection from 172.28.0.1:53254. Total: 2
+2025-04-22 00:09:17,720 [INFO] main: Wrote YAML: /hub_data/countdowns.yaml
+2025-04-22 00:09:17,722 [INFO] main: File Watcher: Processing 'modified' for 'countdowns.yaml'
+2025-04-22 00:09:17,722 [INFO] main: Broadcasting message of type 'alarms_updated' to 2 clients
+2025-04-22 00:09:17,724 [INFO] main: Message broadcast successful to 2/2 clients
+2025-04-22 00:09:17,732 [INFO] main: Wrote YAML: /hub_data/countdowns.yaml
+2025-04-22 00:09:17,792 [INFO] main: Wrote YAML: /hub_data/countdowns.yaml
+2025-04-22 00:09:17,792 [INFO] main: Broadcasting message of type 'alarms_updated' to 2 clients
+2025-04-22 00:09:17,794 [INFO] main: Message broadcast successful to 2/2 clients
+2025-04-22 00:09:19,399 [INFO] main: WebSocket disconnected from 172.28.0.1:53192. Remaining: 1
+2025-04-22 00:09:19,400 [INFO] main: WebSocket disconnected from 172.28.0.1:53254. Remaining: 0
+2025-04-22 00:09:19,614 [INFO] main: New WebSocket connection from 172.28.0.1:58412. Total: 1
+2025-04-22 00:09:19,633 [INFO] main: New WebSocket connection from 172.28.0.1:58420. Total: 2
+2025-04-22 00:09:53,039 [INFO] main: WebSocket disconnected from 172.28.0.1:58420. Remaining: 1
+2025-04-22 00:09:53,040 [INFO] main: WebSocket disconnected from 172.28.0.1:58412. Remaining: 0
+2025-04-22 00:09:53,290 [INFO] main: New WebSocket connection from 172.28.0.1:32986. Total: 1
+2025-04-22 00:09:53,312 [INFO] main: New WebSocket connection from 172.28.0.1:32998. Total: 2
+2025-04-22 00:10:00,524 [INFO] main: Wrote YAML: /hub_data/countdowns.yaml
+2025-04-22 00:10:00,526 [INFO] main: File Watcher: Processing 'modified' for 'countdowns.yaml'
+2025-04-22 00:10:00,526 [INFO] main: Broadcasting message of type 'alarms_updated' to 2 clients
+2025-04-22 00:10:00,527 [INFO] main: Message broadcast successful to 2/2 clients
+2025-04-22 00:11:29,768 [INFO] main: New WebSocket connection from 172.28.0.1:52556. Total: 3
+2025-04-22 00:11:42,652 [INFO] main: WebSocket disconnected from 172.28.0.1:32998. Remaining: 2
+2025-04-22 00:11:42,660 [INFO] main: New WebSocket connection from 172.28.0.1:53992. Total: 3
+2025-04-22 00:11:59,073 [INFO] main: WebSocket disconnected from 172.28.0.1:52556. Remaining: 2
+2025-04-22 00:11:59,081 [INFO] main: New WebSocket connection from 172.28.0.1:40612. Total: 3
+2025-04-22 00:12:44,147 [INFO] main: WebSocket disconnected from 172.28.0.1:32986. Remaining: 2
+2025-04-22 00:12:44,148 [INFO] main: WebSocket disconnected from 172.28.0.1:40612. Remaining: 1
+2025-04-22 00:12:44,149 [INFO] main: WebSocket disconnected from 172.28.0.1:53992. Remaining: 0
+2025-04-22 00:12:44,367 [INFO] main: New WebSocket connection from 172.28.0.1:54498. Total: 1
+2025-04-22 00:12:44,386 [INFO] main: New WebSocket connection from 172.28.0.1:54510. Total: 2
+2025-04-22 00:12:46,681 [INFO] main: Wrote YAML: /hub_data/countdowns.yaml
+2025-04-22 00:12:46,682 [INFO] main: File Watcher: Processing 'modified' for 'countdowns.yaml'
+2025-04-22 00:12:46,682 [INFO] main: Broadcasting message of type 'alarms_updated' to 2 clients
+2025-04-22 00:12:46,683 [INFO] main: Message broadcast successful to 2/2 clients
+2025-04-22 00:12:50,526 [INFO] main: Wrote YAML: /hub_data/countdowns.yaml
+2025-04-22 00:12:50,528 [INFO] main: File Watcher: Processing 'modified' for 'countdowns.yaml'
+2025-04-22 00:12:50,528 [INFO] main: Broadcasting message of type 'alarms_updated' to 2 clients
+2025-04-22 00:12:50,529 [INFO] main: Message broadcast successful to 2/2 clients
+2025-04-22 00:13:43,029 [INFO] main: Looking for focus logs at: /hub_data/focus_logs/daily_summary_2025-04-21.json or /hub_data/focus_logs/focus_log_2025-04-21.jsonl
+2025-04-22 00:13:43,033 [INFO] main: Serving pre-generated summary for 2025-04-21
+2025-04-22 00:13:43,040 [INFO] main: Looking for focus logs at: /hub_data/focus_logs/daily_summary_2025-04-21.json or /hub_data/focus_logs/focus_log_2025-04-21.jsonl
+2025-04-22 00:13:43,044 [INFO] main: Serving pre-generated summary for 2025-04-21
+2025-04-22 00:15:12,257 [INFO] main: WebSocket disconnected from 172.28.0.1:54510. Remaining: 1
+2025-04-22 00:15:12,258 [INFO] main: WebSocket disconnected from 172.28.0.1:54498. Remaining: 0
+2025-04-22 10:20:15,299 [INFO] ollama_client: Initialized Ollama client with base URL: http://host.docker.internal:11434
+2025-04-22 10:20:15,316 [INFO] main: --- Starting Projects Hub Backend ---
+2025-04-22 10:20:15,316 [INFO] main: Watching data directory: /hub_data
+2025-04-22 10:20:15,319 [INFO] main: Hub data directory ready: /hub_data
+2025-04-22 10:20:15,320 [INFO] main: Ensured directory exists: /hub_data/focus_logs
+2025-04-22 10:20:15,343 [INFO] main: File system watcher started successfully.
+2025-04-22 10:30:01,099 [INFO] main: --- Shutting down Projects Hub Backend ---
+2025-04-22 10:30:01,130 [INFO] main: File system watcher stopped.
+2025-04-22 10:30:19,159 [INFO] ollama_client: Initialized Ollama client with base URL: http://host.docker.internal:11434
+2025-04-22 10:30:26,503 [INFO] main: --- Starting Projects Hub Backend ---
+2025-04-22 10:30:26,503 [INFO] main: Watching data directory: /hub_data
+2025-04-22 10:30:26,509 [INFO] main: Hub data directory ready: /hub_data
+2025-04-22 10:30:26,510 [INFO] main: Ensured directory exists: /hub_data/focus_logs
+2025-04-22 10:30:26,555 [INFO] main: File system watcher started successfully.
+2025-04-22 10:30:50,372 [INFO] main: Looking for focus logs at: /hub_data/focus_logs/daily_summary_2025-04-22.json or /hub_data/focus_logs/focus_log_2025-04-22.jsonl
+2025-04-22 10:30:50,373 [INFO] main: Pre-generated summary not found for 2025-04-22, attempting on-demand calculation.
+2025-04-22 10:30:50,375 [INFO] main: Calculating on-demand summary for 2025-04-22 from /hub_data/focus_logs/focus_log_2025-04-22.jsonl
+2025-04-22 10:30:50,390 [INFO] main: Successfully calculated on-demand summary for 2025-04-22
+2025-04-22 10:30:50,396 [INFO] main: Looking for focus logs at: /hub_data/focus_logs/daily_summary_2025-04-22.json or /hub_data/focus_logs/focus_log_2025-04-22.jsonl
+2025-04-22 10:30:50,397 [INFO] main: Pre-generated summary not found for 2025-04-22, attempting on-demand calculation.
+2025-04-22 10:30:50,398 [INFO] main: Calculating on-demand summary for 2025-04-22 from /hub_data/focus_logs/focus_log_2025-04-22.jsonl
+2025-04-22 10:30:50,404 [INFO] main: Successfully calculated on-demand summary for 2025-04-22
+2025-04-22 10:30:50,410 [INFO] main: New WebSocket connection from 172.28.0.1:56340. Total: 1
+2025-04-22 10:30:50,428 [INFO] main: New WebSocket connection from 172.28.0.1:56364. Total: 2
+2025-04-22 10:35:51,897 [INFO] main: WebSocket disconnected from 172.28.0.1:56364. Remaining: 1
+2025-04-22 10:35:51,898 [INFO] main: WebSocket disconnected from 172.28.0.1:56340. Remaining: 0
+2025-04-22 10:35:52,130 [INFO] main: New WebSocket connection from 172.28.0.1:49174. Total: 1
+2025-04-22 10:35:52,144 [INFO] main: New WebSocket connection from 172.28.0.1:49190. Total: 2
+2025-04-22 10:36:12,017 [INFO] main: Wrote YAML: /hub_data/countdowns.yaml
+2025-04-22 10:36:12,018 [INFO] main: File Watcher: Processing 'modified' for 'countdowns.yaml'
+2025-04-22 10:36:12,019 [INFO] main: Broadcasting message of type 'alarms_updated' to 2 clients
+2025-04-22 10:36:12,020 [INFO] main: Message broadcast successful to 2/2 clients
+2025-04-22 10:36:15,585 [INFO] main: WebSocket disconnected from 172.28.0.1:49174. Remaining: 1
+2025-04-22 10:36:15,585 [INFO] main: WebSocket disconnected from 172.28.0.1:49190. Remaining: 0
+2025-04-22 10:36:15,792 [INFO] main: New WebSocket connection from 172.28.0.1:52888. Total: 1
+2025-04-22 10:36:15,812 [INFO] main: New WebSocket connection from 172.28.0.1:52916. Total: 2
+2025-04-22 10:36:18,311 [INFO] main: Wrote YAML: /hub_data/countdowns.yaml
+2025-04-22 10:36:18,313 [INFO] main: File Watcher: Processing 'modified' for 'countdowns.yaml'
+2025-04-22 10:36:18,313 [INFO] main: Broadcasting message of type 'alarms_updated' to 2 clients
+2025-04-22 10:36:18,314 [INFO] main: Message broadcast successful to 2/2 clients
+2025-04-22 10:36:19,435 [INFO] main: Wrote YAML: /hub_data/countdowns.yaml
+2025-04-22 10:36:19,436 [INFO] main: File Watcher: Processing 'modified' for 'countdowns.yaml'
+2025-04-22 10:36:19,437 [INFO] main: Broadcasting message of type 'alarms_updated' to 2 clients
+2025-04-22 10:36:19,437 [INFO] main: Message broadcast successful to 2/2 clients
+2025-04-22 10:38:43,743 [INFO] main: WebSocket disconnected from 172.28.0.1:52888. Remaining: 1
+2025-04-22 10:38:43,744 [INFO] main: WebSocket disconnected from 172.28.0.1:52916. Remaining: 0
+2025-04-22 10:38:43,751 [INFO] main: New WebSocket connection from 172.28.0.1:46068. Total: 1
+2025-04-22 10:38:43,752 [INFO] main: New WebSocket connection from 172.28.0.1:46090. Total: 2
+2025-04-22 10:39:28,816 [INFO] main: Looking for focus logs at: /hub_data/focus_logs/daily_summary_2025-04-22.json or /hub_data/focus_logs/focus_log_2025-04-22.jsonl
+2025-04-22 10:39:28,817 [INFO] main: Pre-generated summary not found for 2025-04-22, attempting on-demand calculation.
+2025-04-22 10:39:28,818 [INFO] main: Calculating on-demand summary for 2025-04-22 from /hub_data/focus_logs/focus_log_2025-04-22.jsonl
+2025-04-22 10:39:28,833 [INFO] main: Successfully calculated on-demand summary for 2025-04-22
+2025-04-22 10:39:28,839 [INFO] main: Focus monitor toggled to: False
+2025-04-22 10:39:28,839 [INFO] main: Broadcasting message of type 'focus_status_changed' to 2 clients
+2025-04-22 10:39:28,840 [INFO] main: Looking for focus logs at: /hub_data/focus_logs/daily_summary_2025-04-22.json or /hub_data/focus_logs/focus_log_2025-04-22.jsonl
+2025-04-22 10:39:28,841 [INFO] main: Pre-generated summary not found for 2025-04-22, attempting on-demand calculation.
+2025-04-22 10:39:28,842 [INFO] main: Calculating on-demand summary for 2025-04-22 from /hub_data/focus_logs/focus_log_2025-04-22.jsonl
+2025-04-22 10:39:28,849 [INFO] main: Successfully calculated on-demand summary for 2025-04-22
+2025-04-22 10:39:28,850 [INFO] main: Focus monitor toggled to: True
+2025-04-22 10:39:28,851 [INFO] main: Broadcasting message of type 'focus_status_changed' to 2 clients
+2025-04-22 10:39:28,856 [INFO] main: Message broadcast successful to 2/2 clients
+2025-04-22 10:39:28,856 [INFO] main: Looking for focus logs at: /hub_data/focus_logs/daily_summary_2025-04-22.json or /hub_data/focus_logs/focus_log_2025-04-22.jsonl
+2025-04-22 10:39:28,857 [INFO] main: Pre-generated summary not found for 2025-04-22, attempting on-demand calculation.
+2025-04-22 10:39:28,859 [INFO] main: Calculating on-demand summary for 2025-04-22 from /hub_data/focus_logs/focus_log_2025-04-22.jsonl
+2025-04-22 10:39:28,866 [INFO] main: Successfully calculated on-demand summary for 2025-04-22
+2025-04-22 10:39:28,867 [INFO] main: Message broadcast successful to 2/2 clients
+2025-04-22 10:39:28,868 [INFO] main: New WebSocket connection from 172.28.0.1:47452. Total: 3
+2025-04-22 10:40:20,385 [INFO] main: WebSocket disconnected from 172.28.0.1:46068. Remaining: 2
+2025-04-22 10:40:20,386 [INFO] main: WebSocket disconnected from 172.28.0.1:46090. Remaining: 1
+2025-04-22 10:40:20,386 [INFO] main: WebSocket disconnected from 172.28.0.1:47452. Remaining: 0
+2025-04-22 10:40:20,594 [INFO] main: New WebSocket connection from 172.28.0.1:47142. Total: 1
+2025-04-22 10:40:20,611 [INFO] main: New WebSocket connection from 172.28.0.1:47164. Total: 2
+2025-04-22 10:41:05,939 [INFO] main: Looking for focus logs at: /hub_data/focus_logs/daily_summary_2025-04-22.json or /hub_data/focus_logs/focus_log_2025-04-22.jsonl
+2025-04-22 10:41:05,940 [INFO] main: Pre-generated summary not found for 2025-04-22, attempting on-demand calculation.
+2025-04-22 10:41:05,941 [INFO] main: Calculating on-demand summary for 2025-04-22 from /hub_data/focus_logs/focus_log_2025-04-22.jsonl
+2025-04-22 10:41:05,958 [INFO] main: Successfully calculated on-demand summary for 2025-04-22
+2025-04-22 10:41:05,962 [INFO] main: Looking for focus logs at: /hub_data/focus_logs/daily_summary_2025-04-22.json or /hub_data/focus_logs/focus_log_2025-04-22.jsonl
+2025-04-22 10:41:05,963 [INFO] main: Pre-generated summary not found for 2025-04-22, attempting on-demand calculation.
+2025-04-22 10:41:05,964 [INFO] main: Calculating on-demand summary for 2025-04-22 from /hub_data/focus_logs/focus_log_2025-04-22.jsonl
+2025-04-22 10:41:05,971 [INFO] main: Successfully calculated on-demand summary for 2025-04-22
+2025-04-22 10:41:34,290 [INFO] main: Looking for focus logs at: /hub_data/focus_logs/daily_summary_2025-04-22.json or /hub_data/focus_logs/focus_log_2025-04-22.jsonl
+2025-04-22 10:41:34,291 [INFO] main: Pre-generated summary not found for 2025-04-22, attempting on-demand calculation.
+2025-04-22 10:41:34,292 [INFO] main: Calculating on-demand summary for 2025-04-22 from /hub_data/focus_logs/focus_log_2025-04-22.jsonl
+2025-04-22 10:41:34,299 [INFO] main: Successfully calculated on-demand summary for 2025-04-22
+2025-04-22 10:41:34,304 [INFO] main: New WebSocket connection from 172.28.0.1:47330. Total: 3
+2025-04-22 10:42:18,802 [INFO] main: Looking for focus logs at: /hub_data/focus_logs/daily_summary_2025-04-22.json or /hub_data/focus_logs/focus_log_2025-04-22.jsonl
+2025-04-22 10:42:18,803 [INFO] main: Pre-generated summary not found for 2025-04-22, attempting on-demand calculation.
+2025-04-22 10:42:18,804 [INFO] main: Calculating on-demand summary for 2025-04-22 from /hub_data/focus_logs/focus_log_2025-04-22.jsonl
+2025-04-22 10:42:18,818 [INFO] main: Successfully calculated on-demand summary for 2025-04-22
+2025-04-22 10:42:18,819 [INFO] main: WebSocket disconnected from 172.28.0.1:47164. Remaining: 2
+2025-04-22 10:42:18,819 [INFO] main: WebSocket disconnected from 172.28.0.1:47142. Remaining: 1
+2025-04-22 10:42:18,820 [INFO] main: WebSocket disconnected from 172.28.0.1:47330. Remaining: 0
+2025-04-22 10:42:18,823 [INFO] main: Looking for focus logs at: /hub_data/focus_logs/daily_summary_2025-04-22.json or /hub_data/focus_logs/focus_log_2025-04-22.jsonl
+2025-04-22 10:42:18,824 [INFO] main: Pre-generated summary not found for 2025-04-22, attempting on-demand calculation.
+2025-04-22 10:42:18,825 [INFO] main: Calculating on-demand summary for 2025-04-22 from /hub_data/focus_logs/focus_log_2025-04-22.jsonl
+2025-04-22 10:42:18,830 [INFO] main: Successfully calculated on-demand summary for 2025-04-22
+2025-04-22 10:42:18,831 [INFO] main: New WebSocket connection from 172.28.0.1:51948. Total: 1
+2025-04-22 10:42:18,835 [INFO] main: New WebSocket connection from 172.28.0.1:51962. Total: 2
+2025-04-22 10:42:18,840 [INFO] main: Wrote YAML: /hub_data/countdowns.yaml
+2025-04-22 10:42:18,848 [INFO] main: File Watcher: Processing 'modified' for 'countdowns.yaml'
+2025-04-22 10:42:18,849 [INFO] main: Broadcasting message of type 'alarms_updated' to 2 clients
+2025-04-22 10:42:18,854 [INFO] main: Message broadcast successful to 2/2 clients
+2025-04-22 10:42:23,375 [INFO] main: Wrote YAML: /hub_data/countdowns.yaml
+2025-04-22 10:42:23,377 [INFO] main: File Watcher: Processing 'modified' for 'countdowns.yaml'
+2025-04-22 10:42:23,377 [INFO] main: Broadcasting message of type 'alarms_updated' to 2 clients
+2025-04-22 10:42:23,378 [INFO] main: Message broadcast successful to 2/2 clients
+2025-04-22 10:42:24,833 [INFO] main: Wrote YAML: /hub_data/countdowns.yaml
+2025-04-22 10:42:24,834 [INFO] main: File Watcher: Processing 'modified' for 'countdowns.yaml'
+2025-04-22 10:42:24,835 [INFO] main: Broadcasting message of type 'alarms_updated' to 2 clients
+2025-04-22 10:42:24,835 [INFO] main: Message broadcast successful to 2/2 clients
+2025-04-22 10:42:27,600 [INFO] main: WebSocket disconnected from 172.28.0.1:51948. Remaining: 1
+2025-04-22 10:42:27,600 [INFO] main: WebSocket disconnected from 172.28.0.1:51962. Remaining: 0
+2025-04-22 10:42:27,799 [INFO] main: New WebSocket connection from 172.28.0.1:47426. Total: 1
+2025-04-22 10:42:27,817 [INFO] main: New WebSocket connection from 172.28.0.1:47438. Total: 2
+2025-04-22 10:43:01,404 [INFO] main: Focus monitor toggled to: False
+2025-04-22 10:43:01,405 [INFO] main: Broadcasting message of type 'focus_status_changed' to 2 clients
+2025-04-22 10:43:01,406 [INFO] main: Focus monitor toggled to: True
+2025-04-22 10:43:01,406 [INFO] main: Broadcasting message of type 'focus_status_changed' to 2 clients
+2025-04-22 10:43:01,407 [INFO] main: Message broadcast successful to 2/2 clients
+2025-04-22 10:43:01,408 [INFO] main: Message broadcast successful to 2/2 clients
+2025-04-22 10:45:57,618 [INFO] main: New WebSocket connection from 172.28.0.1:51734. Total: 3
+2025-04-22 10:45:57,635 [INFO] main: New WebSocket connection from 172.28.0.1:51762. Total: 4
+2025-04-22 10:45:59,676 [INFO] main: Looking for focus logs at: /hub_data/focus_logs/daily_summary_2025-04-22.json or /hub_data/focus_logs/focus_log_2025-04-22.jsonl
+2025-04-22 10:45:59,677 [INFO] main: Pre-generated summary not found for 2025-04-22, attempting on-demand calculation.
+2025-04-22 10:45:59,678 [INFO] main: Calculating on-demand summary for 2025-04-22 from /hub_data/focus_logs/focus_log_2025-04-22.jsonl
+2025-04-22 10:45:59,695 [INFO] main: Successfully calculated on-demand summary for 2025-04-22
+2025-04-22 10:45:59,700 [INFO] main: Looking for focus logs at: /hub_data/focus_logs/daily_summary_2025-04-22.json or /hub_data/focus_logs/focus_log_2025-04-22.jsonl
+2025-04-22 10:45:59,701 [INFO] main: Pre-generated summary not found for 2025-04-22, attempting on-demand calculation.
+2025-04-22 10:45:59,702 [INFO] main: Calculating on-demand summary for 2025-04-22 from /hub_data/focus_logs/focus_log_2025-04-22.jsonl
+2025-04-22 10:45:59,708 [INFO] main: Successfully calculated on-demand summary for 2025-04-22
+2025-04-22 10:46:01,731 [INFO] main: WebSocket disconnected from 172.28.0.1:51762. Remaining: 3
+2025-04-22 10:46:01,731 [INFO] main: WebSocket disconnected from 172.28.0.1:51734. Remaining: 2
+2025-04-22 10:46:01,793 [INFO] main: Looking for focus logs at: /hub_data/focus_logs/daily_summary_2025-04-22.json or /hub_data/focus_logs/focus_log_2025-04-22.jsonl
+2025-04-22 10:46:01,795 [INFO] main: Pre-generated summary not found for 2025-04-22, attempting on-demand calculation.
+2025-04-22 10:46:01,796 [INFO] main: Calculating on-demand summary for 2025-04-22 from /hub_data/focus_logs/focus_log_2025-04-22.jsonl
+2025-04-22 10:46:01,804 [INFO] main: Successfully calculated on-demand summary for 2025-04-22
+2025-04-22 10:46:01,810 [INFO] main: Looking for focus logs at: /hub_data/focus_logs/daily_summary_2025-04-22.json or /hub_data/focus_logs/focus_log_2025-04-22.jsonl
+2025-04-22 10:46:01,811 [INFO] main: Pre-generated summary not found for 2025-04-22, attempting on-demand calculation.
+2025-04-22 10:46:01,813 [INFO] main: Calculating on-demand summary for 2025-04-22 from /hub_data/focus_logs/focus_log_2025-04-22.jsonl
+2025-04-22 10:46:01,820 [INFO] main: Successfully calculated on-demand summary for 2025-04-22
+2025-04-22 10:46:01,822 [INFO] main: New WebSocket connection from 172.28.0.1:51818. Total: 3
+2025-04-22 10:46:01,839 [INFO] main: New WebSocket connection from 172.28.0.1:51824. Total: 4
+2025-04-22 10:46:38,050 [INFO] main: Wrote YAML: /hub_data/countdowns.yaml
+2025-04-22 10:46:38,052 [INFO] main: WebSocket disconnected from 172.28.0.1:51818. Remaining: 3
+2025-04-22 10:46:38,052 [INFO] main: WebSocket disconnected from 172.28.0.1:51824. Remaining: 2
+2025-04-22 10:46:38,053 [INFO] main: File Watcher: Processing 'modified' for 'countdowns.yaml'
+2025-04-22 10:46:38,053 [INFO] main: Broadcasting message of type 'alarms_updated' to 2 clients
+2025-04-22 10:46:38,055 [INFO] main: New WebSocket connection from 172.28.0.1:48310. Total: 3
+2025-04-22 10:46:38,056 [INFO] main: Message broadcast successful to 2/2 clients
+2025-04-22 10:46:38,058 [INFO] main: New WebSocket connection from 172.28.0.1:48326. Total: 4
+2025-04-22 10:47:24,760 [INFO] main: Wrote YAML: /hub_data/countdowns.yaml
+2025-04-22 10:47:24,762 [INFO] main: File Watcher: Processing 'modified' for 'countdowns.yaml'
+2025-04-22 10:47:24,763 [INFO] main: Broadcasting message of type 'alarms_updated' to 4 clients
+2025-04-22 10:47:24,765 [INFO] main: Message broadcast successful to 4/4 clients
+2025-04-22 10:47:28,057 [INFO] main: WebSocket disconnected from 172.28.0.1:48310. Remaining: 3
+2025-04-22 10:47:28,057 [INFO] main: WebSocket disconnected from 172.28.0.1:48326. Remaining: 2
+2025-04-22 10:47:28,194 [INFO] main: New WebSocket connection from 172.28.0.1:38684. Total: 3
+2025-04-22 10:47:28,211 [INFO] main: New WebSocket connection from 172.28.0.1:38690. Total: 4
+2025-04-22 10:47:35,045 [INFO] main: WebSocket disconnected from 172.28.0.1:47426. Remaining: 3
+2025-04-22 10:47:35,046 [INFO] main: WebSocket disconnected from 172.28.0.1:47438. Remaining: 2
+2025-04-22 10:47:35,470 [INFO] main: New WebSocket connection from 172.28.0.1:59952. Total: 3
+2025-04-22 10:47:35,488 [INFO] main: New WebSocket connection from 172.28.0.1:59960. Total: 4
+2025-04-22 10:47:53,058 [INFO] main: WebSocket disconnected from 172.28.0.1:38690. Remaining: 3
+2025-04-22 10:47:53,058 [INFO] main: WebSocket disconnected from 172.28.0.1:38684. Remaining: 2
+2025-04-22 10:47:53,060 [INFO] main: WebSocket disconnected from 172.28.0.1:59952. Remaining: 1
+2025-04-22 10:47:53,060 [INFO] main: WebSocket disconnected from 172.28.0.1:59960. Remaining: 0
+2025-04-22 10:47:53,326 [INFO] main: New WebSocket connection from 172.28.0.1:56488. Total: 1
+2025-04-22 10:47:53,341 [INFO] main: New WebSocket connection from 172.28.0.1:56516. Total: 2
+2025-04-22 10:47:53,354 [INFO] main: New WebSocket connection from 172.28.0.1:56550. Total: 3
+2025-04-22 10:47:53,369 [INFO] main: New WebSocket connection from 172.28.0.1:56554. Total: 4
+2025-04-22 10:48:05,048 [INFO] main: WebSocket disconnected from 172.28.0.1:56554. Remaining: 3
+2025-04-22 10:48:05,049 [INFO] main: WebSocket disconnected from 172.28.0.1:56550. Remaining: 2
+2025-04-22 10:48:05,050 [INFO] main: WebSocket disconnected from 172.28.0.1:56488. Remaining: 1
+2025-04-22 10:48:05,051 [INFO] main: WebSocket disconnected from 172.28.0.1:56516. Remaining: 0
+2025-04-22 10:48:05,288 [INFO] main: New WebSocket connection from 172.28.0.1:40260. Total: 1
+2025-04-22 10:48:05,302 [INFO] main: New WebSocket connection from 172.28.0.1:40288. Total: 2
+2025-04-22 10:48:05,337 [INFO] main: New WebSocket connection from 172.28.0.1:40314. Total: 3
+2025-04-22 10:48:05,352 [INFO] main: New WebSocket connection from 172.28.0.1:40320. Total: 4
+2025-04-22 10:48:26,043 [INFO] main: Wrote YAML: /hub_data/countdowns.yaml
+2025-04-22 10:48:26,043 [INFO] main: File Watcher: Processing 'modified' for 'countdowns.yaml'
+2025-04-22 10:48:26,044 [INFO] main: Broadcasting message of type 'alarms_updated' to 4 clients
+2025-04-22 10:48:26,044 [INFO] main: Message broadcast successful to 4/4 clients
+2025-04-22 10:48:52,042 [INFO] main: Wrote YAML: /hub_data/countdowns.yaml
+2025-04-22 10:48:52,043 [INFO] main: File Watcher: Processing 'modified' for 'countdowns.yaml'
+2025-04-22 10:48:52,044 [INFO] main: Broadcasting message of type 'alarms_updated' to 4 clients
+2025-04-22 10:48:52,045 [INFO] main: Message broadcast successful to 4/4 clients
+2025-04-22 10:49:11,783 [INFO] main: WebSocket disconnected from 172.28.0.1:40288. Remaining: 3
+2025-04-22 10:49:11,784 [INFO] main: WebSocket disconnected from 172.28.0.1:40260. Remaining: 2
+2025-04-22 10:49:11,850 [INFO] main: New WebSocket connection from 172.28.0.1:38280. Total: 3
+2025-04-22 10:49:11,864 [INFO] main: New WebSocket connection from 172.28.0.1:38320. Total: 4
+2025-04-22 10:49:16,047 [INFO] main: Wrote YAML: /hub_data/countdowns.yaml
+2025-04-22 10:49:16,048 [INFO] main: File Watcher: Processing 'modified' for 'countdowns.yaml'
+2025-04-22 10:49:16,048 [INFO] main: Broadcasting message of type 'alarms_updated' to 4 clients
+2025-04-22 10:49:16,049 [INFO] main: Message broadcast successful to 4/4 clients
+2025-04-22 10:49:47,047 [INFO] main: Wrote YAML: /hub_data/countdowns.yaml
+2025-04-22 10:49:47,048 [INFO] main: File Watcher: Processing 'modified' for 'countdowns.yaml'
+2025-04-22 10:49:47,049 [INFO] main: Broadcasting message of type 'alarms_updated' to 4 clients
+2025-04-22 10:49:47,049 [INFO] main: Message broadcast successful to 4/4 clients
+2025-04-22 10:50:11,052 [INFO] main: Wrote YAML: /hub_data/countdowns.yaml
+2025-04-22 10:50:11,053 [INFO] main: File Watcher: Processing 'modified' for 'countdowns.yaml'
+2025-04-22 10:50:11,053 [INFO] main: Broadcasting message of type 'alarms_updated' to 4 clients
+2025-04-22 10:50:11,054 [INFO] main: Message broadcast successful to 4/4 clients
+2025-04-22 10:50:26,118 [INFO] main: WebSocket disconnected from 172.28.0.1:38320. Remaining: 3
+2025-04-22 10:50:26,119 [INFO] main: WebSocket disconnected from 172.28.0.1:38280. Remaining: 2
+2025-04-22 10:50:26,331 [INFO] main: New WebSocket connection from 172.28.0.1:37548. Total: 3
+2025-04-22 10:50:26,345 [INFO] main: New WebSocket connection from 172.28.0.1:37562. Total: 4
+2025-04-22 10:50:27,049 [INFO] main: WebSocket disconnected from 172.28.0.1:40314. Remaining: 3
+2025-04-22 10:50:27,050 [INFO] main: WebSocket disconnected from 172.28.0.1:40320. Remaining: 2
+2025-04-22 10:50:27,228 [INFO] main: New WebSocket connection from 172.28.0.1:37582. Total: 3
+2025-04-22 10:50:27,242 [INFO] main: New WebSocket connection from 172.28.0.1:37586. Total: 4
+2025-04-22 10:50:49,039 [INFO] main: Wrote YAML: /hub_data/countdowns.yaml
+2025-04-22 10:50:49,040 [INFO] main: File Watcher: Processing 'modified' for 'countdowns.yaml'
+2025-04-22 10:50:49,040 [INFO] main: Broadcasting message of type 'alarms_updated' to 4 clients
+2025-04-22 10:50:49,041 [INFO] main: Message broadcast successful to 4/4 clients
+2025-04-22 10:51:13,037 [INFO] main: Wrote YAML: /hub_data/countdowns.yaml
+2025-04-22 10:51:13,038 [INFO] main: File Watcher: Processing 'modified' for 'countdowns.yaml'
+2025-04-22 10:51:13,038 [INFO] main: Broadcasting message of type 'alarms_updated' to 4 clients
+2025-04-22 10:51:13,038 [INFO] main: Message broadcast successful to 4/4 clients
+2025-04-22 10:51:26,130 [INFO] main: WebSocket disconnected from 172.28.0.1:37562. Remaining: 3
+2025-04-22 10:51:26,130 [INFO] main: WebSocket disconnected from 172.28.0.1:37548. Remaining: 2
+2025-04-22 10:51:26,204 [INFO] main: New WebSocket connection from 172.28.0.1:48462. Total: 3
+2025-04-22 10:51:26,219 [INFO] main: New WebSocket connection from 172.28.0.1:48480. Total: 4
+2025-04-22 10:51:27,040 [INFO] main: WebSocket disconnected from 172.28.0.1:48480. Remaining: 3
+2025-04-22 10:51:27,040 [INFO] main: WebSocket disconnected from 172.28.0.1:48462. Remaining: 2
+2025-04-22 10:51:27,105 [INFO] main: New WebSocket connection from 172.28.0.1:48488. Total: 3
+2025-04-22 10:51:27,119 [INFO] main: New WebSocket connection from 172.28.0.1:48500. Total: 4
+2025-04-22 10:51:44,349 [INFO] main: WebSocket disconnected from 172.28.0.1:48488. Remaining: 3
+2025-04-22 10:51:44,350 [INFO] main: WebSocket disconnected from 172.28.0.1:48500. Remaining: 2
+2025-04-22 10:51:44,601 [INFO] main: New WebSocket connection from 172.28.0.1:40184. Total: 3
+2025-04-22 10:51:44,617 [INFO] main: New WebSocket connection from 172.28.0.1:40216. Total: 4
+2025-04-22 10:51:45,049 [INFO] main: WebSocket disconnected from 172.28.0.1:37586. Remaining: 3
+2025-04-22 10:51:45,050 [INFO] main: WebSocket disconnected from 172.28.0.1:37582. Remaining: 2
+2025-04-22 10:51:45,293 [INFO] main: New WebSocket connection from 172.28.0.1:40222. Total: 3
+2025-04-22 10:51:45,308 [INFO] main: New WebSocket connection from 172.28.0.1:40248. Total: 4
+2025-04-22 10:51:49,584 [INFO] main: WebSocket disconnected from 172.28.0.1:40216. Remaining: 3
+2025-04-22 10:51:49,585 [INFO] main: WebSocket disconnected from 172.28.0.1:40184. Remaining: 2
+2025-04-22 10:51:49,627 [INFO] main: New WebSocket connection from 172.28.0.1:40262. Total: 3
+2025-04-22 10:51:49,641 [INFO] main: New WebSocket connection from 172.28.0.1:40282. Total: 4
+2025-04-22 10:52:06,049 [INFO] main: Wrote YAML: /hub_data/countdowns.yaml
+2025-04-22 10:52:06,050 [INFO] main: File Watcher: Processing 'modified' for 'countdowns.yaml'
+2025-04-22 10:52:06,051 [INFO] main: Broadcasting message of type 'alarms_updated' to 4 clients
+2025-04-22 10:52:06,051 [INFO] main: Message broadcast successful to 4/4 clients
+2025-04-22 10:52:30,051 [INFO] main: Wrote YAML: /hub_data/countdowns.yaml
+2025-04-22 10:52:30,052 [INFO] main: File Watcher: Processing 'modified' for 'countdowns.yaml'
+2025-04-22 10:52:30,052 [INFO] main: Broadcasting message of type 'alarms_updated' to 4 clients
+2025-04-22 10:52:30,053 [INFO] main: Message broadcast successful to 4/4 clients
+2025-04-22 10:52:37,470 [INFO] main: WebSocket disconnected from 172.28.0.1:40282. Remaining: 3
+2025-04-22 10:52:37,471 [INFO] main: WebSocket disconnected from 172.28.0.1:40262. Remaining: 2
+2025-04-22 10:52:37,663 [INFO] main: New WebSocket connection from 172.28.0.1:58252. Total: 3
+2025-04-22 10:52:37,678 [INFO] main: New WebSocket connection from 172.28.0.1:58278. Total: 4
+2025-04-22 10:52:38,051 [INFO] main: WebSocket disconnected from 172.28.0.1:40248. Remaining: 3
+2025-04-22 10:52:38,052 [INFO] main: WebSocket disconnected from 172.28.0.1:40222. Remaining: 2
+2025-04-22 10:52:38,259 [INFO] main: New WebSocket connection from 172.28.0.1:58312. Total: 3
+2025-04-22 10:52:38,274 [INFO] main: New WebSocket connection from 172.28.0.1:58326. Total: 4
+2025-04-22 10:52:45,565 [INFO] main: WebSocket disconnected from 172.28.0.1:58278. Remaining: 3
+2025-04-22 10:52:45,565 [INFO] main: WebSocket disconnected from 172.28.0.1:58252. Remaining: 2
+2025-04-22 10:52:45,737 [INFO] main: New WebSocket connection from 172.28.0.1:42852. Total: 3
+2025-04-22 10:52:45,753 [INFO] main: New WebSocket connection from 172.28.0.1:42872. Total: 4
+2025-04-22 10:52:46,043 [INFO] main: WebSocket disconnected from 172.28.0.1:58326. Remaining: 3
+2025-04-22 10:52:46,044 [INFO] main: WebSocket disconnected from 172.28.0.1:58312. Remaining: 2
+2025-04-22 10:52:46,233 [INFO] main: New WebSocket connection from 172.28.0.1:42892. Total: 3
+2025-04-22 10:52:46,248 [INFO] main: New WebSocket connection from 172.28.0.1:42902. Total: 4
+2025-04-22 10:53:07,048 [INFO] main: Wrote YAML: /hub_data/countdowns.yaml
+2025-04-22 10:53:07,049 [INFO] main: File Watcher: Processing 'modified' for 'countdowns.yaml'
+2025-04-22 10:53:07,049 [INFO] main: Broadcasting message of type 'alarms_updated' to 4 clients
+2025-04-22 10:53:07,050 [INFO] main: Message broadcast successful to 4/4 clients
+2025-04-22 10:53:31,045 [INFO] main: Wrote YAML: /hub_data/countdowns.yaml
+2025-04-22 10:53:31,046 [INFO] main: File Watcher: Processing 'modified' for 'countdowns.yaml'
+2025-04-22 10:53:31,046 [INFO] main: Broadcasting message of type 'alarms_updated' to 4 clients
+2025-04-22 10:53:31,047 [INFO] main: Message broadcast successful to 4/4 clients
+2025-04-22 10:53:55,037 [INFO] main: Wrote YAML: /hub_data/countdowns.yaml
+2025-04-22 10:53:55,038 [INFO] main: File Watcher: Processing 'modified' for 'countdowns.yaml'
+2025-04-22 10:53:55,038 [INFO] main: Broadcasting message of type 'alarms_updated' to 4 clients
+2025-04-22 10:53:55,039 [INFO] main: Message broadcast successful to 4/4 clients
+2025-04-22 10:54:19,039 [INFO] main: Wrote YAML: /hub_data/countdowns.yaml
+2025-04-22 10:54:19,040 [INFO] main: File Watcher: Processing 'modified' for 'countdowns.yaml'
+2025-04-22 10:54:19,040 [INFO] main: Broadcasting message of type 'alarms_updated' to 4 clients
+2025-04-22 10:54:19,041 [INFO] main: Message broadcast successful to 4/4 clients
+2025-04-22 10:54:47,038 [INFO] main: Wrote YAML: /hub_data/countdowns.yaml
+2025-04-22 10:54:47,039 [INFO] main: File Watcher: Processing 'modified' for 'countdowns.yaml'
+2025-04-22 10:54:47,039 [INFO] main: Broadcasting message of type 'alarms_updated' to 4 clients
+2025-04-22 10:54:47,040 [INFO] main: Message broadcast successful to 4/4 clients
+2025-04-22 10:55:05,650 [INFO] main: WebSocket disconnected from 172.28.0.1:42852. Remaining: 3
+2025-04-22 10:55:05,651 [INFO] main: WebSocket disconnected from 172.28.0.1:42872. Remaining: 2
+2025-04-22 10:55:05,725 [INFO] main: New WebSocket connection from 172.28.0.1:57096. Total: 3
+2025-04-22 10:55:05,740 [INFO] main: New WebSocket connection from 172.28.0.1:57102. Total: 4
+2025-04-22 10:55:11,048 [INFO] main: Wrote YAML: /hub_data/countdowns.yaml
+2025-04-22 10:55:11,049 [INFO] main: File Watcher: Processing 'modified' for 'countdowns.yaml'
+2025-04-22 10:55:11,049 [INFO] main: Broadcasting message of type 'alarms_updated' to 4 clients
+2025-04-22 10:55:11,050 [INFO] main: Message broadcast successful to 4/4 clients
+2025-04-22 10:55:14,987 [INFO] main: Looking for focus logs at: /hub_data/focus_logs/daily_summary_2025-04-22.json or /hub_data/focus_logs/focus_log_2025-04-22.jsonl
+2025-04-22 10:55:14,988 [INFO] main: Pre-generated summary not found for 2025-04-22, attempting on-demand calculation.
+2025-04-22 10:55:14,989 [INFO] main: Calculating on-demand summary for 2025-04-22 from /hub_data/focus_logs/focus_log_2025-04-22.jsonl
+2025-04-22 10:55:15,004 [INFO] main: Successfully calculated on-demand summary for 2025-04-22
+2025-04-22 10:55:15,010 [INFO] main: Looking for focus logs at: /hub_data/focus_logs/daily_summary_2025-04-22.json or /hub_data/focus_logs/focus_log_2025-04-22.jsonl
+2025-04-22 10:55:15,011 [INFO] main: Pre-generated summary not found for 2025-04-22, attempting on-demand calculation.
+2025-04-22 10:55:15,012 [INFO] main: Calculating on-demand summary for 2025-04-22 from /hub_data/focus_logs/focus_log_2025-04-22.jsonl
+2025-04-22 10:55:15,018 [INFO] main: Successfully calculated on-demand summary for 2025-04-22
+2025-04-22 10:55:20,449 [INFO] main: Looking for focus logs at: /hub_data/focus_logs/daily_summary_2025-04-22.json or /hub_data/focus_logs/focus_log_2025-04-22.jsonl
+2025-04-22 10:55:20,450 [INFO] main: Pre-generated summary not found for 2025-04-22, attempting on-demand calculation.
+2025-04-22 10:55:20,452 [INFO] main: Calculating on-demand summary for 2025-04-22 from /hub_data/focus_logs/focus_log_2025-04-22.jsonl
+2025-04-22 10:55:20,458 [INFO] main: Successfully calculated on-demand summary for 2025-04-22
+2025-04-22 10:55:20,463 [INFO] main: Looking for focus logs at: /hub_data/focus_logs/daily_summary_2025-04-22.json or /hub_data/focus_logs/focus_log_2025-04-22.jsonl
+2025-04-22 10:55:20,464 [INFO] main: Pre-generated summary not found for 2025-04-22, attempting on-demand calculation.
+2025-04-22 10:55:20,465 [INFO] main: Calculating on-demand summary for 2025-04-22 from /hub_data/focus_logs/focus_log_2025-04-22.jsonl
+2025-04-22 10:55:20,471 [INFO] main: Successfully calculated on-demand summary for 2025-04-22
+2025-04-22 10:55:47,046 [INFO] main: Wrote YAML: /hub_data/countdowns.yaml
+2025-04-22 10:55:47,047 [INFO] main: File Watcher: Processing 'modified' for 'countdowns.yaml'
+2025-04-22 10:55:47,047 [INFO] main: Broadcasting message of type 'alarms_updated' to 4 clients
+2025-04-22 10:55:47,048 [INFO] main: Message broadcast successful to 4/4 clients
+2025-04-22 10:55:47,052 [INFO] main: Looking for focus logs at: /hub_data/focus_logs/daily_summary_2025-04-22.json or /hub_data/focus_logs/focus_log_2025-04-22.jsonl
+2025-04-22 10:55:47,053 [INFO] main: Pre-generated summary not found for 2025-04-22, attempting on-demand calculation.
+2025-04-22 10:55:47,054 [INFO] main: Calculating on-demand summary for 2025-04-22 from /hub_data/focus_logs/focus_log_2025-04-22.jsonl
+2025-04-22 10:55:47,061 [INFO] main: Successfully calculated on-demand summary for 2025-04-22
+2025-04-22 10:55:47,066 [INFO] main: Looking for focus logs at: /hub_data/focus_logs/daily_summary_2025-04-22.json or /hub_data/focus_logs/focus_log_2025-04-22.jsonl
+2025-04-22 10:55:47,067 [INFO] main: Pre-generated summary not found for 2025-04-22, attempting on-demand calculation.
+2025-04-22 10:55:47,068 [INFO] main: Calculating on-demand summary for 2025-04-22 from /hub_data/focus_logs/focus_log_2025-04-22.jsonl
+2025-04-22 10:55:47,075 [INFO] main: Successfully calculated on-demand summary for 2025-04-22
+2025-04-22 10:56:11,047 [INFO] main: Wrote YAML: /hub_data/countdowns.yaml
+2025-04-22 10:56:11,048 [INFO] main: File Watcher: Processing 'modified' for 'countdowns.yaml'
+2025-04-22 10:56:11,049 [INFO] main: Broadcasting message of type 'alarms_updated' to 4 clients
+2025-04-22 10:56:11,049 [INFO] main: Message broadcast successful to 4/4 clients
+2025-04-22 10:56:11,053 [INFO] main: Looking for focus logs at: /hub_data/focus_logs/daily_summary_2025-04-22.json or /hub_data/focus_logs/focus_log_2025-04-22.jsonl
+2025-04-22 10:56:11,054 [INFO] main: Pre-generated summary not found for 2025-04-22, attempting on-demand calculation.
+2025-04-22 10:56:11,055 [INFO] main: Calculating on-demand summary for 2025-04-22 from /hub_data/focus_logs/focus_log_2025-04-22.jsonl
+2025-04-22 10:56:11,072 [INFO] main: Successfully calculated on-demand summary for 2025-04-22
+2025-04-22 10:56:11,077 [INFO] main: Looking for focus logs at: /hub_data/focus_logs/daily_summary_2025-04-22.json or /hub_data/focus_logs/focus_log_2025-04-22.jsonl
+2025-04-22 10:56:11,078 [INFO] main: Pre-generated summary not found for 2025-04-22, attempting on-demand calculation.
+2025-04-22 10:56:11,079 [INFO] main: Calculating on-demand summary for 2025-04-22 from /hub_data/focus_logs/focus_log_2025-04-22.jsonl
+2025-04-22 10:56:11,086 [INFO] main: Successfully calculated on-demand summary for 2025-04-22
+2025-04-22 10:56:35,869 [INFO] main: Looking for focus logs at: /hub_data/focus_logs/daily_summary_2025-04-22.json or /hub_data/focus_logs/focus_log_2025-04-22.jsonl
+2025-04-22 10:56:35,870 [INFO] main: Pre-generated summary not found for 2025-04-22, attempting on-demand calculation.
+2025-04-22 10:56:35,871 [INFO] main: Calculating on-demand summary for 2025-04-22 from /hub_data/focus_logs/focus_log_2025-04-22.jsonl
+2025-04-22 10:56:35,879 [INFO] main: Successfully calculated on-demand summary for 2025-04-22
+2025-04-22 10:56:45,409 [INFO] main: Looking for focus logs at: /hub_data/focus_logs/daily_summary_2025-04-22.json or /hub_data/focus_logs/focus_log_2025-04-22.jsonl
+2025-04-22 10:56:45,410 [INFO] main: Pre-generated summary not found for 2025-04-22, attempting on-demand calculation.
+2025-04-22 10:56:45,412 [INFO] main: Calculating on-demand summary for 2025-04-22 from /hub_data/focus_logs/focus_log_2025-04-22.jsonl
+2025-04-22 10:56:45,420 [INFO] main: Successfully calculated on-demand summary for 2025-04-22
+2025-04-22 10:56:46,047 [INFO] main: Wrote YAML: /hub_data/countdowns.yaml
+2025-04-22 10:56:46,048 [INFO] main: File Watcher: Processing 'modified' for 'countdowns.yaml'
+2025-04-22 10:56:46,048 [INFO] main: Broadcasting message of type 'alarms_updated' to 4 clients
+2025-04-22 10:56:46,048 [INFO] main: Message broadcast successful to 4/4 clients
+2025-04-22 10:56:46,055 [INFO] main: Looking for focus logs at: /hub_data/focus_logs/daily_summary_2025-04-22.json or /hub_data/focus_logs/focus_log_2025-04-22.jsonl
+2025-04-22 10:56:46,056 [INFO] main: Pre-generated summary not found for 2025-04-22, attempting on-demand calculation.
+2025-04-22 10:56:46,057 [INFO] main: Calculating on-demand summary for 2025-04-22 from /hub_data/focus_logs/focus_log_2025-04-22.jsonl
+2025-04-22 10:56:46,063 [INFO] main: Successfully calculated on-demand summary for 2025-04-22
+2025-04-22 10:56:46,068 [INFO] main: Looking for focus logs at: /hub_data/focus_logs/daily_summary_2025-04-22.json or /hub_data/focus_logs/focus_log_2025-04-22.jsonl
+2025-04-22 10:56:46,070 [INFO] main: Pre-generated summary not found for 2025-04-22, attempting on-demand calculation.
+2025-04-22 10:56:46,071 [INFO] main: Calculating on-demand summary for 2025-04-22 from /hub_data/focus_logs/focus_log_2025-04-22.jsonl
+2025-04-22 10:56:46,077 [INFO] main: Successfully calculated on-demand summary for 2025-04-22
+2025-04-22 10:56:56,397 [INFO] main: Looking for focus logs at: /hub_data/focus_logs/daily_summary_2025-04-22.json or /hub_data/focus_logs/focus_log_2025-04-22.jsonl
+2025-04-22 10:56:56,398 [INFO] main: Pre-generated summary not found for 2025-04-22, attempting on-demand calculation.
+2025-04-22 10:56:56,400 [INFO] main: Calculating on-demand summary for 2025-04-22 from /hub_data/focus_logs/focus_log_2025-04-22.jsonl
+2025-04-22 10:56:56,407 [INFO] main: Successfully calculated on-demand summary for 2025-04-22
+2025-04-22 10:57:10,051 [INFO] main: Wrote YAML: /hub_data/countdowns.yaml
+2025-04-22 10:57:10,052 [INFO] main: File Watcher: Processing 'modified' for 'countdowns.yaml'
+2025-04-22 10:57:10,052 [INFO] main: Broadcasting message of type 'alarms_updated' to 4 clients
+2025-04-22 10:57:10,053 [INFO] main: Message broadcast successful to 4/4 clients
+2025-04-22 10:57:10,058 [INFO] main: Looking for focus logs at: /hub_data/focus_logs/daily_summary_2025-04-22.json or /hub_data/focus_logs/focus_log_2025-04-22.jsonl
+2025-04-22 10:57:10,059 [INFO] main: Pre-generated summary not found for 2025-04-22, attempting on-demand calculation.
+2025-04-22 10:57:10,060 [INFO] main: Calculating on-demand summary for 2025-04-22 from /hub_data/focus_logs/focus_log_2025-04-22.jsonl
+2025-04-22 10:57:10,076 [INFO] main: Successfully calculated on-demand summary for 2025-04-22
+2025-04-22 10:57:10,082 [INFO] main: Looking for focus logs at: /hub_data/focus_logs/daily_summary_2025-04-22.json or /hub_data/focus_logs/focus_log_2025-04-22.jsonl
+2025-04-22 10:57:10,083 [INFO] main: Pre-generated summary not found for 2025-04-22, attempting on-demand calculation.
+2025-04-22 10:57:10,084 [INFO] main: Calculating on-demand summary for 2025-04-22 from /hub_data/focus_logs/focus_log_2025-04-22.jsonl
+2025-04-22 10:57:10,091 [INFO] main: Successfully calculated on-demand summary for 2025-04-22
+2025-04-22 10:57:47,043 [INFO] main: Wrote YAML: /hub_data/countdowns.yaml
+2025-04-22 10:57:47,044 [INFO] main: File Watcher: Processing 'modified' for 'countdowns.yaml'
+2025-04-22 10:57:47,044 [INFO] main: Broadcasting message of type 'alarms_updated' to 4 clients
+2025-04-22 10:57:47,045 [INFO] main: Message broadcast successful to 4/4 clients
+2025-04-22 10:57:47,048 [INFO] main: Looking for focus logs at: /hub_data/focus_logs/daily_summary_2025-04-22.json or /hub_data/focus_logs/focus_log_2025-04-22.jsonl
+2025-04-22 10:57:47,049 [INFO] main: Pre-generated summary not found for 2025-04-22, attempting on-demand calculation.
+2025-04-22 10:57:47,050 [INFO] main: Calculating on-demand summary for 2025-04-22 from /hub_data/focus_logs/focus_log_2025-04-22.jsonl
+2025-04-22 10:57:47,056 [INFO] main: Successfully calculated on-demand summary for 2025-04-22
+2025-04-22 10:57:47,061 [INFO] main: Looking for focus logs at: /hub_data/focus_logs/daily_summary_2025-04-22.json or /hub_data/focus_logs/focus_log_2025-04-22.jsonl
+2025-04-22 10:57:47,062 [INFO] main: Pre-generated summary not found for 2025-04-22, attempting on-demand calculation.
+2025-04-22 10:57:47,063 [INFO] main: Calculating on-demand summary for 2025-04-22 from /hub_data/focus_logs/focus_log_2025-04-22.jsonl
+2025-04-22 10:57:47,070 [INFO] main: Successfully calculated on-demand summary for 2025-04-22
+2025-04-22 10:58:11,041 [INFO] main: Wrote YAML: /hub_data/countdowns.yaml
+2025-04-22 10:58:11,042 [INFO] main: File Watcher: Processing 'modified' for 'countdowns.yaml'
+2025-04-22 10:58:11,043 [INFO] main: Broadcasting message of type 'alarms_updated' to 4 clients
+2025-04-22 10:58:11,043 [INFO] main: Message broadcast successful to 4/4 clients
+2025-04-22 10:58:11,047 [INFO] main: Looking for focus logs at: /hub_data/focus_logs/daily_summary_2025-04-22.json or /hub_data/focus_logs/focus_log_2025-04-22.jsonl
+2025-04-22 10:58:11,048 [INFO] main: Pre-generated summary not found for 2025-04-22, attempting on-demand calculation.
+2025-04-22 10:58:11,049 [INFO] main: Calculating on-demand summary for 2025-04-22 from /hub_data/focus_logs/focus_log_2025-04-22.jsonl
+2025-04-22 10:58:11,064 [INFO] main: Successfully calculated on-demand summary for 2025-04-22
+2025-04-22 10:58:11,069 [INFO] main: Looking for focus logs at: /hub_data/focus_logs/daily_summary_2025-04-22.json or /hub_data/focus_logs/focus_log_2025-04-22.jsonl
+2025-04-22 10:58:11,069 [INFO] main: Pre-generated summary not found for 2025-04-22, attempting on-demand calculation.
+2025-04-22 10:58:11,071 [INFO] main: Calculating on-demand summary for 2025-04-22 from /hub_data/focus_logs/focus_log_2025-04-22.jsonl
+2025-04-22 10:58:11,078 [INFO] main: Successfully calculated on-demand summary for 2025-04-22
+2025-04-22 10:58:25,544 [INFO] main: Looking for focus logs at: /hub_data/focus_logs/daily_summary_2025-04-22.json or /hub_data/focus_logs/focus_log_2025-04-22.jsonl
+2025-04-22 10:58:25,544 [INFO] main: Pre-generated summary not found for 2025-04-22, attempting on-demand calculation.
+2025-04-22 10:58:25,545 [INFO] main: Calculating on-demand summary for 2025-04-22 from /hub_data/focus_logs/focus_log_2025-04-22.jsonl
+2025-04-22 10:58:25,552 [INFO] main: Successfully calculated on-demand summary for 2025-04-22
+2025-04-22 10:58:25,557 [INFO] main: Looking for focus logs at: /hub_data/focus_logs/daily_summary_2025-04-22.json or /hub_data/focus_logs/focus_log_2025-04-22.jsonl
+2025-04-22 10:58:25,558 [INFO] main: Pre-generated summary not found for 2025-04-22, attempting on-demand calculation.
+2025-04-22 10:58:25,559 [INFO] main: Calculating on-demand summary for 2025-04-22 from /hub_data/focus_logs/focus_log_2025-04-22.jsonl
+2025-04-22 10:58:25,565 [INFO] main: Successfully calculated on-demand summary for 2025-04-22
+2025-04-22 10:58:28,123 [INFO] main: WebSocket disconnected from 172.28.0.1:42902. Remaining: 3
+2025-04-22 10:58:28,123 [INFO] main: WebSocket disconnected from 172.28.0.1:42892. Remaining: 2
+2025-04-22 10:58:28,242 [INFO] main: Looking for focus logs at: /hub_data/focus_logs/daily_summary_2025-04-22.json or /hub_data/focus_logs/focus_log_2025-04-22.jsonl
+2025-04-22 10:58:28,244 [INFO] main: Pre-generated summary not found for 2025-04-22, attempting on-demand calculation.
+2025-04-22 10:58:28,246 [INFO] main: Calculating on-demand summary for 2025-04-22 from /hub_data/focus_logs/focus_log_2025-04-22.jsonl
+2025-04-22 10:58:28,253 [INFO] main: Successfully calculated on-demand summary for 2025-04-22
+2025-04-22 10:58:28,259 [INFO] main: Looking for focus logs at: /hub_data/focus_logs/daily_summary_2025-04-22.json or /hub_data/focus_logs/focus_log_2025-04-22.jsonl
+2025-04-22 10:58:28,260 [INFO] main: Pre-generated summary not found for 2025-04-22, attempting on-demand calculation.
+2025-04-22 10:58:28,261 [INFO] main: Calculating on-demand summary for 2025-04-22 from /hub_data/focus_logs/focus_log_2025-04-22.jsonl
+2025-04-22 10:58:28,268 [INFO] main: Successfully calculated on-demand summary for 2025-04-22
+2025-04-22 10:58:28,270 [INFO] main: New WebSocket connection from 172.28.0.1:41700. Total: 3
+2025-04-22 10:58:28,288 [INFO] main: New WebSocket connection from 172.28.0.1:41732. Total: 4
+2025-04-22 10:58:32,311 [INFO] main: Looking for focus logs at: /hub_data/focus_logs/daily_summary_2025-04-22.json or /hub_data/focus_logs/focus_log_2025-04-22.jsonl
+2025-04-22 10:58:32,313 [INFO] main: Pre-generated summary not found for 2025-04-22, attempting on-demand calculation.
+2025-04-22 10:58:32,314 [INFO] main: Calculating on-demand summary for 2025-04-22 from /hub_data/focus_logs/focus_log_2025-04-22.jsonl
+2025-04-22 10:58:32,320 [INFO] main: Successfully calculated on-demand summary for 2025-04-22
+2025-04-22 10:58:32,325 [INFO] main: Looking for focus logs at: /hub_data/focus_logs/daily_summary_2025-04-22.json or /hub_data/focus_logs/focus_log_2025-04-22.jsonl
+2025-04-22 10:58:32,326 [INFO] main: Pre-generated summary not found for 2025-04-22, attempting on-demand calculation.
+2025-04-22 10:58:32,327 [INFO] main: Calculating on-demand summary for 2025-04-22 from /hub_data/focus_logs/focus_log_2025-04-22.jsonl
+2025-04-22 10:58:32,334 [INFO] main: Successfully calculated on-demand summary for 2025-04-22
+2025-04-22 10:58:55,038 [INFO] main: Looking for focus logs at: /hub_data/focus_logs/daily_summary_2025-04-22.json or /hub_data/focus_logs/focus_log_2025-04-22.jsonl
+2025-04-22 10:58:55,039 [INFO] main: Pre-generated summary not found for 2025-04-22, attempting on-demand calculation.
+2025-04-22 10:58:55,041 [INFO] main: Calculating on-demand summary for 2025-04-22 from /hub_data/focus_logs/focus_log_2025-04-22.jsonl
+2025-04-22 10:58:55,047 [INFO] main: Successfully calculated on-demand summary for 2025-04-22
+2025-04-22 10:58:55,051 [INFO] main: Looking for focus logs at: /hub_data/focus_logs/daily_summary_2025-04-22.json or /hub_data/focus_logs/focus_log_2025-04-22.jsonl
+2025-04-22 10:58:55,052 [INFO] main: Pre-generated summary not found for 2025-04-22, attempting on-demand calculation.
+2025-04-22 10:58:55,053 [INFO] main: Calculating on-demand summary for 2025-04-22 from /hub_data/focus_logs/focus_log_2025-04-22.jsonl
+2025-04-22 10:58:55,059 [INFO] main: Successfully calculated on-demand summary for 2025-04-22
+2025-04-22 10:59:10,045 [INFO] main: Looking for focus logs at: /hub_data/focus_logs/daily_summary_2025-04-22.json or /hub_data/focus_logs/focus_log_2025-04-22.jsonl
+2025-04-22 10:59:10,047 [INFO] main: Pre-generated summary not found for 2025-04-22, attempting on-demand calculation.
+2025-04-22 10:59:10,048 [INFO] main: Calculating on-demand summary for 2025-04-22 from /hub_data/focus_logs/focus_log_2025-04-22.jsonl
+2025-04-22 10:59:10,067 [INFO] main: Successfully calculated on-demand summary for 2025-04-22
+2025-04-22 10:59:10,072 [INFO] main: Looking for focus logs at: /hub_data/focus_logs/daily_summary_2025-04-22.json or /hub_data/focus_logs/focus_log_2025-04-22.jsonl
+2025-04-22 10:59:10,073 [INFO] main: Pre-generated summary not found for 2025-04-22, attempting on-demand calculation.
+2025-04-22 10:59:10,074 [INFO] main: Calculating on-demand summary for 2025-04-22 from /hub_data/focus_logs/focus_log_2025-04-22.jsonl
+2025-04-22 10:59:10,081 [INFO] main: Successfully calculated on-demand summary for 2025-04-22
+2025-04-22 10:59:26,038 [INFO] main: Looking for focus logs at: /hub_data/focus_logs/daily_summary_2025-04-22.json or /hub_data/focus_logs/focus_log_2025-04-22.jsonl
+2025-04-22 10:59:26,039 [INFO] main: Pre-generated summary not found for 2025-04-22, attempting on-demand calculation.
+2025-04-22 10:59:26,040 [INFO] main: Calculating on-demand summary for 2025-04-22 from /hub_data/focus_logs/focus_log_2025-04-22.jsonl
+2025-04-22 10:59:26,047 [INFO] main: Successfully calculated on-demand summary for 2025-04-22
+2025-04-22 10:59:26,052 [INFO] main: Looking for focus logs at: /hub_data/focus_logs/daily_summary_2025-04-22.json or /hub_data/focus_logs/focus_log_2025-04-22.jsonl
+2025-04-22 10:59:26,053 [INFO] main: Pre-generated summary not found for 2025-04-22, attempting on-demand calculation.
+2025-04-22 10:59:26,054 [INFO] main: Calculating on-demand summary for 2025-04-22 from /hub_data/focus_logs/focus_log_2025-04-22.jsonl
+2025-04-22 10:59:26,061 [INFO] main: Successfully calculated on-demand summary for 2025-04-22
+2025-04-22 10:59:40,048 [INFO] main: Looking for focus logs at: /hub_data/focus_logs/daily_summary_2025-04-22.json or /hub_data/focus_logs/focus_log_2025-04-22.jsonl
+2025-04-22 10:59:40,052 [INFO] main: Pre-generated summary not found for 2025-04-22, attempting on-demand calculation.
+2025-04-22 10:59:40,053 [INFO] main: Calculating on-demand summary for 2025-04-22 from /hub_data/focus_logs/focus_log_2025-04-22.jsonl
+2025-04-22 10:59:40,060 [INFO] main: Successfully calculated on-demand summary for 2025-04-22
+2025-04-22 10:59:40,064 [INFO] main: Looking for focus logs at: /hub_data/focus_logs/daily_summary_2025-04-22.json or /hub_data/focus_logs/focus_log_2025-04-22.jsonl
+2025-04-22 10:59:40,065 [INFO] main: Pre-generated summary not found for 2025-04-22, attempting on-demand calculation.
+2025-04-22 10:59:40,066 [INFO] main: Calculating on-demand summary for 2025-04-22 from /hub_data/focus_logs/focus_log_2025-04-22.jsonl
+2025-04-22 10:59:40,073 [INFO] main: Successfully calculated on-demand summary for 2025-04-22
+2025-04-22 10:59:47,046 [INFO] main: Looking for focus logs at: /hub_data/focus_logs/daily_summary_2025-04-22.json or /hub_data/focus_logs/focus_log_2025-04-22.jsonl
+2025-04-22 10:59:47,047 [INFO] main: Pre-generated summary not found for 2025-04-22, attempting on-demand calculation.
+2025-04-22 10:59:47,049 [INFO] main: Calculating on-demand summary for 2025-04-22 from /hub_data/focus_logs/focus_log_2025-04-22.jsonl
+2025-04-22 10:59:47,055 [INFO] main: Successfully calculated on-demand summary for 2025-04-22
+2025-04-22 10:59:47,060 [INFO] main: Looking for focus logs at: /hub_data/focus_logs/daily_summary_2025-04-22.json or /hub_data/focus_logs/focus_log_2025-04-22.jsonl
+2025-04-22 10:59:47,061 [INFO] main: Pre-generated summary not found for 2025-04-22, attempting on-demand calculation.
+2025-04-22 10:59:47,062 [INFO] main: Calculating on-demand summary for 2025-04-22 from /hub_data/focus_logs/focus_log_2025-04-22.jsonl
+2025-04-22 10:59:47,069 [INFO] main: Successfully calculated on-demand summary for 2025-04-22
+2025-04-22 10:59:57,049 [INFO] main: Looking for focus logs at: /hub_data/focus_logs/daily_summary_2025-04-22.json or /hub_data/focus_logs/focus_log_2025-04-22.jsonl
+2025-04-22 10:59:57,050 [INFO] main: Pre-generated summary not found for 2025-04-22, attempting on-demand calculation.
+2025-04-22 10:59:57,051 [INFO] main: Calculating on-demand summary for 2025-04-22 from /hub_data/focus_logs/focus_log_2025-04-22.jsonl
+2025-04-22 10:59:57,058 [INFO] main: Successfully calculated on-demand summary for 2025-04-22
+2025-04-22 10:59:57,063 [INFO] main: Looking for focus logs at: /hub_data/focus_logs/daily_summary_2025-04-22.json or /hub_data/focus_logs/focus_log_2025-04-22.jsonl
+2025-04-22 10:59:57,063 [INFO] main: Pre-generated summary not found for 2025-04-22, attempting on-demand calculation.
+2025-04-22 10:59:57,065 [INFO] main: Calculating on-demand summary for 2025-04-22 from /hub_data/focus_logs/focus_log_2025-04-22.jsonl
+2025-04-22 10:59:57,071 [INFO] main: Successfully calculated on-demand summary for 2025-04-22
+2025-04-22 11:01:38,888 [INFO] main: WebSocket disconnected from 172.28.0.1:41732. Remaining: 3
+2025-04-22 11:01:38,889 [INFO] main: WebSocket disconnected from 172.28.0.1:41700. Remaining: 2
+2025-04-22 11:01:38,995 [INFO] main: New WebSocket connection from 172.28.0.1:46002. Total: 3
+2025-04-22 11:01:38,996 [INFO] main: Looking for focus logs at: /hub_data/focus_logs/daily_summary_2025-04-22.json or /hub_data/focus_logs/focus_log_2025-04-22.jsonl
+2025-04-22 11:01:38,997 [INFO] main: Pre-generated summary not found for 2025-04-22, attempting on-demand calculation.
+2025-04-22 11:01:38,999 [INFO] main: Calculating on-demand summary for 2025-04-22 from /hub_data/focus_logs/focus_log_2025-04-22.jsonl
+2025-04-22 11:01:39,018 [INFO] main: Successfully calculated on-demand summary for 2025-04-22
+2025-04-22 11:01:39,024 [INFO] main: Looking for focus logs at: /hub_data/focus_logs/daily_summary_2025-04-22.json or /hub_data/focus_logs/focus_log_2025-04-22.jsonl
+2025-04-22 11:01:39,025 [INFO] main: Pre-generated summary not found for 2025-04-22, attempting on-demand calculation.
+2025-04-22 11:01:39,026 [INFO] main: Calculating on-demand summary for 2025-04-22 from /hub_data/focus_logs/focus_log_2025-04-22.jsonl
+2025-04-22 11:01:39,034 [INFO] main: Successfully calculated on-demand summary for 2025-04-22
+2025-04-22 11:01:39,040 [INFO] main: New WebSocket connection from 172.28.0.1:46044. Total: 4
+2025-04-22 11:01:44,458 [INFO] main: Looking for focus logs at: /hub_data/focus_logs/daily_summary_2025-04-22.json or /hub_data/focus_logs/focus_log_2025-04-22.jsonl
+2025-04-22 11:01:44,459 [INFO] main: Pre-generated summary not found for 2025-04-22, attempting on-demand calculation.
+2025-04-22 11:01:44,460 [INFO] main: Calculating on-demand summary for 2025-04-22 from /hub_data/focus_logs/focus_log_2025-04-22.jsonl
+2025-04-22 11:01:44,470 [INFO] main: Successfully calculated on-demand summary for 2025-04-22
+2025-04-22 11:01:44,475 [INFO] main: Looking for focus logs at: /hub_data/focus_logs/daily_summary_2025-04-22.json or /hub_data/focus_logs/focus_log_2025-04-22.jsonl
+2025-04-22 11:01:44,475 [INFO] main: Pre-generated summary not found for 2025-04-22, attempting on-demand calculation.
+2025-04-22 11:01:44,477 [INFO] main: Calculating on-demand summary for 2025-04-22 from /hub_data/focus_logs/focus_log_2025-04-22.jsonl
+2025-04-22 11:01:44,484 [INFO] main: Successfully calculated on-demand summary for 2025-04-22
+2025-04-22 11:03:04,687 [INFO] main: Looking for focus logs at: /hub_data/focus_logs/daily_summary_2025-04-22.json or /hub_data/focus_logs/focus_log_2025-04-22.jsonl
+2025-04-22 11:03:04,688 [INFO] main: Pre-generated summary not found for 2025-04-22, attempting on-demand calculation.
+2025-04-22 11:03:04,689 [INFO] main: Calculating on-demand summary for 2025-04-22 from /hub_data/focus_logs/focus_log_2025-04-22.jsonl
+2025-04-22 11:03:04,710 [INFO] main: Successfully calculated on-demand summary for 2025-04-22
+2025-04-22 11:03:05,037 [INFO] main: Looking for focus logs at: /hub_data/focus_logs/daily_summary_2025-04-22.json or /hub_data/focus_logs/focus_log_2025-04-22.jsonl
+2025-04-22 11:03:05,038 [INFO] main: Pre-generated summary not found for 2025-04-22, attempting on-demand calculation.
+2025-04-22 11:03:05,039 [INFO] main: Calculating on-demand summary for 2025-04-22 from /hub_data/focus_logs/focus_log_2025-04-22.jsonl
+2025-04-22 11:03:05,046 [INFO] main: Successfully calculated on-demand summary for 2025-04-22
+2025-04-22 11:04:29,681 [INFO] main: WebSocket disconnected from 172.28.0.1:46044. Remaining: 3
+2025-04-22 11:04:29,682 [INFO] main: WebSocket disconnected from 172.28.0.1:46002. Remaining: 2
+2025-04-22 11:04:29,828 [INFO] main: New WebSocket connection from 172.28.0.1:33976. Total: 3
+2025-04-22 11:04:29,829 [INFO] main: Looking for focus logs at: /hub_data/focus_logs/daily_summary_2025-04-22.json or /hub_data/focus_logs/focus_log_2025-04-22.jsonl
+2025-04-22 11:04:29,829 [INFO] main: Pre-generated summary not found for 2025-04-22, attempting on-demand calculation.
+2025-04-22 11:04:29,831 [INFO] main: Calculating on-demand summary for 2025-04-22 from /hub_data/focus_logs/focus_log_2025-04-22.jsonl
+2025-04-22 11:04:29,839 [INFO] main: Successfully calculated on-demand summary for 2025-04-22
+2025-04-22 11:04:29,845 [INFO] main: Looking for focus logs at: /hub_data/focus_logs/daily_summary_2025-04-22.json or /hub_data/focus_logs/focus_log_2025-04-22.jsonl
+2025-04-22 11:04:29,846 [INFO] main: Pre-generated summary not found for 2025-04-22, attempting on-demand calculation.
+2025-04-22 11:04:29,847 [INFO] main: Calculating on-demand summary for 2025-04-22 from /hub_data/focus_logs/focus_log_2025-04-22.jsonl
+2025-04-22 11:04:29,856 [INFO] main: Successfully calculated on-demand summary for 2025-04-22
+2025-04-22 11:04:29,862 [INFO] main: New WebSocket connection from 172.28.0.1:34024. Total: 4
+2025-04-22 11:04:31,699 [INFO] main: WebSocket disconnected from 172.28.0.1:33976. Remaining: 3
+2025-04-22 11:04:31,699 [INFO] main: WebSocket disconnected from 172.28.0.1:34024. Remaining: 2
+2025-04-22 11:04:31,819 [INFO] main: Looking for focus logs at: /hub_data/focus_logs/daily_summary_2025-04-22.json or /hub_data/focus_logs/focus_log_2025-04-22.jsonl
+2025-04-22 11:04:31,821 [INFO] main: Pre-generated summary not found for 2025-04-22, attempting on-demand calculation.
+2025-04-22 11:04:31,822 [INFO] main: Calculating on-demand summary for 2025-04-22 from /hub_data/focus_logs/focus_log_2025-04-22.jsonl
+2025-04-22 11:04:31,830 [INFO] main: Successfully calculated on-demand summary for 2025-04-22
+2025-04-22 11:04:31,835 [INFO] main: Looking for focus logs at: /hub_data/focus_logs/daily_summary_2025-04-22.json or /hub_data/focus_logs/focus_log_2025-04-22.jsonl
+2025-04-22 11:04:31,836 [INFO] main: Pre-generated summary not found for 2025-04-22, attempting on-demand calculation.
+2025-04-22 11:04:31,837 [INFO] main: Calculating on-demand summary for 2025-04-22 from /hub_data/focus_logs/focus_log_2025-04-22.jsonl
+2025-04-22 11:04:31,844 [INFO] main: Successfully calculated on-demand summary for 2025-04-22
+2025-04-22 11:04:31,845 [INFO] main: New WebSocket connection from 172.28.0.1:34036. Total: 3
+2025-04-22 11:04:31,863 [INFO] main: New WebSocket connection from 172.28.0.1:34050. Total: 4
+2025-04-22 11:12:22,249 [INFO] main: WebSocket disconnected from 172.28.0.1:57102. Remaining: 3
+2025-04-22 11:12:22,250 [INFO] main: WebSocket disconnected from 172.28.0.1:57096. Remaining: 2
+2025-04-22 11:12:22,358 [INFO] main: New WebSocket connection from 172.28.0.1:54250. Total: 3
+2025-04-22 11:12:22,360 [INFO] main: Looking for focus logs at: /hub_data/focus_logs/daily_summary_2025-04-22.json or /hub_data/focus_logs/focus_log_2025-04-22.jsonl
+2025-04-22 11:12:22,361 [INFO] main: Pre-generated summary not found for 2025-04-22, attempting on-demand calculation.
+2025-04-22 11:12:22,362 [INFO] main: Calculating on-demand summary for 2025-04-22 from /hub_data/focus_logs/focus_log_2025-04-22.jsonl
+2025-04-22 11:12:22,378 [INFO] main: Successfully calculated on-demand summary for 2025-04-22
+2025-04-22 11:12:22,389 [INFO] main: Looking for focus logs at: /hub_data/focus_logs/daily_summary_2025-04-22.json or /hub_data/focus_logs/focus_log_2025-04-22.jsonl
+2025-04-22 11:12:22,390 [INFO] main: Pre-generated summary not found for 2025-04-22, attempting on-demand calculation.
+2025-04-22 11:12:22,391 [INFO] main: Calculating on-demand summary for 2025-04-22 from /hub_data/focus_logs/focus_log_2025-04-22.jsonl
+2025-04-22 11:12:22,398 [INFO] main: Successfully calculated on-demand summary for 2025-04-22
+2025-04-22 11:12:22,403 [INFO] main: New WebSocket connection from 172.28.0.1:54320. Total: 4
+2025-04-22 11:13:30,815 [INFO] main: WebSocket disconnected from 172.28.0.1:54320. Remaining: 3
+2025-04-22 11:13:30,815 [INFO] main: WebSocket disconnected from 172.28.0.1:54250. Remaining: 2
+2025-04-22 11:13:30,879 [INFO] main: New WebSocket connection from 172.28.0.1:56944. Total: 3
+2025-04-22 11:13:30,880 [INFO] main: Looking for focus logs at: /hub_data/focus_logs/daily_summary_2025-04-22.json or /hub_data/focus_logs/focus_log_2025-04-22.jsonl
+2025-04-22 11:13:30,881 [INFO] main: Pre-generated summary not found for 2025-04-22, attempting on-demand calculation.
+2025-04-22 11:13:30,883 [INFO] main: Calculating on-demand summary for 2025-04-22 from /hub_data/focus_logs/focus_log_2025-04-22.jsonl
+2025-04-22 11:13:30,900 [INFO] main: Successfully calculated on-demand summary for 2025-04-22
+2025-04-22 11:13:30,906 [INFO] main: Looking for focus logs at: /hub_data/focus_logs/daily_summary_2025-04-22.json or /hub_data/focus_logs/focus_log_2025-04-22.jsonl
+2025-04-22 11:13:30,906 [INFO] main: Pre-generated summary not found for 2025-04-22, attempting on-demand calculation.
+2025-04-22 11:13:30,908 [INFO] main: Calculating on-demand summary for 2025-04-22 from /hub_data/focus_logs/focus_log_2025-04-22.jsonl
+2025-04-22 11:13:30,916 [INFO] main: Successfully calculated on-demand summary for 2025-04-22
+2025-04-22 11:13:30,922 [INFO] main: New WebSocket connection from 172.28.0.1:56994. Total: 4
+2025-04-22 11:13:57,316 [INFO] main: WebSocket disconnected from 172.28.0.1:56994. Remaining: 3
+2025-04-22 11:13:57,317 [INFO] main: WebSocket disconnected from 172.28.0.1:56944. Remaining: 2
+2025-04-22 11:13:57,317 [INFO] main: WebSocket disconnected from 172.28.0.1:34050. Remaining: 1
+2025-04-22 11:13:57,317 [INFO] main: WebSocket disconnected from 172.28.0.1:34036. Remaining: 0
+2025-04-22 11:13:57,416 [INFO] main: --- Shutting down Projects Hub Backend ---
+2025-04-22 11:13:57,455 [INFO] main: File system watcher stopped.
+2025-04-22 11:14:05,146 [INFO] ollama_client: Initialized Ollama client with base URL: http://host.docker.internal:11434
+2025-04-22 11:14:05,163 [INFO] main: --- Starting Projects Hub Backend ---
+2025-04-22 11:14:05,163 [INFO] main: Watching data directory: /hub_data
+2025-04-22 11:14:05,165 [INFO] main: Hub data directory ready: /hub_data
+2025-04-22 11:14:05,167 [INFO] main: Ensured directory exists: /hub_data/focus_logs
+2025-04-22 11:14:05,199 [INFO] main: File system watcher started successfully.
+2025-04-22 11:14:08,058 [INFO] main: New WebSocket connection from 172.28.0.1:36118. Total: 1
+2025-04-22 11:14:08,638 [INFO] main: WebSocket disconnected from 172.28.0.1:36118. Remaining: 0
+2025-04-22 11:14:09,034 [INFO] main: New WebSocket connection from 172.28.0.1:36132. Total: 1
+2025-04-22 11:14:09,265 [INFO] main: Looking for focus logs in primary location: /focus_timer/focus_logs/daily_summary_2025-04-22.json or /focus_timer/focus_logs/focus_log_2025-04-22.jsonl
+2025-04-22 11:14:09,265 [INFO] main: Fallback locations: /hub_data/focus_logs/daily_summary_2025-04-22.json or /hub_data/focus_logs/focus_log_2025-04-22.jsonl
+2025-04-22 11:14:09,267 [INFO] main: Pre-generated summary not found, attempting on-demand calculation.
+2025-04-22 11:14:09,268 [INFO] main: Calculating from FocusTimer log file
+2025-04-22 11:14:09,268 [INFO] main: Calculating on-demand summary for 2025-04-22 from /focus_timer/focus_logs/focus_log_2025-04-22.jsonl
+2025-04-22 11:14:09,288 [INFO] main: Successfully calculated on-demand summary for 2025-04-22
+2025-04-22 11:14:09,295 [INFO] main: Looking for focus logs in primary location: /focus_timer/focus_logs/daily_summary_2025-04-22.json or /focus_timer/focus_logs/focus_log_2025-04-22.jsonl
+2025-04-22 11:14:09,295 [INFO] main: Fallback locations: /hub_data/focus_logs/daily_summary_2025-04-22.json or /hub_data/focus_logs/focus_log_2025-04-22.jsonl
+2025-04-22 11:14:09,296 [INFO] main: Pre-generated summary not found, attempting on-demand calculation.
+2025-04-22 11:14:09,298 [INFO] main: Calculating from FocusTimer log file
+2025-04-22 11:14:09,298 [INFO] main: Calculating on-demand summary for 2025-04-22 from /focus_timer/focus_logs/focus_log_2025-04-22.jsonl
+2025-04-22 11:14:09,311 [INFO] main: Successfully calculated on-demand summary for 2025-04-22
+2025-04-22 11:14:09,317 [INFO] main: New WebSocket connection from 172.28.0.1:36184. Total: 2
+2025-04-22 11:14:09,331 [INFO] main: New WebSocket connection from 172.28.0.1:36208. Total: 3
+2025-04-22 11:24:27,014 [INFO] main: WebSocket disconnected from 172.28.0.1:36184. Remaining: 2
+2025-04-22 11:24:27,015 [INFO] main: WebSocket disconnected from 172.28.0.1:36208. Remaining: 1
+2025-04-22 11:24:40,109 [INFO] main: Looking for focus logs in primary location: /focus_timer/focus_logs/daily_summary_2025-04-22.json or /focus_timer/focus_logs/focus_log_2025-04-22.jsonl
+2025-04-22 11:24:40,110 [INFO] main: Fallback locations: /hub_data/focus_logs/daily_summary_2025-04-22.json or /hub_data/focus_logs/focus_log_2025-04-22.jsonl
+2025-04-22 11:24:40,112 [INFO] main: Pre-generated summary not found, attempting on-demand calculation.
+2025-04-22 11:24:40,113 [INFO] main: Calculating from FocusTimer log file
+2025-04-22 11:24:40,113 [INFO] main: Calculating on-demand summary for 2025-04-22 from /focus_timer/focus_logs/focus_log_2025-04-22.jsonl
+2025-04-22 11:24:40,134 [INFO] main: Successfully calculated on-demand summary for 2025-04-22
+2025-04-22 11:24:40,140 [INFO] main: Looking for focus logs in primary location: /focus_timer/focus_logs/daily_summary_2025-04-22.json or /focus_timer/focus_logs/focus_log_2025-04-22.jsonl
+2025-04-22 11:24:40,141 [INFO] main: Fallback locations: /hub_data/focus_logs/daily_summary_2025-04-22.json or /hub_data/focus_logs/focus_log_2025-04-22.jsonl
+2025-04-22 11:24:40,142 [INFO] main: Pre-generated summary not found, attempting on-demand calculation.
+2025-04-22 11:24:40,143 [INFO] main: Calculating from FocusTimer log file
+2025-04-22 11:24:40,144 [INFO] main: Calculating on-demand summary for 2025-04-22 from /focus_timer/focus_logs/focus_log_2025-04-22.jsonl
+2025-04-22 11:24:40,156 [INFO] main: Successfully calculated on-demand summary for 2025-04-22
+2025-04-22 11:24:40,163 [INFO] main: New WebSocket connection from 172.28.0.1:50188. Total: 2
+2025-04-22 11:24:40,177 [INFO] main: New WebSocket connection from 172.28.0.1:50200. Total: 3
+2025-04-22 11:25:02,528 [INFO] main: WebSocket disconnected from 172.28.0.1:50200. Remaining: 2
+2025-04-22 11:25:02,529 [INFO] main: WebSocket disconnected from 172.28.0.1:50188. Remaining: 1
+2025-04-22 11:25:02,715 [INFO] main: Looking for focus logs in primary location: /focus_timer/focus_logs/daily_summary_2025-04-22.json or /focus_timer/focus_logs/focus_log_2025-04-22.jsonl
+2025-04-22 11:25:02,715 [INFO] main: Fallback locations: /hub_data/focus_logs/daily_summary_2025-04-22.json or /hub_data/focus_logs/focus_log_2025-04-22.jsonl
+2025-04-22 11:25:02,717 [INFO] main: Pre-generated summary not found, attempting on-demand calculation.
+2025-04-22 11:25:02,719 [INFO] main: Calculating from FocusTimer log file
+2025-04-22 11:25:02,719 [INFO] main: Calculating on-demand summary for 2025-04-22 from /focus_timer/focus_logs/focus_log_2025-04-22.jsonl
+2025-04-22 11:25:02,740 [INFO] main: Successfully calculated on-demand summary for 2025-04-22
+2025-04-22 11:25:02,746 [INFO] main: Looking for focus logs in primary location: /focus_timer/focus_logs/daily_summary_2025-04-22.json or /focus_timer/focus_logs/focus_log_2025-04-22.jsonl
+2025-04-22 11:25:02,746 [INFO] main: Fallback locations: /hub_data/focus_logs/daily_summary_2025-04-22.json or /hub_data/focus_logs/focus_log_2025-04-22.jsonl
+2025-04-22 11:25:02,748 [INFO] main: Pre-generated summary not found, attempting on-demand calculation.
+2025-04-22 11:25:02,749 [INFO] main: Calculating from FocusTimer log file
+2025-04-22 11:25:02,749 [INFO] main: Calculating on-demand summary for 2025-04-22 from /focus_timer/focus_logs/focus_log_2025-04-22.jsonl
+2025-04-22 11:25:02,761 [INFO] main: Successfully calculated on-demand summary for 2025-04-22
+2025-04-22 11:25:02,763 [INFO] main: New WebSocket connection from 172.28.0.1:47054. Total: 2
+2025-04-22 11:25:02,783 [INFO] main: New WebSocket connection from 172.28.0.1:47112. Total: 3
+2025-04-22 11:25:39,063 [INFO] main: New WebSocket connection from 172.28.0.1:55478. Total: 4
+2025-04-22 11:25:39,094 [INFO] main: New WebSocket connection from 172.28.0.1:55510. Total: 5
+2025-04-22 11:27:40,752 [INFO] main: WebSocket disconnected from 172.28.0.1:47054. Remaining: 4
+2025-04-22 11:27:40,752 [INFO] main: WebSocket disconnected from 172.28.0.1:55478. Remaining: 3
+2025-04-22 11:27:40,753 [INFO] main: WebSocket disconnected from 172.28.0.1:47112. Remaining: 2
+2025-04-22 11:27:40,753 [INFO] main: WebSocket disconnected from 172.28.0.1:55510. Remaining: 1
+2025-04-22 11:27:40,839 [INFO] main: New WebSocket connection from 172.28.0.1:51446. Total: 2
+2025-04-22 11:27:40,876 [INFO] main: New WebSocket connection from 172.28.0.1:51496. Total: 3
+2025-04-22 11:27:47,814 [INFO] main: Looking for focus logs in primary location: /focus_timer/focus_logs/daily_summary_2025-04-22.json or /focus_timer/focus_logs/focus_log_2025-04-22.jsonl
+2025-04-22 11:27:47,814 [INFO] main: Fallback locations: /hub_data/focus_logs/daily_summary_2025-04-22.json or /hub_data/focus_logs/focus_log_2025-04-22.jsonl
+2025-04-22 11:27:47,816 [INFO] main: Pre-generated summary not found, attempting on-demand calculation.
+2025-04-22 11:27:47,817 [INFO] main: Calculating from FocusTimer log file
+2025-04-22 11:27:47,818 [INFO] main: Calculating on-demand summary for 2025-04-22 from /focus_timer/focus_logs/focus_log_2025-04-22.jsonl
+2025-04-22 11:27:47,837 [INFO] main: Successfully calculated on-demand summary for 2025-04-22
+2025-04-22 11:27:47,843 [INFO] main: Looking for focus logs in primary location: /focus_timer/focus_logs/daily_summary_2025-04-22.json or /focus_timer/focus_logs/focus_log_2025-04-22.jsonl
+2025-04-22 11:27:47,843 [INFO] main: Fallback locations: /hub_data/focus_logs/daily_summary_2025-04-22.json or /hub_data/focus_logs/focus_log_2025-04-22.jsonl
+2025-04-22 11:27:47,844 [INFO] main: Pre-generated summary not found, attempting on-demand calculation.
+2025-04-22 11:27:47,845 [INFO] main: Calculating from FocusTimer log file
+2025-04-22 11:27:47,845 [INFO] main: Calculating on-demand summary for 2025-04-22 from /focus_timer/focus_logs/focus_log_2025-04-22.jsonl
+2025-04-22 11:27:47,857 [INFO] main: Successfully calculated on-demand summary for 2025-04-22
+2025-04-22 11:27:53,835 [INFO] main: Looking for focus logs in primary location: /focus_timer/focus_logs/daily_summary_2025-04-22.json or /focus_timer/focus_logs/focus_log_2025-04-22.jsonl
+2025-04-22 11:27:53,836 [INFO] main: Fallback locations: /hub_data/focus_logs/daily_summary_2025-04-22.json or /hub_data/focus_logs/focus_log_2025-04-22.jsonl
+2025-04-22 11:27:53,837 [INFO] main: Pre-generated summary not found, attempting on-demand calculation.
+2025-04-22 11:27:53,839 [INFO] main: Calculating from FocusTimer log file
+2025-04-22 11:27:53,839 [INFO] main: Calculating on-demand summary for 2025-04-22 from /focus_timer/focus_logs/focus_log_2025-04-22.jsonl
+2025-04-22 11:27:53,851 [INFO] main: Successfully calculated on-demand summary for 2025-04-22
+2025-04-22 11:27:53,856 [INFO] main: Looking for focus logs in primary location: /focus_timer/focus_logs/daily_summary_2025-04-22.json or /focus_timer/focus_logs/focus_log_2025-04-22.jsonl
+2025-04-22 11:27:53,856 [INFO] main: Fallback locations: /hub_data/focus_logs/daily_summary_2025-04-22.json or /hub_data/focus_logs/focus_log_2025-04-22.jsonl
+2025-04-22 11:27:53,857 [INFO] main: Pre-generated summary not found, attempting on-demand calculation.
+2025-04-22 11:27:53,858 [INFO] main: Calculating from FocusTimer log file
+2025-04-22 11:27:53,859 [INFO] main: Calculating on-demand summary for 2025-04-22 from /focus_timer/focus_logs/focus_log_2025-04-22.jsonl
+2025-04-22 11:27:53,870 [INFO] main: Successfully calculated on-demand summary for 2025-04-22
+2025-04-22 11:49:56,354 [INFO] main: Wrote YAML: /hub_data/countdowns.yaml
+2025-04-22 11:49:56,355 [INFO] main: File Watcher: Processing 'modified' for 'countdowns.yaml'
+2025-04-22 11:49:56,356 [INFO] main: Broadcasting message of type 'alarms_updated' to 3 clients
+2025-04-22 11:49:56,357 [INFO] main: Message broadcast successful to 3/3 clients
+2025-04-22 11:49:56,363 [INFO] main: Looking for focus logs in primary location: /focus_timer/focus_logs/daily_summary_2025-04-22.json or /focus_timer/focus_logs/focus_log_2025-04-22.jsonl
+2025-04-22 11:49:56,364 [INFO] main: Fallback locations: /hub_data/focus_logs/daily_summary_2025-04-22.json or /hub_data/focus_logs/focus_log_2025-04-22.jsonl
+2025-04-22 11:49:56,365 [INFO] main: Pre-generated summary not found, attempting on-demand calculation.
+2025-04-22 11:49:56,366 [INFO] main: Calculating from FocusTimer log file
+2025-04-22 11:49:56,366 [INFO] main: Calculating on-demand summary for 2025-04-22 from /focus_timer/focus_logs/focus_log_2025-04-22.jsonl
+2025-04-22 11:49:56,387 [INFO] main: Successfully calculated on-demand summary for 2025-04-22
+2025-04-22 11:49:57,655 [INFO] main: Looking for focus logs in primary location: /focus_timer/focus_logs/daily_summary_2025-04-22.json or /focus_timer/focus_logs/focus_log_2025-04-22.jsonl
+2025-04-22 11:49:57,656 [INFO] main: Fallback locations: /hub_data/focus_logs/daily_summary_2025-04-22.json or /hub_data/focus_logs/focus_log_2025-04-22.jsonl
+2025-04-22 11:49:57,657 [INFO] main: Pre-generated summary not found, attempting on-demand calculation.
+2025-04-22 11:49:57,658 [INFO] main: Calculating from FocusTimer log file
+2025-04-22 11:49:57,659 [INFO] main: Calculating on-demand summary for 2025-04-22 from /focus_timer/focus_logs/focus_log_2025-04-22.jsonl
+2025-04-22 11:49:57,669 [INFO] main: Successfully calculated on-demand summary for 2025-04-22
+2025-04-22 11:49:57,678 [INFO] main: Looking for focus logs in primary location: /focus_timer/focus_logs/daily_summary_2025-04-22.json or /focus_timer/focus_logs/focus_log_2025-04-22.jsonl
+2025-04-22 11:49:57,678 [INFO] main: Fallback locations: /hub_data/focus_logs/daily_summary_2025-04-22.json or /hub_data/focus_logs/focus_log_2025-04-22.jsonl
+2025-04-22 11:49:57,679 [INFO] main: Pre-generated summary not found, attempting on-demand calculation.
+2025-04-22 11:49:57,680 [INFO] main: Calculating from FocusTimer log file
+2025-04-22 11:49:57,680 [INFO] main: Calculating on-demand summary for 2025-04-22 from /focus_timer/focus_logs/focus_log_2025-04-22.jsonl
+2025-04-22 11:49:57,691 [INFO] main: Successfully calculated on-demand summary for 2025-04-22
+2025-04-22 11:50:02,892 [INFO] main: Wrote YAML: /hub_data/Project-A/tasks.yaml
+2025-04-22 11:50:02,892 [INFO] main: Broadcasting message of type 'tasks_updated' to 3 clients
+2025-04-22 11:50:02,893 [INFO] main: Message broadcast successful to 3/3 clients
+2025-04-22 11:50:04,894 [INFO] main: Wrote YAML: /hub_data/Project-A/tasks.yaml
+2025-04-22 11:50:04,895 [INFO] main: Broadcasting message of type 'tasks_updated' to 3 clients
+2025-04-22 11:50:04,895 [INFO] main: Message broadcast successful to 3/3 clients
+2025-04-22 11:50:06,396 [INFO] main: Wrote YAML: /hub_data/Project-A/tasks.yaml
+2025-04-22 11:50:06,396 [INFO] main: Broadcasting message of type 'tasks_updated' to 3 clients
+2025-04-22 11:50:06,397 [INFO] main: Message broadcast successful to 3/3 clients
+2025-04-22 11:50:08,590 [INFO] main: Wrote YAML: /hub_data/Project-A/tasks.yaml
+2025-04-22 11:50:08,591 [INFO] main: Broadcasting message of type 'tasks_updated' to 3 clients
+2025-04-22 11:50:08,591 [INFO] main: Message broadcast successful to 3/3 clients
+2025-04-22 11:50:10,947 [INFO] main: Wrote YAML: /hub_data/Project-A/tasks.yaml
+2025-04-22 11:50:10,947 [INFO] main: Broadcasting message of type 'tasks_updated' to 3 clients
+2025-04-22 11:50:10,948 [INFO] main: Message broadcast successful to 3/3 clients
+2025-04-22 11:50:12,430 [INFO] main: Wrote YAML: /hub_data/Project-A/tasks.yaml
+2025-04-22 11:50:12,431 [INFO] main: Broadcasting message of type 'tasks_updated' to 3 clients
+2025-04-22 11:50:12,432 [INFO] main: Message broadcast successful to 3/3 clients
+2025-04-22 21:32:50,046 [INFO] main: WebSocket disconnected from 172.28.0.1:51496. Remaining: 2
+2025-04-22 21:32:50,047 [INFO] main: WebSocket disconnected from 172.28.0.1:51446. Remaining: 1
+2025-04-22 21:32:50,189 [INFO] main: New WebSocket connection from 172.28.0.1:42920. Total: 2
+2025-04-22 21:32:50,240 [INFO] main: New WebSocket connection from 172.28.0.1:42936. Total: 3
+2025-04-22 21:32:53,365 [INFO] main: Looking for focus logs in primary location: /focus_timer/focus_logs/daily_summary_2025-04-22.json or /focus_timer/focus_logs/focus_log_2025-04-22.jsonl
+2025-04-22 21:32:53,366 [INFO] main: Fallback locations: /hub_data/focus_logs/daily_summary_2025-04-22.json or /hub_data/focus_logs/focus_log_2025-04-22.jsonl
+2025-04-22 21:32:53,367 [INFO] main: Pre-generated summary not found, attempting on-demand calculation.
+2025-04-22 21:32:53,369 [INFO] main: Calculating from FocusTimer log file
+2025-04-22 21:32:53,369 [INFO] main: Calculating on-demand summary for 2025-04-22 from /focus_timer/focus_logs/focus_log_2025-04-22.jsonl
+2025-04-22 21:32:53,393 [INFO] main: Successfully calculated on-demand summary for 2025-04-22
+2025-04-22 21:32:53,403 [INFO] main: Looking for focus logs in primary location: /focus_timer/focus_logs/daily_summary_2025-04-22.json or /focus_timer/focus_logs/focus_log_2025-04-22.jsonl
+2025-04-22 21:32:53,403 [INFO] main: Fallback locations: /hub_data/focus_logs/daily_summary_2025-04-22.json or /hub_data/focus_logs/focus_log_2025-04-22.jsonl
+2025-04-22 21:32:53,405 [INFO] main: Pre-generated summary not found, attempting on-demand calculation.
+2025-04-22 21:32:53,406 [INFO] main: Calculating from FocusTimer log file
+2025-04-22 21:32:53,406 [INFO] main: Calculating on-demand summary for 2025-04-22 from /focus_timer/focus_logs/focus_log_2025-04-22.jsonl
+2025-04-22 21:32:53,419 [INFO] main: Successfully calculated on-demand summary for 2025-04-22
+2025-04-22 21:54:56,357 [INFO] main: WebSocket disconnected from 172.28.0.1:42936. Remaining: 2
+2025-04-22 21:54:56,358 [INFO] main: WebSocket disconnected from 172.28.0.1:42920. Remaining: 1
+2025-04-22 21:54:56,561 [INFO] main: New WebSocket connection from 172.28.0.1:45266. Total: 2
+2025-04-22 21:54:56,614 [INFO] main: New WebSocket connection from 172.28.0.1:45296. Total: 3
+2025-04-22 21:57:05,246 [INFO] main: WebSocket disconnected from 172.28.0.1:36132. Remaining: 2
+2025-04-22 21:57:05,247 [INFO] main: WebSocket disconnected from 172.28.0.1:45296. Remaining: 1
+2025-04-22 21:57:05,247 [INFO] main: WebSocket disconnected from 172.28.0.1:45266. Remaining: 0
+2025-04-22 21:57:05,347 [INFO] main: --- Shutting down Projects Hub Backend ---
+2025-04-22 21:57:05,387 [INFO] main: File system watcher stopped.
+2025-04-22 21:57:15,781 [INFO] ollama_client: Initialized Ollama client with base URL: http://host.docker.internal:11434
+2025-04-22 21:57:15,803 [INFO] main: --- Starting Projects Hub Backend ---
+2025-04-22 21:57:15,804 [INFO] main: Watching data directory: /hub_data
+2025-04-22 21:57:15,807 [INFO] main: Hub data directory ready: /hub_data
+2025-04-22 21:57:15,809 [INFO] main: Ensured directory exists: /hub_data/focus_logs
+2025-04-22 21:57:15,853 [INFO] main: File system watcher started successfully.
+2025-04-22 21:57:17,037 [INFO] main: New WebSocket connection from 172.28.0.1:46566. Total: 1
+2025-04-22 21:57:18,044 [INFO] main: New WebSocket connection from 172.28.0.1:46572. Total: 2
+2025-04-22 21:57:18,463 [INFO] main: WebSocket disconnected from 172.28.0.1:46572. Remaining: 1
+2025-04-22 21:57:18,463 [INFO] main: WebSocket disconnected from 172.28.0.1:46566. Remaining: 0
+2025-04-22 21:57:18,563 [INFO] main: --- Shutting down Projects Hub Backend ---
+2025-04-22 21:57:18,595 [INFO] main: File system watcher stopped.
+2025-04-22 21:58:23,674 [INFO] ollama_client: Initialized Ollama client with base URL: http://host.docker.internal:11434
+2025-04-22 21:58:23,697 [INFO] main: --- Starting Projects Hub Backend ---
+2025-04-22 21:58:23,697 [INFO] main: Watching data directory: /hub_data
+2025-04-22 21:58:23,701 [INFO] main: Hub data directory ready: /hub_data
+2025-04-22 21:58:23,702 [INFO] main: Ensured directory exists: /hub_data/focus_logs
+2025-04-22 21:58:23,737 [INFO] main: File system watcher started successfully.
+2025-04-22 21:58:27,051 [INFO] main: New WebSocket connection from 172.28.0.1:50592. Total: 1
+2025-04-22 21:58:30,121 [INFO] main: New WebSocket connection from 172.28.0.1:50610. Total: 2
+2025-04-22 21:58:30,137 [INFO] main: New WebSocket connection from 172.28.0.1:50642. Total: 3
+2025-04-22 22:16:48,667 [INFO] main: WebSocket disconnected from 172.28.0.1:50610. Remaining: 2
+2025-04-22 22:16:48,668 [INFO] main: WebSocket disconnected from 172.28.0.1:50642. Remaining: 1
+2025-04-22 22:16:48,669 [INFO] main: WebSocket disconnected from 172.28.0.1:50592. Remaining: 0
+2025-04-22 22:16:48,767 [INFO] main: --- Shutting down Projects Hub Backend ---
+2025-04-22 22:16:48,804 [INFO] main: File system watcher stopped.

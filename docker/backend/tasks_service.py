@@ -446,12 +446,29 @@ class TasksService:
             tasks_data = yaml.safe_load(file_content)
             
             # Handle different formats
+            tasks_list = []
             if isinstance(tasks_data, list):
-                return tasks_data
+                tasks_list = tasks_data
             elif isinstance(tasks_data, dict) and "tasks" in tasks_data:
-                return tasks_data["tasks"]
+                tasks_list = tasks_data["tasks"]
             else:
                 return []
+                
+            # Ensure all tasks have proper IDs and formats
+            for task in tasks_list:
+                # Make sure ID exists and is a string
+                if "id" not in task or not task["id"]:
+                    task["id"] = f"task-{int(time.time())}"
+                elif not isinstance(task["id"], str):
+                    task["id"] = str(task["id"])
+                    
+                # Ensure status is lowercase
+                if "status" in task and task["status"]:
+                    task["status"] = task["status"].lower()
+                else:
+                    task["status"] = "todo"
+                    
+            return tasks_list
                 
         except Exception as e:
             logger.error(f"Error reading tasks for project {project_id}: {e}")
